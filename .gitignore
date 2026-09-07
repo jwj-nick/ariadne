@@ -1,0 +1,35 @@
+# deps
+node_modules/
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+build/
+next-env.d.ts
+
+# 빌드 산출물 (scripts/build.ts 가 생성)
+app/data/graph.json
+app/data/quiz/
+
+# 감사 리포트
+reports/
+
+# env
+.env
+.env.local
+.env*.local
+
+# vercel
+.vercel
+
+# 편집기 / OS
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+
+# typescript
+*.tsbuildinfo
