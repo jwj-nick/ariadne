@@ -11,6 +11,7 @@ next-env.d.ts
 
 # 빌드 산출물 (scripts/build.ts 가 생성)
 app/data/graph.json
+app/data/quiz.json
 app/data/quiz/
 
 # 감사 리포트

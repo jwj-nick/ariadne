@@ -12,6 +12,7 @@ import { join } from 'node:path';
 import { loadCards, isTrace, isSource, REPO_ROOT, type Card } from './lib/content.ts';
 import { runChecks, codeTitle } from './lib/checks.ts';
 import { VISIBLE_STATUSES, type Status } from './lib/schema.ts';
+import { buildQuiz } from './lib/quiz.ts';
 
 interface GraphTrace {
   id: string;
@@ -206,6 +207,21 @@ const outDir = join(REPO_ROOT, 'app', 'data');
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, 'graph.json'), JSON.stringify(graph, null, 2) + '\n', 'utf8');
 
+// ── 7. 퀴즈 (D17 — 빌드 시점 생성, 런타임 AI 없음) ──────────────────────
+const quiz = buildQuiz(all.filter(visible));
+const quizCounts = {
+  items: quiz.items.length,
+  adult: quiz.items.filter((q) => q.level === 'adult').length,
+  kid: quiz.items.filter((q) => q.level === 'kid').length,
+  discarded: quiz.discarded.length,
+};
+writeFileSync(
+  join(outDir, 'quiz.json'),
+  JSON.stringify({ meta: { generated_at: graph.meta.generated_at, counts: quizCounts }, items: quiz.items }, null, 2) +
+    '\n',
+  'utf8',
+);
+
 const byFreq = [...traces].sort((a, b) => b.frequency - a.frequency).slice(0, 5);
 
 console.log('');
@@ -219,6 +235,19 @@ console.log(`  경고           ${warns.length}건${warns.length > 0 ? ' (npm ru
 if (byFreq.length > 0) {
   console.log(`  frequency 상위 ${byFreq.map((t) => `${t.name_en}(${t.frequency})`).join(', ')}`);
 }
+console.log(`  퀴즈           ${quizCounts.items}문 (어른 ${quizCounts.adult} · 아이 ${quizCounts.kid})`);
+for (const [type, n] of Object.entries(
+  quiz.items.reduce<Record<string, number>>((acc, q) => ({ ...acc, [q.type]: (acc[q.type] ?? 0) + 1 }), {}),
+)) {
+  console.log(`      ${type.padEnd(16)} ${n}문`);
+}
+if (quiz.discarded.length > 0) {
+  // 흔적 이름이 원천 이름을 그대로 품은 경우가 대부분이며, 이것은 설계상 정상이다.
+  // 그런 흔적에도 "이유 말하기" 문제는 따로 만들어져 있다.
+  console.log(`  만들지 않음    ${quiz.discarded.length}건 (문제에 답이 드러나는 조합)`);
+  const byReason = quiz.discarded.filter((d) => !d.reason.includes('그대로 들어 있습니다'));
+  for (const d of byReason) console.log(`      확인 필요: ${d.trace_id} · ${d.reason}`);
+}
 console.log('');
-console.log('  기록: app/data/graph.json');
+console.log('  기록: app/data/graph.json, app/data/quiz.json');
 console.log('');

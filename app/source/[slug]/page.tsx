@@ -56,19 +56,26 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
         )}
       </header>
 
-      {/* 두 레벨 요약. kid/adult 전환 UI 는 M1 에서 붙인다. */}
+      {/*
+        두 눈높이 요약. 머리말의 전환에 따라 CSS 로 한쪽만 보인다.
+        서버에서는 둘 다 그려 두므로 이 페이지는 서버 컴포넌트로 남는다.
+      */}
       <div
         className="mb-7 rounded-lg p-4"
         style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
       >
-        <p className="text-[12px]" style={{ color: 'var(--muted)' }}>
-          아이에게
-        </p>
-        <p className="mt-1 text-[15px]">{source.level_kid}</p>
-        <p className="mt-3.5 text-[12px]" style={{ color: 'var(--muted)' }}>
-          어른에게
-        </p>
-        <p className="mt-1 text-[14px]">{source.level_adult}</p>
+        <div className="level-kid">
+          <p className="text-[12px]" style={{ color: 'var(--muted)' }}>
+            한 줄로
+          </p>
+          <p className="mt-1 text-[16px] leading-relaxed">{source.level_kid}</p>
+        </div>
+        <div className="level-adult">
+          <p className="text-[12px]" style={{ color: 'var(--muted)' }}>
+            한 줄로
+          </p>
+          <p className="mt-1 text-[15px] leading-relaxed">{source.level_adult}</p>
+        </div>
       </div>
 
       {/* 이 원천에서 갈라져 나온 흔적들. 이 앱의 핵심 방향이다. */}

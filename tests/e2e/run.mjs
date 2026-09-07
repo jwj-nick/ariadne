@@ -11,7 +11,7 @@
  * 그래서 모바일 폭 확인에는 Emulation.setDeviceMetricsOverride 를 쓴다.
  * 스크린샷은 tests/e2e/shots/ 에 남으며 git 에는 올리지 않는다.
  */
-import { spawn } from 'node:child_process';
+import { spawn, execSync } from 'node:child_process';
 import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,6 +39,42 @@ const bad = (label, detail) => {
 function expect(label, actual, wanted) {
   String(actual) === String(wanted) ? ok(label, `(${actual})`) : bad(label, `기대 ${wanted} / 실제 ${actual}`);
 }
+
+// ── 남은 프로세스 정리 ──────────────────────────────────────────────────
+// Windows 에서 spawn 한 npx.cmd 는 kill 해도 그 아래 node 가 살아남는다.
+// 지난 실행이 남긴 서버가 포트를 쥐고 있으면 **옛 빌드를 검사하게 되어** 엉뚱한 실패가 난다.
+// 실제로 그 일이 있었으므로, 시작 전에 포트를 비우고 끝날 때 프로세스 나무째 정리한다.
+function killPort(port) {
+  try {
+    if (process.platform === 'win32') {
+      const out = execSync(`netstat -ano -p tcp | findstr LISTENING | findstr :${port}`, {
+        encoding: 'utf8',
+        stdio: ['ignore', 'pipe', 'ignore'],
+      });
+      const pids = new Set(out.trim().split(/\r?\n/).map((l) => l.trim().split(/\s+/).pop()));
+      for (const pid of pids) {
+        if (pid && /^\d+$/.test(pid)) execSync(`taskkill /F /T /PID ${pid}`, { stdio: 'ignore' });
+      }
+    } else {
+      execSync(`lsof -ti tcp:${port} | xargs -r kill -9`, { stdio: 'ignore' });
+    }
+  } catch {
+    // 쥐고 있는 프로세스가 없으면 명령이 실패한다. 정상이다.
+  }
+}
+
+function killTree(child) {
+  if (!child?.pid) return;
+  try {
+    if (process.platform === 'win32') execSync(`taskkill /F /T /PID ${child.pid}`, { stdio: 'ignore' });
+    else child.kill('SIGKILL');
+  } catch {
+    // 이미 끝난 경우다.
+  }
+}
+
+killPort(PORT);
+killPort(CDP_PORT);
 
 // ── 서버 띄우기 ─────────────────────────────────────────────────────────
 const server = spawn(
@@ -103,6 +139,15 @@ try {
     console.error('서버가 뜨지 않았습니다. npm run build 를 먼저 실행하십시오.');
     process.exit(1);
   }
+  // 지금 빌드에 있는 경로가 전부 응답하는지 먼저 본다.
+  // 하나라도 404 면 옛 빌드가 응답하고 있다는 뜻이므로 여기서 멈춘다.
+  for (const path of ['/', '/quiz', '/trace/nike', '/source/zeus']) {
+    const r = await fetch(BASE + path);
+    if (!r.ok) {
+      console.error(`${path} 가 HTTP ${r.status} 입니다. 옛 빌드가 응답하고 있을 수 있습니다.`);
+      process.exit(1);
+    }
+  }
 
   // ── 1부. 서버가 내려 준 HTML ────────────────────────────────────────
   console.log('\n[1] 서버 HTML');
@@ -114,7 +159,7 @@ try {
     '/trace/pandora': ['같은 원천의 다른 흔적', '판도라의 상자'],
     '/trace/pandoras-box': ['피토스', '픽시스'],
     '/source/zeus': ['옥황상제', '여기서 나온 흔적', '목성', '한국 대응물'],
-    '/source/ariadne': ['실마리', '인셉션', '아이에게', '어른에게'],
+    '/source/ariadne': ['실마리', '인셉션', 'level-kid', 'level-adult'],
     '/source/achilles': ['트로이 목마', '역린'],
     '/source/seven-deadly-sins': ['일곱 죄악', '삼독', '세븐'],
   };
@@ -226,11 +271,148 @@ try {
       const moved = await s.js('location.pathname');
       String(moved).startsWith('/source/') ? ok('카드 클릭 이동', moved) : bad('카드 클릭 이동', moved);
 
+      // ── 3부. 학습 루프 (M1) ──────────────────────────────────────
+      console.log('\n[3] 학습 루프');
+      const clickText = (selector, text) =>
+        `(() => { const el = [...document.querySelectorAll(${JSON.stringify(selector)})].find(e => e.textContent.includes(${JSON.stringify(text)})); if (!el) return false; el.click(); return true; })()`;
+
+      await s.js('localStorage.clear()');
+      await s.send('Page.navigate', { url: BASE + '/quiz' });
+      await sleep(1800);
+
+      const firstPrompt = await s.js('document.querySelector("main h1")?.textContent ?? ""');
+      firstPrompt.length > 0 ? ok('첫 문제가 나온다', firstPrompt.slice(0, 30) + '…') : bad('첫 문제', '비어 있음');
+
+      // 정답을 먼저 보여주지 않아야 한다 (D6).
+      const revealedEarly = await s.js(
+        `document.querySelector('main')?.textContent.includes('이 이름이 붙은 까닭') ?? false`,
+      );
+      expect('답을 먼저 보여주지 않는다', revealedEarly, false);
+
+      // 힌트는 세 번까지 열린다.
+      for (let i = 0; i < 3; i++) {
+        await s.js(clickText('button', '힌트 보기'));
+        await sleep(200);
+      }
+      const hintCount = await s.js(
+        `[...document.querySelectorAll('main p')].filter(p => p.textContent.trim().startsWith('힌트 ')).length`,
+      );
+      expect('힌트 3단', hintCount, 3);
+      expect('힌트를 다 열면 버튼이 사라진다', await s.js(clickText('button', '힌트 보기')), false);
+
+      // 답을 보고 자기평가하면 다음 문제로 넘어간다.
+      const isSelf = await s.js('!!document.querySelector("main textarea")');
+      if (isSelf) {
+        await s.js(`document.querySelector('main textarea').focus()`);
+        await s.send('Input.insertText', { text: '테스트 답안' });
+        await s.js(clickText('button', '답 보기'));
+        await sleep(300);
+        expect('답을 열면 까닭이 보인다', await s.js(`document.querySelector('main').textContent.includes('이 이름이 붙은 까닭')`), true);
+        // 답 공개 화면도 눈으로 볼 수 있게 남긴다.
+        {
+          const m = await s.send('Page.getLayoutMetrics');
+          const size = m.cssContentSize ?? m.contentSize;
+          const shot = await s.send('Page.captureScreenshot', {
+            format: 'png',
+            captureBeyondViewport: true,
+            clip: { x: 0, y: 0, width: 390, height: Math.min(size.height, 4000), scale: 1 },
+          });
+          writeFileSync(join(SHOTS, 'm-quiz-reveal.png'), Buffer.from(shot.data, 'base64'));
+        }
+        await s.js(clickText('button', '정확히 알고 있었다'));
+      } else {
+        // 객관식이거나 자유입력인 경우
+        const hasChoices = await s.js(`document.querySelectorAll('main ul li button').length >= 3`);
+        if (hasChoices) await s.js(`document.querySelector('main ul li button').click()`);
+        else {
+          await s.js(`document.querySelector('main input').focus()`);
+          await s.send('Input.insertText', { text: '아무거나' });
+          await s.js(clickText('button', '확인'));
+        }
+        await sleep(300);
+        await s.js(clickText('button', '다음'));
+      }
+      await sleep(500);
+
+      const secondPrompt = await s.js('document.querySelector("main h1")?.textContent ?? ""');
+      secondPrompt && secondPrompt !== firstPrompt
+        ? ok('푼 뒤 다음 문제로 넘어간다')
+        : bad('다음 문제', `여전히 "${secondPrompt.slice(0, 20)}"`);
+
+      const saved = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.reviews') || '[]')`);
+      Array.isArray(saved) && saved.length === 1 && saved[0].reps >= 0
+        ? ok('복습 상태가 저장된다', `due ${saved[0].due}`)
+        : bad('복습 상태 저장', JSON.stringify(saved));
+      const logs = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.logs') || '[]')`);
+      expect('퀴즈 기록이 남는다', Array.isArray(logs) && logs.length, 1);
+
+      // 다시 열면 방금 푼 것은 오늘 대기열에서 빠진다.
+      await s.send('Page.navigate', { url: BASE + '/quiz' });
+      await sleep(1500);
+      const totalNow = await s.js(
+        `(document.querySelector('main div div span:last-child')?.textContent ?? '').replace(/[^0-9]/g, '')`,
+      );
+      Number(totalNow) === 22
+        ? ok('푼 흔적은 오늘 대기열에서 빠진다', `남은 ${totalNow}개`)
+        : bad('대기열 갱신', `남은 것이 ${totalNow}개로 나옵니다 (기대 22)`);
+
+      // ── 4부. 눈높이 전환 (M1-5) ──────────────────────────────────
+      console.log('\n[4] 눈높이');
+      await s.send('Page.navigate', { url: BASE + '/source/nike-goddess' });
+      await sleep(1200);
+      expect('처음은 어른 눈높이', await s.js('document.documentElement.dataset.level'), 'adult');
+      const adultVisible = await s.js(
+        `!!document.querySelector('.level-adult')?.offsetParent && !document.querySelector('.level-kid')?.offsetParent`,
+      );
+      expect('어른 요약만 보인다', adultVisible, true);
+
+      await s.js(clickText('header button', '아이'));
+      await sleep(300);
+      expect('아이로 전환된다', await s.js('document.documentElement.dataset.level'), 'kid');
+      const kidVisible = await s.js(
+        `!!document.querySelector('.level-kid')?.offsetParent && !document.querySelector('.level-adult')?.offsetParent`,
+      );
+      expect('아이 요약만 보인다', kidVisible, true);
+
+      // 새로 고쳐도 유지되고, 화면이 번쩍이지 않도록 첫 그림부터 아이 눈높이여야 한다.
+      await s.send('Page.navigate', { url: BASE + '/source/ariadne' });
+      await sleep(1000);
+      expect('새로 고쳐도 유지된다', await s.js('document.documentElement.dataset.level'), 'kid');
+
+      // 아이 눈높이의 퀴즈는 객관식이어야 한다.
+      await s.send('Page.navigate', { url: BASE + '/quiz' });
+      await sleep(1500);
+      const kidChoices = await s.js(`document.querySelectorAll('main ul li button').length`);
+      expect('아이 퀴즈는 선택지 3개', kidChoices, 3);
+
+      // ── 5부. 진도와 백업 ─────────────────────────────────────────
+      console.log('\n[5] 진도와 백업');
+      await s.send('Page.navigate', { url: BASE + '/settings' });
+      await sleep(1300);
+      const settingsText = await s.js(`document.querySelector('main')?.textContent ?? ''`);
+      settingsText.includes('한 번 이상 보았고') && settingsText.includes('백업 내려받기')
+        ? ok('진도와 백업 화면이 뜬다')
+        : bad('진도와 백업 화면', settingsText.slice(0, 60));
+
+      // 눈높이를 여기서도 바꿀 수 있어야 한다.
+      await s.js(clickText('main button', '어른'));
+      await sleep(300);
+      expect('설정에서 눈높이 전환', await s.js('document.documentElement.dataset.level'), 'adult');
+      expect(
+        '고른 값이 저장된다',
+        await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.profile') || '{}').level`),
+        'adult',
+      );
+
+      await s.js(`localStorage.clear()`);
+
       // 스크린샷 남기기
       for (const [name, path] of [
         ['m-home', '/'],
         ['m-trace-nike', '/trace/nike'],
         ['m-source-ariadne', '/source/ariadne'],
+        ['m-quiz', '/quiz'],
+        ['m-settings', '/settings'],
       ]) {
         await s.send('Page.navigate', { url: BASE + path });
         await sleep(1200);
@@ -243,13 +425,15 @@ try {
         });
         writeFileSync(join(SHOTS, `${name}.png`), Buffer.from(shot.data, 'base64'));
       }
-      ok('스크린샷 3장', 'tests/e2e/shots/');
+      ok('스크린샷 5장', 'tests/e2e/shots/');
       s.ws.close();
     }
   }
 } finally {
-  chrome?.kill();
-  server.kill();
+  killTree(chrome);
+  killTree(server);
+  killPort(PORT);
+  killPort(CDP_PORT);
 }
 
 console.log(`\n실패 ${fails}건`);

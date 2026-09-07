@@ -105,3 +105,14 @@ body {
   height: 1.6rem;
   background: var(--thread);
 }
+
+/*
+ * 눈높이(D8). <html data-level> 값에 따라 한쪽만 보여 준다.
+ * 이렇게 하면 카드 페이지가 서버 컴포넌트로 남을 수 있고 정적 배포에서도 그대로 돈다.
+ */
+html[data-level='kid'] .level-adult {
+  display: none;
+}
+html[data-level='adult'] .level-kid {
+  display: none;
+}
