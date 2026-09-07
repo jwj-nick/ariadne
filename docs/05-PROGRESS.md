@@ -33,7 +33,7 @@
 | M0-2 | OPEN QUESTIONS 확인 + 스키마 도메인 확정 | `[x]` 2026-09-07 | Q1·Q5 해결, D12~D18 기록 |
 | M0-3 | `scripts/validate.ts` + `scripts/build.ts` | `[x]` 2026-09-07 | 검사 E01~E09·W01~W06 + 회귀 테스트 17건 |
 | M0-4 | 시드 카드 작성 (`status: reviewed`) | `[x]` 2026-09-07 | trace 23장 / source 22장 / edge 46. 고아 0, error 0, warn 0 |
-| M0-5 | Next.js 앱 골격 + `graph.json` 로드 + 조회 화면(검색만) | `[ ]` | D18: 루트가 Next.js 프로젝트. **주의: `app/data/graph.json` 은 빌드 산출물이라 git 에 없다. Vercel 빌드 명령을 `npm run build:content && next build` 로 잡아야 한다** |
+| M0-5 | Next.js 앱 골격 + `graph.json` 로드 + 조회 화면(검색만) | `[x]` 2026-09-08 | Next 16 + React 19 + Tailwind 4. 정적 48쪽. `npm run build` 가 build:content 를 먼저 돌린다 |
 | M0-6 | Vercel 프리뷰 배포, 오너 폰에서 확인 | `[ ]` | |
 
 ### M0-4 시드 20장 진행표
@@ -80,10 +80,17 @@
 ### 커밋 전 게이트
 
 ```
-npm run check      # typecheck → test → validate → build:content
+npm run check      # typecheck -> test(단위 17건) -> validate -> build:content
+npm run verify     # check -> next build -> test:e2e(21건).  화면까지 바뀌었을 때
 ```
 
-네 단계 중 하나라도 실패하면 커밋하지 않는다. `npm run audit` 은 감사 리포트까지 파일로 남긴다.
+하나라도 실패하면 커밋하지 않는다. `npm run audit` 은 감사 리포트를 파일로 남긴다.
+
+E2E(`tests/e2e/run.mjs`)는 빌드된 앱을 3111 포트에 띄우고 두 가지를 본다.
+서버가 내려 준 HTML 에 카드 내용이 제대로 들어 있는지, 그리고 브라우저에서 검색과 필터와 이동이 도는지다.
+모바일 폭 확인은 DevTools Protocol 의 `Emulation.setDeviceMetricsOverride` 로 한다.
+**이 머신의 헤드리스 Chrome 은 `--window-size` 만으로는 뷰포트 폭이 500px 아래로 내려가지 않는다.**
+스크린샷은 `tests/e2e/shots/` 에 남고 git 에는 올리지 않는다.
 
 ---
 

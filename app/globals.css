@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+
+/*
+ * Ariadne 색과 활자.
+ *
+ * 그림의 축은 두 가지다. 하나는 양피지와 잉크(밝을 때 따뜻한 종이색, 어두울 때 짙은 남빛),
+ * 다른 하나는 아리아드네가 건넨 붉은 실이다. 실 색은 링크와 강조에만 쓰고 넓은 면에는 쓰지 않는다.
+ * 카드 왼쪽의 가는 세로선도 같은 실의 은유다.
+ */
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --ink: #1c1a17;
+  --muted: #6b6459;
+  --thread: #b23a2e;
+  --thread-soft: #b23a2e26;
+  --line: #e4ddd1;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161c;
+    --surface: #1b1e26;
+    --ink: #e9e5dd;
+    --muted: #958e81;
+    --thread: #dd6b57;
+    --thread-soft: #dd6b5726;
+    --line: #2b2f39;
+    color-scheme: dark;
+  }
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo',
+    'Noto Sans KR', sans-serif;
+  line-height: 1.75;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 로고와 라틴 문자 제목에만 쓰는 세리프. 한국어 제목은 시스템 산세리프를 유지한다. */
+.wordmark {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.thread-link {
+  color: var(--thread);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.thread-link:hover {
+  background: var(--thread-soft);
+}
+
+/* 카드 본문 */
+.prose-ariadne p {
+  margin: 0 0 0.9rem;
+}
+.prose-ariadne p:last-child {
+  margin-bottom: 0;
+}
+.prose-ariadne ul {
+  margin: 0 0 0.9rem;
+  padding: 0;
+  list-style: none;
+}
+.prose-ariadne li {
+  position: relative;
+  padding-left: 1.05rem;
+  margin-bottom: 0.45rem;
+}
+.prose-ariadne li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.42rem;
+  height: 1px;
+  background: var(--thread);
+}
+.prose-ariadne strong {
+  font-weight: 600;
+}
+
+/* 실 한 가닥. 섹션 왼쪽에 붙는 세로선. */
+.thread-rail {
+  border-left: 1px solid var(--line);
+  padding-left: 1.15rem;
+}
+.thread-rail::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0.55rem;
+  width: 1px;
+  height: 1.6rem;
+  background: var(--thread);
+}
