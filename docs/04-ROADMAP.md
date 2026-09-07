@@ -11,7 +11,7 @@
 - [x] `scripts/validate.ts`, `scripts/build.ts` (md → graph.json)
 - [ ] 시드 카드 20장 수작업 (아래 목록) — 스키마 검증용. `status: reviewed` (D15)
 - [ ] Next.js 앱 골격 + graph.json 로드 + 조회 화면(검색만)
-- [ ] Vercel 프리뷰 배포
+- [x] 배포 — https://jwj-nick.github.io/ariadne/ (Vercel 은 로그인 필요, 05-PROGRESS B1 참조)
 
 > **Supabase는 M0에 없다.** D14에 따라 M1 후반에 도입하고, 그 전까지는 `localStorage`를 쓴다.
 > 견적 1~2시간은 낙관적이었다. 시드 20장을 스키마대로 쓰는 분량 때문에 실제로는 2~3세션으로 본다.

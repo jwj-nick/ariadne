@@ -17,11 +17,27 @@
 
 | 항목 | 값 |
 |---|---|
-| 마일스톤 | **M0 — 리포 부트스트랩** |
-| 진행률 | 4/6 단계 |
-| 마지막 세션 | 2026-09-07 (세션 "adriane") |
-| 다음 작업 | **M0-4. 시드 20장 작성** (아래 참조) |
-| 블로커 | 없음. 단 Q6(시드 status)에 오너 답이 있으면 좋다 |
+| 마일스톤 | **M0 완료 → M1 학습 루프 진행 중** |
+| 진행률 | M0 6/6 단계 완료 |
+| 마지막 세션 | 2026-09-08 (세션 "adriane", 야간 자율진행) |
+| 공개 주소 | **https://jwj-nick.github.io/ariadne/** |
+| 다음 작업 | M1-1 SM-2 스케줄러 |
+| 블로커 | Vercel 배포와 Supabase 도입은 오너의 로그인이 필요하다 (아래 참조) |
+
+### 오너가 직접 해야 하는 일 (지금 막혀 있는 것)
+
+| # | 필요한 것 | 왜 |
+|---|---|---|
+| B1 | `npx vercel login` 후 `npx vercel --prod` | Vercel 이 최종 목적지(D5)인데 로그인이 대화형이라 자율진행으로 할 수 없다. 자세한 사정은 아래 |
+| B2 | Supabase 프로젝트 생성 + 키 발급 | M1-6 에서 가족 계정과 기기 간 동기화를 붙일 때 필요하다 |
+| B3 | Anthropic API 키 | M2 의 캡처 매칭에 필요하다. 힌트 튜터는 D17 에 따라 빌드 시점 생성이라 키가 필요 없다 |
+
+**Vercel 이 막힌 사정.** `vercel deploy --temporary` 는 계정 없이 배포할 수 있는 경로인데,
+이 방식은 로컬에서 빌드한다. 그런데 Windows 에서 Next.js 빌더가 `trace/[slug]` 와 `source/[slug]` 의
+동일한 함수 번들을 심볼릭 링크로 묶으려다 `EPERM` 으로 실패한다.
+정상 경로인 원격 빌드는 로그인이 필요하다. `dynamicParams = false` 로도 함수 생성 자체는 없어지지 않았다.
+그래서 확인용 배포는 GitHub Pages 로 먼저 했고, `next.config.ts` 가 환경변수 하나로 두 경우를 가르도록 해 두었다.
+로그인만 하면 Vercel 쪽은 설정 변경 없이 그대로 배포된다.
 
 ---
 
@@ -34,7 +50,7 @@
 | M0-3 | `scripts/validate.ts` + `scripts/build.ts` | `[x]` 2026-09-07 | 검사 E01~E09·W01~W06 + 회귀 테스트 17건 |
 | M0-4 | 시드 카드 작성 (`status: reviewed`) | `[x]` 2026-09-07 | trace 23장 / source 22장 / edge 46. 고아 0, error 0, warn 0 |
 | M0-5 | Next.js 앱 골격 + `graph.json` 로드 + 조회 화면(검색만) | `[x]` 2026-09-08 | Next 16 + React 19 + Tailwind 4. 정적 48쪽. `npm run build` 가 build:content 를 먼저 돌린다 |
-| M0-6 | Vercel 프리뷰 배포, 오너 폰에서 확인 | `[ ]` | |
+| M0-6 | 배포, 오너 폰에서 확인 | `[x]` 2026-09-08 | **https://jwj-nick.github.io/ariadne/** (GitHub Pages). Vercel 은 아래 사유로 보류 |
 
 ### M0-4 시드 20장 진행표
 
