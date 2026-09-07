@@ -9,7 +9,8 @@
 2. `docs/01-DESIGN-LOG.md` — 오너와 Claude가 나눈 설계 대화 전체 기록 + 결정 사항
 3. `docs/02-SCHEMA.md` — trace/source 노드 스키마, 링크 규칙
 4. `docs/03-SKILLS-TOOLS.md` — 이 리포에서 쓰는 스킬·툴·MCP 목록과 역할
-5. `docs/04-ROADMAP.md` — v1 마일스톤
+5. `docs/04-ROADMAP.md` — v1 마일스톤 (계획의 정본)
+6. `docs/05-PROGRESS.md` — **진행 체크리스트 (진행 상태의 정본). 세션을 시작하면 여기 "다음 작업"부터 읽는다.**
 
 ## 1. 한 줄 정의
 **흔적(trace) → 원천(source)** 방향의 서양 교양 학습·조회·퀴즈 웹앱.
@@ -62,6 +63,8 @@ ariadne/
 - 새 작업은 `docs/01-DESIGN-LOG.md`의 결정 사항과 충돌하는지 먼저 확인. 충돌하면 코드 쓰기 전에 오너에게 질문.
 - 콘텐츠 대량 생성은 반드시 `trace-harvester` → `card-author` → `link-auditor` 순서. 감사 통과 못 한 카드는 `candidates/`에 남긴다.
 - 커밋 메시지: `content:`, `app:`, `scripts:`, `docs:` prefix.
+- **작업을 끝낼 때마다 `docs/05-PROGRESS.md`의 해당 항목을 `[x]`로 바꾸고 완료일을 적는다.**
+  세션을 끝낼 때는 05의 "현재 위치" 표와 "세션 로그"를 갱신한다. 새 결정은 05가 아니라 01의 DECISIONS 표에 적는다.
 - 오너에게 보고할 때: 짧고 명료하게. 다음 결정이 필요한 질문을 1~3개 붙인다. 오너는 AI가 개선 방향을 먼저 제안하는 것을 선호한다.
 - 오너와의 대화는 한국어 + 영문 기술용어.
 

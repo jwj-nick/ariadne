@@ -63,6 +63,32 @@
 
 ---
 
+---
+
+## Round 4 — 2026-09-06 / 09-07 (Claude Code, 세션 "adriane")
+
+### Claude
+- CLAUDE.md와 `docs/00~04`, `.claude/skills/` 4종을 모두 읽고 OPEN QUESTIONS Q1~Q5에 대한 추천안을 제시했다.
+- 추천 요지: (Q1) Next.js + Vercel 확정하되 Supabase는 M1 후반으로 미루고 그 전에는 `localStorage`.
+  (Q2) 조회는 공개, 캡처·진도는 초대제. (Q3) 텍스트·URL 먼저(GET share target), 이미지는 POST + 서비스 워커라 뒤로.
+  (Q4) 로드맵의 천문 우선을 뒤집어 브랜드·관용구 먼저. (Q5) 도메인을 3개로 줄이고 그리스·로마 통합.
+- 추가 제안 두 가지: 퀴즈 힌트를 런타임이 아니라 빌드 시점에 정적 생성할 것,
+  승인 UI가 없는 M0 시드의 status를 `reviewed`로 둘 것.
+
+### 오너 답변
+- Q1: **로컬(`localStorage`) 오케이.** Supabase 지연에 동의.
+- Q5: **그리스·로마 통합. 단, 구약과 신약은 분리.**
+- 리포: **public.**
+- 이번 세션 범위: 착수 순서 3번(validate·build 스크립트 작성)까지.
+- 지시: "전체 계획은 잘 저장해두고 세부 진행하면서 체크리스트 관리 잘하길."
+
+### Claude 판단 (오너 결정을 코드로 옮기며 내린 세부 결정)
+- 도메인 이름을 `greek-myth`가 아니라 **`greco-roman-myth`**로 정했다.
+  야누스나 베스타처럼 그리스 대응이 없는 로마 고유 신을 `greek-myth` 폴더에 넣으면 이름과 내용이 어긋나기 때문이다.
+- Q2·Q3·Q4는 각각 M4·M2·M3에서 필요한 결정이므로 이번에 확정하지 않고 OPEN QUESTIONS에 추천안과 함께 남긴다.
+- 진행 상황 추적을 위해 `docs/05-PROGRESS.md`를 신설했다. 로드맵(04)은 계획의 정본이고,
+  05는 "지금 어디까지 왔나"의 정본이다.
+
 ## DECISIONS (누적)
 
 | # | 결정 | 근거 | 상태 |
@@ -71,7 +97,7 @@
 | D2 | 1차 키 = 흔적(trace). 원천(source)은 흔적에서 도달 | 기억은 마주침에 붙는다 | 확정 |
 | D3 | 조우 캡처는 v1 범위. PWA Web Share Target 필수 | 오너 R2 "아주 좋음" | 확정 |
 | D4 | 처음부터 웹앱. CLI는 파이프라인 전용 | 오너 R2 | 확정 |
-| D5 | 스택: Next.js + Supabase + Vercel, 콘텐츠는 git Markdown → JSON 빌드 | Claude 제안, 오너 미반대 | 잠정 (오너 확인 필요) |
+| D5 | 스택: Next.js + Supabase + Vercel, 콘텐츠는 git Markdown → JSON 빌드 | Claude 제안, 오너 R4 확인 | 확정 (Supabase 시점은 D14가 한정) |
 | D6 | 학습 루프: 추측 → 힌트 → 답 → 카드. 정답 선노출 금지 | 생성 효과, 오너의 범용 학습 코어 원칙 | 확정 |
 | D7 | 복습 = SM-2, trace 단위 | 오너 기존 경험 | 잠정 |
 | D8 | kid/adult 2단 레벨, 한·영 병기, 한국 대응물 선택 | 대상 = 아이들 + 비서양권 성인 | 확정 |
@@ -79,9 +105,32 @@
 | D10 | 초기 큐레이션은 trace-harvester로 자동 추출 후 오너가 선별 | Claude 제안 | 잠정 |
 | D11 | 종교·정치 입장 없음. 성경은 문화 원천 텍스트로만 | 보편성 | 확정 |
 
-## OPEN QUESTIONS (오너 답 필요)
-- Q1. D5 스택 확정? (특히 Supabase vs 자체 DB, Vercel 배포 OK?)
-- Q2. 공개 범위: 처음부터 공개 URL + 누구나 가입 vs 초대제(가족+지인)로 시작?
-- Q3. 캡처 입력 우선순위: 텍스트/URL 공유 먼저, 이미지(OCR)·음성은 v1.1?
-- Q4. 첫 harvester 입력 소스 우선순위: 브랜드 / 천문 / 심리·의학 용어 / 회화 / 영화 중 무엇부터?
-- Q5. 원천 도메인 초기 5개: greek-myth, roman-myth, bible, greco-roman-history, shakespeare — 르네상스 회화·서양사(프랑스혁명 등)는 v1.1?
+| D12 | 원천 도메인 초기 4종: `greco-roman-myth`, `bible-ot`, `bible-nt`, `history`. 나머지는 첫 카드 시점에 추가 | 오너 R4 + 빈 도메인은 고아 경고만 늘린다 | 확정 |
+| D13 | 그리스 신과 로마 신은 하나의 source 노드. 다른 쪽 이름은 `aliases`에 | 오너 R4 "그리스 로마 통합". 노드를 나누면 흔적 연결 판단이 매번 필요 | 확정 |
+| D14 | Supabase 도입은 M1 후반. M0~M1 전반은 `localStorage`. 저장 계층은 `app/lib/store/` 인터페이스 뒤로 격리 | 오너 R4 "로컬 오케이". 콘텐츠 0장 상태의 DB 스키마 확정은 순서가 거꾸로다 | 확정 |
+| D15 | 승인 UI가 생기기 전까지 앱은 `reviewed`도 노출. `published`는 오너만 | D9를 깨지 않고 M0 앱을 돌리기 위한 잠정 조치 | 잠정 (Q6) |
+| D16 | 리포는 public: `github.com/jwj-nick/ariadne` | 오너 R4 "public" | 확정 |
+| D17 | 퀴즈 힌트는 빌드 시점에 정적 생성. 런타임 AI는 캡처 매칭과 `explain_allusion` 채점 두 곳만 | 비용이 사용량에 비례하지 않고, 정답 누출 검사를 배포 전에 자동화할 수 있다 | 잠정 (Q7) |
+| D18 | 리포 루트가 Next.js 프로젝트. `app/`은 App Router 디렉토리이며 `app/data/`, `app/lib/`이 그 안에 놓인다 | docs의 기존 경로 표기(`app/data/graph.json`, `app/lib/ai/config.ts`)와 일치 | 확정 |
+
+## OPEN QUESTIONS
+
+### 해결됨
+- ~~Q1. D5 스택 확정?~~ → **해결 (R4).** Next.js + Vercel 확정, Supabase는 M1 후반. D5·D14 참조.
+- ~~Q5. 원천 도메인 초기 5개?~~ → **해결 (R4).** 4종 확정, 그리스·로마 통합. D12·D13 참조.
+
+### 미해결 (필요해지는 시점 표기)
+- **Q2. 공개 범위** — 필요 시점: M4.
+  Claude 추천 = 조회 화면은 로그인 없이 공개, 캡처·학습 진도는 초대제.
+  근거 = 콘텐츠 200장 미만에서 전면 공개하면 첫인상이 비어 보이고, 로그인 게이트가 곧 AI 비용 게이트다.
+- **Q3. 캡처 입력 우선순위** — 필요 시점: M2.
+  Claude 추천 = v1은 텍스트·URL만(manifest `method: "GET"`, 서비스 워커 불필요).
+  이미지는 `method: "POST"` + `multipart/form-data`라 서비스 워커 fetch 핸들러 구현이 필요하므로 M2 말 또는 M3.
+  절충안 = 이미지는 매칭 없이 저장 + 후보 큐 등록만 먼저.
+- **Q4. harvester 첫 입력 소스** — 필요 시점: M3.
+  Claude 추천 = 브랜드 50 → 관용구 50 → 천문·코드명 40 → 심리·의학 30 → 영화·문학 20 → 회화 10.
+  로드맵 04의 "천문 먼저"를 뒤집는 제안이다. 근거 = `frequency: 5`가 브랜드와 관용구에 몰려 있다.
+- **Q6. M0 시드 20장의 status** — 필요 시점: M0 4단계 (다음 세션).
+  Claude는 `reviewed`로 두자고 제안했고 오너 답변은 아직 없다. D15에 잠정으로 반영해 두었다.
+- **Q7. 퀴즈 힌트 생성 시점** — 필요 시점: M1.
+  Claude는 빌드 시점 정적 생성을 제안했고 오너 답변은 아직 없다. D17에 잠정으로 반영해 두었다.
