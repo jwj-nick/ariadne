@@ -4,6 +4,12 @@ import { notFound } from 'next/navigation';
 import Section from '../../components/Section';
 import { DOMAIN_LABEL, REL_LABEL, getGraph, getSource, resolve, tracesOf } from '../../lib/graph';
 
+/**
+ * 모든 slug 가 빌드 시점에 확정되므로, 목록에 없는 주소는 요청 시 렌더링하지 않고 곧바로 404 로 보낸다.
+ * 이렇게 하면 이 경로에 서버 함수가 아예 생기지 않아 배포 산출물이 순수 정적 파일이 된다.
+ */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getGraph().sources.map((s) => ({ slug: s.slug }));
 }
