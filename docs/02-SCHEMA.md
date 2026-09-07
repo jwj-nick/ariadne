@@ -26,7 +26,7 @@ created: 2026-09-06
 1. **한 줄** — 아이도 이해하는 정의
 2. **어디서 만나나** — 실제 접점 2~3개 (로고, 광고 문구, 뉴스 표현)
 3. **왜 이 이름인가** — frontmatter `why`의 확장 (2~4문장)
-4. **같은 원천의 다른 흔적** — 자동 생성 가능 (link-auditor가 채움)
+4. **같은 원천의 다른 흔적** — 선택. 앱이 `graph.json`의 엣지에서 계산하므로 마크다운에 쓰지 않아도 된다.
 
 ### source (원천) — 신·인물·사건·개념·작품
 `content/sources/<domain>/<slug>.md`
@@ -57,6 +57,28 @@ created: 2026-09-06
 3. **왜 알아야 하나** — 파생 관용구·영어 표현·유명 그림·영화·브랜드 (trace 링크로)
 4. **연결** — 가족·적·연인·관련 사건 (relations의 서술형)
 5. **한국 대응물** (선택)
+
+## 본문 섹션 제목 규약 (W02 검사 기준)
+
+본문의 각 섹션은 **마크다운 `## ` 제목**으로 쓰고, 제목 문자열은 아래와 정확히 같아야 한다.
+`scripts/lib/schema.ts`의 `TRACE_SECTIONS` / `SOURCE_SECTIONS`가 이 표를 그대로 담고 있고,
+검증기가 순서와 누락을 확인한다(W02). `### ` 이하의 소제목은 자유롭게 써도 된다.
+
+| 노드 | 섹션 제목 (이 순서대로) | 필수 여부 |
+|---|---|---|
+| trace | `## 한 줄` | 필수 |
+| trace | `## 어디서 만나나` | 필수 |
+| trace | `## 왜 이 이름인가` | 필수 |
+| trace | `## 같은 원천의 다른 흔적` | 선택 (앱이 엣지에서 계산) |
+| source | `## 한 줄 정의` | 필수 |
+| source | `## 3문장 스토리` | 필수 |
+| source | `## 왜 알아야 하나` | 필수 |
+| source | `## 연결` | 필수 |
+| source | `## 한국 대응물` | 선택 |
+
+빌드는 이 제목을 기준으로 본문을 쪼개어 `graph.json`의 `sections` 객체에 담는다.
+앱은 카드 전체를 렌더링할 수도 있고, 퀴즈 화면처럼 일부 섹션만 골라 보여줄 수도 있다.
+예를 들어 정답 공개 전에는 `왜 이 이름인가`를 감춰야 하므로 이 분해가 필요하다.
 
 ## 도메인 목록 (확정 — D12, D13)
 
@@ -128,4 +150,29 @@ Supabase는 두 번째 기기가 붙거나 승인 UI가 필요해지는 M1 후�
 모든 타입 공통: **추측 입력 → 힌트(최대 3단) → 정답 → 카드**. 힌트는 원천 이름을 직접 말하지 않는다.
 
 ## 빌드 산출물
-`app/data/graph.json` = `{ traces: [...], sources: [...], edges: [...] }`, 검색 인덱스 포함. 앱은 이 파일만 읽는다.
+`app/data/graph.json` = `{ meta, traces, sources, edges, index }`. 앱은 이 파일만 읽는다.
+
+| 키 | 내용 |
+|---|---|
+| `meta` | 생성 시각, 개수 통계(trace·source·edge·고아), 노출 대상 status 목록 |
+| `traces` | frontmatter + `body`(원본 마크다운) + `sections`(제목별로 쪼갠 본문) |
+| `sources` | 위와 같고, `traces` 역링크가 **빌드에서 채워진 상태**로 들어간다 |
+| `edges` | `{from, to, kind}`. trace → source 는 `kind: "traces_to"`, source ↔ source 는 `relations`의 `rel` 값 |
+| `index` | 검색용. `{id, type, name_ko, name_en, terms[]}`, `terms`는 전부 소문자 |
+
+빌드 규칙 두 가지를 기억해 둘 것.
+- 노출 대상이 아닌 status(`candidate`, `retired`)의 카드는 `graph.json`에 들어가지 않는다.
+  노출 대상 목록은 `scripts/lib/schema.ts`의 `VISIBLE_STATUSES`가 정한다(D15).
+- 아직 카드가 없는 원천을 가리키는 `relations`는 감사에서 통과시키되 엣지에는 넣지 않는다.
+  나중에 그 원천 카드를 만들면 다시 빌드할 때 엣지가 자동으로 생긴다.
+
+## 실행 방법
+
+| 명령 | 하는 일 |
+|---|---|
+| `npm run validate` | `content/traces`, `content/sources` 감사. error 가 있으면 종료 코드 1 |
+| `npm run validate -- --candidates` | `content/candidates` 까지 함께 감사 |
+| `npm run audit` | 위와 같되 `reports/audit-<날짜>.md` 도 남긴다 |
+| `npm run build:content` | 감사를 통과하면 `app/data/graph.json` 생성 |
+| `npm test` | 검사기 회귀 테스트 (`tests/checks.test.ts`) |
+| `npm run check` | typecheck → test → validate → build. **커밋 전 게이트** |

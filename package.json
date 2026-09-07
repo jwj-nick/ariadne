@@ -1,0 +1,21 @@
+{
+  "name": "ariadne",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "흔적(trace)에서 원천(source)까지 실을 잇는 서양 교양 학습·조회·퀴즈 웹앱",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "validate": "tsx scripts/validate.ts",
+    "build:content": "tsx scripts/build.ts",
+    "audit": "tsx scripts/validate.ts --report",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm run test && npm run validate && npm run build:content"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "gray-matter": "^4.0.3",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

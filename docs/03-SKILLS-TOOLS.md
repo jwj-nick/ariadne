@@ -15,12 +15,16 @@
 ## B. 슬래시 커맨드 (`.claude/commands/`)
 - `/harvest <source-list>` — trace-harvester 실행, 후보 요약 표 출력
 - `/author <candidate-glob>` — card-author로 카드 완성
-- `/audit` — link-auditor 실행 + 빌드 dry-run
-- `/build` — `scripts/build` 실행, graph.json 갱신, 통계(노드/엣지/고아 수)
+- `/audit` — link-auditor 실행 + 빌드 dry-run → **구현됨: `npm run audit`**
+- `/build` — `scripts/build` 실행, graph.json 갱신, 통계(노드/엣지/고아 수) → **구현됨: `npm run build:content`**
 - `/log <요지>` — `docs/01-DESIGN-LOG.md`에 새 라운드 추가
 
+> 2026-09-07 현재 `.claude/commands/` 파일은 아직 없다. 위 두 가지는 npm 스크립트로 먼저 구현했고,
+> `/harvest` 와 `/author` 는 실제 콘텐츠 배치를 돌려 본 뒤에 만드는 편이 낫다고 보아 미뤄 두었다.
+> 커밋 전 게이트는 `npm run check` 하나로 묶여 있다 (typecheck → test → validate → build).
+
 ## C. 훅 제안 (`.claude/settings.json` hooks)
-- **PostToolUse(Write/Edit on `content/**`)** → `scripts/validate.ts <file>` 자동 실행. frontmatter 위반 즉시 피드백.
+- **PostToolUse(Write/Edit on `content/**`)** → `npm run validate` 자동 실행. frontmatter 위반 즉시 피드백.
 - **Stop** → 콘텐츠 변경이 있었으면 `/audit` 결과 요약을 세션 끝에 출력.
 - 원칙: 훅은 "감사"만 하고 콘텐츠를 자동 수정하지 않는다 (오너=큐레이터).
 

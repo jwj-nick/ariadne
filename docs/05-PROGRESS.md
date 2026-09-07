@@ -31,7 +31,7 @@
 |---|---|---|---|
 | M0-1 | git 초기화 + public 원격 리포 | `[x]` 2026-09-07 | `github.com/jwj-nick/ariadne` |
 | M0-2 | OPEN QUESTIONS 확인 + 스키마 도메인 확정 | `[x]` 2026-09-07 | Q1·Q5 해결, D12~D18 기록 |
-| M0-3 | `scripts/validate.ts` + `scripts/build.ts` | `[x]` 2026-09-07 | 검사 E01~E05·W01~W05 구현 |
+| M0-3 | `scripts/validate.ts` + `scripts/build.ts` | `[x]` 2026-09-07 | 검사 E01~E09·W01~W06 + 회귀 테스트 17건 |
 | M0-4 | 시드 20장 작성 (`status: reviewed`) | `[ ]` | 픽스처 2장 완료, 18장 남음 |
 | M0-5 | Next.js 앱 골격 + `graph.json` 로드 + 조회 화면(검색만) | `[ ]` | D18: 루트가 Next.js 프로젝트 |
 | M0-6 | Vercel 프리뷰 배포, 오너 폰에서 확인 | `[ ]` | |
@@ -63,6 +63,16 @@
 | 18 | Good Samaritan | 선한 사마리아인 | bible-nt | `[ ]` |
 | 19 | Ariadne's thread | 아리아드네 | greco-roman-myth | `[x]` 2026-09-07 |
 | 20 | Oracle (회사) | 델포이 신탁 | history | `[ ]` |
+
+### 커밋 전 게이트
+
+```
+npm run check      # typecheck → test → validate → build:content
+```
+
+네 단계 중 하나라도 실패하면 커밋하지 않는다. `npm run audit` 은 감사 리포트까지 파일로 남긴다.
+
+---
 
 > 20장 중 `bible-ot` 도메인에 해당하는 항목이 하나도 없다. 시드 단계에서 구약 카드가 없으면
 > 도메인 폴더가 비어 있게 되므로, M0-4에서 구약 흔적을 한둘 추가할지 오너에게 확인한다.
@@ -120,4 +130,4 @@
 | 날짜 | 세션 | 한 일 | 다음 |
 |---|---|---|---|
 | 2026-09-06 | claude.ai 모바일 | 설계 Round 1~3, 리포 골격 문서 5종 + 스킬 4종 초안 | Claude Code로 이관 |
-| 2026-09-07 | adriane (Claude Code) | OPEN Q 추천안 제시 → Q1·Q5 확정. git init + public 리포. 스키마 도메인 확정(D12~D18). `validate.ts`·`build.ts` 작성. 픽스처 카드 2장 | M0-4 시드 18장 |
+| 2026-09-07 | adriane (Claude Code) | OPEN Q 추천안 제시 → Q1·Q5 확정. git init + public 리포. 스키마 도메인·섹션 제목 규약 확정(D12~D18). `validate.ts`·`build.ts`·검사기 17건 테스트 작성. 시드 2장(Nike, Ariadne's thread) | M0-4 시드 18장 |
