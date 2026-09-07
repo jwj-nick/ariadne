@@ -33,7 +33,7 @@
 | M0-2 | OPEN QUESTIONS 확인 + 스키마 도메인 확정 | `[x]` 2026-09-07 | Q1·Q5 해결, D12~D18 기록 |
 | M0-3 | `scripts/validate.ts` + `scripts/build.ts` | `[x]` 2026-09-07 | 검사 E01~E09·W01~W06 + 회귀 테스트 17건 |
 | M0-4 | 시드 20장 작성 (`status: reviewed`) | `[ ]` | 픽스처 2장 완료, 18장 남음 |
-| M0-5 | Next.js 앱 골격 + `graph.json` 로드 + 조회 화면(검색만) | `[ ]` | D18: 루트가 Next.js 프로젝트 |
+| M0-5 | Next.js 앱 골격 + `graph.json` 로드 + 조회 화면(검색만) | `[ ]` | D18: 루트가 Next.js 프로젝트. **주의: `app/data/graph.json` 은 빌드 산출물이라 git 에 없다. Vercel 빌드 명령을 `npm run build:content && next build` 로 잡아야 한다** |
 | M0-6 | Vercel 프리뷰 배포, 오너 폰에서 확인 | `[ ]` | |
 
 ### M0-4 시드 20장 진행표
