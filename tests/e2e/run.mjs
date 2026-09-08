@@ -404,7 +404,64 @@ try {
         'adult',
       );
 
-      await s.js(`localStorage.clear()`);
+      // ── 6부. 조우 캡처와 PWA (M2) ────────────────────────────────
+      console.log('\n[6] 조우 캡처와 PWA');
+      const manifest = await (await fetch(BASE + '/manifest.webmanifest')).json();
+      manifest.share_target?.method === 'GET' && manifest.share_target?.action?.endsWith('/capture')
+        ? ok('매니페스트에 공유 대상이 있다', manifest.share_target.action)
+        : bad('공유 대상', JSON.stringify(manifest.share_target));
+      manifest.icons?.some((i) => i.sizes === '512x512' && i.purpose === 'maskable')
+        ? ok('설치용 아이콘이 갖춰져 있다', `${manifest.icons.length}종`)
+        : bad('아이콘', JSON.stringify(manifest.icons));
+      expect('서비스 워커 파일이 있다', (await fetch(BASE + '/sw.js')).status, 200);
+      expect('아이콘 파일이 있다', (await fetch(BASE + '/icons/icon-512.png')).status, 200);
+
+      await s.js('localStorage.clear(); sessionStorage.clear();');
+      // 공유 시트가 이 주소로 열어 준다.
+      await s.send('Page.navigate', {
+        url: BASE + '/capture?text=' + encodeURIComponent('오늘 나이키 운동화를 샀다. 로고가 좋다.'),
+      });
+      await sleep(1600);
+
+      const capText = await s.js(`document.querySelector('main')?.textContent ?? ''`);
+      capText.includes('1개를 알아봤습니다') && capText.includes('나이키')
+        ? ok('공유로 들어온 글에서 흔적을 알아본다')
+        : bad('공유 캡처', capText.slice(0, 80));
+
+      const stored = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.captures') || '[]')`);
+      Array.isArray(stored) && stored.length === 1 && stored[0].matched_trace_ids?.[0] === 'trace:nike'
+        ? ok('캡처가 저장된다', stored[0].matched_trace_ids.join(', '))
+        : bad('캡처 저장', JSON.stringify(stored));
+
+      // 같은 주소를 새로 고쳐도 두 번 담기면 안 된다.
+      await s.send('Page.reload');
+      await sleep(1400);
+      expect(
+        '새로 고쳐도 두 번 담기지 않는다',
+        (await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.captures') || '[]').length`)),
+        1,
+      );
+
+      // 오늘 복습에 넣으면 그 흔적이 대기열 맨 앞으로 온다 (M2-4).
+      await s.js(clickText('button', '오늘 복습에 넣기'));
+      await sleep(400);
+      const bumped = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.reviews') || '[]')`);
+      Array.isArray(bumped) && bumped.some((r) => r.itemId === 'trace:nike')
+        ? ok('캡처한 흔적이 오늘 복습에 들어간다', bumped[0]?.due)
+        : bad('복습 편입', JSON.stringify(bumped));
+
+      // 직접 붙여 넣는 길도 열려 있어야 한다 (아이폰에는 공유 대상이 없다).
+      await s.js(`document.querySelector('main textarea').focus()`);
+      await s.send('Input.insertText', { text: '기사에서 판도라의 상자라는 표현을 보았다' });
+      await sleep(200);
+      await s.js(clickText('main button', '담기'));
+      await sleep(500);
+      const after = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.captures') || '[]')`);
+      after.length === 2 && after[1].matched_trace_ids.includes('trace:pandoras-box')
+        ? ok('직접 붙여 넣어도 알아본다', after[1].matched_trace_ids.join(', '))
+        : bad('직접 입력', JSON.stringify(after.map((c) => c.matched_trace_ids)));
+
+      await s.js(`localStorage.clear(); sessionStorage.clear();`);
 
       // 스크린샷 남기기
       for (const [name, path] of [
@@ -413,6 +470,7 @@ try {
         ['m-source-ariadne', '/source/ariadne'],
         ['m-quiz', '/quiz'],
         ['m-settings', '/settings'],
+        ['m-capture', '/capture'],
       ]) {
         await s.send('Page.navigate', { url: BASE + path });
         await sleep(1200);
@@ -425,7 +483,7 @@ try {
         });
         writeFileSync(join(SHOTS, `${name}.png`), Buffer.from(shot.data, 'base64'));
       }
-      ok('스크린샷 5장', 'tests/e2e/shots/');
+      ok('스크린샷 6장', 'tests/e2e/shots/');
       s.ws.close();
     }
   }

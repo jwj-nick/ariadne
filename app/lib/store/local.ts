@@ -5,13 +5,14 @@
  * 사생활 보호 모드나 저장 공간 차단 때문에 읽기와 쓰기가 예외를 던질 수 있어서 전부 감싸 두었다.
  */
 import type { ReviewState } from '../learning/sm2';
-import { DEFAULT_PROFILE, type Profile, type QuizLog, type Snapshot, type Store } from './types';
+import { DEFAULT_PROFILE, type Capture, type Profile, type QuizLog, type Snapshot, type Store } from './types';
 
 const NS = 'ariadne.v1';
 const K = {
   profile: `${NS}.profile`,
   reviews: `${NS}.reviews`,
   logs: `${NS}.logs`,
+  captures: `${NS}.captures`,
 } as const;
 
 /** 로그는 무한정 쌓이지 않게 최근 것만 남긴다. */
@@ -103,6 +104,23 @@ export const localStore: Store = {
     return read<QuizLog[]>(K.logs, []).slice(-limit).reverse();
   },
 
+  addCapture(capture) {
+    write(K.captures, [...this.allCaptures(), capture].slice(-500));
+  },
+
+  allCaptures() {
+    return read<Capture[]>(K.captures, []).filter(
+      (c) => c && typeof c.id === 'string' && typeof c.text === 'string',
+    );
+  },
+
+  updateCapture(id, patch) {
+    write(
+      K.captures,
+      this.allCaptures().map((c) => (c.id === id ? { ...c, ...patch } : c)),
+    );
+  },
+
   exportSnapshot() {
     return {
       version: 1,
@@ -110,6 +128,7 @@ export const localStore: Store = {
       profile: this.getProfile(),
       reviews: this.allReviews(),
       logs: read<QuizLog[]>(K.logs, []),
+      captures: this.allCaptures(),
     };
   },
 
@@ -126,6 +145,8 @@ export const localStore: Store = {
     write(K.profile, sanitizeProfile(snap.profile));
     write(K.reviews, reviews);
     write(K.logs, Array.isArray(snap.logs) ? snap.logs.slice(-LOG_CAP) : []);
+    // 캡처는 옛 백업에 없을 수 있으므로 없으면 비운다.
+    write(K.captures, Array.isArray(snap.captures) ? snap.captures : []);
     return { ok: true };
   },
 

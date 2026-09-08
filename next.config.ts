@@ -14,6 +14,8 @@ const basePath = process.env.ARIADNE_BASE_PATH ?? '';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // 클라이언트에서도 배포 경로를 알아야 서비스 워커를 알맞은 자리에 등록할 수 있다.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   ...(basePath
     ? {
         basePath,

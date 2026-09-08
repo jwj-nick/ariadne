@@ -5,5 +5,5 @@
  * 화면 코드는 `store` 와 `types.ts` 만 알고 있어야 한다.
  */
 export { localStore as store } from './local';
-export type { Level, Profile, QuizLog, Snapshot, Store } from './types';
+export type { Capture, Level, Profile, QuizLog, Snapshot, Store } from './types';
 export { DEFAULT_PROFILE } from './types';

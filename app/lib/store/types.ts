@@ -28,12 +28,30 @@ export interface QuizLog {
   at: string;
 }
 
+/**
+ * 삶에서 마주친 것을 그대로 던져 넣은 기록 (D3).
+ * 앉아서 공부한 것이 아니라 방송이나 책이나 거리에서 마주친 순간이 학습의 시작이다.
+ */
+export interface Capture {
+  id: string;
+  /** 공유되거나 붙여 넣은 글. */
+  text: string;
+  url: string;
+  title: string;
+  /** 이 캡처에서 알아본 흔적들. 비어 있으면 아직 못 알아본 것이다. */
+  matched_trace_ids: string[];
+  /** open = 아직 처리 안 함, kept = 오늘 복습에 넣음, candidate = 새 흔적 후보로 남김, dismissed = 버림 */
+  status: 'open' | 'kept' | 'candidate' | 'dismissed';
+  at: string;
+}
+
 export interface Snapshot {
   version: 1;
   exported_at: string;
   profile: Profile;
   reviews: ReviewState[];
   logs: QuizLog[];
+  captures?: Capture[];
 }
 
 export interface Store {
@@ -48,6 +66,10 @@ export interface Store {
   appendLog(log: QuizLog): void;
   /** 최근 것부터. */
   recentLogs(limit?: number): QuizLog[];
+
+  addCapture(capture: Capture): void;
+  allCaptures(): Capture[];
+  updateCapture(id: string, patch: Partial<Capture>): void;
 
   /** 백업 파일로 내보내고 되돌리기. 기기에만 남는 데이터라 사용자가 직접 챙길 수 있어야 한다. */
   exportSnapshot(): Snapshot;

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import LevelSwitch from './components/LevelSwitch';
+import ServiceWorker from './components/ServiceWorker';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -50,6 +51,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/quiz" style={{ color: 'var(--thread)' }}>
                 오늘의 복습
               </Link>
+              <Link href="/capture" style={{ color: 'var(--muted)' }}>
+                조우 캡처
+              </Link>
               <Link href="/settings" style={{ color: 'var(--muted)' }}>
                 진도와 백업
               </Link>
@@ -57,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </header>
 
           <main className="flex-1 pb-16">{children}</main>
+          <ServiceWorker />
 
           <footer
             className="border-t py-6 text-[12px]"

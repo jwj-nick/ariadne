@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#faf7f2"/>
+  <g transform="translate(256 256)" fill="none" stroke="#cdc4b4" stroke-width="18" stroke-linecap="square">
+    <!-- 미궁의 담. 네모난 나선을 바깥에서 안으로 감는다. -->
+    <path d="M -180 -180 H 180 V 180 H -140"/>
+    <path d="M -140 -140 H 140 V 140 H -100"/>
+    <path d="M -100 -100 H 100 V 100 H -60"/>
+    <path d="M -60 -60 H 60 V 60 H -20"/>
+  </g>
+  <!-- 아리아드네의 실. 담을 굽이쳐 가로지르며 밖으로 나간다. -->
+  <g transform="translate(256 256)" fill="none" stroke="#b23a2e" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0 18
+             C -70 -10, 70 -60, -30 -112
+             S 60 -186, 6 -222"/>
+  </g>
+  <circle cx="256" cy="274" r="24" fill="#b23a2e"/>
+</svg>
