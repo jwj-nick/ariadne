@@ -9,6 +9,7 @@ relations:
   - {rel: precedes, target: source:exodus-story}
 level_kid: 성경의 첫 번째 책이며, 세상과 사람이 어떻게 생겨났는지로 시작하는 이야기.
 level_adult: 구약 성경의 첫 권. 세상이 생겨나는 이야기로 시작해 에덴동산, 노아의 홍수, 바벨탑, 그리고 아브라함부터 요셉까지의 가족 이야기로 이어진다. 서양 문학과 미술이 가장 자주 되돌아가는 텍스트이며, 그리스어 제목 게네시스는 시작이나 기원을 뜻한다.
+emblem: seed
 korea_parallel: ""
 traces: []
 status: reviewed

@@ -10,6 +10,7 @@ relations:
   - {rel: parent_of, target: source:atlas}
 level_kid: 제우스보다 먼저 세상을 다스리던, 몸집이 크고 힘이 센 신들.
 level_adult: 하늘의 신 우라노스와 땅의 여신 가이아 사이에서 태어난 열두 신. 우두머리 크로노스가 세상을 다스리다가, 아들 제우스가 이끄는 올림포스 신들과 10년 동안 싸운 끝에 패배하고 땅속 깊은 곳 타르타로스에 갇혔다. 세대가 바뀌는 이야기의 앞 세대에 해당한다.
+emblem: mountain
 korea_parallel: ""
 traces: []
 status: reviewed

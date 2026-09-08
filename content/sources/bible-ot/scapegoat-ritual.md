@@ -9,6 +9,7 @@ relations:
   - {rel: follows, target: source:exodus-story}
 level_kid: 사람들의 잘못을 대신 지고 들판으로 보내지던 염소.
 level_adult: 구약 성경 레위기에 나오는 속죄일 의식. 염소 두 마리 가운데 하나는 제물로 바치고, 다른 하나에는 사람들의 잘못을 지운 뒤 광야로 내보냈다. 아무 잘못 없는 것이 모두의 잘못을 지고 떠난다는 구조 때문에, 남의 책임을 대신 지는 사람을 가리키는 말로 남았다.
+emblem: goat
 korea_parallel: ""
 traces: []
 status: reviewed

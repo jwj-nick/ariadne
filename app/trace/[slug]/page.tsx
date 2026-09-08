@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import Emblem, { emblemFor } from '../../components/Emblem';
 import Section from '../../components/Section';
 import { CATEGORY_LABEL, DOMAIN_LABEL, getGraph, getTrace, siblingTraces } from '../../lib/graph';
 
@@ -57,22 +58,31 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
         className="mb-7 rounded-lg p-4"
         style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
       >
-        <p className="text-[12px]" style={{ color: 'var(--muted)' }}>
-          이 이름은 어디서 왔나
-        </p>
-        <div className="mt-1.5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-          {sources.map((s) => (
-            <Link key={s.id} href={`/source/${s.slug}`} className="thread-link text-[17px] font-semibold">
-              {s.name_ko}
-            </Link>
-          ))}
+        <div className="flex items-start gap-3.5">
           {sources[0] && (
-            <span className="text-[12px]" style={{ color: 'var(--muted)' }}>
-              {DOMAIN_LABEL[sources[0].domain] ?? sources[0].domain}
-            </span>
+            <div className="shrink-0" style={{ color: 'var(--thread)' }}>
+              <Emblem name={emblemFor(sources[0].emblem, sources[0].domain)} size={52} strokeWidth={5} />
+            </div>
           )}
+          <div className="min-w-0 flex-1">
+            <p className="text-[12px]" style={{ color: 'var(--muted)' }}>
+              이 이름은 어디서 왔나
+            </p>
+            <div className="mt-1 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+              {sources.map((s) => (
+                <Link key={s.id} href={`/source/${s.slug}`} className="thread-link text-[17px] font-semibold">
+                  {s.name_ko}
+                </Link>
+              ))}
+              {sources[0] && (
+                <span className="text-[12px]" style={{ color: 'var(--muted)' }}>
+                  {DOMAIN_LABEL[sources[0].domain] ?? sources[0].domain}
+                </span>
+              )}
+            </div>
+          </div>
         </div>
-        <p className="mt-2 text-[14px]">{trace.why}</p>
+        <p className="mt-2.5 text-[14px]">{trace.why}</p>
       </div>
 
       <Section title="한 줄" text={trace.sections['한 줄']} />

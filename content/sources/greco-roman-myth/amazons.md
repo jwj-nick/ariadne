@@ -10,6 +10,7 @@ relations:
   - {rel: enemy_of, target: source:achilles}
 level_kid: 여자들만으로 나라를 이루고 살았다는, 말을 타고 활을 쏘는 전사 부족.
 level_adult: 그리스 신화에 나오는 여전사 부족. 흑해 근처에 자기들만의 나라를 세우고 살았다고 전해진다. 헤라클레스의 열두 과업 가운데 하나가 이 부족 여왕의 허리띠를 가져오는 일이었고, 트로이 전쟁에도 트로이 편으로 참전했다.
+emblem: bow
 korea_parallel: ""
 traces: []
 status: reviewed

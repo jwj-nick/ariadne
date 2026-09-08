@@ -1,9 +1,11 @@
 import Browser, { type BrowseItem } from './components/Browser';
+import { emblemFor } from './components/Emblem';
 import TodayStrip from './components/TodayStrip';
 import { CATEGORY_LABEL, DOMAIN_LABEL, getGraph } from './lib/graph';
 
 export default function Home() {
   const g = getGraph();
+  const sourceById = new Map(g.sources.map((s) => [s.id, s]));
 
   const traces: BrowseItem[] = g.traces.map((t) => ({
     id: t.id,
@@ -16,6 +18,11 @@ export default function Home() {
     blurb: t.why,
     frequency: t.frequency,
     terms: [t.name_ko, t.name_en, ...t.domain_hint].map((s) => s.toLowerCase()),
+    // 흔적도 그 원천의 문양을 함께 단다. 목록을 훑을 때 뿌리가 같은 것끼리 눈에 묶인다.
+    emblem: (() => {
+      const s = sourceById.get(t.sources[0] ?? '');
+      return s ? emblemFor(s.emblem, s.domain) : undefined;
+    })(),
   }));
 
   const sources: BrowseItem[] = g.sources.map((s) => ({
@@ -30,6 +37,7 @@ export default function Home() {
     // 원천은 그 자체의 빈도가 없으므로, 이 원천을 가리키는 흔적 가운데 가장 높은 값을 쓴다.
     frequency: Math.max(0, ...g.traces.filter((t) => t.sources.includes(s.id)).map((t) => t.frequency)),
     terms: [s.name_ko, s.name_en, ...s.aliases].map((x) => x.toLowerCase()),
+    emblem: emblemFor(s.emblem, s.domain),
   }));
 
   if (traces.length === 0) {

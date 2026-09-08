@@ -10,6 +10,7 @@ relations:
   - {rel: enemy_of, target: source:hubris}
 level_kid: 잘난 척이 지나친 사람에게 반드시 벌을 주는 여신.
 level_adult: 그리스 신화에서 응보와 균형을 맡은 여신. 사람이 분수를 넘어 오만해질 때 그만큼을 되갚는 역할을 한다. 밤의 여신 닉스의 딸로 전해지며, 아티카의 람누스에 신전이 있었다. 나르키소스에게 벌을 내린 것도 이 여신이다.
+emblem: scale
 korea_parallel: 잘못한 만큼 되돌아온다는 뜻으로 한국에서 쓰는 사필귀정, 인과응보와 개념이 거의 겹친다. 다만 네메시스는 개념이 아니라 그 일을 직접 하는 신이라는 점이 다르다.
 traces: []
 status: reviewed

@@ -9,6 +9,7 @@ relations:
   - {rel: child_of, target: source:hermes}
 level_kid: 염소 다리와 뿔을 가진 숲과 목장의 신이며, 갈대 피리를 분다.
 level_adult: 아르카디아의 숲과 목장, 양치기를 지키는 신. 상반신은 사람이고 하반신은 염소다. 인적 없는 숲에서 갑자기 나는 소리로 사람과 짐승을 까닭 없는 공포에 빠뜨린다고 여겨졌고, 그 공포를 가리키던 말이 오늘날의 패닉이 되었다. 로마 신화의 파우누스와 같은 자리에 놓인다.
+emblem: goat
 korea_parallel: ""
 traces: []
 status: reviewed

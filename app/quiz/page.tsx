@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import QuizRunner, { type NodeMeta } from '../components/QuizRunner';
+import { emblemFor } from '../components/Emblem';
 import { getGraph } from '../lib/graph';
 import { getQuiz } from '../lib/quiz-data';
 
@@ -15,7 +16,7 @@ export default function QuizPage() {
   const traces: Record<string, NodeMeta> = {};
   for (const t of graph.traces) traces[t.id] = { name_ko: t.name_ko, slug: t.slug, why: t.why };
   const sources: Record<string, NodeMeta> = {};
-  for (const s of graph.sources) sources[s.id] = { name_ko: s.name_ko, slug: s.slug };
+  for (const s of graph.sources) sources[s.id] = { name_ko: s.name_ko, slug: s.slug, emblem: emblemFor(s.emblem, s.domain) };
 
   if (quiz.items.length === 0) {
     return (

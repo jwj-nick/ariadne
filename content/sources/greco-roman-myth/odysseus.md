@@ -11,6 +11,7 @@ relations:
   - {rel: spouse_of, target: source:penelope}
 level_kid: 트로이 전쟁이 끝난 뒤 10년을 헤매다 집으로 돌아간, 꾀 많은 영웅.
 level_adult: 이타카의 왕이며 호메로스 <오디세이아>의 주인공. 힘보다 꾀로 문제를 푸는 인물로, 트로이 목마의 계략도 그가 냈다. 전쟁이 끝난 뒤 집으로 돌아가는 데 10년이 걸렸고, 그 사이의 여정이 서양 문학에서 귀향 이야기의 원형이 되었다.
+emblem: ship
 korea_parallel: ""
 traces: []
 status: reviewed

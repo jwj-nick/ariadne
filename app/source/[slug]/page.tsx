@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import Emblem, { emblemFor } from '../../components/Emblem';
 import Section from '../../components/Section';
 import { DOMAIN_LABEL, REL_LABEL, getGraph, getSource, resolve, tracesOf } from '../../lib/graph';
 
@@ -41,7 +42,11 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
         ← 목록
       </Link>
 
-      <header className="mt-3 mb-6">
+      <header className="mt-3 mb-6 flex items-start gap-4">
+        <div className="shrink-0" style={{ color: 'var(--thread)' }}>
+          <Emblem name={emblemFor(source.emblem, source.domain)} size={74} strokeWidth={4.5} />
+        </div>
+        <div className="min-w-0 flex-1">
         <p className="text-[12px]" style={{ color: 'var(--thread)' }}>
           원천 · {DOMAIN_LABEL[source.domain] ?? source.domain}
         </p>
@@ -54,6 +59,7 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
             다른 이름 {source.aliases.join(' · ')}
           </p>
         )}
+        </div>
       </header>
 
       {/*

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import Emblem from './Emblem';
 
 export interface BrowseItem {
   id: string;
@@ -16,6 +17,8 @@ export interface BrowseItem {
   blurb: string;
   frequency: number;
   terms: string[];
+  /** 원천 항목에만 있다. 목록에서도 문양이 먼저 눈에 들어오게 한다. */
+  emblem?: string;
 }
 
 function FrequencyDots({ n }: { n: number }) {
@@ -155,21 +158,30 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
               className="block rounded-lg p-3.5 transition-colors"
               style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
             >
-              <div className="flex items-baseline justify-between gap-3">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-[16px] font-semibold">{it.name_ko}</span>
-                  <span className="wordmark text-[13px]" style={{ color: 'var(--muted)' }}>
-                    {it.name_en}
-                  </span>
+              <div className="flex items-start gap-3">
+                {it.emblem && (
+                  <div className="mt-0.5 shrink-0" style={{ color: 'var(--thread)' }}>
+                    <Emblem name={it.emblem} size={34} strokeWidth={6} />
+                  </div>
+                )}
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-[16px] font-semibold">{it.name_ko}</span>
+                      <span className="wordmark text-[13px]" style={{ color: 'var(--muted)' }}>
+                        {it.name_en}
+                      </span>
+                    </div>
+                    {it.type === 'trace' && <FrequencyDots n={it.frequency} />}
+                  </div>
+                  <div className="mt-0.5 text-[12px]" style={{ color: 'var(--muted)' }}>
+                    {it.kicker}
+                  </div>
+                  <p className="mt-1.5 line-clamp-2 text-[13.5px]" style={{ color: 'var(--muted)' }}>
+                    {it.blurb}
+                  </p>
                 </div>
-                {it.type === 'trace' && <FrequencyDots n={it.frequency} />}
               </div>
-              <div className="mt-0.5 text-[12px]" style={{ color: 'var(--muted)' }}>
-                {it.kicker}
-              </div>
-              <p className="mt-1.5 line-clamp-2 text-[13.5px]" style={{ color: 'var(--muted)' }}>
-                {it.blurb}
-              </p>
             </Link>
           </li>
         ))}

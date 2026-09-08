@@ -12,6 +12,7 @@ relations:
   - {rel: companion_of, target: source:atlas}
 level_kid: 열두 가지 어려운 일을 해낸, 그리스에서 가장 힘센 영웅.
 level_adult: 제우스와 인간 알크메네 사이에서 태어난 영웅. 헤라의 미움을 받아 광기에 빠져 제 가족을 해쳤고, 그 죄를 씻기 위해 열두 과업을 치렀다. 죽은 뒤 신들 사이에 자리를 얻은 드문 인물이며, 로마에서는 헤르쿨레스로 불렸다.
+emblem: lion
 korea_parallel: ""
 traces: []
 status: reviewed

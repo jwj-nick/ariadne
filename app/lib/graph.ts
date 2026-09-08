@@ -38,6 +38,7 @@ export interface Source {
   level_kid: string;
   level_adult: string;
   korea_parallel: string;
+  emblem: string;
   traces: string[];
   status: Status;
   body: string;
@@ -58,6 +59,19 @@ export interface IndexEntry {
   terms: string[];
 }
 
+export interface LayoutNode {
+  id: string;
+  type: 'trace' | 'source';
+  x: number;
+  y: number;
+  degree: number;
+}
+
+export interface Layout {
+  nodes: LayoutNode[];
+  bounds: { minX: number; minY: number; maxX: number; maxY: number };
+}
+
 export interface Graph {
   meta: {
     generated_at: string;
@@ -68,6 +82,7 @@ export interface Graph {
   sources: Source[];
   edges: Edge[];
   index: IndexEntry[];
+  layout: Layout;
 }
 
 const EMPTY: Graph = {
@@ -80,6 +95,7 @@ const EMPTY: Graph = {
   sources: [],
   edges: [],
   index: [],
+  layout: { nodes: [], bounds: { minX: 0, minY: 0, maxX: 0, maxY: 0 } },
 };
 
 let cached: Graph | null = null;

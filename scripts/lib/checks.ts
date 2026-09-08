@@ -4,6 +4,7 @@
  * error 가 하나라도 있으면 scripts/build.ts 는 실패해야 한다.
  */
 import {
+  EMBLEM_NAMES,
   RELATION_VOCAB,
   SOURCE_DOMAINS,
   SOURCE_SECTIONS,
@@ -38,6 +39,7 @@ const CODE_TITLES: Record<string, string> = {
   W04: '중복 의심 (name_en 유사도 높음)',
   W05: '저작권 의심 장문 인용',
   W06: 'frequency 누락 또는 범위 밖',
+  W07: 'emblem 이 문양 목록 밖',
 };
 
 export const codeTitle = (code: string) => CODE_TITLES[code] ?? code;
@@ -232,6 +234,12 @@ export function runChecks(cards: Card[]): Finding[] {
           add('W03', 'warn', c.path, `relations.rel "${String(r?.rel)}" 는 허용 어휘 밖입니다.`);
         }
         if (r?.target) relDegree.set(r.target, (relDegree.get(r.target) ?? 0) + 1);
+      }
+
+      // W07 — 문양
+      const emblem = (d as Record<string, unknown>).emblem;
+      if (emblem !== undefined && !EMBLEM_NAMES.includes(emblem as never)) {
+        add('W07', 'warn', c.path, `emblem "${String(emblem)}" 는 문양 목록 밖입니다. app/components/Emblem.tsx 에 그림을 먼저 넣으십시오.`);
       }
 
       // W02

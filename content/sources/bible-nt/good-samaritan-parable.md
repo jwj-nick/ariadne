@@ -9,6 +9,7 @@ relations:
   - {rel: parallel_of, target: source:prodigal-son-parable}
 level_kid: 다친 사람을 다들 지나쳐 갔지만, 한 나그네가 멈춰 서서 돌봐 준 이야기.
 level_adult: 신약 성경 누가복음에 실린 비유. 강도를 만나 쓰러진 사람을 제사장과 레위인은 지나쳤으나, 당시 유대 사회에서 멸시받던 사마리아 사람이 멈춰 서서 치료하고 여관으로 데려가 비용까지 치렀다. 가장 도울 것 같지 않은 쪽이 도왔다는 뒤집기가 이야기의 핵심이며, 오늘날 선한 사마리아인 법이라는 제도 이름으로 남았다.
+emblem: hand
 korea_parallel: 한국의 응급의료에 관한 법률에도 선의의 응급의료에 대한 면책 조항이 있어서, 이 비유가 이름을 붙여 준 제도가 한국 법에도 그대로 들어와 있다.
 traces: []
 status: reviewed

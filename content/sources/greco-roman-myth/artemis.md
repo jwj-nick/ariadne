@@ -10,6 +10,7 @@ relations:
   - {rel: sibling_of, target: source:apollo}
 level_kid: 활을 들고 숲에서 사냥하는 달의 여신이며, 아폴론의 쌍둥이 누이.
 level_adult: 제우스와 레토의 딸이며 아폴론의 쌍둥이 누이. 사냥과 야생 동물과 달을 맡는다. 결혼하지 않겠다고 스스로 정한 처녀신으로, 로마 신화의 디아나와 같은 존재로 다룬다. 에페소스의 아르테미스 신전은 고대 세계의 일곱 불가사의 가운데 하나였다.
+emblem: moon
 korea_parallel: ""
 traces: []
 status: reviewed

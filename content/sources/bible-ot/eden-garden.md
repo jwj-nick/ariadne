@@ -9,6 +9,7 @@ relations:
   - {rel: appears_in, target: source:genesis-book}
 level_kid: 첫 사람들이 아무 걱정 없이 살다가, 먹지 말라던 열매를 먹고 나오게 된 동산.
 level_adult: 구약 성경 창세기에 나오는 동산. 첫 사람들이 이곳에 살면서 부족함이 없었으나, 먹지 말라고 한 나무의 열매를 먹은 뒤 나오게 되었다. 서양 문학과 미술에서 잃어버린 낙원과 순수의 상실을 가리키는 자리로 되풀이해 쓰인다.
+emblem: apple
 korea_parallel: 이상향이라는 자리로 보면 무릉도원이 가깝다. 다만 무릉도원은 우연히 찾았다가 다시 못 찾는 곳이고, 에덴은 살던 곳에서 쫓겨난 자리라 잃는 방식이 다르다.
 traces: []
 status: reviewed

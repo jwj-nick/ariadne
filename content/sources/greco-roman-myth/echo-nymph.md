@@ -10,6 +10,7 @@ relations:
   - {rel: enemy_of, target: source:hera}
 level_kid: 벌을 받아 남의 말끝만 따라 하게 된 숲의 님프.
 level_adult: 헤라의 벌로 스스로 말을 시작하지 못하고 남이 한 말의 끝만 되풀이하게 된 님프. 나르키소스를 사랑했으나 자기 말로 마음을 전할 수 없어 거절당했고, 슬픔에 몸이 사라져 목소리만 남았다. 메아리를 뜻하는 영어 낱말 echo 가 이 이름에서 나왔다.
+emblem: wave
 korea_parallel: ""
 traces: []
 status: reviewed

@@ -13,6 +13,7 @@ import { loadCards, isTrace, isSource, REPO_ROOT, type Card } from './lib/conten
 import { runChecks, codeTitle } from './lib/checks.ts';
 import { VISIBLE_STATUSES, type Status } from './lib/schema.ts';
 import { buildQuiz } from './lib/quiz.ts';
+import { computeLayout } from './lib/layout.ts';
 
 interface GraphTrace {
   id: string;
@@ -40,6 +41,8 @@ interface GraphSource {
   level_kid: string;
   level_adult: string;
   korea_parallel: string;
+  /** 이 원천을 나타내는 선 그림 이름 */
+  emblem: string;
   /** 빌드가 채우는 역링크 */
   traces: string[];
   status: Status;
@@ -146,6 +149,7 @@ const sources: GraphSource[] = sourceCards.map((c) => {
     level_kid: str((c.data as Record<string, unknown>).level_kid),
     level_adult: str((c.data as Record<string, unknown>).level_adult),
     korea_parallel: str((c.data as Record<string, unknown>).korea_parallel),
+    emblem: str((c.data as Record<string, unknown>).emblem),
     traces: (backlinks.get(id) ?? []).sort(),
     status: c.data.status as Status,
     body: c.body.trim(),
@@ -184,7 +188,17 @@ const index = [
   })),
 ];
 
-// ── 6. 출력 ───────────────────────────────────────────────────────────
+// ── 6. 그래프 화면용 좌표 (D27-C) ────────────────────────────────────
+// 브라우저가 아니라 여기서 한 번 계산해 굳힌다. 열 때마다 같은 그림이 나오고 폰이 가볍다.
+const layout = computeLayout(
+  [
+    ...traces.map((t) => ({ id: t.id, type: 'trace' as const })),
+    ...sources.map((s) => ({ id: s.id, type: 'source' as const })),
+  ],
+  edges,
+);
+
+// ── 7. 출력 ───────────────────────────────────────────────────────────
 const orphans = sources.filter((s) => s.traces.length === 0);
 const graph = {
   meta: {
@@ -201,13 +215,14 @@ const graph = {
   sources,
   edges,
   index,
+  layout,
 };
 
 const outDir = join(REPO_ROOT, 'app', 'data');
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, 'graph.json'), JSON.stringify(graph, null, 2) + '\n', 'utf8');
 
-// ── 7. 퀴즈 (D17 — 빌드 시점 생성, 런타임 AI 없음) ──────────────────────
+// ── 8. 퀴즈 (D17 — 빌드 시점 생성, 런타임 AI 없음) ──────────────────────
 const quiz = buildQuiz(all.filter(visible));
 const quizCounts = {
   items: quiz.items.length,
@@ -235,6 +250,9 @@ console.log(`  경고           ${warns.length}건${warns.length > 0 ? ' (npm ru
 if (byFreq.length > 0) {
   console.log(`  frequency 상위 ${byFreq.map((t) => `${t.name_en}(${t.frequency})`).join(', ')}`);
 }
+console.log(
+  `  배치           ${layout.nodes.length}점 (${Math.round(layout.bounds.maxX - layout.bounds.minX)} x ${Math.round(layout.bounds.maxY - layout.bounds.minY)})`,
+);
 console.log(`  퀴즈           ${quizCounts.items}문 (어른 ${quizCounts.adult} · 아이 ${quizCounts.kid})`);
 for (const [type, n] of Object.entries(
   quiz.items.reduce<Record<string, number>>((acc, q) => ({ ...acc, [q.type]: (acc[q.type] ?? 0) + 1 }), {}),

@@ -9,6 +9,7 @@ relations:
   - {rel: parallel_of, target: source:bennu}
 level_kid: 스스로 불에 타 죽고, 그 재에서 다시 태어나는 새.
 level_adult: 오랜 세월을 살다가 스스로 불타 죽고 그 재에서 다시 태어난다고 전해지는 새. 헤로도토스가 이집트에서 들은 이야기로 기록했고, 이집트의 벤누새와 이어져 있다고 본다. 죽음과 되살아남을 한 몸에 담은 상징이라 종교와 나라와 회사의 재기를 나타내는 데 두루 쓰였다.
+emblem: flame
 korea_parallel: 한국과 동아시아의 봉황은 상서로운 새라는 점이 겹치지만, 스스로 타 죽고 되살아난다는 대목은 없다. 봉황은 태평한 시대에 나타나는 새다.
 traces: []
 status: reviewed

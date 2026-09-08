@@ -10,6 +10,7 @@ relations:
   - {rel: sibling_of, target: source:artemis}
 level_kid: 빛과 음악과 예언을 맡은 신이며, 활을 잘 쏘는 아르테미스의 쌍둥이 오빠.
 level_adult: 제우스와 레토 사이에서 태어난 올림포스의 신. 빛, 음악, 시, 예언, 의술, 활쏘기를 맡는다. 델포이 신전의 주인으로 신탁을 내렸고, 후대에는 태양신과 하나로 여겨졌다. 아르테미스와 쌍둥이 남매다.
+emblem: lyre
 korea_parallel: ""
 traces: []
 status: reviewed

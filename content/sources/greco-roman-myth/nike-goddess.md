@@ -11,6 +11,7 @@ relations:
   - {rel: companion_of, target: source:zeus}
 level_kid: 승리를 알려 주는 날개 달린 여신.
 level_adult: 그리스 신화의 승리의 여신. 로마 신화의 빅토리아와 같은 존재로 다룬다. 날개를 달고 하늘에서 내려와 승자에게 승리를 알리는 모습으로 그려지며, 루브르 박물관의 조각 <사모트라케의 니케>가 가장 널리 알려진 형상이다.
+emblem: wing
 korea_parallel: ""
 traces: []
 status: reviewed

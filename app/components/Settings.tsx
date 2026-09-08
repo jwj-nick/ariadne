@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { progress } from '../lib/learning/sm2';
 import { store, type Level } from '../lib/store';
+import LabyrinthProgress from './LabyrinthProgress';
 
 /**
  * 진도 확인과 백업.
@@ -84,14 +85,23 @@ export default function Settings({ totalTraces }: { totalTraces: number }) {
         <h2 className="mb-2 text-[12px]" style={{ color: 'var(--muted)' }}>
           진도
         </h2>
-        <div className="rounded-lg p-4" style={box}>
-          <p className="text-[15px]">
-            흔적 {ready ? stats.total : totalTraces}개 가운데 <strong>{stats.seen}개</strong>를 한 번 이상 보았고,
-            그 가운데 <strong>{stats.settled}개</strong>는 복습 간격이 3주를 넘었습니다.
-          </p>
-          <p className="mt-2 text-[13.5px]" style={{ color: 'var(--muted)' }}>
-            오늘 볼 것 {stats.due}개
-          </p>
+        <div className="flex items-center gap-4 rounded-lg p-4" style={box}>
+          <div className="shrink-0">
+            <LabyrinthProgress seen={stats.seen} settled={stats.settled} total={totalTraces} size={104} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="text-[15px]">
+              흔적 {ready ? stats.total : totalTraces}개 가운데 <strong>{stats.seen}개</strong>를 한 번 이상 보았고,
+              그 가운데 <strong>{stats.settled}개</strong>는 복습 간격이 3주를 넘었습니다.
+            </p>
+            <p className="mt-2 text-[13.5px]" style={{ color: 'var(--muted)' }}>
+              오늘 볼 것 {stats.due}개
+            </p>
+            <p className="mt-2 text-[12.5px]" style={{ color: 'var(--muted)' }}>
+              미궁 그림은 바깥에서 가운데로 감깁니다. 옅은 실이 한 번이라도 본 것,
+              진한 실이 자리 잡은 것입니다.
+            </p>
+          </div>
         </div>
       </section>
 

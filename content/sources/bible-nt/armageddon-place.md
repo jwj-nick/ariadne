@@ -9,6 +9,7 @@ relations:
   - {rel: appears_in, target: source:revelation}
 level_kid: 성경의 마지막 책에서 마지막 큰 싸움이 벌어진다고 한 곳의 이름.
 level_adult: 신약 요한계시록에 나오는 지명. 마지막 싸움이 벌어질 곳으로 지목되며, 이스라엘 북부의 므깃도 언덕을 가리키는 말로 보는 해석이 널리 받아들여진다. 므깃도는 실제로 여러 시대에 걸쳐 전투가 되풀이된 요충지였고, 그 이름이 오늘날에는 재앙 자체를 뜻하는 말로 쓰인다.
+emblem: sword
 korea_parallel: ""
 traces: []
 status: reviewed

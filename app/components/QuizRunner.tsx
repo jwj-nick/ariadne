@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SELF_RATING_LABEL, qualityFromAuto, qualityFromSelf, type SelfRating } from '../lib/learning/grade';
 import { dueQueue, initialState, progress, review, today, type ReviewState } from '../lib/learning/sm2';
 import { store, type Level } from '../lib/store';
+import ThreadReveal from './ThreadReveal';
 
 export interface QuizItemView {
   id: string;
@@ -25,6 +26,8 @@ export interface NodeMeta {
   slug: string;
   /** 흔적에만 있다. 답을 공개할 때 "왜 이 이름인가" 를 함께 보여 주기 위한 것이다. */
   why?: string;
+  /** 원천에만 있다. 실이 도착하는 자리에 그릴 문양이다. */
+  emblem?: string;
 }
 
 const TYPE_LABEL: Record<QuizItemView['type'], string> = {
@@ -296,6 +299,16 @@ export default function QuizRunner({
       {/* 답 */}
       {phase === 'reveal' && (
         <div className="mt-5">
+          {/* 흔적에서 원천으로 실이 이어지는 장면. 이 앱의 은유를 그대로 보여 준다. */}
+          {trace && source && (
+            <ThreadReveal
+              key={item.id}
+              traceName={trace.name_ko}
+              sourceName={source.name_ko}
+              emblem={source.emblem ?? 'maze'}
+            />
+          )}
+
           {correct !== null && (
             <p className="mb-3 text-[15px] font-semibold" style={{ color: correct ? 'var(--thread)' : 'var(--muted)' }}>
               {correct ? '맞혔습니다.' : `아쉽습니다. 적으신 답은 "${guess}"`}

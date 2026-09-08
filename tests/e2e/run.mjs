@@ -162,6 +162,7 @@ try {
 
   const CHECKS = {
     '/': ['오늘 본 이름', '나이키', '판도라의 상자', '오늘 볼 복습', '담아 둔 조우'],
+    '/graph': ['실 지도', '그리스·로마 신화', '전체 보기'],
     '/trace/nike': ['나이키', '니케', '스우시', '사모트라케', '이 이름은 어디서 왔나'],
     '/trace/pandora': ['같은 원천의 다른 흔적', '판도라의 상자'],
     '/trace/pandoras-box': ['피토스', '픽시스'],
@@ -256,6 +257,17 @@ try {
       expect('모바일 390px 가로 넘침 없음', docW, 390);
 
       expect('첫 화면 흔적 수', await s.js(CARDS), N_TRACE);
+      // 디자인 A · D — 문양과 미궁이 실제로 그려지는지 본다.
+      expect(
+        '목록의 모든 카드에 문양이 붙는다',
+        await s.js(`document.querySelectorAll('main ul li a svg').length >= ${N_TRACE}`),
+        true,
+      );
+      expect(
+        '미궁 진도가 그려진다',
+        await s.js(`!!document.querySelector('main a[href="/settings"] svg path[stroke-dasharray]')`),
+        true,
+      );
       expect(
         '오늘 할 일 줄이 숫자를 채운다',
         await s.js(`[...document.querySelectorAll('main a[href="/quiz"] span')].pop()?.textContent`),
@@ -327,7 +339,10 @@ try {
         await s.js(clickText('button', '답 보기'));
         await sleep(300);
         expect('답을 열면 까닭이 보인다', await s.js(`document.querySelector('main').textContent.includes('이 이름이 붙은 까닭')`), true);
-        // 답 공개 화면도 눈으로 볼 수 있게 남긴다.
+        expect('흔적에서 원천으로 실이 그려진다', await s.js(`!!document.querySelector('.thread-draw')`), true);
+        expect('실이 도착하는 자리에 문양이 있다', await s.js(`!!document.querySelector('.thread-target svg')`), true);
+        // 답 공개 화면도 눈으로 볼 수 있게 남긴다. 실이 다 그려질 때까지 기다린다.
+        await sleep(1500);
         {
           const m = await s.send('Page.getLayoutMetrics');
           const size = m.cssContentSize ?? m.contentSize;
@@ -403,6 +418,29 @@ try {
       await sleep(1500);
       const kidChoices = await s.js(`document.querySelectorAll('main ul li button').length`);
       expect('아이 퀴즈는 선택지 3개', kidChoices, 3);
+
+      // ── 4.5부. 실 지도 (D27-C) ───────────────────────────────────
+      console.log('\n[4.5] 실 지도');
+      await s.send('Page.navigate', { url: BASE + '/graph' });
+      await sleep(1500);
+      expect(
+        '점이 모두 그려진다',
+        await s.js(`document.querySelectorAll('main svg > g > g circle').length >= ${N_TRACE + N_SOURCE}`),
+        true,
+      );
+      expect(
+        '실이 그려진다',
+        await s.js(`document.querySelectorAll('main svg line').length > 0`),
+        true,
+      );
+      // 점을 누르면 그 둘레만 남는다.
+      await s.js(`document.querySelectorAll('main svg > g > g')[0].dispatchEvent(new PointerEvent('pointerup', { bubbles: true }))`);
+      await sleep(400);
+      expect(
+        '점을 누르면 카드로 가는 길이 열린다',
+        await s.js(`!!document.querySelector('main a[href^="/trace/"], main a[href^="/source/"]')`),
+        true,
+      );
 
       // ── 5부. 진도와 백업 ─────────────────────────────────────────
       console.log('\n[5] 진도와 백업');
@@ -506,6 +544,7 @@ try {
         ['m-quiz', '/quiz'],
         ['m-settings', '/settings'],
         ['m-capture', '/capture'],
+        ['m-graph', '/graph'],
       ]) {
         await s.send('Page.navigate', { url: BASE + path });
         await sleep(1200);
@@ -518,7 +557,7 @@ try {
         });
         writeFileSync(join(SHOTS, `${name}.png`), Buffer.from(shot.data, 'base64'));
       }
-      ok('스크린샷 6장', 'tests/e2e/shots/');
+      ok('스크린샷 7장', 'tests/e2e/shots/');
       s.ws.close();
     }
   }

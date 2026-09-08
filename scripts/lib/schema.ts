@@ -49,6 +49,20 @@ export const RELATION_VOCAB = [
 ] as const;
 export type RelationRel = (typeof RELATION_VOCAB)[number];
 
+/**
+ * 원천 문양 이름 (D27).
+ *
+ * 그림은 `app/components/Emblem.tsx` 에 있다. 두 목록이 어긋나지 않도록
+ * `tests/emblem.test.ts` 가 서로 같은지 확인한다.
+ */
+export const EMBLEM_NAMES = [
+  'wing', 'bolt', 'jar', 'thread', 'rock', 'bow', 'lyre', 'laurel', 'helmet', 'horse',
+  'ship', 'tower', 'goat', 'flame', 'scale', 'apple', 'crown', 'mask', 'column', 'wave',
+  'moon', 'shoulders', 'sling', 'coin', 'hand', 'mirror', 'maze', 'star', 'bull', 'staff',
+  'void', 'river', 'seed', 'lion', 'sword', 'shell', 'owl', 'dice', 'door', 'mountain',
+] as const;
+export type EmblemName = (typeof EMBLEM_NAMES)[number];
+
 /** status 생애주기 (D15) */
 export const STATUSES = ['candidate', 'reviewed', 'published', 'retired'] as const;
 export type Status = (typeof STATUSES)[number];
@@ -112,6 +126,8 @@ export interface SourceFrontmatter {
   level_kid: string;
   level_adult: string;
   korea_parallel?: string;
+  /** 이 원천을 나타내는 선 그림. 없으면 도메인 기본 문양을 쓴다. */
+  emblem?: EmblemName;
   /** 빌드가 채운다. 손으로 쓰면 E05. */
   traces?: string[];
   status: Status;

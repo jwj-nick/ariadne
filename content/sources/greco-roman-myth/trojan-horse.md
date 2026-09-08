@@ -10,6 +10,7 @@ relations:
   - {rel: enemy_of, target: source:achilles}
 level_kid: 그리스 병사들이 안에 숨어 들어가려고 만든, 커다란 나무 말.
 level_adult: 그리스군이 트로이 성을 함락하기 위해 쓴 계략. 오디세우스가 고안하고 목수 에페이오스가 만들었다. 신에게 바치는 제물처럼 꾸민 나무 말 안에 병사를 숨겼고, 트로이 사람들이 이것을 성 안으로 끌어들이면서 10년 전쟁이 끝났다. 호메로스의 <오디세이아>와 베르길리우스의 <아이네이스>에 전한다.
+emblem: horse
 korea_parallel: ""
 traces: []
 status: reviewed

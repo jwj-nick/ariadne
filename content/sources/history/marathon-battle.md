@@ -9,6 +9,7 @@ relations:
   - {rel: precedes, target: source:thermopylae}
 level_kid: 아테네가 훨씬 큰 페르시아 군대를 이긴 싸움이며, 그 소식을 전하러 달린 이야기가 남았다.
 level_adult: 기원전 490년 아테네 근처 마라톤 벌판에서 아테네군이 페르시아 원정군을 물리친 전투. 병력에서 크게 밀렸는데도 이겨서 그리스 세계의 자신감을 바꾸어 놓았다고 평가된다. 승전 소식을 달려가 전한 병사 이야기는 후대의 전승으로 보이지만, 그 이야기에서 오늘날의 마라톤 경기가 나왔다.
+emblem: laurel
 korea_parallel: 열세를 뒤집은 싸움이라는 점에서 [[trace:david-vs-goliath]]의 구도와 겹치고, 한국에서는 같은 자리에 명량해전을 든다.
 traces: []
 status: reviewed

@@ -9,6 +9,7 @@ relations:
   - {rel: parallel_of, target: source:lost-sheep-parable}
 level_kid: 집을 나가 가진 것을 다 써 버린 아들이 돌아오자, 아버지가 잔치를 열어 반겨 준 이야기.
 level_adult: 신약 성경 누가복음에 실린 비유. 둘째 아들이 유산을 미리 받아 떠났다가 모두 탕진하고 돌아오자 아버지가 달려 나가 맞이하고 잔치를 연다. 집을 지킨 큰아들이 이를 못마땅해하는 장면으로 끝나며, 이 마지막 대목 때문에 문학과 미술에서 오래 다뤄져 왔다.
+emblem: door
 korea_parallel: ""
 traces: []
 status: reviewed

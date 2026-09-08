@@ -12,6 +12,7 @@ relations:
   - {rel: appears_in, target: source:labyrinth}
 level_kid: 미궁에 들어가는 사람에게 실타래를 건네준 크레타의 공주.
 level_adult: 크레타 왕 미노스의 딸. 미궁에 갇힌 괴물 미노타우로스를 잡으러 온 테세우스에게 실타래를 건네 빠져나올 길을 만들어 주었다. 그 뒤 테세우스에게 버림받고 낙소스 섬에 남겨졌으나, 술과 축제의 신 디오니소스의 아내가 되었다.
+emblem: thread
 korea_parallel: 한국어 낱말 "실마리"는 엉킨 실의 첫머리라는 뜻으로, 문제를 푸는 단서를 가리킨다. 실을 따라 길을 찾는다는 그림이 아리아드네의 실과 거의 같다.
 traces: []
 status: reviewed
