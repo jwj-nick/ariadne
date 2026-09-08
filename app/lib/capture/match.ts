@@ -17,6 +17,8 @@ export interface MatchTarget {
   name_en: string;
   /** 이름과 별칭 등, 찾아볼 표기들. 이미 소문자로 내려온다. */
   terms: string[];
+  /** 원천일 때만. 이 원천을 가리키는 흔적들이다. */
+  traceIds?: string[];
 }
 
 export interface Match {
@@ -26,6 +28,15 @@ export interface Match {
   /** 실제로 걸린 표기. 왜 걸렸는지 사용자에게 보여 주기 위한 것이다. */
   hit: string;
   score: number;
+}
+
+/** 캡처 하나가 어느 흔적으로 이어지는지, 그리고 왜 그렇게 이어졌는지. */
+export interface TraceHit {
+  trace_id: string;
+  /** 흔적 이름이 직접 걸렸는가, 아니면 원천 이름을 통해 이어졌는가. */
+  via: 'trace' | 'source';
+  /** 실제로 걸린 표기. via 가 source 면 원천 이름이다. */
+  hit: string;
 }
 
 const MIN_KO = 2;
@@ -76,4 +87,33 @@ export function matchCapture(text: string, targets: MatchTarget[], limit = 8): M
   }
 
   return out.sort((a, b) => b.score - a.score || a.name_ko.localeCompare(b.name_ko, 'ko')).slice(0, limit);
+}
+
+/**
+ * 매칭 결과를 **흔적 목록으로 펴 준다.**
+ *
+ * 원천 이름만 적힌 캡처도 흔적으로 이어져야 한다.
+ * 방송에서 "니케"를 들었다면 그것은 "나이키"를 복습할 때가 되었다는 뜻이다.
+ * 이 앱에서 학습 단위는 흔적이므로(D2), 원천 매치는 그 원천을 가리키는 흔적들로 바꾼다.
+ */
+export function toTraceHits(matches: Match[], targets: MatchTarget[]): TraceHit[] {
+  const byId = new Map(targets.map((t) => [t.id, t]));
+  const out: TraceHit[] = [];
+  const seen = new Set<string>();
+
+  // 흔적이 직접 걸린 것을 먼저 담는다. 같은 흔적이 원천을 통해서도 걸리면 직접 쪽을 남긴다.
+  for (const m of matches) {
+    if (m.type !== 'trace' || seen.has(m.id)) continue;
+    seen.add(m.id);
+    out.push({ trace_id: m.id, via: 'trace', hit: m.hit });
+  }
+  for (const m of matches) {
+    if (m.type !== 'source') continue;
+    for (const traceId of byId.get(m.id)?.traceIds ?? []) {
+      if (seen.has(traceId)) continue;
+      seen.add(traceId);
+      out.push({ trace_id: traceId, via: 'source', hit: m.hit });
+    }
+  }
+  return out;
 }

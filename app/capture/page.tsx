@@ -24,6 +24,8 @@ export default function CapturePage() {
       name_ko: s.name_ko,
       name_en: s.name_en,
       terms: [s.name_ko, s.name_en, ...s.aliases].map((x) => x.toLowerCase()),
+      // 원천 이름만 적힌 캡처도 흔적으로 이어 주기 위해 역링크를 함께 보낸다.
+      traceIds: s.traces,
     })),
   ];
 

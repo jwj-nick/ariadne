@@ -480,6 +480,22 @@ try {
         ? ok('직접 붙여 넣어도 알아본다', after[1].matched_trace_ids.join(', '))
         : bad('직접 입력', JSON.stringify(after.map((c) => c.matched_trace_ids)));
 
+      // 원천 이름만 적어도 흔적으로 이어져야 한다 (2026-09-08 오너 보고).
+      await s.js(`document.querySelector('main textarea').focus()`);
+      await s.send('Input.insertText', { text: '루브르에서 니케 조각을 보았다' });
+      await sleep(200);
+      await s.js(clickText('main button', '담기'));
+      await sleep(500);
+      const viaSource = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.captures') || '[]').at(-1)`);
+      viaSource?.matched_trace_ids?.includes('trace:nike') && viaSource?.hits?.[0]?.via === 'source'
+        ? ok('원천 이름만 적어도 흔적으로 이어진다', `${viaSource.hits[0].hit} → 나이키`)
+        : bad('원천 경유 매칭', JSON.stringify(viaSource?.matched_trace_ids));
+      expect(
+        '원천을 통해 이어졌다고 화면에 밝힌다',
+        await s.js(`document.querySelector('main').textContent.includes('원천 이름')`),
+        true,
+      );
+
       await s.js(`localStorage.clear(); sessionStorage.clear();`);
 
       // 스크린샷 남기기

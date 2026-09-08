@@ -6,7 +6,7 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { matchCapture, type MatchTarget } from '../app/lib/capture/match.ts';
+import { matchCapture, toTraceHits, type MatchTarget } from '../app/lib/capture/match.ts';
 import { loadCards, isTrace, isSource } from '../scripts/lib/content.ts';
 import { VISIBLE_STATUSES, type Status } from '../scripts/lib/schema.ts';
 
@@ -32,8 +32,15 @@ const targets: MatchTarget[] = [
       String(c.data.name_en),
       ...(Array.isArray(c.data.aliases) ? (c.data.aliases as string[]) : []),
     ].map((s) => s.toLowerCase()),
+    // 빌드가 채우는 역링크를 여기서는 직접 계산한다.
+    traceIds: cards
+      .filter(isTrace)
+      .filter((t) => (Array.isArray(t.data.sources) ? (t.data.sources as string[]) : []).includes(String(c.data.id)))
+      .map((t) => String(t.data.id)),
   })),
 ];
+
+const traceHits = (text: string) => toTraceHits(matchCapture(text, targets), targets);
 
 const ids = (text: string) => matchCapture(text, targets).map((m) => m.id);
 
@@ -89,4 +96,38 @@ test('빈 글이나 아무 관계 없는 글에서는 아무 것도 나오지 �
 test('결과는 개수 제한을 지킨다', () => {
   const many = '나이키 아마존 판도라 아폴로 아르테미스 타이탄 아틀라스 목성 에우로파 나르시시즘 멘토 네메시스';
   assert.ok(matchCapture(many, targets, 3).length <= 3);
+});
+
+test('원천 이름만 적어도 그 원천에서 나온 흔적으로 이어진다', () => {
+  // 2026-09-08 실제로 보고된 문제다. "니케" 만 적으면 아는 흔적이 없다고 나왔다.
+  const hits = traceHits('니케');
+  assert.ok(hits.length > 0, '원천만 걸렸을 때 흔적으로 이어지지 않습니다');
+  assert.deepEqual(
+    hits.map((h) => h.trace_id),
+    ['trace:nike'],
+  );
+  assert.equal(hits[0]!.via, 'source');
+  assert.equal(hits[0]!.hit, '니케');
+});
+
+test('원천 하나에 흔적이 여럿이면 모두 이어진다', () => {
+  // 판도라에서 브랜드와 관용구 두 흔적이 나온다.
+  const ids = traceHits('판도라').map((h) => h.trace_id).sort();
+  assert.deepEqual(ids, ['trace:pandora', 'trace:pandoras-box']);
+});
+
+test('흔적이 직접 걸리면 원천을 통한 것보다 앞에 오고 중복되지 않는다', () => {
+  const hits = traceHits('나이키 로고는 니케의 날개에서 왔다');
+  assert.equal(hits[0]!.trace_id, 'trace:nike');
+  assert.equal(hits[0]!.via, 'trace');
+  assert.equal(new Set(hits.map((h) => h.trace_id)).size, hits.length, '같은 흔적이 두 번 들어갔습니다');
+});
+
+test('별칭으로 걸린 원천도 흔적으로 이어진다', () => {
+  assert.ok(traceHits('로마 신화의 유피테르').some((h) => h.trace_id === 'trace:jupiter-planet'));
+  assert.ok(traceHits('빅토리아 여왕').some((h) => h.trace_id === 'trace:nike'));
+});
+
+test('아무 것도 안 걸리면 빈 목록이다', () => {
+  assert.deepEqual(traceHits('오늘 점심은 김치찌개'), []);
 });

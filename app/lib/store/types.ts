@@ -40,6 +40,8 @@ export interface Capture {
   title: string;
   /** 이 캡처에서 알아본 흔적들. 비어 있으면 아직 못 알아본 것이다. */
   matched_trace_ids: string[];
+  /** 어떻게 이어졌는지. 원천 이름을 통해 이어진 경우를 화면에 밝히기 위한 것이다. */
+  hits?: Array<{ trace_id: string; via: 'trace' | 'source'; hit: string }>;
   /** open = 아직 처리 안 함, kept = 오늘 복습에 넣음, candidate = 새 흔적 후보로 남김, dismissed = 버림 */
   status: 'open' | 'kept' | 'candidate' | 'dismissed';
   at: string;

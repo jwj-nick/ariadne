@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 import ShareIntake from './ShareIntake';
-import { matchCapture, type Match, type MatchTarget } from '../lib/capture/match';
+import { matchCapture, toTraceHits, type MatchTarget } from '../lib/capture/match';
 import { initialState, today } from '../lib/learning/sm2';
 import { store, type Capture } from '../lib/store';
 
@@ -26,13 +26,15 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
     (text: string, url = '', title = '') => {
       const body = [title, text, url].filter(Boolean).join('\n').trim();
       if (!body) return;
-      const matches = matchCapture(body, targets);
+      // 원천 이름만 적힌 캡처도 흔적으로 이어 준다. "니케" 를 봤다면 "나이키" 를 복습할 때다.
+      const hits = toTraceHits(matchCapture(body, targets), targets);
       const capture: Capture = {
         id: `cap-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
         text: text.trim(),
         url: url.trim(),
         title: title.trim(),
-        matched_trace_ids: matches.filter((m) => m.type === 'trace').map((m) => m.id),
+        matched_trace_ids: hits.map((h) => h.trace_id),
+        hits,
         status: 'open',
         at: new Date().toISOString(),
       };
@@ -132,6 +134,8 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
         <ul className="flex flex-col gap-2">
           {list.map((c) => {
             const hits = c.matched_trace_ids.map((id) => byId.get(id)).filter(Boolean);
+            // 원천 이름을 통해 이어진 것이 있으면 그 사실을 밝힌다. 왜 걸렸는지 보이지 않으면 오해를 산다.
+            const viaSource = (c.hits ?? []).filter((h) => h.via === 'source');
             return (
               <li key={c.id} className="rounded-lg p-3.5" style={box}>
                 <p className="text-[12px]" style={{ color: 'var(--muted)' }}>
@@ -162,6 +166,12 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
                 ) : (
                   <p className="mt-2 text-[13px]" style={{ color: 'var(--muted)' }}>
                     아는 흔적이 없습니다.
+                  </p>
+                )}
+
+                {viaSource.length > 0 && (
+                  <p className="mt-1.5 text-[12px]" style={{ color: 'var(--muted)' }}>
+                    원천 이름 {[...new Set(viaSource.map((h) => h.hit))].join(', ')} 을 알아보고 이어 준 것입니다.
                   </p>
                 )}
 
