@@ -263,17 +263,21 @@ export function runChecks(cards: Card[]): Finding[] {
     }
   }
 
-  // W04 — name_en 유사도로 중복을 의심한다.
+  // W04 — 중복 의심. **영어 이름과 한국어 이름이 둘 다 비슷할 때만** 경고한다.
+  // 영어 이름만 보면 수성(Mercury)과 수은(Mercury)처럼 서로 다른 것이 걸린다.
+  // 실제로 같은 대상을 두 번 만든 경우에는 두 이름이 함께 닮는다.
   for (let i = 0; i < cards.length; i++) {
     for (let j = i + 1; j < cards.length; j++) {
       const a = cards[i]!;
       const b = cards[j]!;
       if (a.data.type !== b.data.type) continue;
-      const na = String(a.data.name_en ?? '');
-      const nb = String(b.data.name_en ?? '');
-      if (na === '' || nb === '') continue;
-      if (dice(na, nb) > 0.9) {
-        add('W04', 'warn', a.path, `"${nb}" (${b.path}) 와 이름이 매우 비슷합니다. 같은 대상이면 하나로 합치고 다른 이름은 aliases 에 넣으십시오.`);
+      const enA = String(a.data.name_en ?? '');
+      const enB = String(b.data.name_en ?? '');
+      const koA = String(a.data.name_ko ?? '');
+      const koB = String(b.data.name_ko ?? '');
+      if (enA === '' || enB === '' || koA === '' || koB === '') continue;
+      if (dice(enA, enB) > 0.9 && dice(koA, koB) > 0.9) {
+        add('W04', 'warn', a.path, `"${koB}" (${b.path}) 와 이름이 매우 비슷합니다. 같은 대상이면 하나로 합치고 다른 이름은 aliases 에 넣으십시오.`);
       }
     }
   }

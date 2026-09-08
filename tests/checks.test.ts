@@ -167,12 +167,21 @@ test('W03 — relations.rel 이 허용 어휘 밖', () => {
   assert.ok(!codes([trace(), source({ relations: [{ rel: 'companion_of', target: 'source:athena' }] })]).includes('W03'));
 });
 
-test('W04 — 이름이 매우 비슷한 같은 타입 카드', () => {
+test('W04 — 두 이름이 다 비슷할 때만 중복으로 의심한다', () => {
   const a = source();
-  const b = source({ id: 'source:nike-goddes', name_en: 'Nike' });
+  const b = source({ id: 'source:nike-goddes', name_en: 'Nike', name_ko: '니케' });
   b.slug = 'nike-goddes';
   b.path = 'content/sources/greco-roman-myth/nike-goddes.md';
-  assert.ok(codes([trace(), a, b]).includes('W04'));
+  assert.ok(codes([trace(), a, b]).includes('W04'), '한국어와 영어가 다 같으면 걸려야 한다');
+
+  // 영어 이름만 같은 경우는 걸리면 안 된다. 수성(Mercury)과 수은(Mercury)이 실제 사례다.
+  const planet = trace({ id: 'trace:mercury-planet', name_ko: '수성', name_en: 'Mercury' });
+  planet.slug = 'mercury-planet';
+  const metal = trace({ id: 'trace:mercury-element', name_ko: '수은', name_en: 'Mercury' });
+  metal.slug = 'mercury-element';
+  metal.path = 'content/traces/brand/mercury-element.md';
+  assert.ok(!codes([planet, metal, source()]).includes('W04'), '뜻이 다른데 영어 이름만 같은 경우');
+
   // trace 와 source 는 이름이 같아도 짝이므로 걸리면 안 된다.
   assert.ok(!codes([trace(), source()]).includes('W04'));
 });
