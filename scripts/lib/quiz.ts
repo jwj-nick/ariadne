@@ -58,6 +58,7 @@ const DOMAIN_CONTEXT: Record<string, string> = {
   'bible-ot': '성경 구약에 나오는 이야기에서 왔습니다.',
   'bible-nt': '성경 신약에 나오는 이야기에서 왔습니다.',
   history: '고대 그리스·로마사나 서양사에서 실제로 있었던 일이나 제도에서 왔습니다.',
+  literature: '서양 문학의 이름난 작품에서 왔습니다.',
 };
 
 const CATEGORY_WORD: Record<string, string> = {

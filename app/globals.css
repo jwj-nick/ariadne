@@ -193,3 +193,13 @@ html[data-level='adult'] .level-kid {
 .nav-scroll::-webkit-scrollbar {
   display: none;
 }
+
+/* 문학 도메인 색 */
+:root {
+  --dom-lit: #6b4a7a;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --dom-lit: #b18cc4;
+  }
+}

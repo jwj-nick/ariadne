@@ -42,6 +42,7 @@ const DOMAIN_COLOR: Record<string, string> = {
   'bible-ot': 'var(--dom-ot)',
   'bible-nt': 'var(--dom-nt)',
   history: 'var(--dom-history)',
+  literature: 'var(--dom-lit)',
 };
 
 const colorOf = (domain: string) => DOMAIN_COLOR[domain] ?? 'var(--muted)';
@@ -286,4 +287,5 @@ const DOMAIN_KO: Record<string, string> = {
   'bible-ot': '구약',
   'bible-nt': '신약',
   history: '역사',
+  literature: '문학',
 };

@@ -261,6 +261,7 @@ export const DOMAIN_EMBLEM: Record<string, string> = {
   'bible-ot': 'seed',
   'bible-nt': 'hand',
   history: 'column',
+  literature: 'mask',
 };
 
 export const emblemFor = (emblem: string | undefined, domain: string): string =>

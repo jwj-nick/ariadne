@@ -27,6 +27,9 @@ export const SOURCE_DOMAINS = [
   'bible-ot',
   'bible-nt',
   'history',
+  // 2026-09-08 추가. 단테·밀턴·셰익스피어처럼 그 자체가 원천이 된 작품들.
+  // D12 에 따라 첫 카드가 생기는 시점에 열었다. 셰익스피어를 따로 두지 않고 여기에 합친다.
+  'literature',
 ] as const;
 export type SourceDomain = (typeof SOURCE_DOMAINS)[number];
 

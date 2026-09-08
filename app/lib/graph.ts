@@ -133,6 +133,7 @@ export const DOMAIN_LABEL: Record<string, string> = {
   'bible-ot': '구약',
   'bible-nt': '신약',
   history: '역사',
+  literature: '문학',
 };
 
 /** relations 어휘의 한국어 서술. */

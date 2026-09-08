@@ -100,20 +100,19 @@ test('결과는 개수 제한을 지킨다', () => {
 
 test('원천 이름만 적어도 그 원천에서 나온 흔적으로 이어진다', () => {
   // 2026-09-08 실제로 보고된 문제다. "니케" 만 적으면 아는 흔적이 없다고 나왔다.
+  // 카드가 늘어나면 같은 원천에 흔적이 여럿 붙으므로, 정확한 목록이 아니라 포함 여부를 본다.
   const hits = traceHits('니케');
   assert.ok(hits.length > 0, '원천만 걸렸을 때 흔적으로 이어지지 않습니다');
-  assert.deepEqual(
-    hits.map((h) => h.trace_id),
-    ['trace:nike'],
-  );
-  assert.equal(hits[0]!.via, 'source');
-  assert.equal(hits[0]!.hit, '니케');
+  assert.ok(hits.some((h) => h.trace_id === 'trace:nike'), '나이키로 이어지지 않습니다');
+  assert.ok(hits.every((h) => h.via === 'source'), '모두 원천을 통해 이어져야 합니다');
+  assert.ok(hits.every((h) => h.hit === '니케'));
 });
 
 test('원천 하나에 흔적이 여럿이면 모두 이어진다', () => {
   // 판도라에서 브랜드와 관용구 두 흔적이 나온다.
-  const ids = traceHits('판도라').map((h) => h.trace_id).sort();
-  assert.deepEqual(ids, ['trace:pandora', 'trace:pandoras-box']);
+  const ids = traceHits('판도라').map((h) => h.trace_id);
+  assert.ok(ids.includes('trace:pandora'));
+  assert.ok(ids.includes('trace:pandoras-box'));
 });
 
 test('흔적이 직접 걸리면 원천을 통한 것보다 앞에 오고 중복되지 않는다', () => {
