@@ -161,7 +161,7 @@ try {
   const get = async (path) => (await fetch(BASE + path)).text();
 
   const CHECKS = {
-    '/': ['오늘 본 이름', '나이키', '판도라의 상자'],
+    '/': ['오늘 본 이름', '나이키', '판도라의 상자', '오늘 볼 복습', '담아 둔 조우'],
     '/trace/nike': ['나이키', '니케', '스우시', '사모트라케', '이 이름은 어디서 왔나'],
     '/trace/pandora': ['같은 원천의 다른 흔적', '판도라의 상자'],
     '/trace/pandoras-box': ['피토스', '픽시스'],
@@ -236,9 +236,12 @@ try {
         deviceScaleFactor: 2,
         mobile: true,
       });
+      // 지난 실행이 남긴 진도가 있으면 개수가 어긋난다. 빈 상태에서 시작한다.
       await s.send('Page.navigate', { url: BASE + '/' });
       for (let i = 0; i < 50 && !s.events.includes('Page.loadEventFired'); i++) await sleep(100);
-      await sleep(800);
+      await s.js('localStorage.clear(); sessionStorage.clear();');
+      await s.send('Page.reload');
+      await sleep(1500);
 
       const CARDS = 'document.querySelectorAll(\'main ul li a[href^="/trace/"], main ul li a[href^="/source/"]\').length';
       const clearSearch = `(() => {
@@ -253,6 +256,11 @@ try {
       expect('모바일 390px 가로 넘침 없음', docW, 390);
 
       expect('첫 화면 흔적 수', await s.js(CARDS), N_TRACE);
+      expect(
+        '오늘 할 일 줄이 숫자를 채운다',
+        await s.js(`[...document.querySelectorAll('main a[href="/quiz"] span')].pop()?.textContent`),
+        `${N_TRACE}개`,
+      );
 
       await s.js('document.querySelector("input[type=search]").focus()');
       await s.send('Input.insertText', { text: '판도라' });

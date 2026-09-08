@@ -1,4 +1,5 @@
 import Browser, { type BrowseItem } from './components/Browser';
+import TodayStrip from './components/TodayStrip';
 import { CATEGORY_LABEL, DOMAIN_LABEL, getGraph } from './lib/graph';
 
 export default function Home() {
@@ -44,6 +45,8 @@ export default function Home() {
 
   return (
     <div>
+      <TodayStrip traceIds={g.traces.map((t) => t.id)} />
+
       <section className="mb-7">
         <h1 className="text-[22px] leading-snug font-semibold">
           오늘 본 이름 뒤에 무엇이 있는가
