@@ -199,6 +199,17 @@ test('W05 — 장문 인용 의심, 그리고 짧은 인용은 통과', () => {
   assert.ok(!codes([two, source()]).includes('W05'));
 });
 
+test('W08 - 본문의 깨진 위키 링크와 자기 자신 링크', () => {
+  const body = (link: string) =>
+    ['## 한 줄', link + ' 를 가리킨다', '', '## 어디서 만나나', '접점', '', '## 왜 이 이름인가', '이유', ''].join(
+      String.fromCharCode(10),
+    );
+
+  assert.ok(codes([trace({}, body('[[source:no-such-card]]')), source()]).includes('W08'), '없는 카드를 가리키면 걸려야 한다');
+  assert.ok(codes([trace({}, body('[[trace:nike]]')), source()]).includes('W08'), '자기 자신을 가리키면 걸려야 한다');
+  assert.ok(!codes([trace({}, body('[[source:nike-goddess]]')), source()]).includes('W08'), '있는 카드를 가리키면 걸리면 안 된다');
+});
+
 test('W06 — frequency 가 1~5 정수가 아님', () => {
   assert.ok(codes([trace({ frequency: 0 }), source()]).includes('W06'));
   assert.ok(codes([trace({ frequency: 6 }), source()]).includes('W06'));

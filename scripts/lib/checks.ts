@@ -40,6 +40,7 @@ const CODE_TITLES: Record<string, string> = {
   W05: '저작권 의심 장문 인용',
   W06: 'frequency 누락 또는 범위 밖',
   W07: 'emblem 이 문양 목록 밖',
+  W08: '본문의 [[링크]] 가 없는 카드를 가리킴',
 };
 
 export const codeTitle = (code: string) => CODE_TITLES[code] ?? code;
@@ -245,6 +246,19 @@ export function runChecks(cards: Card[]): Finding[] {
       // W02
       const err = checkSectionOrder(c.headings, SOURCE_SECTIONS);
       if (err) add('W02', 'warn', c.path, err);
+    }
+
+    // W08 — 본문의 위키 링크가 실제 카드를 가리키는지 본다.
+    // 화면에서는 링크가 아니라 이름만 남아 조용히 지나가므로, 여기서 잡아야 한다.
+    const WIKI = /\[\[((?:trace|source):[A-Za-z0-9_-]+)\]\]/g;
+    let wm: RegExpExecArray | null;
+    while ((wm = WIKI.exec(c.body)) !== null) {
+      const target = wm[1]!;
+      if (!byId.has(target)) {
+        add('W08', 'warn', c.path, `본문의 [[${target}]] 에 해당하는 카드가 없습니다.`);
+      } else if (target === d.id) {
+        add('W08', 'warn', c.path, '본문이 자기 자신을 링크하고 있습니다.');
+      }
     }
 
     // W05 — 장문 인용 의심
