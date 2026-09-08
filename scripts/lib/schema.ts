@@ -63,6 +63,9 @@ export const EMBLEM_NAMES = [
   'ship', 'tower', 'goat', 'flame', 'scale', 'apple', 'crown', 'mask', 'column', 'wave',
   'moon', 'shoulders', 'sling', 'coin', 'hand', 'mirror', 'maze', 'star', 'bull', 'staff',
   'void', 'river', 'seed', 'lion', 'sword', 'shell', 'owl', 'dice', 'door', 'mountain',
+  'serpent', 'grape', 'shield', 'scroll', 'ring', 'eye', 'tree', 'fish', 'cup', 'key',
+  'anchor', 'arrow', 'feather', 'hourglass', 'torch', 'wheel', 'wolf', 'eagle', 'dove', 'bread',
+  'chain', 'trident', 'harp', 'scythe', 'sun', 'spider',
 ] as const;
 export type EmblemName = (typeof EMBLEM_NAMES)[number];
 
