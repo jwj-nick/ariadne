@@ -5,7 +5,15 @@
  * 사생활 보호 모드나 저장 공간 차단 때문에 읽기와 쓰기가 예외를 던질 수 있어서 전부 감싸 두었다.
  */
 import type { ReviewState } from '../learning/sm2';
-import { DEFAULT_PROFILE, type Capture, type Profile, type QuizLog, type Snapshot, type Store } from './types';
+import {
+  DEFAULT_PROFILE,
+  type Capture,
+  type Profile,
+  type QuizLog,
+  type Snapshot,
+  type Store,
+  type Wish,
+} from './types';
 
 const NS = 'ariadne.v1';
 const K = {
@@ -13,6 +21,7 @@ const K = {
   reviews: `${NS}.reviews`,
   logs: `${NS}.logs`,
   captures: `${NS}.captures`,
+  wishes: `${NS}.wishes`,
 } as const;
 
 /** 로그는 무한정 쌓이지 않게 최근 것만 남긴다. */
@@ -121,6 +130,28 @@ export const localStore: Store = {
     );
   },
 
+  addWish(wish) {
+    // 같은 카드에서 다시 담으면 앞엣것을 지우고 새로 넣는다. 메모를 고쳐 담는 경우가 대부분이다.
+    const kept = this.allWishes().filter(
+      (w) => !(w.origin.id && wish.origin.id && w.origin.id === wish.origin.id),
+    );
+    write(K.wishes, [...kept, wish].slice(-200));
+  },
+
+  allWishes() {
+    return read<Wish[]>(K.wishes, []).filter(
+      (w) => w && typeof w.id === 'string' && typeof w.text === 'string' && !!w.origin,
+    );
+  },
+
+  removeWish(id) {
+    write(K.wishes, this.allWishes().filter((w) => w.id !== id));
+  },
+
+  clearWishes() {
+    write(K.wishes, []);
+  },
+
   exportSnapshot() {
     return {
       version: 1,
@@ -129,6 +160,7 @@ export const localStore: Store = {
       reviews: this.allReviews(),
       logs: read<QuizLog[]>(K.logs, []),
       captures: this.allCaptures(),
+      wishes: this.allWishes(),
     };
   },
 
@@ -147,6 +179,8 @@ export const localStore: Store = {
     write(K.logs, Array.isArray(snap.logs) ? snap.logs.slice(-LOG_CAP) : []);
     // 캡처는 옛 백업에 없을 수 있으므로 없으면 비운다.
     write(K.captures, Array.isArray(snap.captures) ? snap.captures : []);
+    // 요청 쪽지도 마찬가지다. D28 이전에 만든 백업에는 이 칸이 아예 없다.
+    write(K.wishes, Array.isArray(snap.wishes) ? snap.wishes : []);
     return { ok: true };
   },
 

@@ -173,6 +173,8 @@ try {
     // 클라이언트 화면도 서버 HTML 에 뼈대가 들어 있어야 한다. 없으면 첫 화면이 잠깐 빈다.
     '/capture': ['조우 캡처', '붙여 넣', '담기'],
     '/settings': ['진도와 백업', '백업 내려받기', '눈높이'],
+    // 담은 것이 없으면 요청서 구역은 접힌다. 서버 HTML 에는 안내와 입력 칸까지만 있으면 된다.
+    '/request': ['카드 요청서', '담아 둔 것', '개발 도구에 붙여 넣', '담기'],
     '/quiz': ['오늘의 복습'],
   };
   for (const [path, probes] of Object.entries(CHECKS)) {
@@ -534,7 +536,94 @@ try {
         true,
       );
 
-      await s.js(`localStorage.clear(); sessionStorage.clear();`);
+
+      // ── 7부. 카드 요청서 (D28) ────────────────────────────────
+      console.log(String.fromCharCode(10) + '[7] 카드 요청서');
+      await s.js('localStorage.clear(); sessionStorage.clear();');
+
+      // 카드 화면에서 담는다.
+      await s.send('Page.navigate', { url: BASE + '/trace/pandoras-box' });
+      await sleep(1300);
+      await s.js(clickText('button', '이것에 대해 더 알고 싶습니다'));
+      await sleep(300);
+      await s.js(`document.querySelector('main textarea').focus()`);
+      await s.send('Input.insertText', { text: '항아리였다는 이야기를 더 보고 싶습니다' });
+      await sleep(200);
+      await s.js(clickText('main button', '담기'));
+      await sleep(400);
+
+      const wished = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.wishes') || '[]')`);
+      wished.length === 1 && wished[0].origin?.id === 'trace:pandoras-box'
+        ? ok('카드 화면에서 요청서에 담긴다', wished[0].note)
+        : bad('카드에서 담기', JSON.stringify(wished));
+
+      expect(
+        '담고 나면 담긴 것으로 보인다',
+        await s.js(`document.querySelector('main').textContent.includes('요청서에 담아 두었습니다')`),
+        true,
+      );
+
+      // 같은 카드를 다시 열어도 담긴 상태가 유지된다.
+      await s.send('Page.reload');
+      await sleep(1300);
+      expect(
+        '다시 열어도 담긴 상태가 남는다',
+        await s.js(`document.querySelector('main').textContent.includes('요청서에 담아 두었습니다')`),
+        true,
+      );
+
+      // 요청서 화면에서 글이 뽑힌다.
+      await s.send('Page.navigate', { url: BASE + '/request' });
+      await sleep(1300);
+      const slip = await s.js(`document.querySelectorAll('main textarea')[1]?.value ?? ''`);
+      const wanted = [
+        'Ariadne 카드 요청서',
+        '판도라의 상자',
+        '항아리였다는 이야기',
+        'trace:pandoras-box',
+        'content/traces',
+        'npm run check',
+        'greco-roman-myth',
+      ];
+      const missing = wanted.filter((w) => !slip.includes(w));
+      missing.length === 0
+        ? ok('요청서에 필요한 것이 모두 실린다', `${slip.length}자`)
+        : bad('요청서 내용', '없음: ' + missing.join(', '));
+
+      // 자유 입력으로도 담긴다.
+      await s.js(`document.querySelector('main textarea').focus()`);
+      await s.send('Input.insertText', { text: '성경에서 온 법률 용어' });
+      await sleep(200);
+      await s.js(clickText('main button', '담기'));
+      await sleep(400);
+      expect(
+        '자유 입력도 담긴다',
+        (await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.wishes') || '[]').length`)),
+        2,
+      );
+
+      // 캡처에서 못 알아본 것을 요청서로 넘긴다.
+      await s.send('Page.navigate', {
+        url: BASE + '/capture?text=' + encodeURIComponent('다모클레스의 칼이라는 말을 들었다'),
+      });
+      await sleep(1600);
+      await s.js(clickText('main button', '카드 요청서에 담기'));
+      await sleep(400);
+      const fromCapture = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.wishes') || '[]').at(-1)`);
+      const cap = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.captures') || '[]').at(-1)`);
+      fromCapture?.origin?.kind === 'capture' && cap?.status === 'candidate'
+        ? ok('캡처가 후보와 요청서로 한꺼번에 넘어간다', fromCapture.text.slice(0, 20))
+        : bad('캡처에서 요청', JSON.stringify({ w: fromCapture?.origin, c: cap?.status }));
+
+      // 백업에 요청 쪽지가 함께 실린다.
+      await s.send('Page.navigate', { url: BASE + '/settings' });
+      await sleep(1200);
+      const snapWishes = await s.js(
+        `JSON.parse(localStorage.getItem('ariadne.v1.wishes') || '[]').length`,
+      );
+      expect('요청 쪽지가 기기에 남아 있다', snapWishes, 3);
+
+      await s.js('localStorage.clear(); sessionStorage.clear();');
 
       // 스크린샷 남기기
       for (const [name, path] of [
@@ -545,6 +634,7 @@ try {
         ['m-settings', '/settings'],
         ['m-capture', '/capture'],
         ['m-graph', '/graph'],
+        ['m-request', '/request'],
       ]) {
         await s.send('Page.navigate', { url: BASE + path });
         await sleep(1200);
@@ -557,7 +647,7 @@ try {
         });
         writeFileSync(join(SHOTS, `${name}.png`), Buffer.from(shot.data, 'base64'));
       }
-      ok('스크린샷 7장', 'tests/e2e/shots/');
+      ok('스크린샷 8장', 'tests/e2e/shots/');
       s.ws.close();
     }
   }

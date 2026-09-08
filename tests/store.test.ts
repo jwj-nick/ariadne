@@ -129,3 +129,54 @@ test('reset 은 프로필과 기록을 모두 지운다', () => {
   assert.deepEqual(store.allReviews(), []);
   assert.deepEqual(store.recentLogs(), []);
 });
+
+test('요청 쪽지를 담고 빼고 비운다', () => {
+  store.addWish({
+    id: 'w1',
+    text: '판도라의 상자',
+    origin: { kind: 'trace', id: 'trace:pandora-box', label: '판도라의 상자' },
+    note: '항아리 이야기',
+    at: '2026-09-09T00:00:00.000Z',
+  });
+  assert.equal(store.allWishes().length, 1);
+
+  // 같은 카드에서 다시 담으면 앞엣것을 덮는다. 목록이 같은 이름으로 늘어나면 안 된다.
+  store.addWish({
+    id: 'w2',
+    text: '판도라의 상자',
+    origin: { kind: 'trace', id: 'trace:pandora-box', label: '판도라의 상자' },
+    note: '고쳐 적은 메모',
+    at: '2026-09-09T01:00:00.000Z',
+  });
+  assert.equal(store.allWishes().length, 1);
+  assert.equal(store.allWishes()[0]!.note, '고쳐 적은 메모');
+
+  // 자유 입력은 카드 id 가 없으므로 덮지 않고 쌓인다.
+  store.addWish({ id: 'w3', text: '자유', origin: { kind: 'free' }, note: '', at: '2026-09-09T02:00:00.000Z' });
+  store.addWish({ id: 'w4', text: '자유 둘', origin: { kind: 'free' }, note: '', at: '2026-09-09T03:00:00.000Z' });
+  assert.equal(store.allWishes().length, 3);
+
+  store.removeWish('w3');
+  assert.equal(store.allWishes().length, 2);
+  store.clearWishes();
+  assert.equal(store.allWishes().length, 0);
+});
+
+test('요청 쪽지도 백업에 함께 실린다', () => {
+  store.clearWishes();
+  store.addWish({ id: 'w9', text: '오디세이', origin: { kind: 'free' }, note: '', at: '2026-09-09T00:00:00.000Z' });
+  const snap = store.exportSnapshot();
+  assert.equal(snap.wishes?.length, 1);
+
+  store.clearWishes();
+  assert.equal(store.allWishes().length, 0);
+  assert.deepEqual(store.importSnapshot(snap), { ok: true });
+  assert.equal(store.allWishes().length, 1);
+});
+
+test('요청 쪽지가 없던 옛 백업도 되돌릴 수 있다', () => {
+  store.addWish({ id: 'w10', text: '남아 있으면 안 된다', origin: { kind: 'free' }, note: '', at: '2026-09-09T00:00:00.000Z' });
+  const old = { version: 1, exported_at: '2026-09-01T00:00:00.000Z', profile: { level: 'adult', name: '' }, reviews: [], logs: [] };
+  assert.deepEqual(store.importSnapshot(old), { ok: true });
+  assert.equal(store.allWishes().length, 0);
+});

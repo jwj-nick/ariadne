@@ -47,6 +47,30 @@ export interface Capture {
   at: string;
 }
 
+/**
+ * 더 알고 싶은 것을 담아 두는 쪽지 (D28).
+ *
+ * 앱은 정적이라서 카드를 스스로 만들지 못한다. 그래서 사용자가 관심을 표시하면
+ * 그것을 모아 두었다가, 개발 도구에 그대로 붙여 넣을 수 있는 요청서 한 장으로 뽑아 준다.
+ * 캡처가 "이미 아는 것을 마주쳤다"는 기록이라면, 이쪽은 "아직 없는 것을 원한다"는 기록이다.
+ */
+export interface Wish {
+  id: string;
+  /** 무엇을 알고 싶은가. 사용자가 적었거나 캡처한 글에서 가져온 것이다. */
+  text: string;
+  /** 어디서 담았는지. 카드에서 담았으면 그 카드를 요청서에 함께 적어 준다. */
+  origin: {
+    kind: 'trace' | 'source' | 'capture' | 'free';
+    /** `trace:nike` 처럼 카드 전체 id. 자유 입력이면 비어 있다. */
+    id?: string;
+    /** 화면에 보여 줄 이름. */
+    label?: string;
+  };
+  /** 사용자가 덧붙인 말. 비어 있을 수 있다. */
+  note: string;
+  at: string;
+}
+
 export interface Snapshot {
   version: 1;
   exported_at: string;
@@ -54,6 +78,7 @@ export interface Snapshot {
   reviews: ReviewState[];
   logs: QuizLog[];
   captures?: Capture[];
+  wishes?: Wish[];
 }
 
 export interface Store {
@@ -72,6 +97,12 @@ export interface Store {
   addCapture(capture: Capture): void;
   allCaptures(): Capture[];
   updateCapture(id: string, patch: Partial<Capture>): void;
+
+  /** 같은 카드에서 두 번 담으면 뒤엣것이 앞엣것을 덮는다. 목록이 같은 이름으로 늘어나지 않게 한다. */
+  addWish(wish: Wish): void;
+  allWishes(): Wish[];
+  removeWish(id: string): void;
+  clearWishes(): void;
 
   /** 백업 파일로 내보내고 되돌리기. 기기에만 남는 데이터라 사용자가 직접 챙길 수 있어야 한다. */
   exportSnapshot(): Snapshot;

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Emblem, { emblemFor } from '../../components/Emblem';
 import Section from '../../components/Section';
+import WishButton from '../../components/WishButton';
 import { CATEGORY_LABEL, DOMAIN_LABEL, getGraph, getTrace, siblingTraces } from '../../lib/graph';
 
 /**
@@ -109,6 +110,8 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
           </ul>
         </section>
       )}
+
+      <WishButton kind="trace" id={trace.id} label={trace.name_ko} />
 
       <p className="text-[11.5px]" style={{ color: 'var(--muted)' }}>
         마주칠 확률 {trace.frequency} / 5 · 상태 {trace.status}

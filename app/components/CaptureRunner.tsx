@@ -72,6 +72,26 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
     setMessage(note);
   };
 
+  /**
+   * 못 알아본 캡처를 카드 요청서로 넘긴다 (D28).
+   *
+   * 후보로 남기는 것만으로는 이 기기 안에 쌓이기만 하고 카드가 되는 길이 없었다.
+   * 담는 순간 요청서에 함께 올려 두면, 나중에 그 글을 개발 도구에 붙여 넣는 것으로 이어진다.
+   */
+  const wish = (capture: Capture) => {
+    const text = (capture.title || capture.text || capture.url).trim().slice(0, 120);
+    store.addWish({
+      id: `wish-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      text,
+      origin: { kind: 'capture', id: capture.id },
+      note: capture.url ? `본 곳: ${capture.url}` : '',
+      at: new Date().toISOString(),
+    });
+    store.updateCapture(capture.id, { status: 'candidate' });
+    refresh();
+    setMessage('새 흔적 후보로 남기고 카드 요청서에 담았습니다.');
+  };
+
   // 준비 전에도 안내와 입력 칸은 그린다. 첫 화면이 비어 보이지 않게 하기 위해서다.
   const box = { background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' } as const;
   const byId = new Map(targets.map((t) => [t.id, t]));
@@ -189,11 +209,11 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
                     )}
                     <button
                       type="button"
-                      onClick={() => mark(c, 'candidate', '새 흔적 후보로 남겼습니다.')}
+                      onClick={() => wish(c)}
                       className="rounded-full px-3 py-1.5"
-                      style={{ color: 'var(--muted)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
+                      style={{ color: 'var(--thread)', boxShadow: 'inset 0 0 0 1px var(--thread)' }}
                     >
-                      새 흔적 후보로
+                      카드 요청서에 담기
                     </button>
                     <button
                       type="button"
@@ -213,8 +233,9 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
 
       <section>
         <p className="text-[12.5px]" style={{ color: 'var(--muted)' }}>
-          새 흔적 후보로 남긴 것은 나중에 오너가 카드로 만듭니다.
-          지금은 이 기기 안에만 쌓이므로, 진도와 백업 화면에서 함께 내려받아 두십시오.
+          카드 요청서에 담은 것은 <Link href="/request" className="thread-link">카드 요청서</Link> 화면에서
+          한 장의 글로 뽑아 개발 도구에 넘길 수 있습니다.
+          담아 둔 것은 이 기기 안에만 쌓이므로, 진도와 백업 화면에서 함께 내려받아 두십시오.
         </p>
       </section>
     </div>

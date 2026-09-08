@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Emblem, { emblemFor } from '../../components/Emblem';
 import Section from '../../components/Section';
+import WishButton from '../../components/WishButton';
 import { DOMAIN_LABEL, REL_LABEL, getGraph, getSource, resolve, tracesOf } from '../../lib/graph';
 
 /**
@@ -139,6 +140,8 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
           </ul>
         </section>
       )}
+
+      <WishButton kind="source" id={source.id} label={source.name_ko} />
 
       <p className="text-[11.5px]" style={{ color: 'var(--muted)' }}>
         들어오는 흔적 {traces.length}개 · 상태 {source.status}

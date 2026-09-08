@@ -154,6 +154,40 @@ export const REL_LABEL: Record<string, string> = {
   parallel_of: '~와 대응',
 };
 
+/**
+ * 글자 매칭에 쓸 대상 목록.
+ *
+ * 캡처 화면과 요청서 화면이 같은 목록을 쓴다.
+ * 원천에는 역링크를 함께 실어, 원천 이름만 걸린 경우에도 흔적으로 이어 줄 수 있게 한다 (D26).
+ */
+export function matchTargets(): Array<{
+  id: string;
+  type: 'trace' | 'source';
+  name_ko: string;
+  name_en: string;
+  terms: string[];
+  traceIds?: string[];
+}> {
+  const g = getGraph();
+  return [
+    ...g.traces.map((t) => ({
+      id: t.id,
+      type: 'trace' as const,
+      name_ko: t.name_ko,
+      name_en: t.name_en,
+      terms: [t.name_ko, t.name_en, ...t.domain_hint].map((x) => x.toLowerCase()),
+    })),
+    ...g.sources.map((s) => ({
+      id: s.id,
+      type: 'source' as const,
+      name_ko: s.name_ko,
+      name_en: s.name_en,
+      terms: [s.name_ko, s.name_en, ...s.aliases].map((x) => x.toLowerCase()),
+      traceIds: s.traces,
+    })),
+  ];
+}
+
 export const getTrace = (slug: string): Trace | undefined =>
   getGraph().traces.find((t) => t.slug === slug);
 
