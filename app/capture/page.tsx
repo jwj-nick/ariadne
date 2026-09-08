@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import CaptureRunner from '../components/CaptureRunner';
 import type { MatchTarget } from '../lib/capture/match';
 import { getGraph } from '../lib/graph';
@@ -31,10 +30,7 @@ export default function CapturePage() {
   return (
     <div>
       <h1 className="mb-4 text-[22px] font-semibold">조우 캡처</h1>
-      {/* 공유로 들어온 쿼리는 브라우저에서만 읽을 수 있어서 Suspense 로 감싼다. */}
-      <Suspense fallback={<p className="text-[14px]" style={{ color: 'var(--muted)' }}>불러오는 중입니다…</p>}>
-        <CaptureRunner targets={targets} />
-      </Suspense>
+      <CaptureRunner targets={targets} />
     </div>
   );
 }

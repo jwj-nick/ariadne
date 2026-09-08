@@ -162,6 +162,10 @@ try {
     '/source/ariadne': ['실마리', '인셉션', 'level-kid', 'level-adult'],
     '/source/achilles': ['트로이 목마', '역린'],
     '/source/seven-deadly-sins': ['일곱 죄악', '삼독', '세븐'],
+    // 클라이언트 화면도 서버 HTML 에 뼈대가 들어 있어야 한다. 없으면 첫 화면이 잠깐 빈다.
+    '/capture': ['조우 캡처', '붙여 넣', '담기'],
+    '/settings': ['진도와 백업', '백업 내려받기', '눈높이'],
+    '/quiz': ['오늘의 복습'],
   };
   for (const [path, probes] of Object.entries(CHECKS)) {
     const html = await get(path);

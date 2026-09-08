@@ -74,8 +74,8 @@ export default function Settings({ totalTraces }: { totalTraces: number }) {
     setMessage('학습 기록을 모두 지웠습니다.');
   };
 
-  if (!ready) return null;
-
+  // 준비 전에도 뼈대는 그린다. 아무 것도 안 그리면 첫 화면이 잠깐 비어 보인다.
+  // 처음 그릴 때의 값은 useState 의 초깃값과 같으므로 하이드레이션이 어긋나지 않는다.
   const box = { background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' } as const;
 
   return (
@@ -86,7 +86,7 @@ export default function Settings({ totalTraces }: { totalTraces: number }) {
         </h2>
         <div className="rounded-lg p-4" style={box}>
           <p className="text-[15px]">
-            흔적 {stats.total}개 가운데 <strong>{stats.seen}개</strong>를 한 번 이상 보았고,
+            흔적 {ready ? stats.total : totalTraces}개 가운데 <strong>{stats.seen}개</strong>를 한 번 이상 보았고,
             그 가운데 <strong>{stats.settled}개</strong>는 복습 간격이 3주를 넘었습니다.
           </p>
           <p className="mt-2 text-[13.5px]" style={{ color: 'var(--muted)' }}>

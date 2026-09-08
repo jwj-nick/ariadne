@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useCallback, useEffect, useState } from 'react';
+import { Suspense, useCallback, useEffect, useState } from 'react';
+import ShareIntake from './ShareIntake';
 import { matchCapture, type Match, type MatchTarget } from '../lib/capture/match';
 import { initialState, today } from '../lib/learning/sm2';
 import { store, type Capture } from '../lib/store';
@@ -15,7 +15,6 @@ import { store, type Capture } from '../lib/store';
  * 알아본 것은 오늘 복습 대기열 앞으로 당긴다.
  */
 export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
-  const params = useSearchParams();
   const [ready, setReady] = useState(false);
   const [draft, setDraft] = useState('');
   const [list, setList] = useState<Capture[]>([]);
@@ -48,24 +47,10 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
     [targets],
   );
 
-  // 공유로 열렸으면 그 내용을 바로 담는다. 같은 주소를 새로 고쳐도 두 번 담기지 않게 표시를 남긴다.
   useEffect(() => {
     setReady(true);
     refresh();
-    const text = params.get('text') ?? '';
-    const url = params.get('url') ?? '';
-    const title = params.get('title') ?? '';
-    if (!text && !url && !title) return;
-    const key = `ariadne.v1.lastShare`;
-    const stamp = `${title}|${text}|${url}`;
-    try {
-      if (window.sessionStorage.getItem(key) === stamp) return;
-      window.sessionStorage.setItem(key, stamp);
-    } catch {
-      // 저장 공간이 막혔으면 그냥 담는다. 중복은 목록에서 지우면 된다.
-    }
-    save(text, url, title);
-  }, [params, save]);
+  }, []);
 
   /** 알아본 흔적을 오늘 복습 대기열로 당긴다 (M2-4). */
   const keep = (capture: Capture) => {
@@ -85,8 +70,7 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
     setMessage(note);
   };
 
-  if (!ready) return null;
-
+  // 준비 전에도 안내와 입력 칸은 그린다. 첫 화면이 비어 보이지 않게 하기 위해서다.
   const box = { background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' } as const;
   const byId = new Map(targets.map((t) => [t.id, t]));
 
@@ -99,6 +83,11 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
 
   return (
     <div className="flex flex-col gap-7">
+      {/* 공유로 들어온 쿼리만 브라우저에서 읽는다. 나머지는 서버에서 그려진다. */}
+      <Suspense fallback={null}>
+        <ShareIntake onShare={save} />
+      </Suspense>
+
       <section>
         <p className="text-[14px]" style={{ color: 'var(--muted)' }}>
           방송이나 책이나 거리에서 마주친 것을 그대로 던져 넣으십시오. 아는 이름이 들어 있으면 알아봅니다.
@@ -135,7 +124,7 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
         <h2 className="mb-2 text-[12px]" style={{ color: 'var(--muted)' }}>
           담아 둔 것 {list.length}개
         </h2>
-        {list.length === 0 && (
+        {ready && list.length === 0 && (
           <p className="py-6 text-center text-[14px]" style={{ color: 'var(--muted)' }}>
             아직 없습니다. 오늘 마주친 것을 하나 던져 넣어 보십시오.
           </p>
