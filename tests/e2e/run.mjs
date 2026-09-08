@@ -12,7 +12,7 @@
  * 스크린샷은 tests/e2e/shots/ 에 남으며 git 에는 올리지 않는다.
  */
 import { spawn, execSync } from 'node:child_process';
-import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -30,6 +30,13 @@ const CHROME_CANDIDATES = [
 ];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// 기대하는 개수는 빌드 산출물에서 읽는다. 카드가 늘어날 때마다 테스트를 고치지 않아도 되게 하기 위해서다.
+const GRAPH = JSON.parse(readFileSync(join(ROOT, 'app', 'data', 'graph.json'), 'utf8'));
+const N_TRACE = GRAPH.traces.length;
+const N_SOURCE = GRAPH.sources.length;
+const N_BRAND = GRAPH.traces.filter((t) => t.category === 'brand').length;
+
 let fails = 0;
 const ok = (label, extra = '') => console.log(`  OK    ${label}${extra ? '  ' + extra : ''}`);
 const bad = (label, detail) => {
@@ -245,7 +252,7 @@ try {
       const docW = await s.js('document.documentElement.scrollWidth');
       expect('모바일 390px 가로 넘침 없음', docW, 390);
 
-      expect('첫 화면 흔적 수', await s.js(CARDS), 23);
+      expect('첫 화면 흔적 수', await s.js(CARDS), N_TRACE);
 
       await s.js('document.querySelector("input[type=search]").focus()');
       await s.send('Input.insertText', { text: '판도라' });
@@ -264,11 +271,11 @@ try {
       await sleep(250);
       await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('브랜드')).click()`);
       await sleep(400);
-      expect('갈래 "브랜드" 필터', await s.js(CARDS), 4);
+      expect('갈래 "브랜드" 필터', await s.js(CARDS), N_BRAND);
 
       await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('원천')).click()`);
       await sleep(400);
-      expect('원천 탭 (필터 초기화 포함)', await s.js(CARDS), 22);
+      expect('원천 탭 (필터 초기화 포함)', await s.js(CARDS), N_SOURCE);
 
       await s.js(`document.querySelector('main ul li a[href^="/source/"]').click()`);
       await sleep(1500);
@@ -356,9 +363,9 @@ try {
       const totalNow = await s.js(
         `(document.querySelector('main div div span:last-child')?.textContent ?? '').replace(/[^0-9]/g, '')`,
       );
-      Number(totalNow) === 22
+      Number(totalNow) === N_TRACE - 1
         ? ok('푼 흔적은 오늘 대기열에서 빠진다', `남은 ${totalNow}개`)
-        : bad('대기열 갱신', `남은 것이 ${totalNow}개로 나옵니다 (기대 22)`);
+        : bad('대기열 갱신', `남은 것이 ${totalNow}개로 나옵니다 (기대 ${N_TRACE - 1})`);
 
       // ── 4부. 눈높이 전환 (M1-5) ──────────────────────────────────
       console.log('\n[4] 눈높이');
