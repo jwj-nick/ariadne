@@ -12,6 +12,8 @@ next-env.d.ts
 # 빌드 산출물 (scripts/build.ts 가 생성)
 app/data/graph.json
 app/data/quiz.json
+# 검색용 본문 색인. 마찬가지로 content/ 에서 만들어진다.
+public/search-index.json
 app/data/quiz/
 
 # 감사 리포트

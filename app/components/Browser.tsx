@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Emblem from './Emblem';
+import { score } from '../lib/search';
 
 export interface BrowseItem {
   id: string;
@@ -48,6 +49,9 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
   const [q, setQ] = useState('');
   const [group, setGroup] = useState<string | null>(null);
   const [shown, setShown] = useState(PAGE);
+  /** 카드 id → 본문 낱말. 검색을 시작할 때 받아 온다. */
+  const [bodies, setBodies] = useState<Record<string, string> | null>(null);
+  const asked = useRef(false);
 
   const pool = tab === 'trace' ? traces : sources;
 
@@ -62,21 +66,54 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
   }, [pool]);
 
   const results = useMemo(() => {
-    const needle = q.trim().toLowerCase();
-    return pool
-      .filter((it) => (group ? it.kickerKey === group : true))
-      .filter((it) => {
-        if (!needle) return true;
-        if (it.name_ko.toLowerCase().includes(needle)) return true;
-        if (it.name_en.toLowerCase().includes(needle)) return true;
-        if (it.terms.some((t) => t.includes(needle))) return true;
-        return it.blurb.toLowerCase().includes(needle);
-      })
-      .sort((a, b) => b.frequency - a.frequency || a.name_ko.localeCompare(b.name_ko, 'ko'));
-  }, [pool, q, group]);
+    const inGroup = pool.filter((it) => (group ? it.kickerKey === group : true));
+    if (!q.trim()) {
+      return inGroup.sort((a, b) => b.frequency - a.frequency || a.name_ko.localeCompare(b.name_ko, 'ko'));
+    }
+    // 검색 중일 때는 얼마나 잘 맞는지로 줄을 세운다.
+    // 이름이 걸린 것이 본문이 걸린 것보다 앞에 와야 찾는 것이 먼저 보인다.
+    return inGroup
+      .map((it) => ({
+        it,
+        s: score(
+          {
+            id: it.id,
+            ko: it.name_ko.toLowerCase(),
+            en: it.name_en.toLowerCase(),
+            terms: it.terms,
+            blurb: it.blurb.toLowerCase(),
+          },
+          q,
+          bodies?.[it.id],
+        ),
+      }))
+      .filter((r) => r.s > 0)
+      .sort((a, b) => b.s - a.s || b.it.frequency - a.it.frequency || a.it.name_ko.localeCompare(b.it.name_ko, 'ko'))
+      .map((r) => r.it);
+  }, [pool, q, group, bodies]);
 
   // 검색어나 갈래가 바뀌면 다시 처음부터 보여 준다.
   useEffect(() => setShown(PAGE), [q, group, tab]);
+
+  /**
+   * 본문 색인은 오백육십 킬로바이트라 첫 화면에 실을 수 없다.
+   * 그래서 사람이 실제로 검색을 시작할 때 한 번만 받아 온다.
+   * 받아 오는 동안에도 이름과 한 줄 설명으로는 이미 찾아지므로 화면이 멈추지 않고,
+   * 도착하면 결과가 저절로 넓어진다.
+   */
+  useEffect(() => {
+    if (!q.trim() || bodies || asked.current) return;
+    asked.current = true;
+    const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+    fetch(`${base}/search-index.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: Record<string, string> | null) => {
+        if (data) setBodies(data);
+      })
+      .catch(() => {
+        // 색인을 못 받아도 이름과 한 줄 설명으로는 계속 찾을 수 있다.
+      });
+  }, [q, bodies]);
 
   const switchTab = (next: 'trace' | 'source') => {
     setTab(next);
@@ -116,7 +153,7 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder={tab === 'trace' ? '나이키, Nike, 관용구…' : '니케, Zeus, 신약…'}
+          placeholder={tab === 'trace' ? '나이키, 자동차, ㄴㅇㅋ…' : '니케, Zeus, 신약…'}
           className="w-full rounded-lg px-3.5 py-2.5 text-[15px] outline-none"
           style={{
             background: 'var(--surface)',

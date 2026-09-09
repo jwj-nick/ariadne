@@ -299,6 +299,52 @@ try {
       await s.send('Input.insertText', { text: '판도라' });
       await sleep(400);
       expect('검색 "판도라"', await s.js(CARDS), searchHits('판도라'));
+      expect(
+        '이름이 걸린 것이 맨 앞에 온다',
+        await s.js(`document.querySelector('main ul li a span')?.textContent`),
+        '판도라',
+      );
+
+      // 본문 색인이 도착해야 찾히는 검색. 이름과 한 줄 설명에는 없는 말이다.
+      await s.js(clearSearch);
+      await sleep(250);
+      await s.js('document.querySelector("input[type=search]").focus()');
+      await s.send('Input.insertText', { text: '자동차' });
+      await sleep(1400);
+      const byBody = await s.js(CARDS);
+      byBody > 0
+        ? ok('본문으로도 찾는다 ("자동차")', `${byBody}장`)
+        : bad('본문 검색', '색인이 도착하지 않았거나 판정이 어긋났습니다');
+
+      // 띄어쓰기가 달라도 찾아야 한다.
+      await s.js(clearSearch);
+      await sleep(250);
+      await s.js('document.querySelector("input[type=search]").focus()');
+      await s.send('Input.insertText', { text: '판도라 상자' });
+      await sleep(400);
+      // 낱말을 모두 지닌 카드를 찾으므로 "상자" 가 든 다른 카드도 함께 나온다.
+      // 확인할 것은 개수가 아니라, 찾던 카드가 맨 앞에 오느냐다.
+      expect(
+        '띄어쓰기가 달라도 찾는다',
+        await s.js(`document.querySelector('main ul li a span')?.textContent`),
+        '판도라의 상자',
+      );
+
+      // 초성만 쳐도 이름을 찾아야 한다.
+      await s.js(clearSearch);
+      await sleep(250);
+      await s.js('document.querySelector("input[type=search]").focus()');
+      await s.send('Input.insertText', { text: 'ㄴㅇㅋ' });
+      await sleep(400);
+      const byCho = await s.js(CARDS);
+      byCho > 0
+        ? ok('초성만 쳐도 찾는다 ("ㄴㅇㅋ")', `${byCho}장`)
+        : bad('초성 검색', '결과가 없습니다');
+      expect(
+        '초성 검색의 첫 줄이 나이키다',
+        await s.js(`document.querySelector('main ul li a span')?.textContent`),
+        '나이키',
+      );
 
       await s.js(clearSearch);
       await sleep(250);

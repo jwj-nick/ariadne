@@ -14,6 +14,7 @@ import { runChecks, codeTitle } from './lib/checks.ts';
 import { VISIBLE_STATUSES, type Status } from './lib/schema.ts';
 import { buildQuiz } from './lib/quiz.ts';
 import { computeLayout } from './lib/layout.ts';
+import { bodyIndex } from '../app/lib/search.ts';
 
 interface GraphTrace {
   id: string;
@@ -237,6 +238,18 @@ writeFileSync(
   'utf8',
 );
 
+// ── 8.5. 본문 검색 색인 ───────────────────────────────────────────────
+// 이름과 한 줄 설명만으로는 사람이 실제로 치는 말의 절반을 놓친다.
+// 그렇다고 본문을 첫 화면에 실으면 무거우므로, 따로 내어 두고 검색을 시작할 때 받아 가게 한다.
+// public 에 두면 정적 내보내기에서도 그대로 나간다.
+const searchIndex = Object.fromEntries(
+  all.filter(visible).map((c) => [c.data.id, bodyIndex(c.body)]),
+);
+const publicDir = join(REPO_ROOT, 'public');
+mkdirSync(publicDir, { recursive: true });
+writeFileSync(join(publicDir, 'search-index.json'), JSON.stringify(searchIndex), 'utf8');
+const indexBytes = Buffer.byteLength(JSON.stringify(searchIndex), 'utf8');
+
 const byFreq = [...traces].sort((a, b) => b.frequency - a.frequency).slice(0, 5);
 
 console.log('');
@@ -253,6 +266,7 @@ if (byFreq.length > 0) {
 console.log(
   `  배치           ${layout.nodes.length}점 (${Math.round(layout.bounds.maxX - layout.bounds.minX)} x ${Math.round(layout.bounds.maxY - layout.bounds.minY)})`,
 );
+console.log(`  검색 색인      ${Math.round(indexBytes / 1024)}KB (public/search-index.json)`);
 console.log(`  퀴즈           ${quizCounts.items}문 (어른 ${quizCounts.adult} · 아이 ${quizCounts.kid})`);
 for (const [type, n] of Object.entries(
   quiz.items.reduce<Record<string, number>>((acc, q) => ({ ...acc, [q.type]: (acc[q.type] ?? 0) + 1 }), {}),
