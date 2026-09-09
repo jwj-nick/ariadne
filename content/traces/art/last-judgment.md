@@ -8,6 +8,10 @@ sources: [source:apocalypse]
 why: 미켈란젤로가 시스티나 예배당 제단 벽에 그린 것이며, 요한계시록의 마지막 장면을 담았다.
 frequency: 4
 domain_hint: [michelangelo, sistine, vatican, fresco]
+image:
+  file: Last Judgement (Michelangelo).jpg
+  caption: 미켈란젤로, 최후의 심판, 1541년, 시스티나 예배당 제단 벽
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

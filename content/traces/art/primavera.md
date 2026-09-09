@@ -8,6 +8,10 @@ sources: [source:flora]
 why: 보티첼리가 그린 그림이며, 서풍에 붙들린 님프가 꽃의 여신으로 바뀌는 순간을 한 화면에 담았다.
 frequency: 4
 domain_hint: [botticelli, uffizi, spring, flowers]
+image:
+  file: Sandro Botticelli - La Primavera - Google Art Project.jpg
+  caption: 산드로 보티첼리, 봄, 1480년경, 우피치 미술관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

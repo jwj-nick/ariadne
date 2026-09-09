@@ -8,6 +8,10 @@ sources: [source:laocoon]
 why: 목마를 들이지 말라고 경고한 신관이 두 아들과 함께 뱀에 감겨 죽는 장면을 새긴 조각이다.
 frequency: 3
 domain_hint: [vatican, sculpture, trojan, pain]
+image:
+  file: Laocoon and His Sons.jpg
+  caption: 라오콘 군상, 기원전 1세기경, 바티칸 박물관
+  license: CC BY-SA 4.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

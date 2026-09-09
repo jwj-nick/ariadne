@@ -8,6 +8,10 @@ sources: [source:aphrodite]
 why: 바다 거품에서 태어난 아프로디테가 조개를 타고 뭍에 닿는 장면을 그린 것이다.
 frequency: 5
 domain_hint: [botticelli, uffizi, renaissance, shell]
+image:
+  file: Sandro Botticelli - La nascita di Venere - Google Art Project - edited.jpg
+  caption: 산드로 보티첼리, 비너스의 탄생, 1485년경, 우피치 미술관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

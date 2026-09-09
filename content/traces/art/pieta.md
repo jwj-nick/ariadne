@@ -8,6 +8,10 @@ sources: [source:virgin-mary]
 why: 아들의 주검을 무릎에 안은 어머니를 새긴 조각이며, 연민이라는 뜻의 이탈리아어다.
 frequency: 4
 domain_hint: [michelangelo, vatican, marble, mother]
+image:
+  file: The Pietà by Michelangelo (48135182552).jpg
+  caption: 미켈란젤로, 피에타, 1499년, 성베드로 대성당
+  license: CC BY-SA 2.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -8,6 +8,10 @@ sources: [source:eros]
 why: 사랑에 빠지게 만드는 화살을 쏘는 신 에로스의 로마식 이름이 쿠피도이고, 그것이 영어 큐피드가 되었다.
 frequency: 5
 domain_hint: [valentine, love, arrow, painting]
+image:
+  file: Psyche Revived by Cupid's Kiss, Louvre 22 July 2017.jpg
+  caption: 안토니오 카노바, 에로스의 입맞춤으로 되살아난 프시케, 1793년, 루브르 박물관
+  license: CC0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -8,6 +8,10 @@ sources: [source:olympic-games]
 why: 고대 올림픽의 원반던지기를 새긴 조각이며, 던지기 직전의 멈춘 순간을 담았다.
 frequency: 4
 domain_hint: [sculpture, olympic, greek, athlete]
+image:
+  file: Discobolus Lancelotti Massimo.jpg
+  caption: 원반 던지는 사람, 미론의 원작을 옮긴 로마 시대 대리석 복제본
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -8,6 +8,10 @@ sources: [source:aphrodite]
 why: 밀로스섬에서 발견된 아프로디테 조각이며, 로마 이름 비너스를 붙여 부른다.
 frequency: 4
 domain_hint: [louvre, sculpture, greek, arms]
+image:
+  file: Venus de Milo Louvre Ma399 n4.jpg
+  caption: 밀로의 비너스, 기원전 2세기경, 루브르 박물관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

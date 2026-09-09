@@ -8,6 +8,10 @@ sources: [source:cronus]
 why: 자식에게 자리를 빼앗긴다는 예언 때문에 아이를 삼킨 티탄을 고야가 그린 것이다.
 frequency: 4
 domain_hint: [goya, prado, black paintings, myth]
+image:
+  file: Francisco de Goya, Saturno devorando a su hijo (1819-1823).jpg
+  caption: 프란시스코 고야, 자식을 삼키는 사투르누스, 1823년경, 프라도 미술관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

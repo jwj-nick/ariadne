@@ -8,6 +8,10 @@ sources: [source:last-supper]
 why: 예수가 잡히기 전날 밤 열두 제자와 함께한 마지막 식사 장면을 그린 것이다.
 frequency: 5
 domain_hint: [leonardo, milan, fresco, judas]
+image:
+  file: Leonardo da Vinci - The Last Supper high res.jpg
+  caption: 레오나르도 다 빈치, 최후의 만찬, 1498년, 산타마리아델레그라치에 수도원
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

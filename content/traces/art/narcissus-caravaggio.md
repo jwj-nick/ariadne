@@ -8,6 +8,10 @@ sources: [source:narcissus]
 why: 카라바조가 그린 것이며, 물에 비친 자기를 들여다보는 소년과 그 그림자만으로 화면을 채웠다.
 frequency: 3
 domain_hint: [caravaggio, reflection, water, self]
+image:
+  file: Narcissus-Caravaggio (1594-96).jpg
+  caption: 카라바조, 나르키소스, 1599년경, 바르베리니 국립고전회화관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

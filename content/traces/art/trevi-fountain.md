@@ -8,6 +8,10 @@ sources: [source:oceanus]
 why: 분수 한가운데 선 것은 흔히 넵투누스로 알려져 있으나, 실제로는 땅을 둘러 흐르는 강인 오케아노스다.
 frequency: 4
 domain_hint: [rome, fountain, coin, baroque]
+image:
+  file: Fontana di Trevi di notte.JPG
+  caption: 트레비 분수, 1762년 완성, 로마
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

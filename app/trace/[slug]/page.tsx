@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import Artwork from '../../components/Artwork';
 import Emblem, { emblemFor } from '../../components/Emblem';
 import Section from '../../components/Section';
 import WishButton from '../../components/WishButton';
@@ -85,6 +86,10 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
         </div>
         <p className="mt-2.5 text-[14px]">{trace.why}</p>
       </div>
+
+      {trace.image && (
+        <Artwork file={trace.image.file} caption={trace.image.caption} license={trace.image.license} />
+      )}
 
       <Section title="한 줄" text={trace.sections['한 줄']} />
       <Section title="어디서 만나나" text={trace.sections['어디서 만나나']} />

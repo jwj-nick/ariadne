@@ -23,6 +23,8 @@ export interface Trace {
   frequency: number;
   domain_hint: string[];
   status: Status;
+  /** 위키미디어에 걸어 둔 그림. 파일 이름으로 주소를 만든다. */
+  image?: { file: string; caption: string; license: string };
   body: string;
   sections: Record<string, string>;
 }
@@ -41,6 +43,8 @@ export interface Source {
   emblem: string;
   traces: string[];
   status: Status;
+  /** 위키미디어에 걸어 둔 그림. 파일 이름으로 주소를 만든다. */
+  image?: { file: string; caption: string; license: string };
   body: string;
   sections: Record<string, string>;
 }

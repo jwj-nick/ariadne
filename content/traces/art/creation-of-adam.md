@@ -8,6 +8,10 @@ sources: [source:genesis-book]
 why: 창세기의 첫머리에서 사람이 만들어지는 장면을 그린 것이다.
 frequency: 5
 domain_hint: [michelangelo, sistine, ceiling, finger]
+image:
+  file: Sistine Chapel ceiling, Creation of Adam.jpg
+  caption: 미켈란젤로, 아담의 창조, 1512년, 시스티나 예배당 천장
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

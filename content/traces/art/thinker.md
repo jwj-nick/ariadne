@@ -8,6 +8,10 @@ sources: [source:divine-comedy]
 why: 로댕이 <신곡>의 지옥문 위에 앉힌 인물이며, 원래는 자기가 만든 지옥을 내려다보는 시인 단테였다.
 frequency: 5
 domain_hint: [rodin, dante, hell, sculpture]
+image:
+  file: The Thinker, Rodin.jpg
+  caption: 오귀스트 로댕, 생각하는 사람, 1904년 주조
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

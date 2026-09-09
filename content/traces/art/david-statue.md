@@ -8,6 +8,10 @@ sources: [source:david-and-goliath]
 why: 거인과 맞서기 직전의 소년 다윗을 새긴 조각이다.
 frequency: 5
 domain_hint: [michelangelo, florence, marble, renaissance]
+image:
+  file: Michelangelo's David - right view 2.jpg
+  caption: 미켈란젤로, 다비드, 1504년, 아카데미아 미술관
+  license: CC BY-SA 4.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

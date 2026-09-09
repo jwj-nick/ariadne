@@ -8,6 +8,10 @@ sources: [source:judgment-paris]
 why: 세 여신 가운데 하나를 고르는 장면이며, 그 선택이 트로이 전쟁으로 이어졌다.
 frequency: 4
 domain_hint: [rubens, apple, beauty, trojan]
+image:
+  file: Rubens - Judgement of Paris.jpg
+  caption: 페테르 파울 루벤스, 파리스의 심판, 1636년경
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

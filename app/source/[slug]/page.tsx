@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Emblem, { emblemFor } from '../../components/Emblem';
+import Artwork from '../../components/Artwork';
 import Section from '../../components/Section';
 import WishButton from '../../components/WishButton';
 import { DOMAIN_LABEL, REL_LABEL, getGraph, getSource, resolve, tracesOf } from '../../lib/graph';
@@ -113,6 +114,10 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
             ))}
           </ul>
         </section>
+      )}
+
+      {source.image && (
+        <Artwork file={source.image.file} caption={source.image.caption} license={source.image.license} />
       )}
 
       <Section title="한 줄 정의" text={source.sections['한 줄 정의']} />

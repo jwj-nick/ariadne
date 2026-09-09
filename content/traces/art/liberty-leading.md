@@ -8,6 +8,10 @@ sources: [source:libertas]
 why: 들라크루아가 그린 혁명 장면이며, 앞장선 여인은 실제 인물이 아니라 자유를 의인화한 여신이다.
 frequency: 4
 domain_hint: [delacroix, revolution, louvre, france]
+image:
+  file: La Liberté guidant le peuple - Eugène Delacroix - Musée du Louvre Peintures RF 129 - après restauration 2024.jpg
+  caption: 외젠 들라크루아, 민중을 이끄는 자유의 여신, 1830년, 루브르 박물관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

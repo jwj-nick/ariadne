@@ -8,6 +8,10 @@ sources: [source:divine-comedy]
 why: 단테의 지옥에서 만난 파올로와 프란체스카를 새긴 것이며, 함께 읽던 책 때문에 죄를 지은 두 사람이다.
 frequency: 4
 domain_hint: [rodin, dante, love, marble]
+image:
+  file: The Kiss - Auguste Rodin.JPG
+  caption: 오귀스트 로댕, 입맞춤, 1886년 청동
+  license: CC BY-SA 3.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

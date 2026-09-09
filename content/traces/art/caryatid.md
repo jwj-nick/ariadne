@@ -8,6 +8,10 @@ sources: [source:caryatid-women]
 why: 기둥 대신 지붕을 떠받치는 여인상이며, 아테네의 신전에 선 여섯이 원형이다.
 frequency: 3
 domain_hint: [architecture, column, athens, sculpture]
+image:
+  file: Caryatid Erechtheion BM Sc407.jpg
+  caption: 에레크테이온 신전의 카리아티드, 기원전 5세기, 대영박물관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

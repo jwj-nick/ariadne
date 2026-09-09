@@ -8,6 +8,10 @@ sources: [source:graces]
 why: 아름다움과 기쁨과 베풂을 맡은 세 자매를 그린 것이며, 손을 잡고 둥글게 선 구도가 고대부터 이어졌다.
 frequency: 3
 domain_hint: [botticelli, canova, rubens, composition]
+image:
+  file: Three Graces.jpg
+  caption: 라파엘로, 삼미신, 1505년경, 콩데 미술관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

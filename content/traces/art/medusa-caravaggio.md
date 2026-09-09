@@ -8,6 +8,10 @@ sources: [source:medusa]
 why: 카라바조가 실제 방패에 그린 것이며, 목이 잘린 순간의 놀란 얼굴을 담았다.
 frequency: 3
 domain_hint: [caravaggio, shield, uffizi, scream]
+image:
+  file: Caravaggio - Medusa - Google Art Project.jpg
+  caption: 카라바조, 메두사, 1597년, 우피치 미술관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

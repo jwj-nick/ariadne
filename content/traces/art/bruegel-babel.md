@@ -8,6 +8,10 @@ sources: [source:babel-tower]
 why: 하늘까지 닿는 탑을 쌓다가 말이 갈라졌다는 이야기를 그린 것이다.
 frequency: 3
 domain_hint: [bruegel, vienna, colosseum, construction]
+image:
+  file: The Tower of Babel (Bruegel).jpg
+  caption: 피터르 브뤼헐, 바벨탑, 1563년, 빈 미술사 박물관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

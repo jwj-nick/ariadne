@@ -41,6 +41,7 @@ const CODE_TITLES: Record<string, string> = {
   W06: 'frequency 누락 또는 범위 밖',
   W07: 'emblem 이 문양 목록 밖',
   W08: '본문의 [[링크]] 가 없는 카드를 가리킴',
+  W09: 'image 항목의 짜임이 어긋남',
 };
 
 export const codeTitle = (code: string) => CODE_TITLES[code] ?? code;
@@ -246,6 +247,34 @@ export function runChecks(cards: Card[]): Finding[] {
       // W02
       const err = checkSectionOrder(c.headings, SOURCE_SECTIONS);
       if (err) add('W02', 'warn', c.path, err);
+    }
+
+    /**
+     * W09 — 그림 정보.
+     *
+     * 그림은 위키미디어에 걸어 두고 주소로 불러 온다. 파일 이름만 있으면 되지만,
+     * 저작권 표시와 설명이 빠지면 화면에 출처 없는 그림이 뜬다.
+     * 실제로 그 파일이 있는지는 망을 타야 알 수 있으므로 `npm run images` 가 따로 본다.
+     */
+    if (d.image !== undefined) {
+      const img = d.image as Record<string, unknown> | null;
+      if (!img || typeof img !== 'object' || Array.isArray(img)) {
+        add('W09', 'warn', c.path, 'image 는 file · caption · license 를 담은 묶음이어야 합니다.');
+      } else {
+        for (const field of ['file', 'caption', 'license'] as const) {
+          const v = img[field];
+          if (typeof v !== 'string' || v.trim() === '') {
+            add('W09', 'warn', c.path, `image.${field} 가 비어 있습니다.`);
+          }
+        }
+        const file = typeof img.file === 'string' ? img.file : '';
+        if (file && !/\.(jpe?g|png|gif|svg|webp)$/i.test(file)) {
+          add('W09', 'warn', c.path, `image.file "${file}" 에 그림 확장자가 없습니다.`);
+        }
+        if (file.startsWith('File:')) {
+          add('W09', 'warn', c.path, 'image.file 에는 "File:" 을 빼고 파일 이름만 적습니다.');
+        }
+      }
     }
 
     // W08 — 본문의 위키 링크가 실제 카드를 가리키는지 본다.

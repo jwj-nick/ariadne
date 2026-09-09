@@ -8,6 +8,10 @@ sources: [source:prodigal-son-parable]
 why: 가진 것을 다 잃고 돌아온 아들을 아버지가 끌어안는 장면을 그린 것이다.
 frequency: 3
 domain_hint: [rembrandt, hermitage, forgiveness, hands]
+image:
+  file: Rembrandt Harmensz van Rijn - Return of the Prodigal Son - Google Art Project.jpg
+  caption: 렘브란트, 돌아온 탕자, 1669년경, 예르미타시 미술관
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -8,6 +8,10 @@ sources: [source:hamlet-play]
 why: 밀레이가 그린 것이며, <햄릿>에서 물에 빠져 죽는 여인의 마지막 순간을 담았다.
 frequency: 4
 domain_hint: [millais, shakespeare, water, flowers]
+image:
+  file: John Everett Millais - Ophelia - Google Art Project.jpg
+  caption: 존 에버렛 밀레이, 오필리아, 1852년, 테이트 브리튼
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

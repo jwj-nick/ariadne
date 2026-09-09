@@ -27,6 +27,8 @@ interface GraphTrace {
   frequency: number;
   domain_hint: string[];
   status: Status;
+  /** 위키미디어에 걸어 둔 그림. 리포에는 파일 이름만 둔다. */
+  image?: { file: string; caption: string; license: string };
   body: string;
   sections: Record<string, string>;
 }
@@ -47,6 +49,8 @@ interface GraphSource {
   /** 빌드가 채우는 역링크 */
   traces: string[];
   status: Status;
+  /** 위키미디어에 걸어 둔 그림. 리포에는 파일 이름만 둔다. */
+  image?: { file: string; caption: string; license: string };
   body: string;
   sections: Record<string, string>;
 }
@@ -106,6 +110,21 @@ if (errors.length > 0) {
 
 // ── 2. 노출 대상만 추린다 (D15) ────────────────────────────────────────
 const visible = (c: Card) => VISIBLE_STATUSES.includes(c.data.status as Status);
+/**
+ * 그림 정보를 꺼낸다.
+ *
+ * 그림 자체는 리포에 두지 않고 위키미디어에 걸어 둔다.
+ * 파일 이름과 설명과 저작권만 카드에 적고, 주소는 화면이 만든다.
+ */
+function image(data: Record<string, unknown>): { file: string; caption: string; license: string } | undefined {
+  const raw = data.image;
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return undefined;
+  const o = raw as Record<string, unknown>;
+  const file = str(o.file);
+  if (!file) return undefined;
+  return { file, caption: str(o.caption), license: str(o.license) };
+}
+
 const traceCards = all.filter(isTrace).filter(visible);
 const sourceCards = all.filter(isSource).filter(visible);
 const visibleSourceIds = new Set(sourceCards.map((c) => String(c.data.id)));
@@ -122,6 +141,7 @@ const traces: GraphTrace[] = traceCards.map((c) => ({
   frequency: typeof c.data.frequency === 'number' ? c.data.frequency : 0,
   domain_hint: arr((c.data as Record<string, unknown>).domain_hint),
   status: c.data.status as Status,
+  image: image(c.data as Record<string, unknown>),
   body: c.body.trim(),
   sections: splitSections(c.body),
 }));
@@ -153,6 +173,7 @@ const sources: GraphSource[] = sourceCards.map((c) => {
     emblem: str((c.data as Record<string, unknown>).emblem),
     traces: (backlinks.get(id) ?? []).sort(),
     status: c.data.status as Status,
+    image: image(c.data as Record<string, unknown>),
     body: c.body.trim(),
     sections: splitSections(c.body),
   };

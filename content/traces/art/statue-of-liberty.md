@@ -8,6 +8,10 @@ sources: [source:libertas]
 why: 로마에서 자유를 의인화하던 여신을 근대에 되살린 것이며, 프랑스가 미국에 보낸 선물이다.
 frequency: 5
 domain_hint: [new york, france, torch, immigration]
+image:
+  file: Statue of Liberty frontal 2.jpg
+  caption: 자유의 여신상, 1886년, 뉴욕
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

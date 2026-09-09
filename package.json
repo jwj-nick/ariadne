@@ -10,6 +10,7 @@
     "build:content": "tsx scripts/build.ts",
     "audit": "tsx scripts/validate.ts --report",
     "emblems": "node scripts/emblem-sheet.mjs",
+    "images": "node scripts/check-images.mjs",
     "test": "node --import tsx --test tests/*.test.ts",
     "check": "npm run typecheck && npm run test && npm run validate && npm run build:content",
     "dev": "npm run build:content && next dev",

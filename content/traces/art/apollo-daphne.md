@@ -8,6 +8,10 @@ sources: [source:daphne]
 why: 베르니니가 새긴 조각이며, 님프가 월계수로 변하는 바로 그 순간을 대리석으로 담았다.
 frequency: 4
 domain_hint: [bernini, borghese, marble, transformation]
+image:
+  file: Apollo and Daphne (Bernini).jpg
+  caption: 잔 로렌초 베르니니, 아폴론과 다프네, 1625년, 보르게세 미술관
+  license: CC BY-SA 4.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

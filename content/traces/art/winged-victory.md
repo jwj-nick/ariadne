@@ -8,6 +8,10 @@ sources: [source:nike-goddess]
 why: 뱃머리에 내려앉는 승리의 여신 니케를 새긴 조각이다.
 frequency: 4
 domain_hint: [louvre, sculpture, hellenistic, marble]
+image:
+  file: Victoire de Samothrace - Musee du Louvre - 20190812.jpg
+  caption: 사모트라케의 니케, 기원전 2세기경, 루브르 박물관
+  license: CC0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

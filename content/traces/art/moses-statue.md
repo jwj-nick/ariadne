@@ -8,6 +8,10 @@ sources: [source:moses]
 why: 미켈란젤로가 새긴 모세의 머리에 뿔이 나 있는 것은, 얼굴이 빛났다는 히브리어를 뿔이 났다로 옮긴 오역 때문이다.
 frequency: 4
 domain_hint: [michelangelo, horns, translation, rome]
+image:
+  file: Roma - San Pietro in Vincoli 8576.jpg
+  caption: 미켈란젤로, 모세, 1515년경, 산피에트로인빈콜리 성당
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

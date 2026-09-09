@@ -8,6 +8,10 @@ sources: [source:romulus-remus]
 why: 버려진 쌍둥이에게 젖을 먹이는 암늑대를 새긴 청동상이며, 로마시의 상징이다.
 frequency: 4
 domain_hint: [rome, bronze, twins, symbol]
+image:
+  file: Lupa Capitolina con sfondo bianco.jpg
+  caption: 카피톨리노의 늑대, 청동, 카피톨리노 박물관
+  license: CC BY-SA 4.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

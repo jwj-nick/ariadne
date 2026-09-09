@@ -8,6 +8,10 @@ sources: [source:plato]
 why: 라파엘로가 그린 벽화이며, 가운데 두 사람의 손짓이 플라톤과 아리스토텔레스의 철학을 담고 있다.
 frequency: 4
 domain_hint: [raphael, vatican, philosophy, fresco]
+image:
+  file: '"The School of Athens" by Raffaello Sanzio da Urbino.jpg'
+  caption: 라파엘로, 아테네 학당, 1511년, 바티칸 사도궁
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08
