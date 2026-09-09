@@ -9,6 +9,7 @@
     "validate": "tsx scripts/validate.ts",
     "build:content": "tsx scripts/build.ts",
     "audit": "tsx scripts/validate.ts --report",
+    "emblems": "node scripts/emblem-sheet.mjs",
     "test": "node --import tsx --test tests/*.test.ts",
     "check": "npm run typecheck && npm run test && npm run validate && npm run build:content",
     "dev": "npm run build:content && next dev",

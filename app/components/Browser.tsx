@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Emblem from './Emblem';
 
 export interface BrowseItem {
@@ -35,10 +35,19 @@ function FrequencyDots({ n }: { n: number }) {
   );
 }
 
+/**
+ * 한 번에 그리는 개수.
+ * 흔적이 삼백 장을 넘어가면서 목록을 통째로 그리면 스크롤이 감당이 안 되고,
+ * 폰에서 첫 그림이 느려진다. 마주칠 확률이 높은 것부터 정렬되어 있으므로
+ * 앞쪽 한 화면 분량만 먼저 그려도 볼 만한 것이 먼저 나온다.
+ */
+const PAGE = 60;
+
 export default function Browser({ traces, sources }: { traces: BrowseItem[]; sources: BrowseItem[] }) {
   const [tab, setTab] = useState<'trace' | 'source'>('trace');
   const [q, setQ] = useState('');
   const [group, setGroup] = useState<string | null>(null);
+  const [shown, setShown] = useState(PAGE);
 
   const pool = tab === 'trace' ? traces : sources;
 
@@ -65,6 +74,9 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
       })
       .sort((a, b) => b.frequency - a.frequency || a.name_ko.localeCompare(b.name_ko, 'ko'));
   }, [pool, q, group]);
+
+  // 검색어나 갈래가 바뀌면 다시 처음부터 보여 준다.
+  useEffect(() => setShown(PAGE), [q, group, tab]);
 
   const switchTab = (next: 'trace' | 'source') => {
     setTab(next);
@@ -151,7 +163,7 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
       </p>
 
       <ul className="flex flex-col gap-2">
-        {results.map((it) => (
+        {results.slice(0, shown).map((it) => (
           <li key={it.id}>
             <Link
               href={it.href}
@@ -186,6 +198,17 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
           </li>
         ))}
       </ul>
+
+      {results.length > shown && (
+        <button
+          type="button"
+          onClick={() => setShown((n) => n + PAGE)}
+          className="mt-3 w-full rounded-lg py-3 text-[14px]"
+          style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)', color: 'var(--thread)' }}
+        >
+          더 보기 <span className="tabular-nums opacity-70">{results.length - shown}개 남음</span>
+        </button>
+      )}
 
       {results.length === 0 && (
         <p className="py-10 text-center text-[14px]" style={{ color: 'var(--muted)' }}>

@@ -34,6 +34,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // 기대하는 개수는 빌드 산출물에서 읽는다. 카드가 늘어날 때마다 테스트를 고치지 않아도 되게 하기 위해서다.
 const GRAPH = JSON.parse(readFileSync(join(ROOT, 'app', 'data', 'graph.json'), 'utf8'));
 const N_TRACE = GRAPH.traces.length;
+
+/** 홈 화면 검색이 무엇을 걸러 내는지 여기서 미리 계산한다.
+ *  콘텐츠가 늘어날 때마다 기대 숫자를 손으로 고치지 않기 위해서다.
+ *  app/page.tsx 의 필터와 같은 기준으로 센다. */
+const searchHits = (q) => {
+  const needle = q.toLowerCase();
+  return GRAPH.traces.filter((t) =>
+    [t.name_ko, t.name_en, t.why, ...(t.domain_hint ?? [])].some((x) =>
+      String(x).toLowerCase().includes(needle),
+    ),
+  ).length;
+};
 const N_SOURCE = GRAPH.sources.length;
 const N_BRAND = GRAPH.traces.filter((t) => t.category === 'brand').length;
 
@@ -258,11 +270,18 @@ try {
       const docW = await s.js('document.documentElement.scrollWidth');
       expect('모바일 390px 가로 넘침 없음', docW, 390);
 
-      expect('첫 화면 흔적 수', await s.js(CARDS), N_TRACE);
+      // 목록은 한 번에 60장씩 그린다. 삼백 장을 통째로 그리면 폰에서 첫 그림이 느려진다.
+      const PAGE = 60;
+      expect('첫 화면 흔적 수', await s.js(CARDS), Math.min(PAGE, N_TRACE));
+      await s.js(
+        `[...document.querySelectorAll('main button')].find((b) => b.textContent.includes('더 보기'))?.click()`,
+      );
+      await sleep(300);
+      expect('더 보기를 누르면 이어서 나온다', await s.js(CARDS), Math.min(PAGE * 2, N_TRACE));
       // 디자인 A · D — 문양과 미궁이 실제로 그려지는지 본다.
       expect(
         '목록의 모든 카드에 문양이 붙는다',
-        await s.js(`document.querySelectorAll('main ul li a svg').length >= ${N_TRACE}`),
+        await s.js(`document.querySelectorAll('main ul li a svg').length >= ${Math.min(60, N_TRACE)}`),
         true,
       );
       expect(
@@ -279,25 +298,33 @@ try {
       await s.js('document.querySelector("input[type=search]").focus()');
       await s.send('Input.insertText', { text: '판도라' });
       await sleep(400);
-      expect('검색 "판도라"', await s.js(CARDS), 2);
+      expect('검색 "판도라"', await s.js(CARDS), searchHits('판도라'));
 
       await s.js(clearSearch);
       await sleep(250);
       await s.js('document.querySelector("input[type=search]").focus()');
       await s.send('Input.insertText', { text: 'nasa' });
       await sleep(400);
-      // domain_hint 로만 걸리는 검색. 아폴로 계획, 아르테미스 계획, 에우로파 세 개다.
-      expect('검색 "nasa" (domain_hint)', await s.js(CARDS), 3);
+      // 이름에는 없고 domain_hint 로만 걸리는 검색이다.
+      expect('검색 "nasa" (domain_hint)', await s.js(CARDS), searchHits('nasa'));
 
       await s.js(clearSearch);
       await sleep(250);
       await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('브랜드')).click()`);
       await sleep(400);
-      expect('갈래 "브랜드" 필터', await s.js(CARDS), N_BRAND);
+      expect('갈래 "브랜드" 필터', await s.js(CARDS), Math.min(PAGE, N_BRAND));
 
       await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('원천')).click()`);
       await sleep(400);
-      expect('원천 탭 (필터 초기화 포함)', await s.js(CARDS), N_SOURCE);
+      expect('원천 탭 (필터 초기화 포함)', await s.js(CARDS), Math.min(PAGE, N_SOURCE));
+      expect(
+        '탭 옆 숫자는 전체를 보여 준다',
+        await s.js(
+          // 정규식의 역슬래시는 전달 과정에서 사라지므로 글자를 직접 걸러 낸다.
+          `[...[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('원천')).textContent].filter(c => c >= '0' && c <= '9').join('')`,
+        ),
+        String(N_SOURCE),
+      );
 
       await s.js(`document.querySelector('main ul li a[href^="/source/"]').click()`);
       await sleep(1500);

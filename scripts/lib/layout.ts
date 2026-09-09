@@ -52,10 +52,17 @@ export function computeLayout(
   const y = new Float64Array(n);
   const degree = new Int32Array(n);
 
+  /**
+   * 노드가 늘어나면 그만큼 넓게 펼쳐야 밀도가 유지된다.
+   * 원판의 넓이가 개수에 비례해야 하므로 반지름은 개수의 제곱근에 비례한다.
+   * 흔적 200장 무렵을 기준으로 잡고, 거기서 몇 배가 되었는지로 축척을 정한다.
+   */
+  const spread = Math.sqrt(n / 200);
+
   // 처음 자리는 원 위에 고르게 뿌리고 조금씩 흔든다. 한 점에 겹치면 힘이 폭발한다.
   for (let i = 0; i < n; i++) {
     const angle = (i / n) * Math.PI * 2;
-    const radius = 260 + rand() * 120;
+    const radius = (260 + rand() * 120) * spread;
     x[i] = Math.cos(angle) * radius + (rand() - 0.5) * 40;
     y[i] = Math.sin(angle) * radius + (rand() - 0.5) * 40;
   }
@@ -70,10 +77,13 @@ export function computeLayout(
     degree[b]! += 1;
   }
 
-  const REPEL = 5200;
+  // 밀어내는 힘은 거리의 제곱에 반비례하므로, 거리를 축척만큼 늘리려면 힘을 제곱만큼 키운다.
+  const REPEL = 5200 * spread * spread;
   const SPRING = 0.012;
-  const REST = 96;
-  const CENTER = 0.0022;
+  // 이어진 것 사이의 거리도 함께 벌린다. 다만 축척을 그대로 따르면 실이 너무 길어져 절반만 반영한다.
+  const REST = 96 * (1 + (spread - 1) * 0.5);
+  // 가운데로 당기는 힘이 그대로면 넓힌 만큼 다시 뭉친다.
+  const CENTER = 0.0022 / spread;
 
   const fx = new Float64Array(n);
   const fy = new Float64Array(n);

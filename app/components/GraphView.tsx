@@ -141,6 +141,9 @@ export default function GraphView({
 
   const chosen = selected ? byId.get(selected) : undefined;
 
+  /** 확대할수록 이름을 더 많이 보여 준다. 숫자는 그 원천에 이어진 실의 개수다. */
+  const labelFloor = view.scale >= 2.4 ? 0 : view.scale >= 1.5 ? 2 : 4;
+
   return (
     <div>
       <div className="mb-3 flex flex-wrap items-center gap-2 text-[12px]">
@@ -213,6 +216,9 @@ export default function GraphView({
               const dim = near ? !near.has(n.id) : false;
               const isSource = n.type === 'source';
               const r = isSource ? 15 + Math.min(8, n.degree) : 5;
+              // 원천이 백여든 장이라 이름을 모두 그리면 글자끼리 겹쳐 아무것도 읽히지 않는다.
+              // 멀리서 볼 때는 실이 많이 모인 것만 이름을 달고, 확대할수록 나머지가 드러난다.
+              const showLabel = near?.has(n.id) || (isSource && n.degree >= labelFloor);
               return (
                 <g
                   key={n.id}
@@ -237,7 +243,7 @@ export default function GraphView({
                       <Emblem name={n.emblem} size={100} strokeWidth={7} />
                     </g>
                   )}
-                  {(isSource || near?.has(n.id)) && (
+                  {showLabel && (
                     <text
                       x={n.x}
                       y={n.y + r + 13}
