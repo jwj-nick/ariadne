@@ -15,6 +15,10 @@ level_adult: 제우스와 인간 알크메네 사이에서 태어난 영웅. 헤
 emblem: lion
 korea_parallel: ""
 traces: []
+image:
+  file: Herakles Farnese MAN Napoli Inv6001 n07.jpg
+  caption: 파르네세의 헤라클레스, 나폴리 국립고고학박물관
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

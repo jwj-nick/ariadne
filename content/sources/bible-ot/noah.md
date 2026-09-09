@@ -12,6 +12,10 @@ level_adult: 구약 성경 창세기에 나오는 인물. 세상을 덮을 홍�
 emblem: ship
 korea_parallel: ""
 traces: []
+image:
+  file: (Venice) Animals Entering Noah's Ark by Jacopo Da Ponte (workshop) - gallerie Accademia.jpg
+  caption: 야코포 바사노, 방주로 들어가는 짐승들
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

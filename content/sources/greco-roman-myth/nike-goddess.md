@@ -14,6 +14,10 @@ level_adult: 그리스 신화의 승리의 여신. 로마 신화의 빅토리아
 emblem: wing
 korea_parallel: ""
 traces: []
+image:
+  file: Goddess Nike at Ephesus, Turkey.JPG
+  caption: 에페소스의 니케 부조
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

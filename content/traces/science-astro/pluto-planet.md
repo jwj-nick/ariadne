@@ -8,6 +8,10 @@ sources: [source:hades]
 why: 해에서 가장 멀어 늘 어두운 곳이라서, 저승의 신 플루톤의 이름을 붙였다.
 frequency: 4
 domain_hint: [dwarf-planet, demotion, kuiper, disney]
+image:
+  file: Pluto in True Color - High-Res.jpg
+  caption: 명왕성, 뉴호라이즌스 탐사선
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -8,6 +8,10 @@ sources: [source:ganymede]
 why: 목성의 큰 위성 넷에 제우스가 사랑하거나 곁에 둔 인물들의 이름을 붙였다.
 frequency: 4
 domain_hint: [jupiter, moon, galileo, telescope]
+image:
+  file: Jupiter and the Galilean Satellites.jpg
+  caption: 목성과 갈릴레이 위성 넷
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

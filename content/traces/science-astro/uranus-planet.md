@@ -8,6 +8,10 @@ sources: [source:uranus-sky]
 why: 토성 바깥에서 발견되어, 사투르누스의 아버지인 하늘의 신 우라노스의 이름을 붙였다.
 frequency: 4
 domain_hint: [planet, tilted, herschel, ice-giant]
+image:
+  file: Uranus2.jpg
+  caption: 천왕성, 보이저 2호
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

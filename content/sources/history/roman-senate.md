@@ -12,6 +12,10 @@ level_adult: 로마 공화정의 중심 기구. 이름 자체가 노인을 뜻�
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: Cicero Denounces Catiline in the Roman Senate by Cesare Maccari.png
+  caption: 체사레 마카리, 원로원에서 카틸리나를 탄핵하는 키케로, 1889년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

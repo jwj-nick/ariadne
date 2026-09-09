@@ -8,6 +8,10 @@ sources: [source:poseidon]
 why: 푸른빛이 도는 행성이라서, 바다의 신 넵투누스의 이름을 붙였다.
 frequency: 4
 domain_hint: [planet, blue, voyager, discovery]
+image:
+  file: Neptune Full.jpg
+  caption: 해왕성, 보이저 2호
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

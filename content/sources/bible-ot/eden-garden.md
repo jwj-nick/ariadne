@@ -12,6 +12,10 @@ level_adult: 구약 성경 창세기에 나오는 동산. 첫 사람들이 이�
 emblem: apple
 korea_parallel: 이상향이라는 자리로 보면 무릉도원이 가깝다. 다만 무릉도원은 우연히 찾았다가 다시 못 찾는 곳이고, 에덴은 살던 곳에서 쫓겨난 자리라 잃는 방식이 다르다.
 traces: []
+image:
+  file: The Garden of Earthly Delights by Bosch High Resolution.jpg
+  caption: 히에로니무스 보스, 쾌락의 정원, 1500년경, 프라도 미술관
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -12,6 +12,10 @@ level_adult: 구약 성경 출애굽기에 실린 이야기. 이집트에서 노
 emblem: river
 korea_parallel: ""
 traces: []
+image:
+  file: Hans Jordaens (III) - The crossing of the Red Sea.jpg
+  caption: 한스 요르단스, 홍해를 건너다
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

@@ -8,6 +8,10 @@ sources: [source:zeus]
 why: 태양계에서 가장 큰 행성이라서, 로마 사람들이 신들의 왕 유피테르의 이름을 붙였다.
 frequency: 5
 domain_hint: [planet, solar-system, jovial, thursday]
+image:
+  file: (PIA20701) Juno on Jupiter's Doorstep.jpg
+  caption: 목성과 대적점, 주노 탐사선
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-07

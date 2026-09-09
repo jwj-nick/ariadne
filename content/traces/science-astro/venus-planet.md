@@ -8,6 +8,10 @@ sources: [source:aphrodite]
 why: 밤하늘에서 가장 아름답게 빛나는 별이라서, 로마 사람들이 미의 여신 베누스의 이름을 붙였다.
 frequency: 5
 domain_hint: [planet, morning-star, beauty, botticelli]
+image:
+  file: Venus globe.jpg
+  caption: 금성, 마젤란 탐사선의 레이더로 그린 것
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -14,6 +14,10 @@ level_adult: 그리스 신화에서 아름다움과 사랑을 맡은 여신. 바
 emblem: shell
 korea_parallel: ""
 traces: []
+image:
+  file: Capitoline Venus Louvre Ma336 n6.jpg
+  caption: 카피톨리노의 비너스, 로마 시대 대리석
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

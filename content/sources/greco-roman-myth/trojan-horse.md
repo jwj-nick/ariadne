@@ -13,6 +13,10 @@ level_adult: 그리스군이 트로이 성을 함락하기 위해 쓴 계략. �
 emblem: horse
 korea_parallel: ""
 traces: []
+image:
+  file: Mykonos vase, relief pithos, capture of Troy, 670 BC, AM Mykonos, 2240, 177256.jpg
+  caption: 트로이 목마를 새긴 미코노스 항아리, 기원전 670년경
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-07
 ---

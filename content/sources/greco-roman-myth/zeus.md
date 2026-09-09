@@ -16,6 +16,10 @@ level_adult: 그리스 신화 올림포스 신들의 왕. 티탄 크로노스의
 emblem: bolt
 korea_parallel: 하늘을 다스리는 최고신이라는 자리로 보면 한국 민간 신앙의 옥황상제와 역할이 겹친다. 다만 옥황상제에게는 제우스처럼 많은 연애담과 인간적인 결점이 따라붙지 않는다.
 traces: []
+image:
+  file: Jupiter and Thetis (Ingres).jpg
+  caption: 앵그르, 유피테르와 테티스, 1811년
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

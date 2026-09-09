@@ -12,6 +12,10 @@ level_adult: 갈대 상자에 담겨 강에 띄워진 아기가 이집트 공주
 emblem: staff
 korea_parallel: ""
 traces: []
+image:
+  file: Rembrandt - Moses with the Ten Commandments - Google Art Project.jpg
+  caption: 렘브란트, 십계명을 든 모세, 1659년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

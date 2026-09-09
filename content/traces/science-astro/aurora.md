@@ -8,6 +8,10 @@ sources: [source:eos]
 why: 새벽의 여신을 로마에서 부르던 이름이며, 극지방의 밤하늘이 새벽처럼 밝아지는 것을 보고 붙였다.
 frequency: 4
 domain_hint: [northern lights, sky, dawn, polar]
+image:
+  file: Polarlicht 2.jpg
+  caption: 오로라
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

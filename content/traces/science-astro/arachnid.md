@@ -8,6 +8,10 @@ sources: [source:arachne]
 why: 베 짜는 솜씨를 여신과 겨루었다가 거미가 된 여인의 이름에서 왔다.
 frequency: 3
 domain_hint: [spider, biology, weaving, taxonomy]
+image:
+  file: Argiope spider female adult on her web ventral view black background Don Det Laos.jpg
+  caption: 거미
+  license: CC BY-SA 4.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

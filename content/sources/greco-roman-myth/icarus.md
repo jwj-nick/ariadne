@@ -13,6 +13,10 @@ level_adult: 미궁을 지은 장인 다이달로스의 아들. 아버지와 함
 emblem: wing
 korea_parallel: ""
 traces: []
+image:
+  file: 'Pieter Bruegel the Elder - Landscape with the Fall of Icarus - Brussels, Royal Museums of Fine Arts of Belgium - Google Arts & Culture.jpg'
+  caption: 피터르 브뤼헐, 이카로스의 추락이 있는 풍경. 오른쪽 아래 물에 잠긴 다리가 이카로스다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

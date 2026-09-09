@@ -8,6 +8,10 @@ sources: [source:cronus]
 why: 움직임이 가장 느린 행성이라서, 늙은 신 사투르누스의 이름을 붙였다.
 frequency: 5
 domain_hint: [planet, rings, saturday, cassini]
+image:
+  file: Saturn from Cassini Orbiter (2004-10-06).jpg
+  caption: 토성과 고리, 카시니 탐사선
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

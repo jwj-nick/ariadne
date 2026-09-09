@@ -11,6 +11,10 @@ level_adult: 셰익스피어가 1600년 무렵에 쓴 비극. 아버지를 죽�
 emblem: mask
 korea_parallel: ""
 traces: []
+image:
+  file: Hamlet. Acte V. Sc. I.re - estampe - Eug. Delacroix - btv1b10029779z.jpg
+  caption: 외젠 들라크루아, 햄릿 5막 1장, 무덤 파는 사람들
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -12,6 +12,10 @@ level_adult: 고르곤 세 자매 가운데 유일하게 죽을 수 있는 존�
 emblem: serpent
 korea_parallel: ""
 traces: []
+image:
+  file: Perseus Medusa Cellini Lanzi Florence.jpg
+  caption: 벤베누토 첼리니, 메두사의 머리를 든 페르세우스, 1554년, 피렌체
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

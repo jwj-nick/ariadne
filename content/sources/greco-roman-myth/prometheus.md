@@ -14,6 +14,10 @@ level_adult: 티탄족의 하나. 이름이 미리 아는 자라는 뜻이다. �
 emblem: flame
 korea_parallel: ""
 traces: []
+image:
+  file: Peter Paul Rubens, Flemish (active Italy, Antwerp, and England) - Prometheus Bound - Google Art Project.jpg
+  caption: 페테르 파울 루벤스, 결박된 프로메테우스, 1618년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

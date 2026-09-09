@@ -8,6 +8,10 @@ sources: [source:titans]
 why: 올림포스 신들 이전에 세상을 다스리던 거대한 신족 티탄에서 이름을 땄고, 크고 힘세다는 뜻으로 쓰인다.
 frequency: 4
 domain_hint: [saturn, moon, rocket, titanium, titanic]
+image:
+  file: Titan in true color.jpg
+  caption: 토성의 위성 타이탄. 짙은 대기에 싸여 있다
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-07

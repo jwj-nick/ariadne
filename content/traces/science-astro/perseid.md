@@ -8,6 +8,10 @@ sources: [source:perseus-andromeda]
 why: 유성이 페르세우스자리 방향에서 쏟아지는 것처럼 보여 그 이름이 붙었다.
 frequency: 4
 domain_hint: [meteor, august, comet, sky]
+image:
+  file: Perseid meteor 2007.jpg
+  caption: 페르세우스 유성우
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

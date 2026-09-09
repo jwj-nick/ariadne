@@ -8,6 +8,10 @@ sources: [source:charon-ferryman]
 why: 명왕성의 위성이라, 저승을 다스리는 하데스의 곁에 있던 뱃사공의 이름을 붙였다.
 frequency: 3
 domain_hint: [moon, pluto, ferryman, underworld]
+image:
+  file: Charon in True Color - High-Res.jpg
+  caption: 명왕성의 위성 카론, 뉴호라이즌스 탐사선
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

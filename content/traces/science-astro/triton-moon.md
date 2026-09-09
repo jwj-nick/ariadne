@@ -8,6 +8,10 @@ sources: [source:triton]
 why: 해왕성의 위성이므로, 바다의 신 넵투누스의 아들 이름을 붙였다.
 frequency: 3
 domain_hint: [moon, neptune, retrograde, ice]
+image:
+  file: Triton moon mosaic Voyager 2 (large).jpg
+  caption: 해왕성의 위성 트리톤, 보이저 2호
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

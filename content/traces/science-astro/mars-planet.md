@@ -8,6 +8,10 @@ sources: [source:ares]
 why: 붉게 보이는 색이 피와 전쟁을 떠올리게 해서, 로마 사람들이 전쟁의 신 마르스의 이름을 붙였다.
 frequency: 5
 domain_hint: [planet, rover, march, martial]
+image:
+  file: Mars globe.jpg
+  caption: 화성
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -12,6 +12,10 @@ level_adult: 제우스와 인간 세멜레 사이에서 태어났고, 어머니�
 emblem: grape
 korea_parallel: ""
 traces: []
+image:
+  file: Bacchus by Caravaggio 1.jpg
+  caption: 카라바조, 바쿠스, 1596년경, 우피치 미술관
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

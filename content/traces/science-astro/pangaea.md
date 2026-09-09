@@ -8,6 +8,10 @@ sources: [source:gaia]
 why: 모든 것을 뜻하는 판에 땅을 뜻하는 가이아를 붙여, 하나로 붙어 있던 대륙을 가리키는 이름으로 지었다.
 frequency: 4
 domain_hint: [continent, geology, drift, earth]
+image:
+  file: 250 Million Years Future World (Pangaea Proxima).jpg
+  caption: 판게아. 대륙이 하나로 붙어 있던 시절이다
+  license: CC BY-SA 4.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

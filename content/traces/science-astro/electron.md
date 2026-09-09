@@ -8,6 +8,10 @@ sources: [source:thales]
 why: 호박을 문지르면 가벼운 것이 달라붙는다는 옛 관찰에서 왔고, 호박의 그리스 이름이 엘렉트론이다.
 frequency: 5
 domain_hint: [physics, electricity, amber, greek]
+image:
+  file: Baltic-amber-fossils-inclusions.jpg
+  caption: 호박. 그리스 이름 엘렉트론에서 전자라는 낱말이 나왔다
+  license: CC BY 3.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

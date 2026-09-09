@@ -15,6 +15,10 @@ level_adult: 호메로스 <일리아스>의 주인공. 바다의 여신 테티�
 emblem: helmet
 korea_parallel: 건드리면 안 되는 치명적인 약점을 가리키는 말로 한국에서는 역린이라는 표현을 쓴다. 용의 목에 거꾸로 난 비늘을 건드리면 죽는다는 뜻이다.
 traces: []
+image:
+  file: Attic black-figure amphora Achilles and Aias playing a board game, between them Athena, Chiusi painter, c. 510 BC (28453316940).jpg
+  caption: 아킬레우스와 아약스가 놀이판을 사이에 둔 장면, 엑세키아스의 항아리
+  license: CC0
 status: reviewed
 created: 2026-09-07
 ---

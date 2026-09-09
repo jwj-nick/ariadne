@@ -8,6 +8,10 @@ sources: [source:iris-goddess]
 why: 사람마다 빛깔이 다르고 무늬가 있어, 무지개의 여신 이리스의 이름이 붙었다.
 frequency: 4
 domain_hint: [eye, rainbow, biometric, flower]
+image:
+  file: Iris of human male.jpg
+  caption: 사람의 홍채. 무늬가 사람마다 다르다
+  license: CC BY-SA 4.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

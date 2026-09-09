@@ -13,6 +13,10 @@ level_adult: 그리스 신화에서 바다를 다스리는 신. 제우스, 하�
 emblem: wave
 korea_parallel: ""
 traces: []
+image:
+  file: Neptuno colosal (Museo del Prado) 02a.jpg
+  caption: 넵투누스 거상, 프라도 미술관
+  license: CC BY 2.0
 status: reviewed
 created: 2026-09-08
 ---

@@ -12,6 +12,10 @@ level_adult: 구약 성경 창세기에 실린 이야기. 온 세상이 한 가�
 emblem: tower
 korea_parallel: ""
 traces: []
+image:
+  file: The Tower of Babel (Bruegel).jpg
+  caption: 피터르 브뤼헐, 바벨탑, 1563년, 빈 미술사 박물관
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

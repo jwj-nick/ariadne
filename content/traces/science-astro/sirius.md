@@ -8,6 +8,10 @@ sources: [source:orion-hunter]
 why: 오리온을 따르는 사냥개 별자리에서 가장 밝은 별이며, 이름은 그리스어로 타는 것이라는 뜻이다.
 frequency: 4
 domain_hint: [star, dog days, brightest, winter]
+image:
+  file: Sirius A and B Hubble photo.jpg
+  caption: 시리우스. 오른쪽 아래 작은 점이 짝별인 백색왜성이다
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

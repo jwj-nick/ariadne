@@ -13,6 +13,10 @@ level_adult: 제우스와 마이아의 아들이며 신들의 전령. 길, 여�
 emblem: staff
 korea_parallel: ""
 traces: []
+image:
+  file: Hermes bearing the infant Dionysus, traditionally attributed to Praxiteles and dated to the 4th century BC, discovered in 1877 in the ruins of the Temple of Hera at Olympia, Archaeological Museum of Olympia (16373294135).jpg
+  caption: 아기 디오니소스를 안은 헤르메스, 올림피아 고고학 박물관
+  license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

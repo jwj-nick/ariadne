@@ -11,6 +11,10 @@ level_adult: 갈리아를 정복하고 루비콘강을 건너 내전을 일으�
 emblem: laurel
 korea_parallel: ""
 traces: []
+image:
+  file: Head of Julius Caesar from Tusculum MAntTorino 2089 n01.jpg
+  caption: 율리우스 카이사르의 투스쿨룸 흉상. 생전의 모습에 가장 가깝다고 본다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

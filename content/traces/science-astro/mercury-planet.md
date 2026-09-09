@@ -8,6 +8,10 @@ sources: [source:hermes]
 why: 하늘에서 가장 빠르게 움직이는 행성이라서, 신들의 전령 메르쿠리우스의 이름을 붙였다.
 frequency: 5
 domain_hint: [planet, fast, sun, orbit]
+image:
+  file: Mercury in true color.jpg
+  caption: 수성, 메신저 탐사선이 찍은 것
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

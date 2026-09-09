@@ -12,6 +12,10 @@ level_adult: 신약 성경에 나오는 장면. 예수가 붙잡히기 전날 �
 emblem: door
 korea_parallel: ""
 traces: []
+image:
+  file: Leonardo da Vinci - The Last Supper high res.jpg
+  caption: 레오나르도 다 빈치, 최후의 만찬, 1498년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

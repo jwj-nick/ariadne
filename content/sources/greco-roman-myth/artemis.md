@@ -13,6 +13,10 @@ level_adult: 제우스와 레토의 딸이며 아폴론의 쌍둥이 누이. 사
 emblem: moon
 korea_parallel: ""
 traces: []
+image:
+  file: Diane de Versailles - Musée du Louvre AGER Ma 589.jpg
+  caption: 베르사유의 디아나, 루브르 박물관
+  license: CC0
 status: reviewed
 created: 2026-09-07
 ---

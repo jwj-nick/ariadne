@@ -12,6 +12,10 @@ level_adult: 허먼 멜빌이 1851년에 쓴 소설. 다리를 앗아 간 흰 �
 emblem: ship
 korea_parallel: ""
 traces: []
+image:
+  file: Thomas Beale - Boats attacking whales.jpg
+  caption: 고래를 쫓는 보트, 19세기 판화
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

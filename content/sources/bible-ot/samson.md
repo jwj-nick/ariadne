@@ -12,6 +12,10 @@ level_adult: 태어나기 전부터 하나님께 바쳐진 사람이라 평생 �
 emblem: lion
 korea_parallel: ""
 traces: []
+image:
+  file: Samson and Delilah by Rubens.jpg
+  caption: 페테르 파울 루벤스, 삼손과 들릴라, 1610년경
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

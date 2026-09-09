@@ -12,6 +12,10 @@ level_adult: 코린토스의 왕. 꾀가 많아 죽음의 신을 묶어 두고 �
 emblem: rock
 korea_parallel: 끝이 없는 헛수고를 한국에서는 밑 빠진 독에 물 붓기라고 한다. 아무리 부어도 차지 않는다는 그림이 굴러떨어지는 바위와 같은 자리에 있다.
 traces: []
+image:
+  file: Punishment sisyph.jpg
+  caption: 티치아노, 시시포스, 1549년경, 프라도 미술관
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

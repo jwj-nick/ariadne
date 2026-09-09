@@ -12,6 +12,10 @@ level_adult: 그리스 신화에 나오는 바다의 존재. 아름다운 노래
 emblem: wave
 korea_parallel: ""
 traces: []
+image:
+  file: John William Waterhouse - Ulysses and the Sirens - Google Art Project.jpg
+  caption: 존 윌리엄 워터하우스, 오디세우스와 세이렌, 1891년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -8,6 +8,10 @@ sources: [source:perseus-andromeda]
 why: 딸의 아름다움을 자랑한 벌로 의자에 묶인 채 하늘에 올려진 왕비의 이름이다.
 frequency: 4
 domain_hint: [constellation, star, autumn, north]
+image:
+  file: Cassiopeia - Johann Bayer.jpg
+  caption: 카시오페이아자리
+  license: CC BY-SA 3.0
 status: reviewed
 captured_by: seed
 created: 2026-09-08

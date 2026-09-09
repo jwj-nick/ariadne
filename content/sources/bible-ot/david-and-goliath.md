@@ -12,6 +12,10 @@ level_adult: 구약 성경 사무엘상에 실린 이야기. 블레셋의 거인
 emblem: sling
 korea_parallel: 열세를 뒤집은 싸움의 대표로 한국에서는 명량해전을 든다. 이순신이 남은 배 열세 척으로 훨씬 큰 함대를 상대한 싸움이며, 좁은 물길을 골라 상대의 수적 우세를 무력화했다는 점에서 다윗이 갑옷을 벗고 물매를 고른 선택과 닮았다.
 traces: []
+image:
+  file: David with the Head of Goliath-Caravaggio (1610).jpg
+  caption: 카라바조, 골리앗의 머리를 든 다윗, 1610년
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

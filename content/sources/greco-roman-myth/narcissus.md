@@ -14,6 +14,10 @@ level_adult: 그리스 신화에 나오는 아름다운 소년. 자기를 사랑
 emblem: mirror
 korea_parallel: ""
 traces: []
+image:
+  file: Echo and Narcissus by John William Waterhouse.jpg
+  caption: 존 윌리엄 워터하우스, 에코와 나르키소스, 1903년
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

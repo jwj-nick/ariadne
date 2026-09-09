@@ -12,6 +12,10 @@ level_adult: 기원전 49년, 갈리아 총독이던 카이사르가 군대를 �
 emblem: dice
 korea_parallel: 되돌릴 수 없는 결단이라는 점에서 한국에서는 배수진을 친다는 말이 가까운 자리에 있다. 다만 배수진은 물러설 곳을 스스로 없애는 것이고, 루비콘은 넘어서는 안 될 선을 넘는 것이라 방향이 반대다.
 traces: []
+image:
+  file: Gustave Boulanger, Jules-César arrivé au Rubicon, 1854, Musée Picardie.jpg
+  caption: 귀스타브 불랑제, 루비콘강에 이른 카이사르, 1857년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

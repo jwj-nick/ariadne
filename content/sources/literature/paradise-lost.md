@@ -12,6 +12,10 @@ level_adult: 존 밀턴이 1667년에 낸 서사시. 창세기의 앞부분, 곧
 emblem: apple
 korea_parallel: ""
 traces: []
+image:
+  file: Paradise Lost 12.jpg
+  caption: 귀스타브 도레, 실낙원 삽화
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

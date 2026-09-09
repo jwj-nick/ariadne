@@ -12,6 +12,10 @@ level_adult: 신약 성경에 나오는 예수의 열두 제자 가운데 하나
 emblem: coin
 korea_parallel: ""
 traces: []
+image:
+  file: Kiss of Judas by Giotto.jpg
+  caption: 조토, 유다의 입맞춤, 1305년경, 스크로베니 예배당
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

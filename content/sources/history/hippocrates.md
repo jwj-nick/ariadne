@@ -11,6 +11,10 @@ level_adult: 기원전 5세기 코스섬의 의사로, 병을 신이 내린 벌�
 emblem: scroll
 korea_parallel: ""
 traces: []
+image:
+  file: Engraving; portrait of Hippocrates, Wellcome L0016239.jpg
+  caption: 히포크라테스 초상 판화
+  license: CC BY 4.0
 status: reviewed
 created: 2026-09-08
 ---

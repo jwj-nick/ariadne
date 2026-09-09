@@ -11,6 +11,10 @@ level_adult: 기원전 6세기 무렵 그리스에 살았다고 전하는 인물
 emblem: scroll
 korea_parallel: ""
 traces: []
+image:
+  file: Velázquez - Esopo (Museo del Prado, 1639-41).jpg
+  caption: 디에고 벨라스케스, 이솝, 1640년경, 프라도 미술관
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -13,6 +13,10 @@ level_adult: 크레타의 미궁에 갇힌 소머리 괴물 미노타우로스�
 emblem: maze
 korea_parallel: ""
 traces: []
+image:
+  file: Theseus Minotaur MGEt Inv20260.jpg
+  caption: 미노타우로스를 죽이는 테세우스, 기원전 5세기 도자기
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -8,6 +8,10 @@ sources: [source:pleiades-myth]
 why: 하늘을 떠받치는 아틀라스의 일곱 딸이 별 무리가 되었다는 이야기에서 왔다.
 frequency: 4
 domain_hint: [star cluster, taurus, subaru, seven]
+image:
+  file: Pleiades large.jpg
+  caption: 플레이아데스 성단
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

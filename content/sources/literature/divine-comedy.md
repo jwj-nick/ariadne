@@ -12,6 +12,10 @@ level_adult: 단테 알리기에리가 14세기 초에 쓴 서사시. 주인공�
 emblem: mask
 korea_parallel: ""
 traces: []
+image:
+  file: Domenico-Di-Michelino-Dante-and-the-Three-Kingdoms.jpg
+  caption: 도메니코 디 미켈리노, 단테와 세 나라, 1465년, 피렌체 대성당
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

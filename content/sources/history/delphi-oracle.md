@@ -12,6 +12,10 @@ level_adult: 그리스 파르나소스 산기슭 델포이에 있던 아폴론 �
 emblem: column
 korea_parallel: 큰일을 앞두고 앞날을 물으러 가는 자리라는 점에서 한국의 무당이나 점집, 정초에 보는 토정비결과 역할이 겹친다. 다만 델포이는 개인의 일만이 아니라 나라의 전쟁과 정책까지 물으러 가던 공적인 기관이었다는 점이 다르다.
 traces: []
+image:
+  file: Delphes. Ruines. Temple d'Apollon. Voie Sacrée.jpg
+  caption: 델포이의 아폴론 신전 유적
+  license: CC0
 status: reviewed
 created: 2026-09-07
 ---

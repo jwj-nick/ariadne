@@ -13,6 +13,10 @@ level_adult: 그리스 신화에서 신들이 흙으로 빚어 만든 최초의 
 emblem: jar
 korea_parallel: ""
 traces: []
+image:
+  file: John William Waterhouse - Pandora, 1896.jpg
+  caption: 존 윌리엄 워터하우스, 판도라, 1896년
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

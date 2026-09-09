@@ -12,6 +12,10 @@ level_adult: 신약 성경 누가복음에 실린 비유. 둘째 아들이 유�
 emblem: door
 korea_parallel: ""
 traces: []
+image:
+  file: Rembrandt Harmensz van Rijn - Return of the Prodigal Son - Google Art Project.jpg
+  caption: 렘브란트, 돌아온 탕자, 1669년경, 예르미타시 미술관
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

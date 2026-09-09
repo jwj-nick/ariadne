@@ -8,6 +8,10 @@ sources: [source:perseus-andromeda]
 why: 그 은하가 안드로메다자리 방향에 있어 붙은 이름이며, 그 별자리는 바위에 묶였던 공주다.
 frequency: 4
 domain_hint: [galaxy, star, milky way, collision]
+image:
+  file: Andromeda Galaxy (with h-alpha).jpg
+  caption: 안드로메다은하
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

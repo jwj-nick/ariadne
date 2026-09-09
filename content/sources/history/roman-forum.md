@@ -12,6 +12,10 @@ level_adult: 고대 로마 도시의 한가운데에 있던 광장. 시장이자
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: Roman Forum (1883), by Cesare Tallone.jpg
+  caption: 체사레 탈로네, 로마 광장, 1883년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -14,6 +14,10 @@ level_adult: 이타카의 왕이며 호메로스 <오디세이아>의 주인공.
 emblem: ship
 korea_parallel: ""
 traces: []
+image:
+  file: Odysseus Sirens BM E440.jpg
+  caption: 돛대에 몸을 묶은 오디세우스와 세이렌, 기원전 5세기 도자기
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

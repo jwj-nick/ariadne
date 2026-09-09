@@ -13,6 +13,10 @@ level_adult: 제우스의 머리에서 갑옷을 갖춰 입은 채 태어났다�
 emblem: owl
 korea_parallel: ""
 traces: []
+image:
+  file: '"Varvakeion Athena" Statue, 200-250 AD (27890636513).jpg'
+  caption: 바르바케이온의 아테나. 파르테논에 있던 거상을 옮긴 로마 시대 복제본
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

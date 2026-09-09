@@ -8,6 +8,10 @@ sources: [source:europa]
 why: 목성의 위성에는 제우스가 사랑한 대상의 이름을 붙이는데, 에우로파는 제우스가 황소로 변해 데려간 페니키아 공주다.
 frequency: 3
 domain_hint: [jupiter, moon, ocean, europe, nasa]
+image:
+  file: Europa-moon-with-margins.jpg
+  caption: 목성의 위성 에우로파. 얼음 껍질의 금이 보인다
+  license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-07

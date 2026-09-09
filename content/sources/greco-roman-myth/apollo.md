@@ -13,6 +13,10 @@ level_adult: 제우스와 레토 사이에서 태어난 올림포스의 신. 빛
 emblem: lyre
 korea_parallel: ""
 traces: []
+image:
+  file: Apollo Belvedere replicas in Toulouse MHNT.jpg
+  caption: 벨베데레의 아폴론 복제본
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-07
 ---
