@@ -2,6 +2,7 @@
 id: trace:liberty-leading
 type: trace
 category: art
+group: modern
 name_ko: 민중을 이끄는 자유의 여신
 name_en: Liberty Leading the People
 sources: [source:libertas]

@@ -2,6 +2,7 @@
 id: source:aphrodite
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 아프로디테
 name_en: Aphrodite
 aliases: [베누스, Venus, 비너스]

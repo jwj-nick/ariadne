@@ -2,6 +2,7 @@
 id: source:ares
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 아레스
 name_en: Ares
 aliases: [마르스, Mars]
@@ -14,6 +15,10 @@ level_adult: 그리스 신화의 전쟁의 신. 같은 전쟁이라도 아테나
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: Ares Borghese Cour Carrée Louvre.jpg
+  caption: 아레스 보르게세, 루브르
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

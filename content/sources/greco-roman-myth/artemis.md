@@ -2,6 +2,7 @@
 id: source:artemis
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 아르테미스
 name_en: Artemis
 aliases: [디아나, Diana, 다이애나]

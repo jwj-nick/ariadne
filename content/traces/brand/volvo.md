@@ -2,6 +2,7 @@
 id: trace:volvo
 type: trace
 category: brand
+group: car
 name_ko: 볼보
 name_en: Volvo
 sources: [source:ares]

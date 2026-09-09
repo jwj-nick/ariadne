@@ -2,6 +2,7 @@
 id: trace:tellurium
 type: trace
 category: science-astro
+group: element
 name_ko: 텔루륨
 name_en: Tellurium
 sources: [source:gaia]

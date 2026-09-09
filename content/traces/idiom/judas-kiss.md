@@ -2,6 +2,7 @@
 id: trace:judas-kiss
 type: trace
 category: idiom
+group: wisdom
 name_ko: 유다의 입맞춤
 name_en: Judas kiss
 sources: [source:judas]

@@ -2,6 +2,7 @@
 id: source:procrustes
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 프로크루스테스
 name_en: Procrustes
 aliases: [프로크루스테스의 침대]
@@ -12,6 +13,10 @@ level_adult: 아테네로 가는 길에 있던 강도. 나그네를 붙잡아 �
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: Greece from the Coming of the Hellenes to AD. 14, page 1, Vase painting.jpg
+  caption: 테세우스에게 자기 침대에 눕혀지는 프로크루스테스
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

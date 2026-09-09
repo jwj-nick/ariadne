@@ -2,6 +2,7 @@
 id: trace:atlas-rocket
 type: trace
 category: codename
+group: rocket
 name_ko: 아틀라스 로켓
 name_en: Atlas rocket
 sources: [source:atlas]

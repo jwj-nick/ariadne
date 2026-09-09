@@ -2,6 +2,7 @@
 id: trace:manna
 type: trace
 category: idiom
+group: desire
 name_ko: 만나
 name_en: Manna
 sources: [source:exodus-story]

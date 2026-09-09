@@ -2,6 +2,7 @@
 id: trace:last-supper-painting
 type: trace
 category: art
+group: renaissance
 name_ko: 최후의 만찬
 name_en: The Last Supper
 sources: [source:last-supper]

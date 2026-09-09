@@ -2,6 +2,7 @@
 id: source:castor-pollux
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 카스토르와 폴룩스
 name_en: Castor and Pollux
 aliases: [디오스쿠로이, 쌍둥이자리]
@@ -13,6 +14,10 @@ level_adult: 같은 어머니에게서 났으나 아버지가 달라, 폴룩스�
 emblem: star
 korea_parallel: ""
 traces: []
+image:
+  file: Castor and Pollux Temple Forum Romanum, Rome.jpg
+  caption: 로마 포룸에 남은 카스토르와 폴룩스 신전의 기둥
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

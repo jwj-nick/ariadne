@@ -2,6 +2,7 @@
 id: trace:cassandra-syndrome
 type: trace
 category: idiom
+group: person
 name_ko: 카산드라
 name_en: Cassandra
 sources: [source:cassandra]

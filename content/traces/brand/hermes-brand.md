@@ -2,6 +2,7 @@
 id: trace:hermes-brand
 type: trace
 category: brand
+group: fashion
 name_ko: 에르메스
 name_en: Hermes
 sources: [source:hermes]

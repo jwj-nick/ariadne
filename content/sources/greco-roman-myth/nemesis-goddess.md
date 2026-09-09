@@ -2,6 +2,7 @@
 id: source:nemesis-goddess
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 네메시스
 name_en: Nemesis
 aliases: [람누시아, Rhamnusia]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화에서 응보와 균형을 맡은 여신. 사람이
 emblem: scale
 korea_parallel: 잘못한 만큼 되돌아온다는 뜻으로 한국에서 쓰는 사필귀정, 인과응보와 개념이 거의 겹친다. 다만 네메시스는 개념이 아니라 그 일을 직접 하는 신이라는 점이 다르다.
 traces: []
+image:
+  file: Nemesis (The Great Fortune) MET MM5236.jpg
+  caption: 알브레히트 뒤러, 네메시스, 1502년경 동판화
+  license: CC0
 status: reviewed
 created: 2026-09-07
 ---

@@ -2,6 +2,7 @@
 id: trace:galilean-moons
 type: trace
 category: science-astro
+group: planet
 name_ko: 갈릴레이 위성
 name_en: Galilean moons
 sources: [source:ganymede]

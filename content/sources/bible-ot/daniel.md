@@ -2,6 +2,7 @@
 id: source:daniel
 type: source
 domain: bible-ot
+group: king
 name_ko: 다니엘
 name_en: Daniel
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 바빌론에 끌려간 유대 청년으로, 왕의 꿈을 풀이해
 emblem: lion
 korea_parallel: ""
 traces: []
+image:
+  file: 'Sir Peter Paul Rubens - Daniel in the Lions'' Den - Google Art Project.jpg'
+  caption: 페테르 파울 루벤스, 사자굴의 다니엘, 1615년경
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

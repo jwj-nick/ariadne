@@ -2,6 +2,7 @@
 id: source:gullivers-travels
 type: source
 domain: literature
+group: fable
 name_ko: 걸리버 여행기
 name_en: Gulliver's Travels
 aliases: []
@@ -11,6 +12,10 @@ level_adult: 스위프트가 1726년에 쓴 것으로, 배가 난파해 여러 �
 emblem: ship
 korea_parallel: ""
 traces: []
+image:
+  file: Slapende Gulliver, RP-P-2018-2875.jpg
+  caption: 잠든 걸리버와 소인국 사람들, 1895년경
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

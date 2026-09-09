@@ -2,6 +2,7 @@
 id: trace:paradise-hotel
 type: trace
 category: brand
+group: life
 name_ko: 파라다이스
 name_en: Paradise
 sources: [source:eden-garden]

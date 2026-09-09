@@ -2,6 +2,7 @@
 id: trace:writing-on-wall
 type: trace
 category: idiom
+group: fate
 name_ko: 벽에 쓰인 글
 name_en: Writing on the wall
 sources: [source:daniel]

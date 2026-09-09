@@ -2,6 +2,7 @@
 id: source:proteus
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 프로테우스
 name_en: Proteus
 aliases: [바다의 노인]
@@ -12,6 +13,10 @@ level_adult: 바다의 노인이라 불리는 신이며, 앞일을 알지만 말
 emblem: wave
 korea_parallel: ""
 traces: []
+image:
+  file: 'Florimell saved by Proteus (Crane, 1895-1897).jpg'
+  caption: '월터 크레인, 프로테우스가 플로리멜을 구하다, 1897년. 바다의 노인은 붙잡히면 모습을 계속 바꾼다'
+  license: 'CC BY-SA 4.0'
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:pleiades-myth
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 플레이아데스
 name_en: Pleiades
 aliases: [일곱 자매, 좀생이별]
@@ -12,6 +13,10 @@ level_adult: 하늘을 떠받치는 아틀라스의 일곱 딸이며, 사냥꾼 
 emblem: star
 korea_parallel: ""
 traces: []
+image:
+  file: The Pleiades (Elihu Vedder).jpg
+  caption: 엘리후 베더, 플레이아데스, 1885년. 일곱 자매가 별을 매단다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

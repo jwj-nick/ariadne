@@ -2,6 +2,7 @@
 id: trace:odyssey
 type: trace
 category: idiom
+group: wisdom
 name_ko: 오디세이
 name_en: Odyssey
 sources: [source:odysseus]

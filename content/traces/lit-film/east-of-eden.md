@@ -2,6 +2,7 @@
 id: trace:east-of-eden
 type: trace
 category: lit-film
+group: classic
 name_ko: 에덴의 동쪽
 name_en: East of Eden
 sources: [source:eden-garden]

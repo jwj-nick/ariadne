@@ -2,6 +2,7 @@
 id: source:greek-polis
 type: source
 domain: history
+group: greece
 name_ko: 폴리스
 name_en: Polis
 aliases: [도시 국가]
@@ -12,6 +13,10 @@ level_adult: 고대 그리스는 하나의 나라가 아니라 수백 개의 작
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: Attica 06-13 Athens 50 View from Philopappos - Acropolis Hill.jpg
+  caption: 필로파포스 언덕에서 본 아테네. 폴리스는 이런 도시 하나가 곧 나라였다
+  license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

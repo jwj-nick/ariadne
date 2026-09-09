@@ -2,6 +2,7 @@
 id: trace:nemesis
 type: trace
 category: idiom
+group: contest
 name_ko: 네메시스
 name_en: Nemesis
 sources: [source:nemesis-goddess]

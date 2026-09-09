@@ -2,6 +2,7 @@
 id: trace:thanatos-drive
 type: trace
 category: psych-med
+group: mind
 name_ko: 타나토스
 name_en: Thanatos
 sources: [source:thanatos]

@@ -2,6 +2,7 @@
 id: trace:atlantic
 type: trace
 category: place
+group: sea
 name_ko: 대서양
 name_en: Atlantic Ocean
 sources: [source:atlas]

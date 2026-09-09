@@ -2,6 +2,7 @@
 id: trace:mercurial
 type: trace
 category: idiom
+group: person
 name_ko: 변덕스러운
 name_en: Mercurial
 sources: [source:hermes]

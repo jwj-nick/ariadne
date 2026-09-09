@@ -2,6 +2,7 @@
 id: trace:martial
 type: trace
 category: idiom
+group: person
 name_ko: 무예의
 name_en: Martial
 sources: [source:ares]

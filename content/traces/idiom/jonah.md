@@ -2,6 +2,7 @@
 id: trace:jonah
 type: trace
 category: idiom
+group: person
 name_ko: 요나
 name_en: Jonah
 sources: [source:jonah]

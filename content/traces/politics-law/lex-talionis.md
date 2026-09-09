@@ -2,6 +2,7 @@
 id: trace:lex-talionis
 type: trace
 category: politics-law
+group: law
 name_ko: 눈에는 눈
 name_en: Lex talionis
 sources: [source:hammurabi]

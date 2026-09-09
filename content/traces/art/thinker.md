@@ -2,6 +2,7 @@
 id: trace:thinker
 type: trace
 category: art
+group: sculpture
 name_ko: 생각하는 사람
 name_en: The Thinker
 sources: [source:divine-comedy]

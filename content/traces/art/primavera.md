@@ -2,6 +2,7 @@
 id: trace:primavera
 type: trace
 category: art
+group: renaissance
 name_ko: 봄
 name_en: Primavera
 sources: [source:flora]

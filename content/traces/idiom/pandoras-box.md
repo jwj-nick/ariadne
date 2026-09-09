@@ -2,6 +2,7 @@
 id: trace:pandoras-box
 type: trace
 category: idiom
+group: desire
 name_ko: 판도라의 상자
 name_en: Pandora box
 sources: [source:pandora]

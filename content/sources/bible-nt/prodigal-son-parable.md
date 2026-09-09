@@ -2,6 +2,7 @@
 id: source:prodigal-son-parable
 type: source
 domain: bible-nt
+group: parable
 name_ko: 탕자의 비유
 name_en: Parable of the prodigal son
 aliases: [잃어버린 아들의 비유, 두 아들의 비유]

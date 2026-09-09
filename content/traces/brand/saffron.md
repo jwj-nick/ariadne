@@ -2,6 +2,7 @@
 id: trace:saffron
 type: trace
 category: brand
+group: life
 name_ko: 샤프란
 name_en: Saffron
 sources: [source:crocus]

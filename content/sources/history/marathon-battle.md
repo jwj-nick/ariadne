@@ -2,6 +2,7 @@
 id: source:marathon-battle
 type: source
 domain: history
+group: greece
 name_ko: 마라톤 전투
 name_en: Battle of Marathon
 aliases: [마라톤 벌판]
@@ -12,6 +13,10 @@ level_adult: 기원전 490년 아테네 근처 마라톤 벌판에서 아테네�
 emblem: laurel
 korea_parallel: 열세를 뒤집은 싸움이라는 점에서 [[trace:david-vs-goliath]]의 구도와 겹치고, 한국에서는 같은 자리에 명량해전을 든다.
 traces: []
+image:
+  file: The burial mound of the Plataeans in Marathon on January 15, 2019.jpg
+  caption: 마라톤 벌판의 봉분. 전사한 아테네 시민이 여기 묻혔다
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

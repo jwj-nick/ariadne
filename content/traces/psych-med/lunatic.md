@@ -2,6 +2,7 @@
 id: trace:lunatic
 type: trace
 category: psych-med
+group: mind
 name_ko: 루나틱
 name_en: Lunatic
 sources: [source:selene]

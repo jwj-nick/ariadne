@@ -377,6 +377,65 @@ try {
       const moved = await s.js('location.pathname');
       String(moved).startsWith('/source/') ? ok('카드 클릭 이동', moved) : bad('카드 클릭 이동', moved);
 
+      // ── 2.5부. 갈래별 보기 (D31) ─────────────────────────────────
+      console.log('\n[2.5] 갈래별 보기');
+      await s.send('Page.navigate', { url: BASE + '/browse' });
+      await sleep(1500);
+
+      const buckets = `[...document.querySelectorAll('main button[aria-expanded]')].length`;
+      expect('갈래가 접힌 채로 나온다', await s.js(buckets), 10);
+      expect(
+        '펼치기 전에는 카드가 없다',
+        await s.js(`document.querySelectorAll('main a[href^="/trace/"]').length`),
+        0,
+      );
+
+      // 브랜드를 펼치면 묶음이 나오고, 묶음을 펼치면 카드가 깔린다.
+      await s.js(
+        `[...document.querySelectorAll('main button[aria-expanded]')].find(b => b.textContent.includes('브랜드')).click()`,
+      );
+      await sleep(400);
+      expect(
+        '갈래를 펼치면 묶음이 나온다',
+        await s.js(
+          `[...document.querySelectorAll('main button[aria-expanded]')].some(b => b.textContent.includes('타는 것'))`,
+        ),
+        true,
+      );
+
+      await s.js(
+        `[...document.querySelectorAll('main button[aria-expanded]')].find(b => b.textContent.includes('타는 것')).click()`,
+      );
+      await sleep(600);
+      const gridCards = await s.js(`document.querySelectorAll('main a[href^="/trace/"]').length`);
+      gridCards > 0 ? ok('묶음을 펼치면 카드가 깔린다', gridCards + '장') : bad('묶음 펼치기', '0장');
+      expect(
+        '카드마다 그림이 걸려 있다',
+        await s.js(`document.querySelectorAll('main a[href^="/trace/"] img').length`),
+        gridCards,
+      );
+
+      await s.js(`document.querySelector('main a[href^="/trace/"]').click()`);
+      await sleep(1200);
+      const fromGrid = await s.js('location.pathname');
+      String(fromGrid).startsWith('/trace/')
+        ? ok('격자에서 카드로 이동', fromGrid)
+        : bad('격자에서 카드로 이동', fromGrid);
+
+      // 그림이 없는 흔적도 원천의 그림을 물려받아야 한다 (D29).
+      await s.send('Page.navigate', { url: BASE + '/trace/nike' });
+      await sleep(1500);
+      expect(
+        '로고를 걸 수 없는 흔적도 원천의 그림을 받는다',
+        await s.js(`document.querySelector('main figure img') !== null`),
+        true,
+      );
+      expect(
+        '빌려 온 그림에는 원천 표시가 붙는다',
+        await s.js(`document.querySelector('main figcaption').textContent.includes('원천')`),
+        true,
+      );
+
       // ── 3부. 학습 루프 (M1) ──────────────────────────────────────
       console.log('\n[3] 학습 루프');
       const clickText = (selector, text) =>

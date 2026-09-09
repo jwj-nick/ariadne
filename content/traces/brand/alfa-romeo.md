@@ -2,6 +2,7 @@
 id: trace:alfa-romeo
 type: trace
 category: brand
+group: car
 name_ko: 알파로메오
 name_en: Alfa Romeo
 sources: [source:visconti-biscione]

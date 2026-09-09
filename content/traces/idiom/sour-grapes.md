@@ -2,6 +2,7 @@
 id: trace:sour-grapes
 type: trace
 category: idiom
+group: desire
 name_ko: 신 포도
 name_en: Sour grapes
 sources: [source:aesop]

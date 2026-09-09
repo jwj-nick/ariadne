@@ -2,6 +2,7 @@
 id: source:ambrosia-nectar
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 암브로시아와 넥타르
 name_en: Ambrosia and Nectar
 aliases: [신들의 음식, 신들의 술]
@@ -12,6 +13,10 @@ level_adult: 그리스 신화에서 신들이 먹는 음식이 암브로시아�
 emblem: jar
 korea_parallel: ""
 traces: []
+image:
+  file: MA I386039 TePapa Hebe full.jpg
+  caption: 안젤리카 카우프만, 신들의 잔을 든 헤베, 1770년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

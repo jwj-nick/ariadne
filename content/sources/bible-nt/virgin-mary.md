@@ -2,6 +2,7 @@
 id: source:virgin-mary
 type: source
 domain: bible-nt
+group: jesus
 name_ko: 성모 마리아
 name_en: Virgin Mary
 aliases: [마돈나, Madonna]
@@ -11,6 +12,10 @@ level_adult: 예수의 어머니이며, 천사에게 소식을 듣는 장면부�
 emblem: crown
 korea_parallel: ""
 traces: []
+image:
+  file: 'Raphael - The Sistine Madonna - Google Arts & Culture.jpg'
+  caption: 라파엘로, 시스티나의 성모, 1512년경, 드레스덴
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

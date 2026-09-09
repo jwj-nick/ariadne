@@ -2,6 +2,7 @@
 id: trace:versace
 type: trace
 category: brand
+group: fashion
 name_ko: 베르사체
 name_en: Versace
 sources: [source:medusa]

@@ -2,6 +2,7 @@
 id: source:scapegoat-ritual
 type: source
 domain: bible-ot
+group: exodus
 name_ko: 속죄의 염소
 name_en: Scapegoat
 aliases: [아자젤의 염소, 속죄일 의식]
@@ -12,6 +13,10 @@ level_adult: 구약 성경 레위기에 나오는 속죄일 의식. 염소 두 �
 emblem: goat
 korea_parallel: ""
 traces: []
+image:
+  file: Holeman Hunt - Der Sündenbock.jpeg
+  caption: 윌리엄 홀먼 헌트, 속죄양, 1854년. 사람의 죄를 지고 광야로 쫓겨난 염소다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

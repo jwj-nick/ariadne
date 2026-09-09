@@ -2,6 +2,7 @@
 id: source:athena
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 아테나
 name_en: Athena
 aliases: [미네르바, Minerva, 팔라스, Pallas]

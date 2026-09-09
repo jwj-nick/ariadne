@@ -2,6 +2,7 @@
 id: trace:hermaphrodite
 type: trace
 category: psych-med
+group: body
 name_ko: 자웅동체
 name_en: Hermaphrodite
 sources: [source:hermaphroditus]

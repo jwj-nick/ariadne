@@ -2,6 +2,7 @@
 id: trace:laconic
 type: trace
 category: idiom
+group: person
 name_ko: 간결한
 name_en: Laconic
 sources: [source:sparta]

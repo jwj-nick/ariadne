@@ -2,6 +2,7 @@
 id: trace:sound-and-fury
 type: trace
 category: lit-film
+group: classic
 name_ko: 소리와 분노
 name_en: The Sound and the Fury
 sources: [source:macbeth]

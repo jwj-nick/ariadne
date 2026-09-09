@@ -2,6 +2,7 @@
 id: trace:siren-sound
 type: trace
 category: other
+group: misc
 name_ko: 사이렌
 name_en: Siren
 sources: [source:sirens]

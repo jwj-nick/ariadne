@@ -2,6 +2,7 @@
 id: source:echo-nymph
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 에코
 name_en: Echo
 aliases: [에코 님프]
@@ -13,6 +14,10 @@ level_adult: 헤라의 벌로 스스로 말을 시작하지 못하고 남이 한
 emblem: wave
 korea_parallel: ""
 traces: []
+image:
+  file: Narcissus and Echo Met DP886213.jpg
+  caption: 나르키소스와 에코, 17세기
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:pygmalion
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 피그말리온
 name_en: Pygmalion
 aliases: [퓌그말리온]
@@ -12,6 +13,10 @@ level_adult: 키프로스의 조각가. 상아로 여인상을 새기고 그것�
 emblem: shell
 korea_parallel: ""
 traces: []
+image:
+  file: Jean-Leon Gerome - Pygmalion and Galatea.png
+  caption: 장 레옹 제롬, 피그말리온과 갈라테이아, 1890년경. 아래는 아직 돌이다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

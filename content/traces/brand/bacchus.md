@@ -2,6 +2,7 @@
 id: trace:bacchus
 type: trace
 category: brand
+group: food
 name_ko: 박카스
 name_en: Bacchus
 sources: [source:dionysus]

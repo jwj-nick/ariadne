@@ -2,6 +2,7 @@
 id: trace:lord-of-flies
 type: trace
 category: lit-film
+group: classic
 name_ko: 파리대왕
 name_en: Lord of the Flies
 sources: [source:beelzebub]

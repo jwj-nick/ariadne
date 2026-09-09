@@ -2,6 +2,7 @@
 id: trace:david-statue
 type: trace
 category: art
+group: sculpture
 name_ko: 다비드
 name_en: David
 sources: [source:david-and-goliath]

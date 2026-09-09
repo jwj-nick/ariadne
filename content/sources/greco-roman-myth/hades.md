@@ -2,6 +2,7 @@
 id: source:hades
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 하데스
 name_en: Hades
 aliases: [플루톤, Pluto, 플루토, 디스]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화에서 저승을 다스리는 신. 제우스, 포�
 emblem: void
 korea_parallel: ""
 traces: []
+image:
+  file: Pluto Serapis and Persephone Isis Heraklion museum.jpg
+  caption: 하데스와 페르세포네. 발치의 개가 케르베로스다
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:gordian-knot
 type: source
 domain: history
+group: greece
 name_ko: 고르디우스의 매듭
 name_en: Gordian Knot
 aliases: [고르디온의 매듭]
@@ -12,6 +13,10 @@ level_adult: 프리기아의 도시 고르디온에 있던 매듭. 풀어내는 
 emblem: thread
 korea_parallel: ""
 traces: []
+image:
+  file: Alexander cuts the Gordian Knot.jpg
+  caption: 장 시몽 베르텔레미, 고르디우스의 매듭을 자르는 알렉산드로스, 1767년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

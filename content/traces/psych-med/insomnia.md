@@ -2,6 +2,7 @@
 id: trace:insomnia
 type: trace
 category: psych-med
+group: mind
 name_ko: 불면
 name_en: Insomnia
 sources: [source:hypnos]

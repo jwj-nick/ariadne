@@ -2,6 +2,7 @@
 id: source:amalthea
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 아말테이아
 name_en: Amalthea
 aliases: [풍요의 뿔, 코르누코피아]
@@ -12,6 +13,10 @@ level_adult: 아버지 크로노스에게 삼켜지지 않으려고 숨겨진 �
 emblem: goat
 korea_parallel: ""
 traces: []
+image:
+  file: Nicolas Poussin - The Infant Jupiter Nurtured by the Goat Amalthea - WGA18300.jpg
+  caption: 니콜라 푸생, 염소 아말테이아의 젖을 먹는 어린 유피테르, 1638년경
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

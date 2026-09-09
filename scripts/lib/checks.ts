@@ -12,6 +12,7 @@ import {
   TRACE_CATEGORIES,
   TRACE_SECTIONS,
 } from './schema.ts';
+import { isValidGroup } from './groups.ts';
 import { isSource, isTrace, type Card } from './content.ts';
 
 export type Severity = 'error' | 'warn';
@@ -42,6 +43,7 @@ const CODE_TITLES: Record<string, string> = {
   W07: 'emblem 이 문양 목록 밖',
   W08: '본문의 [[링크]] 가 없는 카드를 가리킴',
   W09: 'image 항목의 짜임이 어긋남',
+  W10: 'group 이 그 갈래의 묶음 목록 밖',
 };
 
 export const codeTitle = (code: string) => CODE_TITLES[code] ?? code;
@@ -247,6 +249,24 @@ export function runChecks(cards: Card[]): Finding[] {
       // W02
       const err = checkSectionOrder(c.headings, SOURCE_SECTIONS);
       if (err) add('W02', 'warn', c.path, err);
+    }
+
+    /**
+     * W10 — 하위 묶음 (D31).
+     *
+     * 둘러보기 화면이 갈래를 묶음으로 접어서 보여 준다. 묶음이 없거나 목록 밖의 이름이면
+     * 그 카드는 화면에서 "그 밖" 으로 떨어져 사실상 찾기 어려워진다.
+     * 묶음 목록은 `scripts/lib/groups.ts` 에 있다.
+     */
+    {
+      const bucket = isTrace(c) ? String(d.category) : String(d.domain);
+      const kind = isTrace(c) ? 'trace' : 'source';
+      const g = d.group;
+      if (g === undefined) {
+        add('W10', 'warn', c.path, `group 이 없습니다. ${bucket} 의 묶음 하나를 골라 적으십시오.`);
+      } else if (typeof g !== 'string' || !isValidGroup(kind, bucket, g)) {
+        add('W10', 'warn', c.path, `group "${String(g)}" 은 ${bucket} 의 묶음이 아닙니다.`);
+      }
     }
 
     /**

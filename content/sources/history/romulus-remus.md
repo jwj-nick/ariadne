@@ -2,6 +2,7 @@
 id: source:romulus-remus
 type: source
 domain: history
+group: rome
 name_ko: 로물루스와 레무스
 name_en: Romulus and Remus
 aliases: []
@@ -11,6 +12,10 @@ level_adult: 강에 버려진 쌍둥이가 암늑대의 젖을 먹고 살아남�
 emblem: wolf
 korea_parallel: ""
 traces: []
+image:
+  file: Romulus and Remus by Peter Paul Rubens.jpg
+  caption: 페테르 파울 루벤스, 늑대의 젖을 먹는 로물루스와 레무스, 1616년경
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

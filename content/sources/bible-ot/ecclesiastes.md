@@ -2,6 +2,7 @@
 id: source:ecclesiastes
 type: source
 domain: bible-ot
+group: wisdom
 name_ko: 전도서
 name_en: Ecclesiastes
 aliases: [코헬렛]
@@ -11,6 +12,10 @@ level_adult: 모든 것이 헛되고 헛되다는 문장으로 시작하는 구�
 emblem: hourglass
 korea_parallel: ""
 traces: []
+image:
+  file: StillLifeWithASkull.jpg
+  caption: '필리프 드 샹파뉴, 해골이 있는 정물, 1671년경. 전도서의 "헛되다" 를 그린 것이다'
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

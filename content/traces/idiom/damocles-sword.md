@@ -2,6 +2,7 @@
 id: trace:damocles-sword
 type: trace
 category: idiom
+group: fate
 name_ko: 다모클레스의 검
 name_en: Sword of Damocles
 sources: [source:damocles]

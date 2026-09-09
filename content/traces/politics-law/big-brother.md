@@ -2,6 +2,7 @@
 id: trace:big-brother
 type: trace
 category: politics-law
+group: power
 name_ko: 빅 브라더
 name_en: Big Brother
 sources: [source:orwell-1984]

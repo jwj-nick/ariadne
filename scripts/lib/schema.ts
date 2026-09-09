@@ -104,6 +104,8 @@ export interface TraceFrontmatter {
   id: string;
   type: 'trace';
   category: TraceCategory;
+  /** 갈래 아래의 하위 묶음 (D31). 목록은 scripts/lib/groups.ts 에 있다. */
+  group?: string;
   name_ko: string;
   name_en: string;
   sources: string[];
@@ -125,6 +127,8 @@ export interface SourceFrontmatter {
   id: string;
   type: 'source';
   domain: SourceDomain;
+  /** 도메인 아래의 하위 묶음 (D31). 목록은 scripts/lib/groups.ts 에 있다. */
+  group?: string;
   name_ko: string;
   name_en: string;
   aliases?: string[];

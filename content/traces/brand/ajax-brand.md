@@ -2,6 +2,7 @@
 id: trace:ajax-brand
 type: trace
 category: brand
+group: life
 name_ko: 아약스
 name_en: Ajax
 sources: [source:ajax-hero]

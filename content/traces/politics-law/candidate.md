@@ -2,6 +2,7 @@
 id: trace:candidate
 type: trace
 category: politics-law
+group: power
 name_ko: 후보자
 name_en: Candidate
 sources: [source:roman-election]

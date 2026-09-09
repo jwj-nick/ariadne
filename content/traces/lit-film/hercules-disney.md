@@ -2,6 +2,7 @@
 id: trace:hercules-disney
 type: trace
 category: lit-film
+group: popular
 name_ko: 디즈니 헤라클레스
 name_en: Hercules
 sources: [source:heracles]

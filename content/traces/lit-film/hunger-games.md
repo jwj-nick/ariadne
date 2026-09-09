@@ -2,6 +2,7 @@
 id: trace:hunger-games
 type: trace
 category: lit-film
+group: film
 name_ko: 헝거 게임
 name_en: The Hunger Games
 sources: [source:theseus-minotaur]

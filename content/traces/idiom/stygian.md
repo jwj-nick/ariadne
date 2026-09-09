@@ -2,6 +2,7 @@
 id: trace:stygian
 type: trace
 category: idiom
+group: fate
 name_ko: 칠흑 같은
 name_en: Stygian
 sources: [source:styx]

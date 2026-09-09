@@ -2,6 +2,7 @@
 id: trace:tantalum
 type: trace
 category: science-astro
+group: element
 name_ko: 탄탈룸
 name_en: Tantalum
 sources: [source:tantalus]

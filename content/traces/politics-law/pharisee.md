@@ -2,6 +2,7 @@
 id: trace:pharisee
 type: trace
 category: politics-law
+group: people
 name_ko: 바리새인
 name_en: Pharisee
 sources: [source:pharisees]

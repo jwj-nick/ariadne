@@ -2,6 +2,7 @@
 id: trace:fiat
 type: trace
 category: brand
+group: car
 name_ko: 피아트
 name_en: Fiat
 sources: [source:genesis-book]

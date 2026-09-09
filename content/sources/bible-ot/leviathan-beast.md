@@ -2,6 +2,7 @@
 id: source:leviathan-beast
 type: source
 domain: bible-ot
+group: origin
 name_ko: 리바이어던
 name_en: Leviathan
 aliases: [레비아탄]
@@ -11,6 +12,10 @@ level_adult: 욥기와 시편에 나오는 바다의 거대한 괴물이며, 비
 emblem: serpent
 korea_parallel: ""
 traces: []
+image:
+  file: 122.The Destruction of Leviathan.jpg
+  caption: 귀스타브 도레, 리바이어던의 파멸, 1866년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

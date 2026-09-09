@@ -2,6 +2,7 @@
 id: source:judgment-paris
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 파리스의 심판
 name_en: Judgment of Paris
 aliases: [황금 사과]
@@ -12,6 +13,10 @@ level_adult: 불화의 여신이 잔치에 던져 넣은 황금 사과에 가장
 emblem: apple
 korea_parallel: ""
 traces: []
+image:
+  file: Lucas Cranach the Elder - Judgment of Paris - 28-1932 - Saint Louis Art Museum.jpg
+  caption: 루카스 크라나흐, 파리스의 심판, 1530년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:lent-carnival
 type: source
 domain: history
+group: beyond
 name_ko: 사순절과 카니발
 name_en: Lent and Carnival
 aliases: [재의 수요일]
@@ -11,6 +12,10 @@ level_adult: 사순절은 부활절을 앞둔 사십 일 동안 고기를 끊고
 emblem: mask
 korea_parallel: ""
 traces: []
+image:
+  file: The Fight Between Carnival and Lent.jpg
+  caption: 피터르 브뤼헐, 사육제와 사순절의 싸움, 1559년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:cassandra
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 카산드라
 name_en: Cassandra
 aliases: [카산드레]
@@ -13,6 +14,10 @@ level_adult: 트로이 왕 프리아모스의 딸. 아폴론에게 예언하는 
 emblem: mask
 korea_parallel: ""
 traces: []
+image:
+  file: Cassandra1.jpeg
+  caption: 이블린 드 모건, 카산드라, 1898년. 뒤에서 트로이가 타고 있다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

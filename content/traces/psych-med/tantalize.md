@@ -2,6 +2,7 @@
 id: trace:tantalize
 type: trace
 category: psych-med
+group: mind
 name_ko: 탄탈라이즈
 name_en: Tantalize
 sources: [source:tantalus]

@@ -2,6 +2,7 @@
 id: trace:orion-spacecraft
 type: trace
 category: codename
+group: space
 name_ko: 오리온 우주선
 name_en: Orion spacecraft
 sources: [source:orion-hunter]

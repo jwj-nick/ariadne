@@ -2,6 +2,7 @@
 id: trace:herculean
 type: trace
 category: idiom
+group: contest
 name_ko: 헤라클레스의 과업
 name_en: Herculean task
 sources: [source:heracles]

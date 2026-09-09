@@ -2,6 +2,7 @@
 id: trace:rubicon
 type: trace
 category: politics-law
+group: people
 name_ko: 루비콘을 건너다
 name_en: Cross the Rubicon
 sources: [source:rubicon-crossing]

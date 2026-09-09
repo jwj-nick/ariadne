@@ -2,6 +2,7 @@
 id: trace:mars-planet
 type: trace
 category: science-astro
+group: planet
 name_ko: 화성
 name_en: Mars
 sources: [source:ares]

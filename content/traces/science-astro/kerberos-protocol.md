@@ -2,6 +2,7 @@
 id: trace:kerberos-protocol
 type: trace
 category: science-astro
+group: earth
 name_ko: 케르베로스 인증
 name_en: Kerberos
 sources: [source:cerberus]

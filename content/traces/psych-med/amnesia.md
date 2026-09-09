@@ -2,6 +2,7 @@
 id: trace:amnesia
 type: trace
 category: psych-med
+group: mind
 name_ko: 기억상실
 name_en: Amnesia
 sources: [source:lethe]

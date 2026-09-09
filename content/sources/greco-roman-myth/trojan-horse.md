@@ -2,6 +2,7 @@
 id: source:trojan-horse
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 트로이 목마
 name_en: Trojan horse
 aliases: [목마의 계략, Dourateos Hippos]

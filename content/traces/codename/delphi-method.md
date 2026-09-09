@@ -2,6 +2,7 @@
 id: trace:delphi-method
 type: trace
 category: codename
+group: soft
 name_ko: 델파이 기법
 name_en: Delphi method
 sources: [source:delphi-oracle]

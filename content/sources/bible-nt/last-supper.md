@@ -2,6 +2,7 @@
 id: source:last-supper
 type: source
 domain: bible-nt
+group: jesus
 name_ko: 최후의 만찬
 name_en: The Last Supper
 aliases: [마지막 만찬, 성찬의 자리]

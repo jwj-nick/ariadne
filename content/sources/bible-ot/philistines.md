@@ -2,6 +2,7 @@
 id: source:philistines
 type: source
 domain: bible-ot
+group: exodus
 name_ko: 블레셋 사람
 name_en: Philistines
 aliases: [펠리시테]
@@ -13,6 +14,10 @@ level_adult: 지중해 연안에 자리 잡고 구약 시대 내내 이스라엘
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: Medinet Habu Ramses III14.JPG
+  caption: 메디네트 하부의 부조에 새겨진 블레셋 포로
+  license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

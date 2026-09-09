@@ -2,6 +2,7 @@
 id: trace:aegis-ship
 type: trace
 category: brand
+group: life
 name_ko: 이지스함
 name_en: Aegis ship
 sources: [source:aegis]

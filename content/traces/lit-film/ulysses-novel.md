@@ -2,6 +2,7 @@
 id: trace:ulysses-novel
 type: trace
 category: lit-film
+group: classic
 name_ko: 율리시스
 name_en: Ulysses
 sources: [source:odysseus]

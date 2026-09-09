@@ -2,6 +2,7 @@
 id: source:gospel-sayings
 type: source
 domain: bible-nt
+group: jesus
 name_ko: 복음서의 어록
 name_en: Gospel sayings
 aliases: [산상수훈, 예수의 말]
@@ -11,6 +12,10 @@ level_adult: 복음서에는 비유와 짧은 어록이 여럿 실려 있고, �
 emblem: bread
 korea_parallel: ""
 traces: []
+image:
+  file: Sermon-on-the-mount detail.jpg
+  caption: 산상수훈. 예수의 말이 모인 자리다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

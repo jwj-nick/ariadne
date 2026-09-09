@@ -2,6 +2,7 @@
 id: source:asclepius
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 아스클레피오스
 name_en: Asclepius
 aliases: [아이스쿨라피우스]
@@ -13,6 +14,10 @@ level_adult: 아폴론의 아들이며 케이론에게서 의술을 배웠다. �
 emblem: staff
 korea_parallel: ""
 traces: []
+image:
+  file: Statue-of-asclepius.jpg
+  caption: 뱀이 감긴 지팡이를 든 아스클레피오스
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

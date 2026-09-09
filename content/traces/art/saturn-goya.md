@@ -2,6 +2,7 @@
 id: trace:saturn-goya
 type: trace
 category: art
+group: modern
 name_ko: 자식을 삼키는 사투르누스
 name_en: Saturn Devouring His Son
 sources: [source:cronus]

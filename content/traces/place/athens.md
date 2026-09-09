@@ -2,6 +2,7 @@
 id: trace:athens
 type: trace
 category: place
+group: land
 name_ko: 아테네
 name_en: Athens
 sources: [source:athena]

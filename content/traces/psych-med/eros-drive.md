@@ -2,6 +2,7 @@
 id: trace:eros-drive
 type: trace
 category: psych-med
+group: mind
 name_ko: 에로스
 name_en: Eros
 sources: [source:eros]

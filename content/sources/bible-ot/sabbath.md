@@ -2,6 +2,7 @@
 id: source:sabbath
 type: source
 domain: bible-ot
+group: exodus
 name_ko: 안식일
 name_en: Sabbath
 aliases: [샤바트, 안식]
@@ -11,6 +12,10 @@ level_adult: 창세기에서 신이 엿새 동안 만들고 이레째에 쉬었�
 emblem: hourglass
 korea_parallel: ""
 traces: []
+image:
+  file: Shabbat Candles.jpg
+  caption: 안식일을 여는 촛불
+  license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

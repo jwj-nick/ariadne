@@ -2,6 +2,7 @@
 id: source:tantalus
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 탄탈로스
 name_en: Tantalus
 aliases: [탄탈루스]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화의 왕. 신들을 시험하려다 벌을 받아, �
 emblem: apple
 korea_parallel: ""
 traces: []
+image:
+  file: Tantalus Gioacchino Assereto circa1640s.jpg
+  caption: 조아키노 아세레토, 탄탈로스, 1630년대. 물이 입에 닿기 전에 물러난다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

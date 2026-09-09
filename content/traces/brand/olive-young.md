@@ -2,6 +2,7 @@
 id: trace:olive-young
 type: trace
 category: brand
+group: beauty
 name_ko: 올리브영
 name_en: Olive Young
 sources: [source:noah]

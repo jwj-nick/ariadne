@@ -2,6 +2,7 @@
 id: source:aristotle-metaphysics
 type: source
 domain: history
+group: thinker
 name_ko: 아리스토텔레스의 형이상학
 name_en: Metaphysics
 aliases: [메타피지카]
@@ -11,6 +12,10 @@ level_adult: 아리스토텔레스가 존재 자체를 다룬 강의록이며, �
 emblem: scroll
 korea_parallel: ""
 traces: []
+image:
+  file: Aristotle Altemps Inv8575.jpg
+  caption: 아리스토텔레스 흉상. 리시포스 원작의 로마 시대 복제
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

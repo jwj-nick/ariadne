@@ -2,6 +2,7 @@
 id: source:narcissus
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 나르키소스
 name_en: Narcissus
 aliases: [나르시스, Narkissos]

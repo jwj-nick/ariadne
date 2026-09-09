@@ -2,6 +2,7 @@
 id: trace:genesis-brand
 type: trace
 category: brand
+group: car
 name_ko: 제네시스
 name_en: Genesis
 sources: [source:genesis-book]

@@ -2,6 +2,7 @@
 id: trace:doubting-thomas
 type: trace
 category: idiom
+group: person
 name_ko: 의심하는 도마
 name_en: Doubting Thomas
 sources: [source:thomas]

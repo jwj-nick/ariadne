@@ -2,6 +2,7 @@
 id: trace:politics-polis
 type: trace
 category: politics-law
+group: power
 name_ko: 정치
 name_en: Politics
 sources: [source:greek-polis]

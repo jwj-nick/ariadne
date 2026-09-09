@@ -2,6 +2,7 @@
 id: trace:plutonium
 type: trace
 category: science-astro
+group: element
 name_ko: 플루토늄
 name_en: Plutonium
 sources: [source:hades]

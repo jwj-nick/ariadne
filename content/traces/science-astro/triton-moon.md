@@ -2,6 +2,7 @@
 id: trace:triton-moon
 type: trace
 category: science-astro
+group: planet
 name_ko: 트리톤
 name_en: Triton
 sources: [source:triton]

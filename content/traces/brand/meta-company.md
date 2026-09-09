@@ -2,6 +2,7 @@
 id: trace:meta-company
 type: trace
 category: brand
+group: tech
 name_ko: 메타
 name_en: Meta
 sources: [source:aristotle-metaphysics]

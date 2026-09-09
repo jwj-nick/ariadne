@@ -2,6 +2,7 @@
 id: source:pyramus-thisbe
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 피라모스와 티스베
 name_en: Pyramus and Thisbe
 aliases: []
@@ -11,6 +12,10 @@ level_adult: 이웃한 두 집의 남녀가 부모의 반대로 만나지 못하
 emblem: wave
 korea_parallel: ""
 traces: []
+image:
+  file: Nicolas Poussin - Landscape during a Thunderstorm with Pyramus and thisbe - Google Art Project.jpg
+  caption: 니콜라 푸생, 폭풍우 속의 피라모스와 티스베, 1651년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

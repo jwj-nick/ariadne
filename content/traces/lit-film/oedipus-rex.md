@@ -2,6 +2,7 @@
 id: trace:oedipus-rex
 type: trace
 category: lit-film
+group: classic
 name_ko: 오이디푸스 왕
 name_en: Oedipus Rex
 sources: [source:oedipus]

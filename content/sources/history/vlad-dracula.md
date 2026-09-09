@@ -2,6 +2,7 @@
 id: source:vlad-dracula
 type: source
 domain: history
+group: beyond
 name_ko: 블라드 드라쿨라
 name_en: Vlad Dracula
 aliases: [블라드 3세, 가시공]
@@ -11,6 +12,10 @@ level_adult: 15세기 왈라키아의 군주로, 오스만 제국에 맞서 싸�
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: Vlad Ţepeş, the Impaler, Prince of Wallachia (1456-1462) (died 1477).jpg
+  caption: 블라드 3세 초상, 16세기. 드라큘라라는 이름이 여기서 왔다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

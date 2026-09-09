@@ -2,6 +2,7 @@
 id: trace:toyota-avalon
 type: trace
 category: brand
+group: car
 name_ko: 아발론
 name_en: Avalon
 sources: [source:arthur-avalon]

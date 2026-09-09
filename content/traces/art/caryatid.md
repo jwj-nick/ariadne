@@ -2,6 +2,7 @@
 id: trace:caryatid
 type: trace
 category: art
+group: sculpture
 name_ko: 카리아티드
 name_en: Caryatid
 sources: [source:caryatid-women]

@@ -2,6 +2,7 @@
 id: trace:palladium
 type: trace
 category: science-astro
+group: element
 name_ko: 팔라듐
 name_en: Palladium
 sources: [source:athena]

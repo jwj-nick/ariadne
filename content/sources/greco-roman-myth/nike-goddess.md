@@ -2,6 +2,7 @@
 id: source:nike-goddess
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 니케
 name_en: Nike
 aliases: [Νίκη, Victoria, 빅토리아, 비토리아]

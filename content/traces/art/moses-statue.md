@@ -2,6 +2,7 @@
 id: trace:moses-statue
 type: trace
 category: art
+group: sculpture
 name_ko: 모세상
 name_en: Moses
 sources: [source:moses]

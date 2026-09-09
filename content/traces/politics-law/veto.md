@@ -2,6 +2,7 @@
 id: trace:veto
 type: trace
 category: politics-law
+group: power
 name_ko: 거부권
 name_en: Veto
 sources: [source:roman-republic]

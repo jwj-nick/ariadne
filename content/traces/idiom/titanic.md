@@ -2,6 +2,7 @@
 id: trace:titanic
 type: trace
 category: idiom
+group: contest
 name_ko: 거대한
 name_en: Titanic
 sources: [source:titans]

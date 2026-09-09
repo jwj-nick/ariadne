@@ -2,6 +2,7 @@
 id: trace:iris-eye
 type: trace
 category: science-astro
+group: life
 name_ko: 홍채
 name_en: Iris
 sources: [source:iris-goddess]

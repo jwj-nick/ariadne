@@ -2,6 +2,7 @@
 id: source:psyche
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 프시케
 name_en: Psyche
 aliases: [푸시케]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화에 나오는 사람의 여인. 아름다움 때문
 emblem: wing
 korea_parallel: 금기를 어겨 사랑을 잃는 짜임이 한국의 「선녀와 나무꾼」과 같다.
 traces: []
+image:
+  file: Psyche-Waterhouse.jpg
+  caption: 존 윌리엄 워터하우스, 황금 상자를 여는 프시케, 1904년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

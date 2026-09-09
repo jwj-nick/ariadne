@@ -2,6 +2,7 @@
 id: source:alpha-omega
 type: source
 domain: bible-nt
+group: end
 name_ko: 알파와 오메가
 name_en: Alpha and Omega
 aliases: [처음과 마지막]
@@ -11,6 +12,10 @@ level_adult: 요한계시록에서 "나는 알파와 오메가요 처음과 마�
 emblem: ring
 korea_parallel: ""
 traces: []
+image:
+  file: Katowice St John Paul church mosaic 2021.jpg
+  caption: 그리스도 좌우의 A 와 Ω. 카토비체 성당 모자이크, 2021년
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

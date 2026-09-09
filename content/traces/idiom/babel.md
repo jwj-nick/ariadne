@@ -2,6 +2,7 @@
 id: trace:babel
 type: trace
 category: idiom
+group: wisdom
 name_ko: 바벨탑
 name_en: Tower of Babel
 sources: [source:babel-tower]

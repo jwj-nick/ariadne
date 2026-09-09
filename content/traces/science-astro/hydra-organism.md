@@ -2,6 +2,7 @@
 id: trace:hydra-organism
 type: trace
 category: science-astro
+group: life
 name_ko: 히드라
 name_en: Hydra
 sources: [source:hydra-monster]

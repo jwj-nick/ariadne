@@ -2,6 +2,7 @@
 id: source:jonah
 type: source
 domain: bible-ot
+group: wisdom
 name_ko: 요나
 name_en: Jonah
 aliases: []
@@ -11,6 +12,10 @@ level_adult: 니느웨로 가서 회개를 전하라는 명령을 피해 반대�
 emblem: fish
 korea_parallel: ""
 traces: []
+image:
+  file: Pieter Lastman - Jonah and the Whale - Google Art Project.jpg
+  caption: 피터르 라스트만, 요나와 고래, 1621년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

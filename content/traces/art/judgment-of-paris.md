@@ -2,6 +2,7 @@
 id: trace:judgment-of-paris
 type: trace
 category: art
+group: renaissance
 name_ko: 파리스의 심판
 name_en: Judgment of Paris
 sources: [source:judgment-paris]

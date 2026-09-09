@@ -2,6 +2,7 @@
 id: trace:victorias-secret
 type: trace
 category: brand
+group: fashion
 name_ko: 빅토리아 시크릿
 name_en: Victoria's Secret
 sources: [source:nike-goddess]

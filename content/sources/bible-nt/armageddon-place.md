@@ -2,6 +2,7 @@
 id: source:armageddon-place
 type: source
 domain: bible-nt
+group: end
 name_ko: 아마겟돈
 name_en: Armageddon
 aliases: [하르마게돈, 므깃도]
@@ -12,6 +13,10 @@ level_adult: 신약 요한계시록에 나오는 지명. 마지막 싸움이 벌
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: Tel Megiddo 26.jpg
+  caption: 이스라엘 므깃도 텔. 아마겟돈은 이 언덕 이름에서 왔다
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

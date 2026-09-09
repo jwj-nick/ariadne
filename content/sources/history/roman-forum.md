@@ -2,6 +2,7 @@
 id: source:roman-forum
 type: source
 domain: history
+group: rome
 name_ko: 포룸
 name_en: Roman Forum
 aliases: [Forum Romanum, 광장]

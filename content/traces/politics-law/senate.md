@@ -2,6 +2,7 @@
 id: trace:senate
 type: trace
 category: politics-law
+group: power
 name_ko: 상원
 name_en: Senate
 sources: [source:roman-senate]

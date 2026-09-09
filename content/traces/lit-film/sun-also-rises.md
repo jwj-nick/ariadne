@@ -2,6 +2,7 @@
 id: trace:sun-also-rises
 type: trace
 category: lit-film
+group: classic
 name_ko: 태양은 다시 떠오른다
 name_en: The Sun Also Rises
 sources: [source:ecclesiastes]

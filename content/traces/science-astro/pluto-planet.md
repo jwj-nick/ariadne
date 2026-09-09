@@ -2,6 +2,7 @@
 id: trace:pluto-planet
 type: trace
 category: science-astro
+group: planet
 name_ko: 명왕성
 name_en: Pluto
 sources: [source:hades]

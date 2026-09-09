@@ -2,6 +2,7 @@
 id: source:electra
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 엘렉트라
 name_en: Electra
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 트로이에서 돌아온 아버지 아가멤논이 어머니 클�
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: 1869 Frederic Leighton - Electra at the Tomb of Agamemnon.jpg
+  caption: 프레더릭 레이턴, 아가멤논의 무덤 앞의 엘렉트라, 1869년경
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

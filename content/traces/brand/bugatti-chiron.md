@@ -2,6 +2,7 @@
 id: trace:bugatti-chiron
 type: trace
 category: brand
+group: car
 name_ko: 부가티 시론
 name_en: Bugatti Chiron
 sources: [source:chiron]

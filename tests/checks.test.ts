@@ -19,6 +19,7 @@ function trace(overrides: Partial2 = {}, body?: string): Card {
     id: 'trace:nike',
     type: 'trace',
     category: 'brand',
+    group: 'tech',
     name_ko: '나이키',
     name_en: 'Nike',
     sources: ['source:nike-goddess'],
@@ -46,6 +47,7 @@ function source(overrides: Partial2 = {}, body?: string): Card {
     id: 'source:nike-goddess',
     type: 'source',
     domain: 'greco-roman-myth',
+    group: 'olympian',
     name_ko: '니케',
     name_en: 'Nike',
     level_kid: '승리의 여신.',
@@ -123,6 +125,15 @@ test('E08 — 허용 목록 밖 category / domain, 그리고 폴더 불일치', 
   const mismatched = trace();
   mismatched.folder = 'idiom'; // category 는 brand 인데 폴더가 다르다
   assert.ok(codes([mismatched, source()]).includes('E08'));
+});
+
+test('W10 — 하위 묶음', () => {
+  // 묶음이 없으면 둘러보기 화면에서 사실상 찾을 수 없게 된다.
+  assert.ok(codes([trace({ group: undefined }), source()]).includes('W10'));
+  // 다른 갈래의 묶음 이름을 적은 경우다. brand 에 olympian 은 없다.
+  assert.ok(codes([trace({ group: 'olympian' }), source()]).includes('W10'));
+  // 같은 이름이라도 갈래가 맞으면 통과한다. life 는 brand 에도 science-astro 에도 있다.
+  assert.ok(!codes([trace({ group: 'life' }), source()]).includes('W10'));
 });
 
 test('E09 — status 어휘 밖', () => {

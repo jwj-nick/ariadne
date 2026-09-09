@@ -2,6 +2,7 @@
 id: trace:three-graces
 type: trace
 category: art
+group: renaissance
 name_ko: 삼미신
 name_en: The Three Graces
 sources: [source:graces]

@@ -2,6 +2,7 @@
 id: source:chimera-monster
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 키마이라
 name_en: Chimera
 aliases: [키메라]
@@ -12,6 +13,10 @@ level_adult: 앞은 사자, 가운데는 염소, 꼬리는 뱀인 괴물이며 �
 emblem: goat
 korea_parallel: ""
 traces: []
+image:
+  file: Chimera di Arezzo.jpg
+  caption: 아레초의 키마이라. 기원전 4세기 에트루리아 청동상
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

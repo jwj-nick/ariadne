@@ -2,6 +2,7 @@
 id: trace:eye-of-needle
 type: trace
 category: idiom
+group: desire
 name_ko: 낙타와 바늘귀
 name_en: Eye of a needle
 sources: [source:gospel-sayings]

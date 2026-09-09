@@ -2,6 +2,7 @@
 id: trace:chronometer
 type: trace
 category: science-astro
+group: earth
 name_ko: 크로노미터
 name_en: Chronometer
 sources: [source:cronus]

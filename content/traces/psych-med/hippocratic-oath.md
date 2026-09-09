@@ -2,6 +2,7 @@
 id: trace:hippocratic-oath
 type: trace
 category: psych-med
+group: doctor
 name_ko: 히포크라테스 선서
 name_en: Hippocratic Oath
 sources: [source:hippocrates]

@@ -2,6 +2,7 @@
 id: trace:jubilee
 type: trace
 category: politics-law
+group: law
 name_ko: 희년
 name_en: Jubilee
 sources: [source:sabbath]

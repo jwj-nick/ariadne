@@ -2,6 +2,7 @@
 id: source:uranus-sky
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 우라노스
 name_en: Uranus
 aliases: [카일루스, Caelus]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화에서 하늘 그 자체인 존재. 땅인 가이�
 emblem: star
 korea_parallel: ""
 traces: []
+image:
+  file: Aion mosaic Glyptothek Munich W504 full.jpg
+  caption: 아이온 모자이크. 하늘을 두른 띠가 황도 십이궁이다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

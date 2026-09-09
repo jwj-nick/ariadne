@@ -2,6 +2,7 @@
 id: trace:mammon
 type: trace
 category: politics-law
+group: people
 name_ko: 맘몬
 name_en: Mammon
 sources: [source:mammon]

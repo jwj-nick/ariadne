@@ -2,6 +2,7 @@
 id: source:elysium
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 엘리시온
 name_en: Elysium
 aliases: [엘리시온 들판, Elysian Fields]
@@ -12,6 +13,10 @@ level_adult: 저승에 있으되 다른 곳과 달리 해가 비치고 바람이
 emblem: tree
 korea_parallel: ""
 traces: []
+image:
+  file: Goethe Elysium crop.jpg
+  caption: 프란츠 나도르프, 엘리시온에 도착한 괴테
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

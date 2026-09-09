@@ -2,6 +2,7 @@
 id: source:asia-titaness
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 아시아
 name_en: Asia
 aliases: [아시에]
@@ -13,6 +14,10 @@ level_adult: 오케아노스와 테티스 사이에서 태어난 님프이며, �
 emblem: river
 korea_parallel: ""
 traces: []
+image:
+  file: Delineation orbis terrarum Herodotei ex conjectura Niebuhrii (FL147347705 2726321).jpg
+  caption: 헤로도토스가 그린 세계. 아시아는 이 지도의 오른쪽이다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

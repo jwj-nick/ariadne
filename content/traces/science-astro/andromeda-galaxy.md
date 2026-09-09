@@ -2,6 +2,7 @@
 id: trace:andromeda-galaxy
 type: trace
 category: science-astro
+group: star
 name_ko: 안드로메다은하
 name_en: Andromeda Galaxy
 sources: [source:perseus-andromeda]

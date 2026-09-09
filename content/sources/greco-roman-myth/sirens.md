@@ -2,6 +2,7 @@
 id: source:sirens
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 세이렌
 name_en: Sirens
 aliases: [세이레네스, 사이렌]

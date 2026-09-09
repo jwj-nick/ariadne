@@ -2,6 +2,7 @@
 id: trace:uranium
 type: trace
 category: science-astro
+group: element
 name_ko: 우라늄
 name_en: Uranium
 sources: [source:uranus-sky]

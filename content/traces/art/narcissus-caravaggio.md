@@ -2,6 +2,7 @@
 id: trace:narcissus-caravaggio
 type: trace
 category: art
+group: modern
 name_ko: 나르키소스
 name_en: Narcissus
 sources: [source:narcissus]

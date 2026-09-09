@@ -2,6 +2,7 @@
 id: source:sparta
 type: source
 domain: history
+group: greece
 name_ko: 스파르타
 name_en: Sparta
 aliases: [라케다이몬, 라코니아]
@@ -12,6 +13,10 @@ level_adult: 남자아이를 일곱 살에 집에서 데려가 공동 막사에�
 emblem: helmet
 korea_parallel: ""
 traces: []
+image:
+  file: Leónidas en las Termópilas, por Jacques-Louis David.jpg
+  caption: 자크 루이 다비드, 테르모필레의 레오니다스, 1814년, 루브르
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

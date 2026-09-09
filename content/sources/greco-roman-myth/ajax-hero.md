@@ -2,6 +2,7 @@
 id: source:ajax-hero
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 아이아스
 name_en: Ajax
 aliases: [대 아이아스, 아약스]
@@ -13,6 +14,10 @@ level_adult: 트로이 전쟁에 나온 그리스의 전사. 아킬레우스 다
 emblem: shell
 korea_parallel: ""
 traces: []
+image:
+  file: Ajax suicide.jpg
+  caption: 자기 칼 위로 몸을 던지는 아이아스, 19세기
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

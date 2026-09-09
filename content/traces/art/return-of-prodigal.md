@@ -2,6 +2,7 @@
 id: trace:return-of-prodigal
 type: trace
 category: art
+group: modern
 name_ko: 탕자의 귀향
 name_en: The Return of the Prodigal Son
 sources: [source:prodigal-son-parable]

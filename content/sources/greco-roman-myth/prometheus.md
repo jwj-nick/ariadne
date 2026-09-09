@@ -2,6 +2,7 @@
 id: source:prometheus
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 프로메테우스
 name_en: Prometheus
 aliases: [프로메테오스]

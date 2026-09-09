@@ -2,6 +2,7 @@
 id: trace:uranus-planet
 type: trace
 category: science-astro
+group: planet
 name_ko: 천왕성
 name_en: Uranus
 sources: [source:uranus-sky]

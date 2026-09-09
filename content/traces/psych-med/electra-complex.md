@@ -2,6 +2,7 @@
 id: trace:electra-complex
 type: trace
 category: psych-med
+group: mind
 name_ko: 엘렉트라 콤플렉스
 name_en: Electra complex
 sources: [source:electra]

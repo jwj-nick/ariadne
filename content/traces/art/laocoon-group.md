@@ -2,6 +2,7 @@
 id: trace:laocoon-group
 type: trace
 category: art
+group: sculpture
 name_ko: 라오콘 군상
 name_en: Laocoon and His Sons
 sources: [source:laocoon]

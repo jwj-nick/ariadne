@@ -2,6 +2,7 @@
 id: trace:jovial
 type: trace
 category: idiom
+group: person
 name_ko: 조비얼
 name_en: Jovial
 sources: [source:zeus]

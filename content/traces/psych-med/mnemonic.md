@@ -2,6 +2,7 @@
 id: trace:mnemonic
 type: trace
 category: psych-med
+group: mind
 name_ko: 기억술
 name_en: Mnemonic
 sources: [source:mnemosyne]

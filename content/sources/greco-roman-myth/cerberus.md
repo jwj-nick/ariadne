@@ -2,6 +2,7 @@
 id: source:cerberus
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 케르베로스
 name_en: Cerberus
 aliases: [케르베루스]
@@ -12,6 +13,10 @@ level_adult: 저승의 문을 지키는 머리 셋 달린 개다. 들어오는 �
 emblem: lion
 korea_parallel: ""
 traces: []
+image:
+  file: 'Illustrations to Dante''s Divine Comedy object 13 Butlin 812-13 Second Version of Cerberus.jpg'
+  caption: 윌리엄 블레이크, 단테 신곡의 케르베로스
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

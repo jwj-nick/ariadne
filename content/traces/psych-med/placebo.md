@@ -2,6 +2,7 @@
 id: trace:placebo
 type: trace
 category: psych-med
+group: drug
 name_ko: 플라시보
 name_en: Placebo
 sources: [source:vulgate-psalm]

@@ -2,6 +2,7 @@
 id: trace:school-of-athens
 type: trace
 category: art
+group: renaissance
 name_ko: 아테네 학당
 name_en: The School of Athens
 sources: [source:plato]

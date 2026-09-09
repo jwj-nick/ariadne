@@ -2,6 +2,7 @@
 id: trace:cesarean
 type: trace
 category: psych-med
+group: body
 name_ko: 제왕절개
 name_en: Cesarean section
 sources: [source:julius-caesar]

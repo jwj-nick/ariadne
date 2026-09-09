@@ -2,6 +2,7 @@
 id: trace:ostracism
 type: trace
 category: politics-law
+group: law
 name_ko: 도편추방
 name_en: Ostracism
 sources: [source:athenian-democracy]

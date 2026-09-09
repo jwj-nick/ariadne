@@ -2,6 +2,7 @@
 id: trace:atlas
 type: trace
 category: other
+group: misc
 name_ko: 아틀라스
 name_en: Atlas
 sources: [source:atlas]

@@ -2,6 +2,7 @@
 id: trace:pangaea
 type: trace
 category: science-astro
+group: earth
 name_ko: 판게아
 name_en: Pangaea
 sources: [source:gaia]

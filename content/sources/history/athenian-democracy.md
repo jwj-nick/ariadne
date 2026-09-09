@@ -2,6 +2,7 @@
 id: source:athenian-democracy
 type: source
 domain: history
+group: greece
 name_ko: 아테네 민주정
 name_en: Athenian democracy
 aliases: [고대 아테네 민주주의]
@@ -12,6 +13,10 @@ level_adult: 기원전 5세기 아테네에서 자리 잡은 정치 체제. 대�
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: View of the Retaining Wall of the Pnyx.jpg
+  caption: 아테네 프닉스 언덕. 시민이 모여 표결하던 자리다
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

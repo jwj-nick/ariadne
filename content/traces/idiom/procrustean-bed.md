@@ -2,6 +2,7 @@
 id: trace:procrustean-bed
 type: trace
 category: idiom
+group: wisdom
 name_ko: 프로크루스테스의 침대
 name_en: Procrustean bed
 sources: [source:procrustes]

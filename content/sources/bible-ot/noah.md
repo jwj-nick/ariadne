@@ -2,6 +2,7 @@
 id: source:noah
 type: source
 domain: bible-ot
+group: origin
 name_ko: 노아
 name_en: Noah
 aliases: [노아의 방주, 대홍수]

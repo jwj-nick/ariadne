@@ -2,6 +2,7 @@
 id: trace:gordian-knot-idiom
 type: trace
 category: idiom
+group: wisdom
 name_ko: 고르디우스의 매듭
 name_en: Gordian knot
 sources: [source:gordian-knot]

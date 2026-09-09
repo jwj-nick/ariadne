@@ -2,6 +2,7 @@
 id: trace:artemis-program
 type: trace
 category: codename
+group: space
 name_ko: 아르테미스 계획
 name_en: Artemis program
 sources: [source:artemis]

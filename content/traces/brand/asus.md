@@ -2,6 +2,7 @@
 id: trace:asus
 type: trace
 category: brand
+group: tech
 name_ko: 에이수스
 name_en: ASUS
 sources: [source:pegasus]

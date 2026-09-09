@@ -2,6 +2,7 @@
 id: trace:trojan-virus
 type: trace
 category: codename
+group: soft
 name_ko: 트로이 목마 프로그램
 name_en: Trojan malware
 sources: [source:trojan-horse]

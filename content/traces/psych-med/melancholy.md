@@ -2,6 +2,7 @@
 id: trace:melancholy
 type: trace
 category: psych-med
+group: mind
 name_ko: 우울
 name_en: Melancholy
 sources: [source:hippocrates]

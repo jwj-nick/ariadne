@@ -2,6 +2,7 @@
 id: source:babel-tower
 type: source
 domain: bible-ot
+group: origin
 name_ko: 바벨탑
 name_en: Tower of Babel
 aliases: [바벨, 바빌론 탑]

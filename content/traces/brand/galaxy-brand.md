@@ -2,6 +2,7 @@
 id: trace:galaxy-brand
 type: trace
 category: brand
+group: tech
 name_ko: 갤럭시
 name_en: Galaxy
 sources: [source:milky-way]

@@ -2,6 +2,7 @@
 id: trace:protean
 type: trace
 category: idiom
+group: person
 name_ko: 변화무쌍한
 name_en: Protean
 sources: [source:proteus]

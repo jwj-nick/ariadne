@@ -2,6 +2,7 @@
 id: trace:hera-cosmetics
 type: trace
 category: brand
+group: beauty
 name_ko: 헤라
 name_en: HERA
 sources: [source:hera]

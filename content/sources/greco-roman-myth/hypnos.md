@@ -2,6 +2,7 @@
 id: source:hypnos
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 힙노스
 name_en: Hypnos
 aliases: [Somnus, 솜누스]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화에서 잠을 맡은 신. 밤의 여신 닉스의 �
 emblem: moon
 korea_parallel: ""
 traces: []
+image:
+  file: Hypnos (Petit Palais, Paris) (32419933577).jpg
+  caption: 잠의 신 힙노스. 관자놀이의 날개로 알아본다
+  license: CC BY 2.0
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:graces
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 삼미신
 name_en: Charites
 aliases: [카리테스, 그라티아이, Graces]
@@ -13,6 +14,10 @@ level_adult: 아름다움과 기쁨과 베풂을 맡은 세 자매이며, 아프
 emblem: thread
 korea_parallel: ""
 traces: []
+image:
+  file: Secret Cabinet Fresco of the three Graces, naked, wearing wreaths, standing in a spring landscape, from Pompeii (48451882416).jpg
+  caption: 폼페이 벽화의 삼미신
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

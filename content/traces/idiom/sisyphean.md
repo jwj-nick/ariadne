@@ -2,6 +2,7 @@
 id: trace:sisyphean
 type: trace
 category: idiom
+group: fate
 name_ko: 시시포스의 바위
 name_en: Sisyphean task
 sources: [source:sisyphus]

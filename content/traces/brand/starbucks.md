@@ -2,6 +2,7 @@
 id: trace:starbucks
 type: trace
 category: brand
+group: food
 name_ko: 스타벅스
 name_en: Starbucks
 sources: [source:moby-dick, source:sirens]

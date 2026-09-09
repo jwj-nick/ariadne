@@ -2,6 +2,7 @@
 id: trace:asclepius-rod
 type: trace
 category: psych-med
+group: doctor
 name_ko: 의료 표지
 name_en: Rod of Asclepius
 sources: [source:asclepius]

@@ -2,6 +2,7 @@
 id: trace:chimera
 type: trace
 category: science-astro
+group: life
 name_ko: 키메라
 name_en: Chimera
 sources: [source:chimera-monster]

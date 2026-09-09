@@ -2,6 +2,7 @@
 id: trace:dictator
 type: trace
 category: politics-law
+group: power
 name_ko: 독재자
 name_en: Dictator
 sources: [source:roman-republic]

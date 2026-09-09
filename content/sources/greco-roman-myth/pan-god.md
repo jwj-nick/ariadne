@@ -2,6 +2,7 @@
 id: source:pan-god
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 판
 name_en: Pan
 aliases: [파우누스, Faunus, 목신 판]
@@ -12,6 +13,10 @@ level_adult: 아르카디아의 숲과 목장, 양치기를 지키는 신. 상�
 emblem: goat
 korea_parallel: ""
 traces: []
+image:
+  file: The Barberini Faun.jpg
+  caption: 바르베리니 파운. 목신 판과 같은 계열의 사티로스상이다
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

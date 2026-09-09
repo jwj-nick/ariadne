@@ -2,6 +2,7 @@
 id: trace:tiffany
 type: trace
 category: brand
+group: fashion
 name_ko: 티파니
 name_en: Tiffany
 sources: [source:epiphany]

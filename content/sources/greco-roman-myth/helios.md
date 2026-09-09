@@ -2,6 +2,7 @@
 id: source:helios
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 헬리오스
 name_en: Helios
 aliases: [Sol, 솔]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화에서 해 그 자체인 신. 날마다 네 마리 
 emblem: star
 korea_parallel: ""
 traces: []
+image:
+  file: Coptic - Plaque with Allegorical Relief - Walters 711113.jpg
+  caption: 태양신 헬리오스를 새긴 부조, 5세기
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

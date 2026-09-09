@@ -2,6 +2,7 @@
 id: trace:tyrant
 type: trace
 category: politics-law
+group: power
 name_ko: 참주
 name_en: Tyrant
 sources: [source:greek-tyranny]

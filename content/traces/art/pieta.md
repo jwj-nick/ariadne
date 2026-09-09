@@ -2,6 +2,7 @@
 id: trace:pieta
 type: trace
 category: art
+group: sculpture
 name_ko: 피에타
 name_en: Pietà
 sources: [source:virgin-mary]

@@ -2,6 +2,7 @@
 id: trace:republic
 type: trace
 category: politics-law
+group: power
 name_ko: 공화국
 name_en: Republic
 sources: [source:roman-republic]

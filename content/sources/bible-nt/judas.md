@@ -2,6 +2,7 @@
 id: source:judas
 type: source
 domain: bible-nt
+group: jesus
 name_ko: 유다
 name_en: Judas Iscariot
 aliases: [가룟 유다, 이스가리옷 유다]

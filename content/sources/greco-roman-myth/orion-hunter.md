@@ -2,6 +2,7 @@
 id: source:orion-hunter
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 오리온
 name_en: Orion
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 바다의 신 포세이돈의 아들로 태어난 거인 사냥꾼�
 emblem: star
 korea_parallel: ""
 traces: []
+image:
+  file: Blind Orion Searching for the Rising Sun MET DP148490.jpg
+  caption: 니콜라 푸생, 해 뜨는 쪽을 찾아가는 눈먼 오리온, 1658년
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

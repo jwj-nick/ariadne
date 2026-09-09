@@ -2,6 +2,7 @@
 id: trace:rodin-kiss
 type: trace
 category: art
+group: sculpture
 name_ko: 입맞춤
 name_en: The Kiss
 sources: [source:divine-comedy]

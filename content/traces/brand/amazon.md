@@ -2,6 +2,7 @@
 id: trace:amazon
 type: trace
 category: brand
+group: tech
 name_ko: 아마존
 name_en: Amazon
 sources: [source:amazons]

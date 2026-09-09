@@ -2,6 +2,7 @@
 id: source:roman-election
 type: source
 domain: history
+group: rome
 name_ko: 로마의 선거
 name_en: Roman elections
 aliases: [캔디다투스, candidatus]
@@ -12,6 +13,10 @@ level_adult: 로마 공화국에서는 해마다 관직을 뽑는 선거가 있�
 emblem: coin
 korea_parallel: ""
 traces: []
+image:
+  file: Pompeia-ViaAbundancia-propagandaElectoral-5445.jpg
+  caption: 폼페이 담벼락의 선거 벽보. 이천 년 전 후보 이름이 남아 있다
+  license: CC BY 3.0
 status: reviewed
 created: 2026-09-08
 ---

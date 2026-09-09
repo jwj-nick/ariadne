@@ -2,6 +2,7 @@
 id: trace:mobil
 type: trace
 category: brand
+group: car
 name_ko: 모빌
 name_en: Mobil
 sources: [source:pegasus]

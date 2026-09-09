@@ -2,6 +2,7 @@
 id: trace:eureka
 type: trace
 category: idiom
+group: wisdom
 name_ko: 유레카
 name_en: Eureka
 sources: [source:archimedes]

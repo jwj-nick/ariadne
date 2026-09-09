@@ -2,6 +2,7 @@
 id: trace:little-mermaid
 type: trace
 category: lit-film
+group: classic
 name_ko: 인어공주
 name_en: The Little Mermaid
 sources: [source:sirens]

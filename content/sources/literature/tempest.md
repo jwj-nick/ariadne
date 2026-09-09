@@ -2,6 +2,7 @@
 id: source:tempest
 type: source
 domain: literature
+group: shakespeare
 name_ko: 템페스트
 name_en: The Tempest
 aliases: [폭풍우]
@@ -11,6 +12,10 @@ level_adult: 동생에게 자리를 빼앗기고 딸과 함께 외딴섬에 버�
 emblem: wave
 korea_parallel: ""
 traces: []
+image:
+  file: Waterhouse miranda the tempest.jpg
+  caption: 존 윌리엄 워터하우스, 미란다, 1916년. 폭풍우에 난파하는 배를 보고 있다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

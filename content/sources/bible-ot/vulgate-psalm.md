@@ -2,6 +2,7 @@
 id: source:vulgate-psalm
 type: source
 domain: bible-ot
+group: wisdom
 name_ko: 시편의 라틴어 구절
 name_en: Placebo Domino
 aliases: [불가타 시편]
@@ -11,6 +12,10 @@ level_adult: 라틴어 성경의 시편 116편에 나는 주님을 기쁘게 하
 emblem: harp
 korea_parallel: ""
 traces: []
+image:
+  file: Psalm 26 (27); Thomas Becket - Luttrell Psalter (c.1325-1335), f.51 - BL Add MS 42130.jpg
+  caption: 러트렐 시편집의 시편 26편. 14세기 채색 필사본
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: trace:last-judgment
 type: trace
 category: art
+group: renaissance
 name_ko: 최후의 심판
 name_en: The Last Judgment
 sources: [source:apocalypse]

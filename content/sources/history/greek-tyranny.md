@@ -2,6 +2,7 @@
 id: source:greek-tyranny
 type: source
 domain: history
+group: greece
 name_ko: 참주
 name_en: Tyrannos
 aliases: [티라노스, 참주정]
@@ -11,6 +12,10 @@ level_adult: 귀족정과 민주정 사이의 시기에 그리스 도시 국가�
 emblem: crown
 korea_parallel: ""
 traces: []
+image:
+  file: Sommer, Giorgio (1834-1914) - n. 11211 - Napoli - Museo Nazionale.jpg
+  caption: 참주를 죽인 하르모디오스와 아리스토게이톤, 나폴리 국립고고학박물관
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

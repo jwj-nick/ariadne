@@ -2,6 +2,7 @@
 id: source:cronus
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 크로노스
 name_en: Cronus
 aliases: [사투르누스, Saturnus, Saturn, 사투른]
@@ -13,6 +14,10 @@ level_adult: 티탄족의 막내이자 우두머리. 아버지 우라노스를 �
 emblem: mountain
 korea_parallel: ""
 traces: []
+image:
+  file: Rubens saturn.jpg
+  caption: 페테르 파울 루벤스, 자식을 삼키는 사투르누스, 1636년, 프라도
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

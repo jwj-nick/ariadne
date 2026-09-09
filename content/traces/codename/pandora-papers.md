@@ -2,6 +2,7 @@
 id: trace:pandora-papers
 type: trace
 category: codename
+group: soft
 name_ko: 판도라 페이퍼스
 name_en: Pandora Papers
 sources: [source:pandora]

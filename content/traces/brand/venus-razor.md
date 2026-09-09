@@ -2,6 +2,7 @@
 id: trace:venus-razor
 type: trace
 category: brand
+group: beauty
 name_ko: 비너스 면도기
 name_en: Venus razor
 sources: [source:aphrodite]

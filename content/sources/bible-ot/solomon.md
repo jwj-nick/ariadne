@@ -2,6 +2,7 @@
 id: source:solomon
 type: source
 domain: bible-ot
+group: king
 name_ko: 솔로몬
 name_en: Solomon
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 다윗의 아들이며, 신이 무엇을 원하느냐 묻자 재물
 emblem: scale
 korea_parallel: ""
 traces: []
+image:
+  file: Le Jugement de Salomon - 1649 - Nicolas Poussin - Louvre - INV 7277 ; MR 2316 (2).jpg
+  caption: 니콜라 푸생, 솔로몬의 심판, 1649년, 루브르
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: trace:exodus
 type: trace
 category: idiom
+group: fate
 name_ko: 엑소더스
 name_en: Exodus
 sources: [source:exodus-story]

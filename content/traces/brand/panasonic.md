@@ -2,6 +2,7 @@
 id: trace:panasonic
 type: trace
 category: brand
+group: tech
 name_ko: 파나소닉
 name_en: Panasonic
 sources: [source:pan-god]

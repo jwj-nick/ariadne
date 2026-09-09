@@ -2,6 +2,7 @@
 id: source:alcyone
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 알키오네
 name_en: Alcyone
 aliases: [할키온, Halcyon]
@@ -11,6 +12,10 @@ level_adult: 남편 케익스가 바다에서 죽자 슬픔에 몸을 던졌고,
 emblem: wave
 korea_parallel: ""
 traces: []
+image:
+  file: Herbert James Draper - Halcyone (1915).jpg
+  caption: 허버트 드레이퍼, 알키오네, 1915년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

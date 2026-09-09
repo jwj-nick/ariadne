@@ -2,6 +2,7 @@
 id: trace:capitoline-wolf
 type: trace
 category: art
+group: sculpture
 name_ko: 카피톨리노의 늑대
 name_en: Capitoline Wolf
 sources: [source:romulus-remus]

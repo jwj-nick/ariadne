@@ -2,6 +2,7 @@
 id: trace:nvidia
 type: trace
 category: brand
+group: tech
 name_ko: 엔비디아
 name_en: NVIDIA
 sources: [source:nemesis-goddess]

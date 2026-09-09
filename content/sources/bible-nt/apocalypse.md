@@ -2,6 +2,7 @@
 id: source:apocalypse
 type: source
 domain: bible-nt
+group: end
 name_ko: 요한계시록
 name_en: Apocalypse
 aliases: [묵시록, Revelation]
@@ -11,6 +12,10 @@ level_adult: 신약의 마지막 책이며, 그리스어 제목은 감춘 것을
 emblem: scroll
 korea_parallel: ""
 traces: []
+image:
+  file: The Four Horsemen (CBL WEp 0021).jpg
+  caption: 알브레히트 뒤러, 요한계시록의 네 기사, 1498년 목판화
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

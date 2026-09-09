@@ -2,6 +2,7 @@
 id: trace:space-odyssey
 type: trace
 category: lit-film
+group: film
 name_ko: 2001 스페이스 오디세이
 name_en: "2001: A Space Odyssey"
 sources: [source:odysseus]

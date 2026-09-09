@@ -2,6 +2,7 @@
 id: trace:panacea
 type: trace
 category: psych-med
+group: drug
 name_ko: 만병통치약
 name_en: Panacea
 sources: [source:panacea-goddess]

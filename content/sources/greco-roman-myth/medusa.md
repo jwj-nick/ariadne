@@ -2,6 +2,7 @@
 id: source:medusa
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 메두사
 name_en: Medusa
 aliases: [고르곤]

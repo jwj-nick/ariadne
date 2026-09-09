@@ -2,6 +2,7 @@
 id: source:triton
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 트리톤
 name_en: Triton
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 포세이돈의 아들이며, 상반신은 사람이고 하반신�
 emblem: shell
 korea_parallel: ""
 traces: []
+image:
+  file: Fontana del Tritone(Triton Fountain), Rome, Italy (Ank Kumar, Infosys Limited) 03.jpg
+  caption: 잔 로렌초 베르니니, 트리톤 분수, 1643년, 로마
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

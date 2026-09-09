@@ -2,6 +2,7 @@
 id: source:paradise-lost
 type: source
 domain: literature
+group: epic
 name_ko: 실낙원
 name_en: Paradise Lost
 aliases: [밀턴의 실낙원]

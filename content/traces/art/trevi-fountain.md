@@ -2,6 +2,7 @@
 id: trace:trevi-fountain
 type: trace
 category: art
+group: sculpture
 name_ko: 트레비 분수
 name_en: Trevi Fountain
 sources: [source:oceanus]

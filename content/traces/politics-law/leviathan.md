@@ -2,6 +2,7 @@
 id: trace:leviathan
 type: trace
 category: politics-law
+group: power
 name_ko: 리바이어던
 name_en: Leviathan
 sources: [source:leviathan-beast]

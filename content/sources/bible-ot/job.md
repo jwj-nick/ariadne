@@ -2,6 +2,7 @@
 id: source:job
 type: source
 domain: bible-ot
+group: wisdom
 name_ko: 욥
 name_en: Job
 aliases: []
@@ -11,6 +12,10 @@ level_adult: 재산과 자식과 건강을 한꺼번에 잃고도 신을 저버�
 emblem: rock
 korea_parallel: ""
 traces: []
+image:
+  file: William Blake - Job and His Family.jpg
+  caption: 윌리엄 블레이크, 욥과 그의 가족
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

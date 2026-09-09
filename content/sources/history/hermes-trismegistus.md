@@ -2,6 +2,7 @@
 id: source:hermes-trismegistus
 type: source
 domain: history
+group: thinker
 name_ko: 헤르메스 트리스메기스토스
 name_en: Hermes Trismegistus
 aliases: [세 번 위대한 헤르메스]
@@ -12,6 +13,10 @@ level_adult: 헬레니즘 시대의 이집트에서 그리스의 헤르메스와
 emblem: staff
 korea_parallel: ""
 traces: []
+image:
+  file: Hermes Trismegistus Sienna Cathedral Mosaic.jpg
+  caption: 시에나 대성당 바닥의 헤르메스 트리스메기스토스, 1500년대
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

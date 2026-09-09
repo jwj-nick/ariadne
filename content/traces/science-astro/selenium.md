@@ -2,6 +2,7 @@
 id: trace:selenium
 type: trace
 category: science-astro
+group: element
 name_ko: 셀레늄
 name_en: Selenium
 sources: [source:selene]

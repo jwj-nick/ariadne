@@ -2,6 +2,7 @@
 id: trace:helium
 type: trace
 category: science-astro
+group: element
 name_ko: 헬륨
 name_en: Helium
 sources: [source:helios]

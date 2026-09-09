@@ -2,6 +2,7 @@
 id: trace:cadmium
 type: trace
 category: science-astro
+group: element
 name_ko: 카드뮴
 name_en: Cadmium
 sources: [source:cadmus]

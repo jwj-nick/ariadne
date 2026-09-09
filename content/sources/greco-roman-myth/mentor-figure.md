@@ -2,6 +2,7 @@
 id: source:mentor-figure
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 멘토르
 name_en: Mentor
 aliases: [Mentor of Ithaca]
@@ -13,6 +14,10 @@ level_adult: 호메로스의 <오디세이아>에 나오는 이타카 사람. �
 emblem: owl
 korea_parallel: ""
 traces: []
+image:
+  file: Mentor neemt afscheid van Telemachus, RP-T-1996-103.jpg
+  caption: 텔레마코스와 작별하는 멘토르, 18세기
+  license: CC0
 status: reviewed
 created: 2026-09-07
 ---

@@ -2,6 +2,7 @@
 id: trace:apollo-program
 type: trace
 category: codename
+group: space
 name_ko: 아폴로 계획
 name_en: Apollo program
 sources: [source:apollo]

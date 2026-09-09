@@ -2,6 +2,7 @@
 id: trace:winged-victory
 type: trace
 category: art
+group: sculpture
 name_ko: 사모트라케의 니케
 name_en: Winged Victory of Samothrace
 sources: [source:nike-goddess]

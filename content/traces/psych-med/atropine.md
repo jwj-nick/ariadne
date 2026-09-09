@@ -2,6 +2,7 @@
 id: trace:atropine
 type: trace
 category: psych-med
+group: drug
 name_ko: 아트로핀
 name_en: Atropine
 sources: [source:fates]

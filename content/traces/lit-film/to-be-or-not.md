@@ -2,6 +2,7 @@
 id: trace:to-be-or-not
 type: trace
 category: lit-film
+group: classic
 name_ko: 사느냐 죽느냐
 name_en: To be or not to be
 sources: [source:hamlet-play]

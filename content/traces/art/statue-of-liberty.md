@@ -2,6 +2,7 @@
 id: trace:statue-of-liberty
 type: trace
 category: art
+group: sculpture
 name_ko: 자유의 여신상
 name_en: Statue of Liberty
 sources: [source:libertas]

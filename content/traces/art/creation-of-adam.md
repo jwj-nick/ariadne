@@ -2,6 +2,7 @@
 id: trace:creation-of-adam
 type: trace
 category: art
+group: renaissance
 name_ko: 아담의 창조
 name_en: The Creation of Adam
 sources: [source:genesis-book]

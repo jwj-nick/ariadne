@@ -2,6 +2,7 @@
 id: trace:dante-inferno
 type: trace
 category: lit-film
+group: classic
 name_ko: 단테의 지옥
 name_en: Dante Inferno
 sources: [source:divine-comedy]

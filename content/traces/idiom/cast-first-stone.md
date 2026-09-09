@@ -2,6 +2,7 @@
 id: trace:cast-first-stone
 type: trace
 category: idiom
+group: contest
 name_ko: 첫 돌을 던지다
 name_en: Cast the first stone
 sources: [source:gospel-sayings]

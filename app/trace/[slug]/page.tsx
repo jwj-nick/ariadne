@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Artwork from '../../components/Artwork';
+import SourceThumb from '../../components/SourceThumb';
 import Emblem, { emblemFor } from '../../components/Emblem';
 import Section from '../../components/Section';
 import WishButton from '../../components/WishButton';
@@ -85,11 +86,37 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
           </div>
         </div>
         <p className="mt-2.5 text-[14px]">{trace.why}</p>
+        {/* 흔적 자체의 그림이 이미 크게 걸리는 카드에서는, 원천이 어떤 모습으로
+            전해져 왔는지를 여기에 작게 곁들인다. 그림을 빌려 온 카드에서는
+            아래에 같은 그림이 크게 나오므로 두지 않는다. */}
+        {trace.image &&
+          (() => {
+            const s0 = sources.find((s) => s.image);
+            return s0?.image ? (
+              <SourceThumb file={s0.image.file} href={`/source/${s0.slug}`} name={s0.name_ko} />
+            ) : null;
+          })()}
       </div>
 
-      {trace.image && (
-        <Artwork file={trace.image.file} caption={trace.image.caption} license={trace.image.license} />
-      )}
+      {/* 흔적 자체의 그림이 없으면 그 원천의 그림을 빌려 온다.
+          로고는 상표권 때문에 걸 수 없지만, 그 이름이 나온 자리의 그림은 걸 수 있다. */}
+      {(() => {
+        const own = trace.image;
+        const lent = own ? null : sources.find((s) => s.image)?.image;
+        const lender = own ? null : sources.find((s) => s.image);
+        if (own) return <Artwork file={own.file} caption={own.caption} license={own.license} />;
+        if (lent && lender) {
+          return (
+            <Artwork
+              file={lent.file}
+              caption={lent.caption}
+              license={lent.license}
+              borrowedFrom={lender.name_ko}
+            />
+          );
+        }
+        return null;
+      })()}
 
       <Section title="한 줄" text={trace.sections['한 줄']} />
       <Section title="어디서 만나나" text={trace.sections['어디서 만나나']} />

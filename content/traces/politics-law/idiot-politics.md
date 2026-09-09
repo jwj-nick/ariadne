@@ -2,6 +2,7 @@
 id: trace:idiot-politics
 type: trace
 category: politics-law
+group: people
 name_ko: 이디엇
 name_en: Idiot
 sources: [source:greek-polis]

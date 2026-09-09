@@ -2,6 +2,7 @@
 id: source:oceanus
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 오케아노스
 name_en: Oceanus
 aliases: [오케아누스]
@@ -13,6 +14,10 @@ level_adult: 우라노스와 가이아 사이에서 태어난 티탄이며, 땅�
 emblem: river
 korea_parallel: ""
 traces: []
+image:
+  file: Sousse bath Oceanus.JPG
+  caption: 수스의 목욕탕 바닥에 새겨진 오케아노스의 얼굴
+  license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

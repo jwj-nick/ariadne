@@ -2,6 +2,7 @@
 id: source:panacea-goddess
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 파나케이아
 name_en: Panacea
 aliases: [파나케아]
@@ -13,6 +14,10 @@ level_adult: 의술의 신 아스클레피오스의 딸이며, 이름 자체가 
 emblem: cup
 korea_parallel: ""
 traces: []
+image:
+  file: Ancient Greece Marble Votive Relief (28212732640).jpg
+  caption: 아스클레피오스 가족을 새긴 봉헌 부조. 파나케이아는 그 딸이다
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

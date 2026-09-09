@@ -2,6 +2,7 @@
 id: trace:ariel-detergent
 type: trace
 category: brand
+group: life
 name_ko: 아리엘
 name_en: Ariel
 sources: [source:tempest]

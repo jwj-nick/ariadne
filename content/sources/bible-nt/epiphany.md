@@ -2,6 +2,7 @@
 id: source:epiphany
 type: source
 domain: bible-nt
+group: end
 name_ko: 주현절
 name_en: Epiphany
 aliases: [에피파니, 공현절]
@@ -11,6 +12,10 @@ level_adult: 그리스어로 위에서 드러남을 뜻하는 낱말이며, 별�
 emblem: star
 korea_parallel: ""
 traces: []
+image:
+  file: Fra Angelico, Fra Filippo Lippi, The Adoration of the Magi.jpg
+  caption: 프라 안젤리코와 필리포 리피, 동방박사의 경배, 1440년경
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

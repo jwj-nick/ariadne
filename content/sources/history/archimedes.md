@@ -2,6 +2,7 @@
 id: source:archimedes
 type: source
 domain: history
+group: thinker
 name_ko: 아르키메데스
 name_en: Archimedes
 aliases: [아르키메데스의 원리]
@@ -11,6 +12,10 @@ level_adult: 기원전 3세기 시라쿠사의 수학자이자 발명가. 왕관
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: Gemäldegalerie Alte Meister (Dresden) Galeriewerk Heineken 135.jpg
+  caption: 도메니코 페티를 따른 판화, 아르키메데스
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

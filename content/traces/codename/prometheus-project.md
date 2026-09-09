@@ -2,6 +2,7 @@
 id: trace:prometheus-project
 type: trace
 category: codename
+group: soft
 name_ko: 프로메테우스
 name_en: Prometheus
 sources: [source:prometheus]

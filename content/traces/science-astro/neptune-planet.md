@@ -2,6 +2,7 @@
 id: trace:neptune-planet
 type: trace
 category: science-astro
+group: planet
 name_ko: 해왕성
 name_en: Neptune
 sources: [source:poseidon]

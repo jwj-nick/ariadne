@@ -2,6 +2,7 @@
 id: trace:hypnosis
 type: trace
 category: psych-med
+group: mind
 name_ko: 최면
 name_en: Hypnosis
 sources: [source:hypnos]

@@ -2,6 +2,7 @@
 id: trace:atom
 type: trace
 category: science-astro
+group: element
 name_ko: 원자
 name_en: Atom
 sources: [source:democritus]

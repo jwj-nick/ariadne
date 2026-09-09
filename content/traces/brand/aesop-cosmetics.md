@@ -2,6 +2,7 @@
 id: trace:aesop-cosmetics
 type: trace
 category: brand
+group: beauty
 name_ko: 이솝
 name_en: Aesop
 sources: [source:aesop]

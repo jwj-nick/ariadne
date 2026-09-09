@@ -2,6 +2,7 @@
 id: trace:apollo-daphne
 type: trace
 category: art
+group: sculpture
 name_ko: 아폴론과 다프네
 name_en: Apollo and Daphne
 sources: [source:daphne]

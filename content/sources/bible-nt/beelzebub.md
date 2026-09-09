@@ -2,6 +2,7 @@
 id: source:beelzebub
 type: source
 domain: bible-nt
+group: end
 name_ko: 베엘제붑
 name_en: Beelzebub
 aliases: [파리대왕, 바알제붑]
@@ -12,6 +13,10 @@ level_adult: 신약 성경에 악마의 우두머리를 가리키는 이름으�
 emblem: mask
 korea_parallel: ""
 traces: []
+image:
+  file: Ill dict infernal p0103-89 belzebuth.jpg
+  caption: 파리 모습의 베엘제붑. 지옥사전 삽화, 1863년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -12,6 +12,7 @@ import { join } from 'node:path';
 import { loadCards, isTrace, isSource, REPO_ROOT, type Card } from './lib/content.ts';
 import { runChecks, codeTitle } from './lib/checks.ts';
 import { VISIBLE_STATUSES, type Status } from './lib/schema.ts';
+import { TRACE_GROUPS, SOURCE_GROUPS } from './lib/groups.ts';
 import { buildQuiz } from './lib/quiz.ts';
 import { computeLayout } from './lib/layout.ts';
 import { bodyIndex } from '../app/lib/search.ts';
@@ -20,6 +21,8 @@ interface GraphTrace {
   id: string;
   slug: string;
   category: string;
+  /** 갈래 아래의 하위 묶음 (D31) */
+  group: string;
   name_ko: string;
   name_en: string;
   sources: string[];
@@ -37,6 +40,8 @@ interface GraphSource {
   id: string;
   slug: string;
   domain: string;
+  /** 도메인 아래의 하위 묶음 (D31) */
+  group: string;
   name_ko: string;
   name_en: string;
   aliases: string[];
@@ -133,6 +138,7 @@ const traces: GraphTrace[] = traceCards.map((c) => ({
   id: String(c.data.id),
   slug: c.slug,
   category: str(c.data.category),
+  group: str((c.data as Record<string, unknown>).group),
   name_ko: str(c.data.name_ko),
   name_en: str(c.data.name_en),
   // 노출되지 않는 source 를 가리키는 링크는 그래프에서 뺀다.
@@ -161,6 +167,7 @@ const sources: GraphSource[] = sourceCards.map((c) => {
     id,
     slug: c.slug,
     domain: str(c.data.domain),
+    group: str((c.data as Record<string, unknown>).group),
     name_ko: str(c.data.name_ko),
     name_en: str(c.data.name_en),
     aliases: arr((c.data as Record<string, unknown>).aliases),
@@ -232,6 +239,11 @@ const graph = {
       orphan_sources: orphans.length,
     },
     visible_statuses: VISIBLE_STATUSES,
+    /**
+     * 갈래 아래의 묶음 정의 (D31).
+     * 앱이 scripts 를 들여다보지 않고 데이터만 읽어 계층을 그릴 수 있게 여기에 함께 싣는다.
+     */
+    groups: { trace: TRACE_GROUPS, source: SOURCE_GROUPS },
   },
   traces,
   sources,

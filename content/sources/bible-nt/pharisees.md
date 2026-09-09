@@ -2,6 +2,7 @@
 id: source:pharisees
 type: source
 domain: bible-nt
+group: parable
 name_ko: 바리새인
 name_en: Pharisees
 aliases: []
@@ -11,6 +12,10 @@ level_adult: 예수 시대 유대교의 한 무리이며, 율법을 세밀하게
 emblem: scroll
 korea_parallel: ""
 traces: []
+image:
+  file: Christ and the Woman Cught in Adultery with Pharisees - MNK XII-A-307 (342040).jpg
+  caption: 간음한 여인과 바리새인들, 18세기
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

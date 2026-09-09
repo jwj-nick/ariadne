@@ -2,6 +2,7 @@
 id: source:perseus-andromeda
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 페르세우스와 안드로메다
 name_en: Perseus and Andromeda
 aliases: [페르세우스, Perseus, 안드로메다, Andromeda, 카시오페이아, Cassiopeia]
@@ -13,6 +14,10 @@ level_adult: 제우스의 아들 페르세우스는 메두사의 목을 베어 �
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: Peter Paul Rubens - Perseus and Andromeda (Hermitage Museum).jpg
+  caption: 페테르 파울 루벤스, 안드로메다를 풀어 주는 페르세우스, 1622년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

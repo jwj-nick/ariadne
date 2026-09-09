@@ -16,6 +16,8 @@ export interface Trace {
   id: string;
   slug: string;
   category: string;
+  /** 갈래 아래의 하위 묶음 (D31) */
+  group: string;
   name_ko: string;
   name_en: string;
   sources: string[];
@@ -33,6 +35,8 @@ export interface Source {
   id: string;
   slug: string;
   domain: string;
+  /** 도메인 아래의 하위 묶음 (D31) */
+  group: string;
   name_ko: string;
   name_en: string;
   aliases: string[];
@@ -81,6 +85,11 @@ export interface Graph {
     generated_at: string;
     counts: { traces: number; sources: number; edges: number; orphan_sources: number };
     visible_statuses: Status[];
+    /** 갈래별 묶음 정의. 배열 순서가 화면에 나오는 순서다. */
+    groups: {
+      trace: Record<string, Array<{ key: string; label: string }>>;
+      source: Record<string, Array<{ key: string; label: string }>>;
+    };
   };
   traces: Trace[];
   sources: Source[];
@@ -94,6 +103,7 @@ const EMPTY: Graph = {
     generated_at: '',
     counts: { traces: 0, sources: 0, edges: 0, orphan_sources: 0 },
     visible_statuses: [],
+    groups: { trace: {}, source: {} },
   },
   traces: [],
   sources: [],

@@ -2,6 +2,7 @@
 id: trace:chaos-theory
 type: trace
 category: science-astro
+group: earth
 name_ko: 카오스 이론
 name_en: Chaos theory
 sources: [source:chaos-primordial]

@@ -2,6 +2,7 @@
 id: trace:hygiene
 type: trace
 category: psych-med
+group: doctor
 name_ko: 위생
 name_en: Hygiene
 sources: [source:hygieia]

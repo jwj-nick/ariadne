@@ -2,6 +2,7 @@
 id: source:roman-senate
 type: source
 domain: history
+group: rome
 name_ko: 로마 원로원
 name_en: Roman Senate
 aliases: [Senatus, 세나투스]

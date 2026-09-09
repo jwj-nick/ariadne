@@ -2,6 +2,7 @@
 id: trace:caduceus
 type: trace
 category: psych-med
+group: doctor
 name_ko: 카두케우스
 name_en: Caduceus
 sources: [source:hermes]

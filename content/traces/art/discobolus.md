@@ -2,6 +2,7 @@
 id: trace:discobolus
 type: trace
 category: art
+group: sculpture
 name_ko: 원반 던지는 사람
 name_en: Discobolus
 sources: [source:olympic-games]

@@ -2,6 +2,7 @@
 id: source:david-and-goliath
 type: source
 domain: bible-ot
+group: king
 name_ko: 다윗과 골리앗
 name_en: David and Goliath
 aliases: [다비드, David, Goliath]

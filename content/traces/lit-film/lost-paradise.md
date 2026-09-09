@@ -2,6 +2,7 @@
 id: trace:lost-paradise
 type: trace
 category: lit-film
+group: classic
 name_ko: 실낙원
 name_en: Paradise Lost
 sources: [source:paradise-lost]

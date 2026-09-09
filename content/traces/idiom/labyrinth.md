@@ -2,6 +2,7 @@
 id: trace:labyrinth
 type: trace
 category: idiom
+group: fate
 name_ko: 미궁
 name_en: Labyrinth
 sources: [source:theseus-minotaur]

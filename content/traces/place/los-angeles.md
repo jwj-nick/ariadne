@@ -2,6 +2,7 @@
 id: trace:los-angeles
 type: trace
 category: place
+group: land
 name_ko: 로스앤젤레스
 name_en: Los Angeles
 sources: [source:angel]

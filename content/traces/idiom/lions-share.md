@@ -2,6 +2,7 @@
 id: trace:lions-share
 type: trace
 category: idiom
+group: contest
 name_ko: 사자의 몫
 name_en: Lion's share
 sources: [source:aesop]

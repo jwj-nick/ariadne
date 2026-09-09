@@ -2,6 +2,7 @@
 id: source:poseidon
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 포세이돈
 name_en: Poseidon
 aliases: [넵투누스, Neptunus, Neptune, 넵튠]

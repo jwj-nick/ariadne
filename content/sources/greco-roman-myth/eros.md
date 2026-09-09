@@ -2,6 +2,7 @@
 id: source:eros
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 에로스
 name_en: Eros
 aliases: [쿠피도, Cupido, Cupid, 아모르, Amor]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화에서 사랑과 욕망을 맡은 신. 로마에서
 emblem: bow
 korea_parallel: ""
 traces: []
+image:
+  file: Bronze statue of Eros sleeping MET DP123903.jpg
+  caption: 잠자는 에로스 청동상, 기원전 3~2세기
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

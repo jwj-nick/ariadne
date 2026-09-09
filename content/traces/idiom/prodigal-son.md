@@ -2,6 +2,7 @@
 id: trace:prodigal-son
 type: trace
 category: idiom
+group: person
 name_ko: 돌아온 탕자
 name_en: Prodigal son
 sources: [source:prodigal-son-parable]

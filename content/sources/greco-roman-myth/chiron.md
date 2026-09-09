@@ -2,6 +2,7 @@
 id: source:chiron
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 케이론
 name_en: Chiron
 aliases: [키론]
@@ -13,6 +14,10 @@ level_adult: 켄타우로스는 대체로 거칠고 무례한 무리로 그려�
 emblem: bow
 korea_parallel: ""
 traces: []
+image:
+  file: Herculanum-basilica-Chiron.jpg
+  caption: 헤르쿨라네움 벽화의 케이론과 아킬레우스, 1세기
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: trace:saturn-planet
 type: trace
 category: science-astro
+group: planet
 name_ko: 토성
 name_en: Saturn
 sources: [source:cronus]

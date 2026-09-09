@@ -2,6 +2,7 @@
 id: source:plato
 type: source
 domain: history
+group: thinker
 name_ko: 플라톤
 name_en: Plato
 aliases: [플라톤과 아리스토텔레스]
@@ -11,6 +12,10 @@ level_adult: 소크라테스의 제자이며 아카데미아를 세워 가르쳤
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: Plato Academy MAN Napoli Inv124545.jpg
+  caption: 플라톤의 아카데메이아를 그린 폼페이 모자이크, 나폴리
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

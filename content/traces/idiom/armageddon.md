@@ -2,6 +2,7 @@
 id: trace:armageddon
 type: trace
 category: idiom
+group: fate
 name_ko: 아마겟돈
 name_en: Armageddon
 sources: [source:armageddon-place]

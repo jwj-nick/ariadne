@@ -2,6 +2,7 @@
 id: source:visconti-biscione
 type: source
 domain: history
+group: beyond
 name_ko: 비스콘티의 뱀
 name_en: Biscione
 aliases: [비쇼네]
@@ -11,6 +12,10 @@ level_adult: 중세부터 밀라노를 다스린 비스콘티 가문이 쓰던 �
 emblem: serpent
 korea_parallel: ""
 traces: []
+image:
+  file: 'IMG 7180 - Milano - Staz. C.le - Biscione visconteo usato come stemma di MI - Foto Giovanni Dall''Orto 18-Mar-2007.jpg'
+  caption: 밀라노 비스콘티 가문의 뱀 문장. 알파로메오 로고의 오른쪽 절반이 이것이다
+  license: Attribution
 status: reviewed
 created: 2026-09-08
 ---

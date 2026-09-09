@@ -2,6 +2,7 @@
 id: source:odysseus
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 오디세우스
 name_en: Odysseus
 aliases: [울릭세스, Ulysses, 율리시스]

@@ -2,6 +2,7 @@
 id: source:charon-ferryman
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 카론
 name_en: Charon
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 스틱스 또는 아케론이라 불리는 저승의 강에서 죽�
 emblem: ship
 korea_parallel: ""
 traces: []
+image:
+  file: Joachim Patinir. De oversteek naar de onderwereld, GD000687.jpg
+  caption: 요아힘 파티니르, 스틱스강을 건너는 카론, 1520년경, 프라도
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

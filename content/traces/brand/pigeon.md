@@ -2,6 +2,7 @@
 id: trace:pigeon
 type: trace
 category: brand
+group: life
 name_ko: 피죤
 name_en: Pigeon
 sources: [source:noah]

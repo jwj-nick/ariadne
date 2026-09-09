@@ -2,6 +2,7 @@
 id: trace:venus-de-milo
 type: trace
 category: art
+group: sculpture
 name_ko: 밀로의 비너스
 name_en: Venus de Milo
 sources: [source:aphrodite]

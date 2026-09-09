@@ -2,6 +2,7 @@
 id: trace:kappa-brand
 type: trace
 category: brand
+group: fashion
 name_ko: 카파
 name_en: Kappa
 sources: [source:greek-alphabet]

@@ -2,6 +2,7 @@
 id: source:phobos
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 포보스
 name_en: Phobos
 aliases: [포보스와 데이모스, Deimos]
@@ -12,6 +13,10 @@ level_adult: 전쟁의 신 아레스의 아들이며 공포 그 자체다. 형�
 emblem: helmet
 korea_parallel: ""
 traces: []
+image:
+  file: Gigantomachy Staatliche Antikensammlungen 1553.jpg
+  caption: 기간토마키아를 그린 도기. 포보스는 아레스를 따라다니는 공포의 신이다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

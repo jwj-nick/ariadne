@@ -2,6 +2,7 @@
 id: trace:amazon-river
 type: trace
 category: place
+group: sea
 name_ko: 아마존강
 name_en: Amazon River
 sources: [source:amazons]

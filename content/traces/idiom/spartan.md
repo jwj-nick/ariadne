@@ -2,6 +2,7 @@
 id: trace:spartan
 type: trace
 category: idiom
+group: person
 name_ko: 스파르타식
 name_en: Spartan
 sources: [source:sparta]

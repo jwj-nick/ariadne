@@ -2,6 +2,7 @@
 id: trace:promethium
 type: trace
 category: science-astro
+group: element
 name_ko: 프로메튬
 name_en: Promethium
 sources: [source:prometheus]

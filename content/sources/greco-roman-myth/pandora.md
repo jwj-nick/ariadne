@@ -2,6 +2,7 @@
 id: source:pandora
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 판도라
 name_en: Pandora
 aliases: [Pandore]

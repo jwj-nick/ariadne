@@ -2,6 +2,7 @@
 id: source:thomas-more-utopia
 type: source
 domain: literature
+group: fable
 name_ko: 유토피아
 name_en: Utopia
 aliases: [토머스 모어]
@@ -11,6 +12,10 @@ level_adult: 1516년에 토머스 모어가 라틴어로 쓴 책이며, 사유�
 emblem: tower
 korea_parallel: ""
 traces: []
+image:
+  file: Thomas More Utopia 1516 VTOPIAE INSVLAE FIGVRA (Bibliothèque Mazarine).jpg
+  caption: 토머스 모어의 유토피아 초판에 실린 섬 지도, 1516년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

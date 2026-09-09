@@ -2,6 +2,7 @@
 id: trace:golden-calf
 type: trace
 category: idiom
+group: desire
 name_ko: 금송아지
 name_en: Golden calf
 sources: [source:exodus-story]

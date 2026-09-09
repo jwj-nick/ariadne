@@ -2,6 +2,7 @@
 id: source:democritus
 type: source
 domain: history
+group: thinker
 name_ko: 데모크리토스
 name_en: Democritus
 aliases: [웃는 철학자]
@@ -11,6 +12,10 @@ level_adult: 기원전 5세기의 그리스 철학자로, 스승 레우키포스
 emblem: seed
 korea_parallel: ""
 traces: []
+image:
+  file: Democritus Rijksmuseum SK-A-2783.jpeg
+  caption: 헨드릭 테르 브뤼헨, 데모크리토스, 1628년. 웃는 철학자로 불렸다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

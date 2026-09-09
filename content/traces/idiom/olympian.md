@@ -2,6 +2,7 @@
 id: trace:olympian
 type: trace
 category: idiom
+group: person
 name_ko: 올림포스 같은
 name_en: Olympian
 sources: [source:olympus-mountain]

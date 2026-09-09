@@ -2,6 +2,7 @@
 id: trace:jupiter-planet
 type: trace
 category: science-astro
+group: planet
 name_ko: 목성
 name_en: Jupiter
 sources: [source:zeus]

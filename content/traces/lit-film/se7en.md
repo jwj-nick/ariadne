@@ -2,6 +2,7 @@
 id: trace:se7en
 type: trace
 category: lit-film
+group: film
 name_ko: 세븐
 name_en: Se7en
 sources: [source:seven-deadly-sins]

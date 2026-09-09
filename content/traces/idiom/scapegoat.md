@@ -2,6 +2,7 @@
 id: trace:scapegoat
 type: trace
 category: idiom
+group: contest
 name_ko: 희생양
 name_en: Scapegoat
 sources: [source:scapegoat-ritual]

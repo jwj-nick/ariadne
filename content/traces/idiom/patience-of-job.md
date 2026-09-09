@@ -2,6 +2,7 @@
 id: trace:patience-of-job
 type: trace
 category: idiom
+group: fate
 name_ko: 욥의 인내
 name_en: Patience of Job
 sources: [source:job]

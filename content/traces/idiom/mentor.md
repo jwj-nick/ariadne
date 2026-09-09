@@ -2,6 +2,7 @@
 id: trace:mentor
 type: trace
 category: idiom
+group: person
 name_ko: 멘토
 name_en: Mentor
 sources: [source:mentor-figure]

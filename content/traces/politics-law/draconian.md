@@ -2,6 +2,7 @@
 id: trace:draconian
 type: trace
 category: politics-law
+group: law
 name_ko: 드라콘식
 name_en: Draconian
 sources: [source:draco-lawgiver]

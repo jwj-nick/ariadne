@@ -2,6 +2,7 @@
 id: trace:mercury-program
 type: trace
 category: codename
+group: space
 name_ko: 머큐리 계획
 name_en: Project Mercury
 sources: [source:hermes]

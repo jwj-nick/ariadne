@@ -2,6 +2,7 @@
 id: source:selene
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 셀레네
 name_en: Selene
 aliases: [루나, Luna]
@@ -13,6 +14,10 @@ level_adult: 해를 모는 헬리오스와 새벽을 여는 에오스의 누이�
 emblem: moon
 korea_parallel: ""
 traces: []
+image:
+  file: Selene en Endymion Rijksmuseum SK-A-71.jpeg
+  caption: 요한 카를 로트, 셀레네와 엔디미온, 1660년대
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

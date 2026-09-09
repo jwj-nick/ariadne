@@ -2,6 +2,7 @@
 id: source:gaia
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 가이아
 name_en: Gaia
 aliases: [게, 테라, Terra, 테라 마테르]
@@ -13,6 +14,10 @@ level_adult: 혼돈에서 가장 먼저 생겨난 존재 가운데 하나이며,
 emblem: mountain
 korea_parallel: ""
 traces: []
+image:
+  file: Pergamonmuseum - Antikensammlung - Pergamonaltar 13 detail.jpg
+  caption: 페르가몬 제단의 기간토마키아 부조에 새겨진 가이아
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:hera
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 헤라
 name_en: Hera
 aliases: [유노, Juno, 주노]
@@ -13,6 +14,10 @@ level_adult: 제우스의 아내이자 누이이며, 결혼과 출산을 지키�
 emblem: crown
 korea_parallel: ""
 traces: []
+image:
+  file: Hera Ludovisi Altemps Inv8631.jpg
+  caption: 헤라 루도비시. 로마 알템프스 궁전
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

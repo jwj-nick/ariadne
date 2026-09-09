@@ -2,6 +2,7 @@
 id: trace:narcissism
 type: trace
 category: psych-med
+group: mind
 name_ko: 나르시시즘
 name_en: Narcissism
 sources: [source:narcissus]

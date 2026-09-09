@@ -2,6 +2,7 @@
 id: source:niobe
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 니오베
 name_en: Niobe
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 탄탈로스의 딸이며 테베의 왕비였다. 자식이 열넷�
 emblem: rock
 korea_parallel: ""
 traces: []
+image:
+  file: Nióbide corriendo - vaciado en RABASF.jpg
+  caption: 달아나는 니오베의 아이. 고대 조각의 주형
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:phoenix-bird
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 불사조
 name_en: Phoenix
 aliases: [포이닉스, 피닉스]
@@ -12,6 +13,10 @@ level_adult: 오랜 세월을 살다가 스스로 불타 죽고 그 재에서 �
 emblem: flame
 korea_parallel: 한국과 동아시아의 봉황은 상서로운 새라는 점이 겹치지만, 스스로 타 죽고 되살아난다는 대목은 없다. 봉황은 태평한 시대에 나타나는 새다.
 traces: []
+image:
+  file: Phoenix detail from Aberdeen Bestiary.jpg
+  caption: 애버딘 동물지의 불사조. 12세기 필사본
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

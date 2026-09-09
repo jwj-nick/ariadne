@@ -2,6 +2,7 @@
 id: source:delphi-oracle
 type: source
 domain: history
+group: greece
 name_ko: 델포이 신탁
 name_en: Oracle of Delphi
 aliases: [델피 신탁, 피티아, Pythia]

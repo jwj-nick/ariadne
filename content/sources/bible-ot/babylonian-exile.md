@@ -2,6 +2,7 @@
 id: source:babylonian-exile
 type: source
 domain: bible-ot
+group: king
 name_ko: 바빌론 유수
 name_en: Babylonian Exile
 aliases: [바벨론 포로]
@@ -11,6 +12,10 @@ level_adult: 기원전 6세기에 바빌로니아가 예루살렘을 무너뜨�
 emblem: river
 korea_parallel: ""
 traces: []
+image:
+  file: 'Jews Mourning in Exile - Eduard Bendemann - Wallraf-Richartz-Museum & Fondation Corboud-6071 (without frame).jpg'
+  caption: 에두아르트 벤데만, 유배지에서 슬퍼하는 유대인들, 1832년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

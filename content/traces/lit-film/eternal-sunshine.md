@@ -2,6 +2,7 @@
 id: trace:eternal-sunshine
 type: trace
 category: lit-film
+group: film
 name_ko: 이터널 선샤인
 name_en: Eternal Sunshine
 sources: [source:lethe]

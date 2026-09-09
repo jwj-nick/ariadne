@@ -2,6 +2,7 @@
 id: source:macbeth
 type: source
 domain: literature
+group: shakespeare
 name_ko: 맥베스
 name_en: Macbeth
 aliases: []
@@ -11,6 +12,10 @@ level_adult: 세 마녀에게 왕이 되리라는 예언을 들은 장군 맥베
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: Füssli - The Three Witches Appearing to Macbeth and Banquo.jpg
+  caption: 헨리 푸젤리, 맥베스 앞에 나타난 세 마녀, 18세기
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

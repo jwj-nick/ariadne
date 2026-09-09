@@ -2,6 +2,7 @@
 id: trace:narcotic
 type: trace
 category: psych-med
+group: drug
 name_ko: 마약
 name_en: Narcotic
 sources: [source:narcissus]

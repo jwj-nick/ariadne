@@ -2,6 +2,7 @@
 id: trace:ariadne-thread
 type: trace
 category: idiom
+group: wisdom
 name_ko: 아리아드네의 실
 name_en: Ariadne's thread
 sources: [source:ariadne]

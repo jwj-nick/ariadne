@@ -2,6 +2,7 @@
 id: trace:elysian
 type: trace
 category: brand
+group: life
 name_ko: 엘리시안
 name_en: Elysian
 sources: [source:elysium]

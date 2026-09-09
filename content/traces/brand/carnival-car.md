@@ -2,6 +2,7 @@
 id: trace:carnival-car
 type: trace
 category: brand
+group: car
 name_ko: 카니발
 name_en: Carnival
 sources: [source:lent-carnival]

@@ -2,6 +2,7 @@
 id: trace:bruegel-babel
 type: trace
 category: art
+group: renaissance
 name_ko: 바벨탑 그림
 name_en: The Tower of Babel
 sources: [source:babel-tower]

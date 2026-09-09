@@ -2,6 +2,7 @@
 id: trace:trojan-horse
 type: trace
 category: idiom
+group: contest
 name_ko: 트로이 목마
 name_en: Trojan horse
 sources: [source:trojan-horse]

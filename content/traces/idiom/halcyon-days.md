@@ -2,6 +2,7 @@
 id: trace:halcyon-days
 type: trace
 category: idiom
+group: fate
 name_ko: 평온한 날들
 name_en: Halcyon days
 sources: [source:alcyone]

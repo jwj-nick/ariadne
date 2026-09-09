@@ -2,6 +2,7 @@
 id: source:milky-way
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 은하수
 name_en: Milky Way
 aliases: [Via Lactea, 갈락시아스]
@@ -13,6 +14,10 @@ level_adult: 밤하늘을 가로지르는 하얀 띠를 두고 그리스 사람�
 emblem: star
 korea_parallel: 동아시아에서는 같은 띠를 은빛 강물로 보고 그 양쪽에 견우와 직녀를 두었다.
 traces: []
+image:
+  file: Jacopo Tintoretto - The Origin of the Milky Way - Google Art Project.jpg
+  caption: 틴토레토, 은하수의 기원, 1575년. 헤라의 젖이 흩어져 은하수가 되었다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

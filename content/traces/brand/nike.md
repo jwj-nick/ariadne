@@ -2,6 +2,7 @@
 id: trace:nike
 type: trace
 category: brand
+group: fashion
 name_ko: 나이키
 name_en: Nike
 sources: [source:nike-goddess]

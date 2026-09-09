@@ -2,6 +2,7 @@
 id: source:draco-lawgiver
 type: source
 domain: history
+group: greece
 name_ko: 드라콘
 name_en: Draco
 aliases: [드라코, 드라콘의 법]
@@ -12,6 +13,10 @@ level_adult: 기원전 7세기 아테네에서 처음으로 법을 글로 적어
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: Honorary stele depicting Athena and the Athenian Deme (4th cent. B.C.) at the National Archaeological Museum of Athens on 22 July 2018.jpg
+  caption: 아테네 민회의 법령을 새긴 비석
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

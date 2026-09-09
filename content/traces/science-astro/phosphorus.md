@@ -2,6 +2,7 @@
 id: trace:phosphorus
 type: trace
 category: science-astro
+group: element
 name_ko: 인
 name_en: Phosphorus
 sources: [source:lucifer-morningstar]

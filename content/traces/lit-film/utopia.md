@@ -2,6 +2,7 @@
 id: trace:utopia
 type: trace
 category: lit-film
+group: classic
 name_ko: 유토피아
 name_en: Utopia
 sources: [source:thomas-more-utopia]

@@ -2,6 +2,7 @@
 id: trace:delta-airlines
 type: trace
 category: brand
+group: car
 name_ko: 델타항공
 name_en: Delta Air Lines
 sources: [source:greek-alphabet]

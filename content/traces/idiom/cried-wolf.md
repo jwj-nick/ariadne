@@ -2,6 +2,7 @@
 id: trace:cried-wolf
 type: trace
 category: idiom
+group: wisdom
 name_ko: 양치기 소년
 name_en: Cry wolf
 sources: [source:aesop]

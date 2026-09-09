@@ -2,6 +2,7 @@
 id: trace:aurora
 type: trace
 category: science-astro
+group: star
 name_ko: 오로라
 name_en: Aurora
 sources: [source:eos]

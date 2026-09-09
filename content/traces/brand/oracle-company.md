@@ -2,6 +2,7 @@
 id: trace:oracle-company
 type: trace
 category: brand
+group: tech
 name_ko: 오라클
 name_en: Oracle
 sources: [source:delphi-oracle]

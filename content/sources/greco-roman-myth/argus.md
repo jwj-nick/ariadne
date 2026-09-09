@@ -2,6 +2,7 @@
 id: source:argus
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 아르고스
 name_en: Argus
 aliases: [아르구스, 파놉테스]
@@ -12,6 +13,10 @@ level_adult: 헤라가 감시를 맡긴 거인으로, 온몸에 백 개의 눈�
 emblem: eye
 korea_parallel: ""
 traces: []
+image:
+  file: Fábula de Mercurio y Argos, by Diego Velázquez.jpg
+  caption: 디에고 벨라스케스, 메르쿠리우스와 아르고스, 1659년, 프라도
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

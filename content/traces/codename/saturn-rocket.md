@@ -2,6 +2,7 @@
 id: trace:saturn-rocket
 type: trace
 category: codename
+group: rocket
 name_ko: 새턴 5호
 name_en: Saturn V
 sources: [source:cronus]

@@ -2,6 +2,7 @@
 id: source:mnemosyne
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 므네모시네
 name_en: Mnemosyne
 aliases: [기억의 여신]
@@ -13,6 +14,10 @@ level_adult: 우라노스와 가이아 사이에서 태어난 티탄이며 기�
 emblem: harp
 korea_parallel: ""
 traces: []
+image:
+  file: Gabriel Dante Rosetti, Mnemosyne.jpg
+  caption: 단테 가브리엘 로세티, 므네모시네, 1881년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

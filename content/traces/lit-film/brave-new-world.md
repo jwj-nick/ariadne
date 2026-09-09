@@ -2,6 +2,7 @@
 id: trace:brave-new-world
 type: trace
 category: lit-film
+group: classic
 name_ko: 멋진 신세계
 name_en: Brave New World
 sources: [source:tempest]

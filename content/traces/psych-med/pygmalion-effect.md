@@ -2,6 +2,7 @@
 id: trace:pygmalion-effect
 type: trace
 category: psych-med
+group: mind
 name_ko: 피그말리온 효과
 name_en: Pygmalion effect
 sources: [source:pygmalion]

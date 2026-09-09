@@ -2,6 +2,7 @@
 id: trace:maserati
 type: trace
 category: brand
+group: car
 name_ko: 마세라티
 name_en: Maserati
 sources: [source:poseidon]

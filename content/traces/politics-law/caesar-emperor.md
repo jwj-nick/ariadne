@@ -2,6 +2,7 @@
 id: trace:caesar-emperor
 type: trace
 category: politics-law
+group: power
 name_ko: 황제
 name_en: Caesar
 sources: [source:julius-caesar]

@@ -2,6 +2,7 @@
 id: source:crocus
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 크로코스
 name_en: Crocus
 aliases: [크로커스]
@@ -12,6 +13,10 @@ level_adult: 님프 스밀락스를 사랑했으나 이루지 못하고 시들�
 emblem: seed
 korea_parallel: ""
 traces: []
+image:
+  file: Frühlings-Krokus, spring crocus (Crocus vernus).jpg
+  caption: 크로커스 꽃. 이 꽃술을 말린 것이 사프란이다
+  license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

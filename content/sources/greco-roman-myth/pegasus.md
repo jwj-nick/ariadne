@@ -2,6 +2,7 @@
 id: source:pegasus
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 페가수스
 name_en: Pegasus
 aliases: [천마]
@@ -13,6 +14,10 @@ level_adult: 메두사의 잘린 목에서 솟아난 날개 달린 말이다. �
 emblem: wing
 korea_parallel: ""
 traces: []
+image:
+  file: Bellerophon killing Chimaera (mosaic from Rhodes).jpg
+  caption: 페가수스를 타고 키마이라를 죽이는 벨레로폰. 로도스의 모자이크
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

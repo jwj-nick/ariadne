@@ -2,6 +2,7 @@
 id: source:hygieia
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 히기에이아
 name_en: Hygieia
 aliases: [Salus, 살루스]
@@ -12,6 +13,10 @@ level_adult: 그리스 신화에서 건강과 청결을 맡은 여신. 의술의
 emblem: staff
 korea_parallel: ""
 traces: []
+image:
+  file: Hku Klimt Hygieia.jpg
+  caption: '구스타프 클림트, 히기에이아. 빈 대학 천장화 <의학>의 부분, 1907년'
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

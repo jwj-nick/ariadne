@@ -2,6 +2,7 @@
 id: source:thomas
 type: source
 domain: bible-nt
+group: jesus
 name_ko: 도마
 name_en: Thomas
 aliases: [디디모]
@@ -11,6 +12,10 @@ level_adult: 예수의 열두 제자 가운데 하나로, 다른 제자들이 �
 emblem: hand
 korea_parallel: ""
 traces: []
+image:
+  file: Caravaggio incredulity.jpg
+  caption: 카라바조, 의심하는 도마, 1601~1602년. 상처에 손가락을 넣는 장면이다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

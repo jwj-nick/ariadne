@@ -2,6 +2,7 @@
 id: trace:charon
 type: trace
 category: science-astro
+group: planet
 name_ko: 카론
 name_en: Charon
 sources: [source:charon-ferryman]

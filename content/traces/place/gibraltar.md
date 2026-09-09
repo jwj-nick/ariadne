@@ -2,6 +2,7 @@
 id: trace:gibraltar
 type: trace
 category: place
+group: sea
 name_ko: 지브롤터
 name_en: Gibraltar
 sources: [source:heracles]

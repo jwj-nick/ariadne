@@ -2,6 +2,7 @@
 id: trace:medusa-caravaggio
 type: trace
 category: art
+group: modern
 name_ko: 메두사의 방패
 name_en: Medusa
 sources: [source:medusa]

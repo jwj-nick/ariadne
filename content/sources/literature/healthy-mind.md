@@ -2,6 +2,7 @@
 id: source:healthy-mind
 type: source
 domain: literature
+group: fable
 name_ko: 건강한 몸에 건강한 마음
 name_en: Mens sana in corpore sano
 aliases: [유베날리스의 풍자시, mens sana]
@@ -11,6 +12,10 @@ level_adult: 로마 시인 유베날리스가 2세기 초에 쓴 풍자시의 �
 emblem: laurel
 korea_parallel: ""
 traces: []
+image:
+  file: Red-figure oinochoe, gymnasium scene (New Orleans Mus of Art 16.11).jpg
+  caption: 김나시온을 그린 그리스 도기. 몸을 닦는 일이 교육의 절반이었다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

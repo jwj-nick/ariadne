@@ -2,6 +2,7 @@
 id: trace:venus-planet
 type: trace
 category: science-astro
+group: planet
 name_ko: 금성
 name_en: Venus
 sources: [source:aphrodite]

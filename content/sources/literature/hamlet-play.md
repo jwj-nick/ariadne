@@ -2,6 +2,7 @@
 id: source:hamlet-play
 type: source
 domain: literature
+group: shakespeare
 name_ko: 햄릿
 name_en: Hamlet
 aliases: [셰익스피어의 햄릿]

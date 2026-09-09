@@ -2,6 +2,7 @@
 id: trace:beauty-and-beast
 type: trace
 category: lit-film
+group: classic
 name_ko: 미녀와 야수
 name_en: Beauty and the Beast
 sources: [source:psyche]

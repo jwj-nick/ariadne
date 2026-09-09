@@ -2,6 +2,7 @@
 id: trace:asylum
 type: trace
 category: politics-law
+group: law
 name_ko: 망명
 name_en: Asylum
 sources: [source:greek-polis]

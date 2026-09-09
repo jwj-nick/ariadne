@@ -2,6 +2,7 @@
 id: trace:panic
 type: trace
 category: psych-med
+group: mind
 name_ko: 패닉
 name_en: Panic
 sources: [source:pan-god]

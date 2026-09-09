@@ -2,6 +2,7 @@
 id: trace:aegean-sea
 type: trace
 category: place
+group: sea
 name_ko: 에게해
 name_en: Aegean Sea
 sources: [source:theseus-minotaur]

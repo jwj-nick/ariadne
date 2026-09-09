@@ -2,6 +2,7 @@
 id: source:hydra-monster
 type: source
 domain: greco-roman-myth
+group: monster
 name_ko: 히드라
 name_en: Hydra
 aliases: [레르나의 히드라]
@@ -12,6 +13,10 @@ level_adult: 레르나의 늪에 살던 여러 머리의 물뱀이며, 목을 �
 emblem: serpent
 korea_parallel: ""
 traces: []
+image:
+  file: 'Antonio del Pollaiolo - Ercole e l''Idra e Ercole e Anteo - Google Art Project.jpg'
+  caption: 안토니오 델 폴라이올로, 헤라클레스와 히드라, 1475년경, 우피치
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

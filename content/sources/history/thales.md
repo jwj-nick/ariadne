@@ -2,6 +2,7 @@
 id: source:thales
 type: source
 domain: history
+group: thinker
 name_ko: 탈레스
 name_en: Thales
 aliases: [밀레토스의 탈레스]
@@ -11,6 +12,10 @@ level_adult: 기원전 6세기 밀레토스 사람으로, 만물의 근원이 �
 emblem: void
 korea_parallel: ""
 traces: []
+image:
+  file: Thalès from Lives 1761.png
+  caption: 탈레스 초상 판화, 1761년
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

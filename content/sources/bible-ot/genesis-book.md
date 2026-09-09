@@ -2,6 +2,7 @@
 id: source:genesis-book
 type: source
 domain: bible-ot
+group: origin
 name_ko: 창세기
 name_en: Genesis
 aliases: [게네시스, 창세기서]
@@ -12,6 +13,10 @@ level_adult: 구약 성경의 첫 권. 세상이 생겨나는 이야기로 시�
 emblem: seed
 korea_parallel: ""
 traces: []
+image:
+  file: Michelangelo Buonarroti 019.jpg
+  caption: 미켈란젤로, 시스티나 천장의 창조 장면, 1508~1512년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:flora
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 플로라
 name_en: Flora
 aliases: [클로리스, Chloris]
@@ -12,6 +13,10 @@ level_adult: 로마에서 꽃과 봄을 맡은 여신이며, 그리스의 님프
 emblem: seed
 korea_parallel: ""
 traces: []
+image:
+  file: Tiziano - Flora - Google Art Project.jpg
+  caption: 티치아노, 플로라, 1515년경, 우피치
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

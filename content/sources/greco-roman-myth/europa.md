@@ -2,6 +2,7 @@
 id: source:europa
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 에우로페
 name_en: Europa
 aliases: [에우로파, Europe]
@@ -13,6 +14,10 @@ level_adult: 페니키아의 공주. 흰 황소로 변신한 제우스에게 이
 emblem: bull
 korea_parallel: ""
 traces: []
+image:
+  file: Titian - Rape of Europa - Google Art Project.jpg
+  caption: 티치아노, 에우로페의 납치. 황소로 변한 제우스가 그를 업고 바다를 건넌다
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

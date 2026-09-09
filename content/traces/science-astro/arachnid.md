@@ -2,6 +2,7 @@
 id: trace:arachnid
 type: trace
 category: science-astro
+group: life
 name_ko: 거미강
 name_en: Arachnid
 sources: [source:arachne]

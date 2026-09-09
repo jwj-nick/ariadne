@@ -2,6 +2,7 @@
 id: trace:forbidden-fruit
 type: trace
 category: idiom
+group: desire
 name_ko: 금단의 열매
 name_en: Forbidden fruit
 sources: [source:eden-garden]

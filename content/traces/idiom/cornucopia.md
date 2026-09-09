@@ -2,6 +2,7 @@
 id: trace:cornucopia
 type: trace
 category: idiom
+group: desire
 name_ko: 풍요의 뿔
 name_en: Cornucopia
 sources: [source:amalthea]

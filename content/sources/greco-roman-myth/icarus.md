@@ -2,6 +2,7 @@
 id: source:icarus
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 이카로스
 name_en: Icarus
 aliases: [이카루스]

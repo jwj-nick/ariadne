@@ -2,6 +2,7 @@
 id: trace:phoenix
 type: trace
 category: idiom
+group: fate
 name_ko: 피닉스
 name_en: Phoenix
 sources: [source:phoenix-bird]

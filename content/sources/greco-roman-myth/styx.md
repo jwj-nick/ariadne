@@ -2,6 +2,7 @@
 id: source:styx
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 스틱스
 name_en: Styx
 aliases: [증오의 강]
@@ -12,6 +13,10 @@ level_adult: 저승을 아홉 번 감돌아 흐르는 강이며, 죽은 이가 �
 emblem: river
 korea_parallel: ""
 traces: []
+image:
+  file: Inferno Canto 08 - Styx (148618431).jpg
+  caption: 귀스타브 도레, 신곡 지옥편의 스틱스강, 1870년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

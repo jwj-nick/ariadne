@@ -2,6 +2,7 @@
 id: source:greek-alphabet
 type: source
 domain: history
+group: greece
 name_ko: 그리스 알파벳
 name_en: Greek alphabet
 aliases: [헬라 문자]
@@ -11,6 +12,10 @@ level_adult: 페니키아 사람들이 쓰던 자음 문자에 모음 글자를 
 emblem: scroll
 korea_parallel: ""
 traces: []
+image:
+  file: Dipylon Inscription.JPG
+  caption: 디필론 도기의 명문. 지금 남은 가장 오래된 그리스 알파벳이다
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

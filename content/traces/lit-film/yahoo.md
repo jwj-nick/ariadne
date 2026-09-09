@@ -2,6 +2,7 @@
 id: trace:yahoo
 type: trace
 category: lit-film
+group: popular
 name_ko: 야후
 name_en: Yahoo
 sources: [source:gullivers-travels]

@@ -2,6 +2,7 @@
 id: trace:ophelia-millais
 type: trace
 category: art
+group: modern
 name_ko: 오필리아
 name_en: Ophelia
 sources: [source:hamlet-play]

@@ -2,6 +2,7 @@
 id: trace:tortoise-hare
 type: trace
 category: idiom
+group: contest
 name_ko: 토끼와 거북
 name_en: Tortoise and the Hare
 sources: [source:aesop]

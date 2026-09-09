@@ -2,6 +2,7 @@
 id: source:damocles
 type: source
 domain: history
+group: greece
 name_ko: 다모클레스
 name_en: Damocles
 aliases: [다모클레스의 검]
@@ -11,6 +12,10 @@ level_adult: 기원전 4세기 시라쿠사의 참주 디오니시오스의 신�
 emblem: sword
 korea_parallel: ""
 traces: []
+image:
+  file: WestallDamocles.JPG
+  caption: 리처드 웨스톨, 다모클레스의 검, 1812년. 왕좌 위에 칼 한 자루가 매달려 있다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

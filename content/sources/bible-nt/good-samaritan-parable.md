@@ -2,6 +2,7 @@
 id: source:good-samaritan-parable
 type: source
 domain: bible-nt
+group: parable
 name_ko: 선한 사마리아인의 비유
 name_en: Parable of the Good Samaritan
 aliases: [사마리아인의 비유]
@@ -12,6 +13,10 @@ level_adult: 신약 성경 누가복음에 실린 비유. 강도를 만나 쓰�
 emblem: hand
 korea_parallel: 한국의 응급의료에 관한 법률에도 선의의 응급의료에 대한 면책 조항이 있어서, 이 비유가 이름을 붙여 준 제도가 한국 법에도 그대로 들어와 있다.
 traces: []
+image:
+  file: Landscape with the Good Samaritan - Rembrandt.jpg
+  caption: 렘브란트, 선한 사마리아인이 있는 풍경, 1638년
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

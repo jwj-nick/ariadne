@@ -2,6 +2,7 @@
 id: trace:mercury-planet
 type: trace
 category: science-astro
+group: planet
 name_ko: 수성
 name_en: Mercury
 sources: [source:hermes]

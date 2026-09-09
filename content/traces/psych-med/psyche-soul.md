@@ -2,6 +2,7 @@
 id: trace:psyche-soul
 type: trace
 category: psych-med
+group: mind
 name_ko: 프시케
 name_en: Psyche
 sources: [source:psyche]

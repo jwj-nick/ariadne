@@ -2,6 +2,7 @@
 id: trace:lethargy
 type: trace
 category: psych-med
+group: mind
 name_ko: 무기력
 name_en: Lethargy
 sources: [source:lethe]

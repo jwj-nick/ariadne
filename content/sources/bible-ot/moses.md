@@ -2,6 +2,7 @@
 id: source:moses
 type: source
 domain: bible-ot
+group: exodus
 name_ko: 모세
 name_en: Moses
 aliases: []

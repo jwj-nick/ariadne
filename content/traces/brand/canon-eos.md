@@ -2,6 +2,7 @@
 id: trace:canon-eos
 type: trace
 category: brand
+group: tech
 name_ko: 캐논 EOS
 name_en: Canon EOS
 sources: [source:eos]

@@ -2,6 +2,7 @@
 id: source:roman-republic
 type: source
 domain: history
+group: rome
 name_ko: 로마 공화정
 name_en: Roman Republic
 aliases: [공화정 로마, Res publica]
@@ -12,6 +13,10 @@ level_adult: 기원전 509년부터 기원전 27년까지 이어진 로마의 �
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: PUBLIC-515492, Silver Roman Republic AR denarius L. Procilius (FindID 746439).jpg
+  caption: 로마 공화정의 은화 데나리우스
+  license: CC BY 2.0
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:seven-deadly-sins
 type: source
 domain: history
+group: beyond
 name_ko: 일곱 죄악
 name_en: Seven deadly sins
 aliases: [칠죄종, 7대 죄악, Seven capital vices]
@@ -12,6 +13,10 @@ level_adult: 교만, 탐욕, 정욕, 시기, 탐식, 분노, 나태의 일곱 �
 emblem: mask
 korea_parallel: 불교에서 사람을 괴롭히는 근본 번뇌로 꼽는 삼독, 곧 탐욕과 성냄과 어리석음이 비슷한 자리를 차지한다. 개수와 항목은 다르지만 마음의 병을 목록으로 만들어 경계한다는 발상이 같다.
 traces: []
+image:
+  file: Hieronymus Bosch- The Seven Deadly Sins and the Four Last Things.JPG
+  caption: 히에로니무스 보스, 일곱 죄악 탁자, 1505~1510년, 프라도
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

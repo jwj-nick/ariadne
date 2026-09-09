@@ -2,6 +2,7 @@
 id: source:theseus-minotaur
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 테세우스와 미노타우로스
 name_en: Theseus and the Minotaur
 aliases: [미노타우로스, 테세우스, 미궁]

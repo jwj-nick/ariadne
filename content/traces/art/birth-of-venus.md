@@ -2,6 +2,7 @@
 id: trace:birth-of-venus
 type: trace
 category: art
+group: renaissance
 name_ko: 비너스의 탄생
 name_en: The Birth of Venus
 sources: [source:aphrodite]

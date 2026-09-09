@@ -2,6 +2,7 @@
 id: source:chaos-primordial
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 카오스
 name_en: Chaos
 aliases: [카오스 신, Khaos]
@@ -13,6 +14,10 @@ level_adult: 헤시오도스의 <신들의 계보>에서 가장 먼저 있었다
 emblem: void
 korea_parallel: 동아시아에도 세상이 나뉘기 전의 뒤섞인 상태를 뜻하는 혼돈이 있다. 장자에는 혼돈이라는 임금에게 구멍을 뚫어 주자 죽어 버렸다는 이야기가 있어서, 아직 나뉘지 않은 상태가 온전한 상태라는 뜻이 담겨 있다.
 traces: []
+image:
+  file: Assistants and George Frederic Watts - Chaos - Google Art Project.jpg
+  caption: 조지 프레더릭 와츠 공방, 카오스, 1875년경
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

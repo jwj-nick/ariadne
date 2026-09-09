@@ -2,6 +2,7 @@
 id: source:midas
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 미다스
 name_en: Midas
 aliases: [마이더스]
@@ -12,6 +13,10 @@ level_adult: 프리기아의 왕. 디오니소스에게서 손대는 것마다 �
 emblem: crown
 korea_parallel: 당나귀 귀 이야기는 한국의 「임금님 귀는 당나귀 귀」와 거의 같다. 신라 경문왕의 이야기로 전해지며, 비밀을 참지 못한 사람이 대숲에 대고 소리쳤다는 대목까지 닮았다.
 traces: []
+image:
+  file: Midas Washing at the Source of the Pactolus MET DP123854.jpg
+  caption: 니콜라 푸생, 팍톨로스 강에서 손을 씻는 미다스, 1627년경
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

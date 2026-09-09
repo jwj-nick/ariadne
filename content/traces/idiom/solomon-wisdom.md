@@ -2,6 +2,7 @@
 id: trace:solomon-wisdom
 type: trace
 category: idiom
+group: wisdom
 name_ko: 솔로몬의 지혜
 name_en: Wisdom of Solomon
 sources: [source:solomon]

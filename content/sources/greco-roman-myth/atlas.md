@@ -2,6 +2,7 @@
 id: source:atlas
 type: source
 domain: greco-roman-myth
+group: primordial
 name_ko: 아틀라스
 name_en: Atlas
 aliases: [Atlas Telamon]
@@ -13,6 +14,10 @@ level_adult: 티탄족의 하나. 올림포스 신들과의 전쟁에서 진 뒤
 emblem: shoulders
 korea_parallel: ""
 traces: []
+image:
+  file: MAN Atlante fronte 1040572.JPG
+  caption: 파르네세 아틀라스. 어깨에 얹힌 것이 하늘이며, 지금 남은 가장 오래된 천구다
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-07
 ---

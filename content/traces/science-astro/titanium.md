@@ -2,6 +2,7 @@
 id: trace:titanium
 type: trace
 category: science-astro
+group: element
 name_ko: 티타늄
 name_en: Titanium
 sources: [source:titans]

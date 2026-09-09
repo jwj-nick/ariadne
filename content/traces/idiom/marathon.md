@@ -2,6 +2,7 @@
 id: trace:marathon
 type: trace
 category: idiom
+group: contest
 name_ko: 마라톤
 name_en: Marathon
 sources: [source:marathon-battle]

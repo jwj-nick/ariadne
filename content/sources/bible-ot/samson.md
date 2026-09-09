@@ -2,6 +2,7 @@
 id: source:samson
 type: source
 domain: bible-ot
+group: king
 name_ko: 삼손
 name_en: Samson
 aliases: []

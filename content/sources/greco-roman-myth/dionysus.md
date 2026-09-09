@@ -2,6 +2,7 @@
 id: source:dionysus
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 디오니소스
 name_en: Dionysus
 aliases: [바쿠스, Bacchus, 박쿠스]

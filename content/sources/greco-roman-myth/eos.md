@@ -2,6 +2,7 @@
 id: source:eos
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 에오스
 name_en: Eos
 aliases: [아우로라, Aurora]
@@ -12,6 +13,10 @@ level_adult: 해를 모는 헬리오스의 누이이며, 날마다 오빠보다 
 emblem: sun
 korea_parallel: ""
 traces: []
+image:
+  file: 'Coupe attique à figures rouges avec décor central d''Éos tenant le cadravre de son fils Memnon - Douris ; potier Kalliadès - Musée du Louvre AGER MNB 1698 ; G 115.jpg'
+  caption: 에오스를 그린 아티카 적색상 잔
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

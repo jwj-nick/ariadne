@@ -2,6 +2,7 @@
 id: source:thanatos
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 타나토스
 name_en: Thanatos
 aliases: [모르스, Mors]
@@ -12,6 +13,10 @@ level_adult: 죽음을 맡은 신이며 잠의 신 히프노스와 쌍둥이 형
 emblem: moon
 korea_parallel: ""
 traces: []
+image:
+  file: Euphronios - ARV 14 extra - Hypnos and Thanatos carrying the body of Sarpedon - warriors arming - Cerveteri MAN - 08.jpg
+  caption: 에우프로니오스의 크라테르. 힙노스와 타나토스가 사르페돈을 옮긴다
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

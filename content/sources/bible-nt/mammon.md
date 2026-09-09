@@ -2,6 +2,7 @@
 id: source:mammon
 type: source
 domain: bible-nt
+group: parable
 name_ko: 맘몬
 name_en: Mammon
 aliases: [재물]
@@ -11,6 +12,10 @@ level_adult: 재물이나 부를 뜻하던 아람어 낱말이며, 신약에서 
 emblem: coin
 korea_parallel: ""
 traces: []
+image:
+  file: Mammon and His Slave.jpg
+  caption: 사샤 슈나이더, 맘몬과 그의 노예, 1896년경
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: trace:frankenstein
 type: trace
 category: lit-film
+group: classic
 name_ko: 프랑켄슈타인
 name_en: Frankenstein
 sources: [source:prometheus]

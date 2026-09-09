@@ -2,6 +2,7 @@
 id: trace:mercury-element
 type: trace
 category: science-astro
+group: element
 name_ko: 수은
 name_en: Mercury
 sources: [source:hermes]

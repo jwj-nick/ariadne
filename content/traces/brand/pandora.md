@@ -2,6 +2,7 @@
 id: trace:pandora
 type: trace
 category: brand
+group: fashion
 name_ko: 판도라
 name_en: Pandora
 sources: [source:pandora]

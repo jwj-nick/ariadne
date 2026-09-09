@@ -2,6 +2,7 @@
 id: trace:philadelphia
 type: trace
 category: place
+group: land
 name_ko: 필라델피아
 name_en: Philadelphia
 sources: [source:apocalypse]

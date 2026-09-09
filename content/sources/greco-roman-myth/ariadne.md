@@ -2,6 +2,7 @@
 id: source:ariadne
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 아리아드네
 name_en: Ariadne
 aliases: [Ἀριάδνη]
@@ -15,6 +16,10 @@ level_adult: 크레타 왕 미노스의 딸. 미궁에 갇힌 괴물 미노타�
 emblem: thread
 korea_parallel: 한국어 낱말 "실마리"는 엉킨 실의 첫머리라는 뜻으로, 문제를 푸는 단서를 가리킨다. 실을 따라 길을 찾는다는 그림이 아리아드네의 실과 거의 같다.
 traces: []
+image:
+  file: '"Bacchus and Ariadne" by Titian - National Gallery, London - Joy of Museums.jpg'
+  caption: 티치아노, 바쿠스와 아리아드네, 1520~1523년, 런던 내셔널 갤러리
+  license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

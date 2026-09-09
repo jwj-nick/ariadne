@@ -2,6 +2,7 @@
 id: trace:achilles-heel
 type: trace
 category: idiom
+group: fate
 name_ko: 아킬레스건
 name_en: Achilles heel
 sources: [source:achilles]

@@ -2,6 +2,7 @@
 id: trace:icarus-wings
 type: trace
 category: idiom
+group: fate
 name_ko: 이카로스의 날개
 name_en: Icarus wings
 sources: [source:icarus]

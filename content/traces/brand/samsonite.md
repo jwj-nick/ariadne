@@ -2,6 +2,7 @@
 id: trace:samsonite
 type: trace
 category: brand
+group: fashion
 name_ko: 쌤소나이트
 name_en: Samsonite
 sources: [source:samson]

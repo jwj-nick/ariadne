@@ -2,6 +2,7 @@
 id: source:caryatid-women
 type: source
 domain: history
+group: greece
 name_ko: 카리아티드
 name_en: Caryatid
 aliases: [여인 기둥]
@@ -11,6 +12,10 @@ level_adult: 기둥 자리에 세워 지붕을 떠받치는 여인상이며, 아
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: Athens Acropolis Erechtheion and Caryatids (28443400325).jpg
+  caption: 에레크테이온의 카리아티드. 기둥 대신 여인이 지붕을 인다
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

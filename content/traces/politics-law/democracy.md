@@ -2,6 +2,7 @@
 id: trace:democracy
 type: trace
 category: politics-law
+group: power
 name_ko: 민주주의
 name_en: Democracy
 sources: [source:athenian-democracy]

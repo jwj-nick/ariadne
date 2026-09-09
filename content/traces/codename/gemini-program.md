@@ -2,6 +2,7 @@
 id: trace:gemini-program
 type: trace
 category: codename
+group: space
 name_ko: 제미니 계획
 name_en: Project Gemini
 sources: [source:castor-pollux]

@@ -2,6 +2,7 @@
 id: source:julius-caesar
 type: source
 domain: history
+group: rome
 name_ko: 율리우스 카이사르
 name_en: Julius Caesar
 aliases: [시저, Caesar]

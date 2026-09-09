@@ -2,6 +2,7 @@
 id: trace:hermetic-seal
 type: trace
 category: science-astro
+group: earth
 name_ko: 밀봉
 name_en: Hermetic seal
 sources: [source:hermes-trismegistus]

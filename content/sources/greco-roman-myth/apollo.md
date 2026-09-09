@@ -2,6 +2,7 @@
 id: source:apollo
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 아폴론
 name_en: Apollo
 aliases: [포이보스, Phoebus, 아폴로]

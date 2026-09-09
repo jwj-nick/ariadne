@@ -2,6 +2,7 @@
 id: trace:achilles-tendon
 type: trace
 category: psych-med
+group: body
 name_ko: 아킬레스건 (해부)
 name_en: Achilles tendon
 sources: [source:achilles]

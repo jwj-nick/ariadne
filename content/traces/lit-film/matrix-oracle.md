@@ -2,6 +2,7 @@
 id: trace:matrix-oracle
 type: trace
 category: lit-film
+group: film
 name_ko: 매트릭스의 오라클
 name_en: The Oracle
 sources: [source:delphi-oracle]

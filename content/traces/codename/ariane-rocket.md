@@ -2,6 +2,7 @@
 id: trace:ariane-rocket
 type: trace
 category: codename
+group: rocket
 name_ko: 아리안 로켓
 name_en: Ariane
 sources: [source:ariadne]

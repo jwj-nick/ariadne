@@ -2,6 +2,7 @@
 id: source:libertas
 type: source
 domain: history
+group: rome
 name_ko: 리베르타스
 name_en: Libertas
 aliases: [자유의 여신]
@@ -11,6 +12,10 @@ level_adult: 로마에서 자유를 의인화한 여신이며, 노예에서 풀�
 emblem: flame
 korea_parallel: ""
 traces: []
+image:
+  file: Roman Coin, Denarius of Vitellius (FindID 580806).jpg
+  caption: 리베르타스가 새겨진 로마 은화
+  license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

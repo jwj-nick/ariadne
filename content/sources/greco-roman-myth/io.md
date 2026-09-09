@@ -2,6 +2,7 @@
 id: source:io
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 이오
 name_en: Io
 aliases: []
@@ -13,6 +14,10 @@ level_adult: 헤라의 여사제였으나 제우스의 눈에 들었고, 헤라�
 emblem: bull
 korea_parallel: ""
 traces: []
+image:
+  file: Antonio Allegri, called Correggio - Jupiter and Io - Google Art Project.jpg
+  caption: 코레조, 유피테르와 이오, 1530년경. 구름이 곧 제우스다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

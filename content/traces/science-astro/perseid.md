@@ -2,6 +2,7 @@
 id: trace:perseid
 type: trace
 category: science-astro
+group: star
 name_ko: 페르세우스 유성우
 name_en: Perseid meteor shower
 sources: [source:perseus-andromeda]

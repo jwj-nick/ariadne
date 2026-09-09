@@ -2,6 +2,7 @@
 id: trace:midsummer-night
 type: trace
 category: lit-film
+group: classic
 name_ko: 한여름 밤의 꿈
 name_en: A Midsummer Night's Dream
 sources: [source:theseus-minotaur]

@@ -2,6 +2,7 @@
 id: source:adonis
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 아도니스
 name_en: Adonis
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 빼어나게 아름다운 청년이라 아프로디테와 페르세
 emblem: seed
 korea_parallel: ""
 traces: []
+image:
+  file: Titian and Workshop, Venus and Adonis, c. 1540s-c. 1560-1565, NGA 1223.jpg
+  caption: 티치아노와 공방, 비너스와 아도니스
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

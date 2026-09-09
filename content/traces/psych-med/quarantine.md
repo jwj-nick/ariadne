@@ -2,6 +2,7 @@
 id: trace:quarantine
 type: trace
 category: psych-med
+group: doctor
 name_ko: 검역
 name_en: Quarantine
 sources: [source:lent-carnival]

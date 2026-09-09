@@ -2,6 +2,7 @@
 id: trace:david-vs-goliath
 type: trace
 category: idiom
+group: contest
 name_ko: 다윗과 골리앗
 name_en: David and Goliath
 sources: [source:david-and-goliath]

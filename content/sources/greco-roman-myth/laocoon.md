@@ -2,6 +2,7 @@
 id: source:laocoon
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 라오콘
 name_en: Laocoon
 aliases: [라오코온]
@@ -12,6 +13,10 @@ level_adult: 트로이의 신관. 그리스군이 두고 간 목마를 성 안�
 emblem: staff
 korea_parallel: ""
 traces: []
+image:
+  file: El Greco (Domenikos Theotokopoulos) - Laocoön - Google Art Project.jpg
+  caption: 엘 그레코, 라오콘, 1610년대. 뒤에 그려진 도시는 트로이가 아니라 톨레도다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

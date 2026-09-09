@@ -2,6 +2,7 @@
 id: trace:niobium
 type: trace
 category: science-astro
+group: element
 name_ko: 니오븀
 name_en: Niobium
 sources: [source:niobe]

@@ -44,11 +44,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </Link>
               <LevelSwitch />
             </div>
-            {/* 길잡이가 여섯이라 좁은 화면에서는 한 줄에 다 들어가지 않는다.
+            {/* 길잡이가 일곱이라 좁은 화면에서는 한 줄에 다 들어가지 않는다.
                 줄바꿈으로 낱말이 잘리는 것보다 가로로 넘기는 편이 읽기 쉽다. */}
             <nav className="nav-scroll mt-3 flex gap-4 overflow-x-auto text-[13px] whitespace-nowrap">
               <Link href="/" style={{ color: 'var(--muted)' }}>
                 흔적 둘러보기
+              </Link>
+              <Link href="/browse" style={{ color: 'var(--muted)' }}>
+                갈래별 보기
               </Link>
               <Link href="/quiz" style={{ color: 'var(--thread)' }}>
                 오늘의 복습

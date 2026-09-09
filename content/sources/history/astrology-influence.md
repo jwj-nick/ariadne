@@ -2,6 +2,7 @@
 id: source:astrology-influence
 type: source
 domain: history
+group: thinker
 name_ko: 별의 영향
 name_en: Astrological influence
 aliases: [아스트롤로지아]
@@ -11,6 +12,10 @@ level_adult: 고대부터 근대 초까지 유럽은 별과 행성이 사람의 
 emblem: star
 korea_parallel: ""
 traces: []
+image:
+  file: Anatomical Man.jpg
+  caption: 랭부르 형제, 별자리와 몸의 대응, 1416년경. 별이 몸을 다스린다고 믿었다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

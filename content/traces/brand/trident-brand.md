@@ -2,6 +2,7 @@
 id: trace:trident-brand
 type: trace
 category: brand
+group: life
 name_ko: 트라이던트
 name_en: Trident
 sources: [source:poseidon]

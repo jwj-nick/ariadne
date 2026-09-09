@@ -2,6 +2,7 @@
 id: trace:olympus-brand
 type: trace
 category: brand
+group: tech
 name_ko: 올림푸스
 name_en: Olympus
 sources: [source:olympus-mountain]

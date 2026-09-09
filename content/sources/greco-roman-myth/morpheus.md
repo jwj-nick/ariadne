@@ -2,6 +2,7 @@
 id: source:morpheus
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 모르페우스
 name_en: Morpheus
 aliases: [모르페오스]
@@ -12,6 +13,10 @@ level_adult: 그리스 신화에서 꿈을 맡은 신. 잠의 신 힙노스의 �
 emblem: moon
 korea_parallel: ""
 traces: []
+image:
+  file: Guerin, Pierre Narcisse - Morpheus and Iris.jpg
+  caption: 피에르 나르시스 게랭, 모르페우스와 이리스, 1811년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

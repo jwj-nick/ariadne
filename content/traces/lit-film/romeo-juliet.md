@@ -2,6 +2,7 @@
 id: trace:romeo-juliet
 type: trace
 category: lit-film
+group: classic
 name_ko: 로미오와 줄리엣
 name_en: Romeo and Juliet
 sources: [source:pyramus-thisbe]

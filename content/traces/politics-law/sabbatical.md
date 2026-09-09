@@ -2,6 +2,7 @@
 id: trace:sabbatical
 type: trace
 category: politics-law
+group: law
 name_ko: 안식년
 name_en: Sabbatical
 sources: [source:sabbath]

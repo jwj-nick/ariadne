@@ -2,6 +2,7 @@
 id: trace:atlas-vertebra
 type: trace
 category: psych-med
+group: body
 name_ko: 환추 (아틀라스)
 name_en: Atlas vertebra
 sources: [source:atlas]

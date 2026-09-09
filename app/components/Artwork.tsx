@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { imageUrl, sourcePage } from '../lib/image';
 
 /**
  * 카드에 실린 그림 (D29).
@@ -21,17 +22,23 @@ export default function Artwork({
   file,
   caption,
   license,
+  borrowedFrom,
 }: {
   file: string;
   caption: string;
   license: string;
+  /**
+   * 이 흔적에 걸 그림이 따로 없어 원천의 그림을 가져온 경우, 그 원천의 이름.
+   * 브랜드 로고처럼 저작권 때문에 걸 수 없는 그림이 많아 흔적 쪽이 자주 비는데,
+   * 아무 말 없이 원천의 그림을 띄우면 그것이 이 브랜드의 사진인 줄로 읽힌다.
+   */
+  borrowedFrom?: string;
 }) {
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
-  // 파일 이름만으로 부를 수 있는 주소다. 해시 경로를 몰라도 되고, 저쪽에서 옮겨도 따라간다.
-  const src = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=900`;
-  const page = `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, '_'))}`;
+  const src = imageUrl(file);
+  const page = sourcePage(file);
 
   // 못 불러 왔으면 자리까지 통째로 감춘다. 깨진 그림 표시가 남는 것보다 낫다.
   if (failed) return null;
@@ -61,7 +68,12 @@ export default function Artwork({
       </div>
       {/* 설명과 저작권을 한 줄에 이으면 줄 끝에서 링크가 갈라져 읽기 나쁘다. */}
       <figcaption className="mt-2 text-[12px] leading-relaxed" style={{ color: 'var(--muted)' }}>
-        <span className="block">{caption}</span>
+        {borrowedFrom && (
+          <span className="mr-1.5 rounded px-1.5 py-0.5 text-[11px]" style={{ background: 'var(--thread-soft)', color: 'var(--thread)' }}>
+            원천 · {borrowedFrom}
+          </span>
+        )}
+        <span className={borrowedFrom ? '' : 'block'}>{caption}</span>
         <a
           href={page}
           target="_blank"

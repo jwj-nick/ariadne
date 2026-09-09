@@ -2,6 +2,7 @@
 id: trace:chiron-healer
 type: trace
 category: psych-med
+group: mind
 name_ko: 상처 입은 치유자
 name_en: Wounded healer
 sources: [source:chiron]

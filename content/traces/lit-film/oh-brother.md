@@ -2,6 +2,7 @@
 id: trace:oh-brother
 type: trace
 category: lit-film
+group: film
 name_ko: 오 형제여 어디 있는가
 name_en: O Brother, Where Art Thou?
 sources: [source:odysseus]

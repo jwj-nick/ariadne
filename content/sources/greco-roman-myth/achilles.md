@@ -2,6 +2,7 @@
 id: source:achilles
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 아킬레우스
 name_en: Achilles
 aliases: [아킬레스, Achilleus]

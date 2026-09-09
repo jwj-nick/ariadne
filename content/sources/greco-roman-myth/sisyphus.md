@@ -2,6 +2,7 @@
 id: source:sisyphus
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 시시포스
 name_en: Sisyphus
 aliases: [시지프, 시지프스]

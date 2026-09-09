@@ -2,6 +2,7 @@
 id: trace:electron
 type: trace
 category: science-astro
+group: element
 name_ko: 전자
 name_en: Electron
 sources: [source:thales]

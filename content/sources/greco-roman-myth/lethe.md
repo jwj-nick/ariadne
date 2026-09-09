@@ -2,6 +2,7 @@
 id: source:lethe
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 레테
 name_en: Lethe
 aliases: [망각의 강]
@@ -12,6 +13,10 @@ level_adult: 저승에 흐르는 다섯 강 가운데 하나이며, 그 물을 �
 emblem: river
 korea_parallel: ""
 traces: []
+image:
+  file: Henryk Siemiradzki - Orfeusz w podziemnym królestwie.jpg
+  caption: 헨리크 시에미라츠키, 저승의 오르페우스, 19세기
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

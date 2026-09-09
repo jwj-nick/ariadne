@@ -2,6 +2,7 @@
 id: source:lucifer-morningstar
 type: source
 domain: bible-ot
+group: origin
 name_ko: 샛별
 name_en: Morning Star
 aliases: [루키페르, Lucifer, 계명성]
@@ -11,6 +12,10 @@ level_adult: 라틴어로 빛을 나르는 자라는 뜻이며, 원래는 새벽
 emblem: star
 korea_parallel: ""
 traces: []
+image:
+  file: Pieter Bruegel the Elder - The Fall of the Rebel Angels - Google Art Project.jpg
+  caption: 피터르 브뤼헐, 반역 천사의 추락, 1562년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

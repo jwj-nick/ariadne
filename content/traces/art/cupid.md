@@ -2,6 +2,7 @@
 id: trace:cupid
 type: trace
 category: art
+group: sculpture
 name_ko: 큐피드
 name_en: Cupid
 sources: [source:eros]

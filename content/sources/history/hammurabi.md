@@ -2,6 +2,7 @@
 id: source:hammurabi
 type: source
 domain: history
+group: beyond
 name_ko: 함무라비 법전
 name_en: Code of Hammurabi
 aliases: []
@@ -11,6 +12,10 @@ level_adult: 기원전 18세기 바빌론의 왕 함무라비가 돌기둥에 �
 emblem: column
 korea_parallel: ""
 traces: []
+image:
+  file: Code of Hammurabi-Sb 8-IMG 7753-gradient.jpg
+  caption: '함무라비 법전 비석, 기원전 18세기, 루브르. "눈에는 눈" 이 여기 새겨져 있다'
+  license: CC BY-SA 3.0 fr
 status: reviewed
 created: 2026-09-08
 ---

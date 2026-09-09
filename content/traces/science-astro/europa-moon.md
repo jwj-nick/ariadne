@@ -2,6 +2,7 @@
 id: trace:europa-moon
 type: trace
 category: science-astro
+group: planet
 name_ko: 에우로파
 name_en: Europa
 sources: [source:europa]

@@ -2,6 +2,7 @@
 id: source:hermes
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 헤르메스
 name_en: Hermes
 aliases: [메르쿠리우스, Mercurius, Mercury, 머큐리]

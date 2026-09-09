@@ -2,6 +2,7 @@
 id: trace:hysteria
 type: trace
 category: psych-med
+group: mind
 name_ko: 히스테리
 name_en: Hysteria
 sources: [source:hippocrates]

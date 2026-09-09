@@ -2,6 +2,7 @@
 id: trace:influenza
 type: trace
 category: psych-med
+group: doctor
 name_ko: 인플루엔자
 name_en: Influenza
 sources: [source:astrology-influence]

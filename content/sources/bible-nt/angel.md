@@ -2,6 +2,7 @@
 id: source:angel
 type: source
 domain: bible-nt
+group: end
 name_ko: 천사
 name_en: Angel
 aliases: [앙겔로스, angelos]
@@ -11,6 +12,10 @@ level_adult: 그리스어 앙겔로스는 원래 심부름꾼이나 전령을 �
 emblem: wing
 korea_parallel: ""
 traces: []
+image:
+  file: GuidoReni MichaelDefeatsSatan.jpg
+  caption: 구이도 레니, 대천사 미카엘, 1636년경, 로마 산타 마리아 델라 콘체치오네
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

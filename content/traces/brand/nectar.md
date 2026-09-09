@@ -2,6 +2,7 @@
 id: trace:nectar
 type: trace
 category: brand
+group: food
 name_ko: 넥타
 name_en: Nectar
 sources: [source:ambrosia-nectar]

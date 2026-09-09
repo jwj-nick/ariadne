@@ -2,6 +2,7 @@
 id: trace:juno-probe
 type: trace
 category: codename
+group: space
 name_ko: 주노
 name_en: Juno
 sources: [source:hera]

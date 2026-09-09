@@ -2,6 +2,7 @@
 id: trace:inception
 type: trace
 category: lit-film
+group: film
 name_ko: 인셉션
 name_en: Inception
 sources: [source:ariadne]

@@ -2,6 +2,7 @@
 id: source:aegis
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 아이기스
 name_en: Aegis
 aliases: [이지스]
@@ -12,6 +13,10 @@ level_adult: 제우스가 지닌 방패이자 아테나가 물려받아 쓴 방�
 emblem: shield
 korea_parallel: ""
 traces: []
+image:
+  file: Marble statue of Athena, Louvre.jpg
+  caption: 아이기스를 두른 아테나. 가슴의 방패에 고르곤 얼굴이 있다
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

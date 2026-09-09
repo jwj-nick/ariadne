@@ -2,6 +2,7 @@
 id: source:exodus-story
 type: source
 domain: bible-ot
+group: exodus
 name_ko: 출애굽
 name_en: The Exodus
 aliases: [출애굽기, 이집트 탈출]

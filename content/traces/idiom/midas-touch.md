@@ -2,6 +2,7 @@
 id: trace:midas-touch
 type: trace
 category: idiom
+group: desire
 name_ko: 미다스의 손
 name_en: Midas touch
 sources: [source:midas]

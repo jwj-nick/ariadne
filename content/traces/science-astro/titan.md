@@ -2,6 +2,7 @@
 id: trace:titan
 type: trace
 category: science-astro
+group: planet
 name_ko: 타이탄
 name_en: Titan
 sources: [source:titans]

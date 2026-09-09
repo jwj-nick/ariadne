@@ -2,6 +2,7 @@
 id: source:olympus-mountain
 type: source
 domain: greco-roman-myth
+group: realm
 name_ko: 올림포스
 name_en: Mount Olympus
 aliases: [올림푸스, 올림포스산]
@@ -12,6 +13,10 @@ level_adult: 그리스 북부에 실제로 있는 산이며, 그리스 신화에
 emblem: mountain
 korea_parallel: ""
 traces: []
+image:
+  file: Mountain Olympus snowy.JPG
+  caption: 눈 덮인 올림포스산. 그리스에서 가장 높은 산이다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: trace:asia
 type: trace
 category: place
+group: land
 name_ko: 아시아
 name_en: Asia
 sources: [source:asia-titaness]

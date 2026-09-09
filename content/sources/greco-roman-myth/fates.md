@@ -2,6 +2,7 @@
 id: source:fates
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 운명의 세 여신
 name_en: Moirai
 aliases: [모이라이, 파르카이, Fates]
@@ -12,6 +13,10 @@ level_adult: 클로토가 실을 잣고 라케시스가 길이를 재며 아트�
 emblem: thread
 korea_parallel: ""
 traces: []
+image:
+  file: The Three Fates by Paul Thumann.jpg
+  caption: 파울 투만, 운명의 세 여신, 19세기. 실을 뽑고 재고 끊는다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

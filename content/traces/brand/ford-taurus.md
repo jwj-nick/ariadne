@@ -2,6 +2,7 @@
 id: trace:ford-taurus
 type: trace
 category: brand
+group: car
 name_ko: 토러스
 name_en: Taurus
 sources: [source:europa]

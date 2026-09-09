@@ -2,6 +2,7 @@
 id: source:amazons
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 아마존족
 name_en: Amazons
 aliases: [아마조네스, Amazones]
@@ -13,6 +14,10 @@ level_adult: 그리스 신화에 나오는 여전사 부족. 흑해 근처에 �
 emblem: bow
 korea_parallel: ""
 traces: []
+image:
+  file: Amazonomachy sarcophagus (Harvard, Sackler Mus 1899.9+1932.49) detail 06.jpg
+  caption: 아마존족과의 싸움을 새긴 석관 부조
+  license: CC BY 4.0
 status: reviewed
 created: 2026-09-07
 ---

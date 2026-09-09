@@ -2,6 +2,7 @@
 id: trace:amazon-echo
 type: trace
 category: brand
+group: tech
 name_ko: 아마존 에코
 name_en: Amazon Echo
 sources: [source:echo-nymph]

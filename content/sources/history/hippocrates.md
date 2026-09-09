@@ -2,6 +2,7 @@
 id: source:hippocrates
 type: source
 domain: history
+group: thinker
 name_ko: 히포크라테스
 name_en: Hippocrates
 aliases: [의학의 아버지]

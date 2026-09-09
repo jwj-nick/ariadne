@@ -2,6 +2,7 @@
 id: source:ganymede
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 가니메데스
 name_en: Ganymede
 aliases: [가니메데]
@@ -12,6 +13,10 @@ level_adult: 트로이의 왕자였으며 인간 가운데 가장 아름답다 �
 emblem: cup
 korea_parallel: ""
 traces: []
+image:
+  file: 'Ganymede with Jupiter''s Eagle - Thorvaldsens Museum - DSC08616.JPG'
+  caption: 베르텔 토르발센, 유피테르의 독수리와 가니메데스
+  license: CC0
 status: reviewed
 created: 2026-09-08
 ---

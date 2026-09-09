@@ -2,6 +2,7 @@
 id: trace:percy-jackson
 type: trace
 category: lit-film
+group: popular
 name_ko: 퍼시 잭슨
 name_en: Percy Jackson
 sources: [source:poseidon]

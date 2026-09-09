@@ -2,6 +2,7 @@
 id: trace:philistine
 type: trace
 category: politics-law
+group: people
 name_ko: 속물
 name_en: Philistine
 sources: [source:philistines]

@@ -2,6 +2,7 @@
 id: trace:salt-of-earth
 type: trace
 category: idiom
+group: person
 name_ko: 세상의 소금
 name_en: Salt of the earth
 sources: [source:gospel-sayings]

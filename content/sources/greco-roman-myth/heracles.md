@@ -2,6 +2,7 @@
 id: source:heracles
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 헤라클레스
 name_en: Heracles
 aliases: [헤르쿨레스, Hercules, 허큘리스]

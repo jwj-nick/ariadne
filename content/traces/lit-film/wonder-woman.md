@@ -2,6 +2,7 @@
 id: trace:wonder-woman
 type: trace
 category: lit-film
+group: popular
 name_ko: 원더우먼
 name_en: Wonder Woman
 sources: [source:amazons]

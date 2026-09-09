@@ -2,6 +2,7 @@
 id: trace:oedipus-complex
 type: trace
 category: psych-med
+group: mind
 name_ko: 오이디푸스 콤플렉스
 name_en: Oedipus complex
 sources: [source:oedipus]

@@ -2,6 +2,7 @@
 id: trace:saturnine
 type: trace
 category: idiom
+group: person
 name_ko: 음침한
 name_en: Saturnine
 sources: [source:cronus]

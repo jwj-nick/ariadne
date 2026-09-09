@@ -2,6 +2,7 @@
 id: trace:ocean
 type: trace
 category: science-astro
+group: earth
 name_ko: 대양
 name_en: Ocean
 sources: [source:oceanus]

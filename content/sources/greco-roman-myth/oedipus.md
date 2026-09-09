@@ -2,6 +2,7 @@
 id: source:oedipus
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 오이디푸스
 name_en: Oedipus
 aliases: [오이디푸스 왕]
@@ -13,6 +14,10 @@ level_adult: 테베의 왕. 아버지를 죽이고 어머니와 혼인하리라�
 emblem: mask
 korea_parallel: ""
 traces: []
+image:
+  file: Oedipus and Sphinx (Ingres).jpg
+  caption: 앵그르, 스핑크스의 수수께끼를 푸는 오이디푸스, 1808년, 루브르
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

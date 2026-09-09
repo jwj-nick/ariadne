@@ -2,6 +2,7 @@
 id: trace:python-language
 type: trace
 category: codename
+group: soft
 name_ko: 파이썬
 name_en: Python
 sources: [source:delphi-oracle]

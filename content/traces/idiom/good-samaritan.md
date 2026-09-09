@@ -2,6 +2,7 @@
 id: trace:good-samaritan
 type: trace
 category: idiom
+group: wisdom
 name_ko: 선한 사마리아인
 name_en: Good Samaritan
 sources: [source:good-samaritan-parable]

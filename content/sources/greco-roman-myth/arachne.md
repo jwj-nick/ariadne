@@ -2,6 +2,7 @@
 id: source:arachne
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 아라크네
 name_en: Arachne
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 베 짜는 솜씨가 뛰어난 여인이었고, 아테나와 겨루
 emblem: spider
 korea_parallel: ""
 traces: []
+image:
+  file: Velázquez - La Fábula de Aracne o Las Hilanderas (Museo del Prado, 1657-58).jpg
+  caption: 디에고 벨라스케스, 실 잣는 여인들, 1655년경. 뒤쪽 벽걸이에 아라크네 이야기가 있다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: source:orwell-1984
 type: source
 domain: literature
+group: fable
 name_ko: "1984"
 name_en: Nineteen Eighty-Four
 aliases: [오웰]
@@ -11,6 +12,10 @@ level_adult: 조지 오웰이 1949년에 발표한 소설로, 모든 것을 감�
 emblem: eye
 korea_parallel: ""
 traces: []
+image:
+  file: George Orwell statue - BBC London (38562767202).jpg
+  caption: 조지 오웰 동상, 런던 BBC 방송센터
+  license: CC BY 2.0
 status: reviewed
 created: 2026-09-08
 ---

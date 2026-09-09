@@ -2,6 +2,7 @@
 id: trace:panopticon
 type: trace
 category: politics-law
+group: law
 name_ko: 파놉티콘
 name_en: Panopticon
 sources: [source:argus]

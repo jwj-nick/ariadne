@@ -2,6 +2,7 @@
 id: trace:diaspora
 type: trace
 category: politics-law
+group: people
 name_ko: 디아스포라
 name_en: Diaspora
 sources: [source:babylonian-exile]

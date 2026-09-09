@@ -2,6 +2,7 @@
 id: source:eden-garden
 type: source
 domain: bible-ot
+group: origin
 name_ko: 에덴동산
 name_en: Garden of Eden
 aliases: [에덴, 낙원]

@@ -2,6 +2,7 @@
 id: source:cadmus
 type: source
 domain: greco-roman-myth
+group: hero
 name_ko: 카드모스
 name_en: Cadmus
 aliases: [카드무스]
@@ -12,6 +13,10 @@ level_adult: 황소로 변한 제우스에게 끌려간 누이 에우로페를 �
 emblem: tower
 korea_parallel: ""
 traces: []
+image:
+  file: Cadmus zaait drakentanden Rijksmuseum SK-A-4051.jpeg
+  caption: 루벤스 공방, 용의 이빨을 뿌리는 카드모스, 1610년대
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

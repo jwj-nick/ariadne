@@ -2,6 +2,7 @@
 id: source:iris-goddess
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 이리스
 name_en: Iris
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 무지개 그 자체이자 신들의 전령이며, 특히 헤라의
 emblem: wave
 korea_parallel: ""
 traces: []
+image:
+  file: Iris Louvre L43 n2.jpg
+  caption: 무지개의 여신 이리스를 그린 도기, 루브르
+  license: CC BY 3.0
 status: reviewed
 created: 2026-09-08
 ---

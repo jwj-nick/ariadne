@@ -2,6 +2,7 @@
 id: trace:seltos
 type: trace
 category: brand
+group: car
 name_ko: 셀토스
 name_en: Seltos
 sources: [source:heracles]

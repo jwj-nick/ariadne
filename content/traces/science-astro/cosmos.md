@@ -2,6 +2,7 @@
 id: trace:cosmos
 type: trace
 category: science-astro
+group: earth
 name_ko: 코스모스
 name_en: Cosmos
 sources: [source:chaos-primordial]

@@ -2,6 +2,7 @@
 id: trace:adonis
 type: trace
 category: idiom
+group: person
 name_ko: 아도니스
 name_en: Adonis
 sources: [source:adonis]

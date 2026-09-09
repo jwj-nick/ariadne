@@ -2,6 +2,7 @@
 id: source:olympic-games
 type: source
 domain: history
+group: greece
 name_ko: 고대 올림픽
 name_en: Ancient Olympic Games
 aliases: [올림피아 제전]
@@ -12,6 +13,10 @@ level_adult: 기원전 8세기부터 그리스의 올림피아에서 제우스�
 emblem: laurel
 korea_parallel: ""
 traces: []
+image:
+  file: Panathenaic amphora Kleophrades Louvre F277.jpg
+  caption: 파나테나이아 암포라의 달리기 장면, 루브르
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

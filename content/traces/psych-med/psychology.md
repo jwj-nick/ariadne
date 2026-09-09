@@ -2,6 +2,7 @@
 id: trace:psychology
 type: trace
 category: psych-med
+group: mind
 name_ko: 심리학
 name_en: Psychology
 sources: [source:psyche]

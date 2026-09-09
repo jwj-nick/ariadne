@@ -2,6 +2,7 @@
 id: trace:forum
 type: trace
 category: politics-law
+group: people
 name_ko: 포럼
 name_en: Forum
 sources: [source:roman-forum]

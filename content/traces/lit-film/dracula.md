@@ -2,6 +2,7 @@
 id: trace:dracula
 type: trace
 category: lit-film
+group: classic
 name_ko: 드라큘라
 name_en: Dracula
 sources: [source:vlad-dracula]

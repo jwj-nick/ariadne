@@ -2,6 +2,7 @@
 id: trace:angelinus
 type: trace
 category: brand
+group: food
 name_ko: 엔제리너스
 name_en: Angel-in-us
 sources: [source:angel]

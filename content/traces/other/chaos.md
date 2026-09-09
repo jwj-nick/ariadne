@@ -2,6 +2,7 @@
 id: trace:chaos
 type: trace
 category: other
+group: misc
 name_ko: 카오스
 name_en: Chaos
 sources: [source:chaos-primordial]

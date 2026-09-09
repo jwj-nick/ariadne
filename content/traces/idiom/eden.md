@@ -2,6 +2,7 @@
 id: trace:eden
 type: trace
 category: idiom
+group: fate
 name_ko: 에덴
 name_en: Eden
 sources: [source:eden-garden]

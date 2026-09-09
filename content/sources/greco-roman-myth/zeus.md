@@ -2,6 +2,7 @@
 id: source:zeus
 type: source
 domain: greco-roman-myth
+group: olympian
 name_ko: 제우스
 name_en: Zeus
 aliases: [유피테르, Jupiter, Jove, 주피터]

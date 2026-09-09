@@ -2,6 +2,7 @@
 id: trace:golden-eggs
 type: trace
 category: idiom
+group: desire
 name_ko: 황금알을 낳는 거위
 name_en: Goose that laid golden eggs
 sources: [source:aesop]

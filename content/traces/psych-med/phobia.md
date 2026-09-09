@@ -2,6 +2,7 @@
 id: trace:phobia
 type: trace
 category: psych-med
+group: mind
 name_ko: 공포증
 name_en: Phobia
 sources: [source:phobos]

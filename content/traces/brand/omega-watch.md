@@ -2,6 +2,7 @@
 id: trace:omega-watch
 type: trace
 category: brand
+group: fashion
 name_ko: 오메가
 name_en: Omega
 sources: [source:alpha-omega]

@@ -2,6 +2,7 @@
 id: source:daphne
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 다프네
 name_en: Daphne
 aliases: []
@@ -12,6 +13,10 @@ level_adult: 에로스의 화살에 맞아 사랑에 빠진 아폴론이 그를 
 emblem: laurel
 korea_parallel: ""
 traces: []
+image:
+  file: Pollaiolo, Piero del - Apollo and Daphne.jpg
+  caption: 피에로 델 폴라이올로, 아폴론과 다프네, 1470년대. 손끝이 이미 월계수 가지다
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -2,6 +2,7 @@
 id: trace:wolf-in-sheep
 type: trace
 category: idiom
+group: person
 name_ko: 양의 탈을 쓴 늑대
 name_en: Wolf in sheep's clothing
 sources: [source:aesop]

@@ -2,6 +2,7 @@
 id: trace:echo
 type: trace
 category: idiom
+group: wisdom
 name_ko: 에코
 name_en: Echo
 sources: [source:echo-nymph]

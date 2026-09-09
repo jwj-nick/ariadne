@@ -2,6 +2,7 @@
 id: trace:grapes-of-wrath
 type: trace
 category: lit-film
+group: classic
 name_ko: 분노의 포도
 name_en: The Grapes of Wrath
 sources: [source:apocalypse]

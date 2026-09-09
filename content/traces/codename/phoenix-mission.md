@@ -2,6 +2,7 @@
 id: trace:phoenix-mission
 type: trace
 category: codename
+group: space
 name_ko: 피닉스 착륙선
 name_en: Phoenix lander
 sources: [source:phoenix-bird]

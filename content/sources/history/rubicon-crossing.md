@@ -2,6 +2,7 @@
 id: source:rubicon-crossing
 type: source
 domain: history
+group: rome
 name_ko: 루비콘 도하
 name_en: Crossing of the Rubicon
 aliases: [루비콘강, Rubicon]

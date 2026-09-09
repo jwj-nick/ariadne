@@ -2,6 +2,7 @@
 id: trace:terra-beer
 type: trace
 category: brand
+group: food
 name_ko: 테라
 name_en: TERRA
 sources: [source:gaia]

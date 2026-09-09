@@ -2,6 +2,7 @@
 id: trace:harry-potter-phoenix
 type: trace
 category: lit-film
+group: popular
 name_ko: 불사조 기사단
 name_en: Order of the Phoenix
 sources: [source:phoenix-bird]

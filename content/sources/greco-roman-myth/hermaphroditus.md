@@ -2,6 +2,7 @@
 id: source:hermaphroditus
 type: source
 domain: greco-roman-myth
+group: nymph
 name_ko: 헤르마프로디토스
 name_en: Hermaphroditus
 aliases: []
@@ -13,6 +14,10 @@ level_adult: 헤르메스와 아프로디테 사이에서 태어난 미소년이
 emblem: mirror
 korea_parallel: ""
 traces: []
+image:
+  file: Sleeping Hermaphroditus Louvre Ma231 face.jpg
+  caption: 잠자는 헤르마프로디토스, 루브르
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

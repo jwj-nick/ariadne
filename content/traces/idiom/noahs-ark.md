@@ -2,6 +2,7 @@
 id: trace:noahs-ark
 type: trace
 category: idiom
+group: fate
 name_ko: 노아의 방주
 name_en: Noah ark
 sources: [source:noah]

@@ -2,6 +2,7 @@
 id: trace:asics
 type: trace
 category: brand
+group: fashion
 name_ko: 아식스
 name_en: ASICS
 sources: [source:healthy-mind]

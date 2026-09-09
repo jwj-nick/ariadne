@@ -2,6 +2,7 @@
 id: trace:morphine
 type: trace
 category: psych-med
+group: drug
 name_ko: 모르핀
 name_en: Morphine
 sources: [source:morpheus]

@@ -2,6 +2,7 @@
 id: source:arthur-avalon
 type: source
 domain: literature
+group: fable
 name_ko: 아발론
 name_en: Avalon
 aliases: [아서왕의 섬]
@@ -11,6 +12,10 @@ level_adult: 아서왕 전설에서 왕이 마지막 싸움에서 크게 다친 
 emblem: apple
 korea_parallel: ""
 traces: []
+image:
+  file: Frank William Warwick Topham Voyage of King Arthur and Morgan Le Fay to the Isle of Avalon 1888.jpg
+  caption: 프랭크 톱햄, 아발론으로 가는 아서왕, 1888년
+  license: Public domain
 status: reviewed
 created: 2026-09-08
 ---
