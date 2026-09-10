@@ -7,7 +7,7 @@
  *
  * 캐시 이름에 판을 적어 두었다. 이 파일을 고칠 때 판을 올리면 옛 캐시가 비워진다.
  */
-const VERSION = 'ariadne-v1';
+const VERSION = 'ariadne-v2';
 const SCOPE = new URL(self.registration.scope).pathname;
 
 self.addEventListener('install', (event) => {

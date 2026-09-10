@@ -126,8 +126,8 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
       <div className="mb-4 flex gap-1.5">
         {(
           [
-            ['trace', '흔적', traces.length],
-            ['source', '원천', sources.length],
+            ['trace', '이름', traces.length],
+            ['source', '이야기', sources.length],
           ] as const
         ).map(([key, label, n]) => (
           <button

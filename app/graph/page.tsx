@@ -4,8 +4,8 @@ import GraphView, { type GraphNode } from '../components/GraphView';
 import { CATEGORY_LABEL, DOMAIN_LABEL, getGraph } from '../lib/graph';
 
 export const metadata: Metadata = {
-  title: '실 지도',
-  description: '흔적과 원천이 어떻게 이어져 있는지 한눈에 봅니다.',
+  title: '관계도',
+  description: '이름과 이야기가 어떻게 이어져 있는지 한눈에 봅니다.',
 };
 
 export default function GraphPage() {
@@ -51,9 +51,9 @@ export default function GraphPage() {
 
   return (
     <div>
-      <h1 className="mb-1 text-[22px] font-semibold">실 지도</h1>
+      <h1 className="mb-1 text-[22px] font-semibold">관계도</h1>
       <p className="mb-4 text-[13.5px]" style={{ color: 'var(--muted)' }}>
-        흔적 {g.meta.counts.traces}개와 원천 {g.meta.counts.sources}개가 {g.meta.counts.edges}개의 실로 이어져 있습니다.
+        이름 {g.meta.counts.traces}개와 이야기 {g.meta.counts.sources}개가 {g.meta.counts.edges}개의 실로 이어져 있습니다.
       </p>
       <GraphView nodes={nodes} edges={g.edges} bounds={g.layout.bounds} />
     </div>

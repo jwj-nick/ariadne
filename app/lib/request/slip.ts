@@ -37,7 +37,7 @@ export interface SlipInput {
 const ORIGIN_LABEL: Record<Wish['origin']['kind'], string> = {
   trace: '흔적 카드',
   source: '원천 카드',
-  capture: '조우 캡처',
+  capture: '본 것 담기',
   free: '직접 적음',
 };
 
@@ -60,7 +60,7 @@ export function buildSlip(input: SlipInput): string {
   const repo = input.repoPath?.trim() || 'ariadne-app';
   const lines: string[] = [];
 
-  lines.push('# Ariadne 카드 요청서');
+  lines.push('# Ariadne 새 카드 신청서');
   lines.push('');
   lines.push(
     `Ariadne 앱에서 ${date} 에 내보낸 것입니다. 아래 요청을 \`${repo}\` 리포에서 처리해 주십시오.`,
@@ -127,4 +127,4 @@ export function buildSlip(input: SlipInput): string {
 }
 
 /** 파일로 저장할 때 쓸 이름. */
-export const slipFileName = (date: string): string => `ariadne-요청서-${date}.md`;
+export const slipFileName = (date: string): string => `ariadne-신청서-${date}.md`;

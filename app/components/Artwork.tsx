@@ -70,7 +70,7 @@ export default function Artwork({
       <figcaption className="mt-2 text-[12px] leading-relaxed" style={{ color: 'var(--muted)' }}>
         {borrowedFrom && (
           <span className="mr-1.5 rounded px-1.5 py-0.5 text-[11px]" style={{ background: 'var(--thread-soft)', color: 'var(--thread)' }}>
-            원천 · {borrowedFrom}
+            {borrowedFrom}의 그림
           </span>
         )}
         <span className={borrowedFrom ? '' : 'block'}>{caption}</span>

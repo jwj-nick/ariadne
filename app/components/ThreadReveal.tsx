@@ -24,7 +24,7 @@ export default function ThreadReveal({
   return (
     <div className="thread-reveal mb-4 flex flex-col items-center">
       <span className="text-[11px] tracking-wide" style={{ color: 'var(--muted)' }}>
-        흔적
+        이름
       </span>
       <span className="mt-0.5 text-[16px] font-semibold">{traceName}</span>
 
@@ -58,7 +58,7 @@ export default function ThreadReveal({
           <Emblem name={emblem} size={56} strokeWidth={5} />
         </div>
         <span className="mt-1 text-[11px] tracking-wide" style={{ color: 'var(--muted)' }}>
-          원천
+          이야기
         </span>
         <span className="mt-0.5 text-[19px] font-semibold" style={{ color: 'var(--thread)' }}>
           {sourceName}

@@ -31,7 +31,7 @@ export interface NodeMeta {
 }
 
 const TYPE_LABEL: Record<QuizItemView['type'], string> = {
-  trace_to_source: '원천 맞히기',
+  trace_to_source: '어디서 왔나',
   idiom_origin: '표현의 뿌리',
   explain_why: '이유 말하기',
 };
@@ -39,7 +39,7 @@ const TYPE_LABEL: Record<QuizItemView['type'], string> = {
 /** 정답 비교. scripts/lib/quiz.ts 의 normalize 와 같은 규칙이어야 한다. */
 const normalize = (s: string): string => s.toLowerCase().replace(/[\s·.,'"()[\]<>“”‘’]/g, '');
 
-const SESSION_CAP = 20;
+export const SESSION_CAP = 20;
 
 export default function QuizRunner({
   items,
@@ -164,15 +164,15 @@ export default function QuizRunner({
           {done > 0 ? `오늘 몫을 마쳤습니다. ${done}개 풀었습니다.` : '오늘 볼 것이 없습니다.'}
         </p>
         <p className="mt-2 text-[13.5px]" style={{ color: 'var(--muted)' }}>
-          본 흔적 {stats.seen} / {stats.total} · 장기 기억으로 넘어간 것 {stats.settled}개
+          본 이름 {stats.seen} / {stats.total} · 장기 기억으로 넘어간 것 {stats.settled}개
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <Link
-            href="/"
+            href="/find"
             className="rounded-full px-4 py-2 text-[14px]"
             style={{ background: 'var(--thread)', color: '#fff' }}
           >
-            흔적 둘러보기
+            다른 이름 찾아보기
           </Link>
           <button
             type="button"
@@ -197,7 +197,7 @@ export default function QuizRunner({
       <div className="mb-5">
         <div className="flex items-baseline justify-between text-[12px]" style={{ color: 'var(--muted)' }}>
           <span>
-            이번 묶음 {cursor + 1} / {total} · {TYPE_LABEL[item.type]}
+            {cursor + 1} / {total} · {TYPE_LABEL[item.type]}
           </span>
           <span>오늘 볼 것 {stats.due}개</span>
         </div>
@@ -259,7 +259,7 @@ export default function QuizRunner({
               <input
                 value={guess}
                 onChange={(e) => setGuess(e.target.value)}
-                placeholder="원천의 이름을 적어 보십시오"
+                placeholder="어느 이야기에서 왔을까요"
                 autoComplete="off"
                 className="w-full rounded-lg px-3.5 py-2.5 text-[15px] outline-none"
                 style={{ background: 'var(--surface)', color: 'var(--ink)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
@@ -330,7 +330,7 @@ export default function QuizRunner({
             )}
             {item.type === 'explain_why' && source && (
               <p className="mt-2 text-[13px]" style={{ color: 'var(--muted)' }}>
-                원천은 {source.name_ko}입니다.
+                이 이름은 {source.name_ko} 에서 왔습니다.
               </p>
             )}
           </div>

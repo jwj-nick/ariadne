@@ -24,7 +24,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const s = getSource(slug);
-  if (!s) return { title: '없는 원천' };
+  if (!s) return { title: '없는 이야기' };
   return { title: `${s.name_ko} (${s.name_en})`, description: s.level_adult };
 }
 
@@ -40,8 +40,8 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
 
   return (
     <article>
-      <Link href="/" className="text-[12px]" style={{ color: 'var(--muted)' }}>
-        ← 목록
+      <Link href="/find" className="text-[12px]" style={{ color: 'var(--muted)' }}>
+        ← 찾아보기
       </Link>
 
       <header className="mt-3 mb-6 flex items-start gap-4">
@@ -50,7 +50,7 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
         </div>
         <div className="min-w-0 flex-1">
         <p className="text-[12px]" style={{ color: 'var(--thread)' }}>
-          원천 · {DOMAIN_LABEL[source.domain] ?? source.domain}
+          {DOMAIN_LABEL[source.domain] ?? source.domain}
         </p>
         <h1 className="mt-1 text-[26px] leading-tight font-semibold">{source.name_ko}</h1>
         <p className="wordmark mt-0.5 text-[15px]" style={{ color: 'var(--muted)' }}>
@@ -90,7 +90,7 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
       {traces.length > 0 && (
         <section className="relative thread-rail mb-7">
           <h2 className="mb-2 text-[12px] tracking-wide" style={{ color: 'var(--muted)' }}>
-            여기서 나온 흔적
+            여기서 나온 이름
           </h2>
           <ul className="flex flex-col gap-1.5">
             {traces.map((t) => (
@@ -149,7 +149,7 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
       <WishButton kind="source" id={source.id} label={source.name_ko} />
 
       <p className="text-[11.5px]" style={{ color: 'var(--muted)' }}>
-        들어오는 흔적 {traces.length}개 · 상태 {source.status}
+        이 이야기에서 나온 이름 {traces.length}개
       </p>
     </article>
   );

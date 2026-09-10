@@ -114,5 +114,5 @@ test('빈 줄이 세 줄 넘게 이어지지 않는다', () => {
 });
 
 test('파일 이름에 날짜가 들어간다', () => {
-  assert.equal(slipFileName('2026-09-09'), 'ariadne-요청서-2026-09-09.md');
+  assert.equal(slipFileName('2026-09-09'), 'ariadne-신청서-2026-09-09.md');
 });

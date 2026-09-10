@@ -2,15 +2,16 @@ import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import LevelSwitch from './components/LevelSwitch';
 import ServiceWorker from './components/ServiceWorker';
+import TabBar from './components/TabBar';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ariadne — 흔적에서 원천까지',
+    default: 'Ariadne — 이름 뒤의 이야기',
     template: '%s · Ariadne',
   },
   description:
-    '오늘 본 로고, 용어, 행성, 그림, 영화 뒤에 무엇이 있는지 실을 이어 주는 서양 교양 학습 앱.',
+    '나이키는 승리의 여신, 목성은 신들의 왕. 매일 쓰는 이름이 어디서 왔는지 찾아보는 앱.',
 };
 
 export const viewport: Viewport = {
@@ -31,56 +32,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: LEVEL_BOOTSTRAP }} />
       </head>
       <body>
-        <div className="mx-auto flex min-h-dvh max-w-3xl flex-col px-5">
-          <header className="py-6">
-            <div className="flex items-baseline justify-between gap-3">
-              <Link href="/" className="flex items-baseline gap-2.5">
-                <span className="wordmark text-xl" style={{ color: 'var(--thread)' }}>
-                  Ariadne
-                </span>
-                <span className="text-[13px]" style={{ color: 'var(--muted)' }}>
-                  아리아드네
-                </span>
-              </Link>
-              <LevelSwitch />
-            </div>
-            {/* 길잡이가 일곱이라 좁은 화면에서는 한 줄에 다 들어가지 않는다.
-                줄바꿈으로 낱말이 잘리는 것보다 가로로 넘기는 편이 읽기 쉽다. */}
-            <nav className="nav-scroll mt-3 flex gap-4 overflow-x-auto text-[13px] whitespace-nowrap">
-              <Link href="/" style={{ color: 'var(--muted)' }}>
-                흔적 둘러보기
-              </Link>
-              <Link href="/browse" style={{ color: 'var(--muted)' }}>
-                갈래별 보기
-              </Link>
-              <Link href="/quiz" style={{ color: 'var(--thread)' }}>
-                오늘의 복습
-              </Link>
-              <Link href="/graph" style={{ color: 'var(--muted)' }}>
-                실 지도
-              </Link>
-              <Link href="/capture" style={{ color: 'var(--muted)' }}>
-                조우 캡처
-              </Link>
-              <Link href="/request" style={{ color: 'var(--muted)' }}>
-                카드 요청서
-              </Link>
-              <Link href="/settings" style={{ color: 'var(--muted)' }}>
-                진도와 백업
-              </Link>
-            </nav>
+        <div
+          className="mx-auto flex min-h-dvh max-w-3xl flex-col px-5"
+          style={{ paddingBottom: 'calc(74px + env(safe-area-inset-bottom))' }}
+        >
+          {/* 머리말은 이름과 부제만 남긴다.
+              길잡이는 엄지가 닿는 화면 아래로 내려갔다 (D35). */}
+          <header className="flex items-baseline justify-between gap-3 py-5">
+            <Link href="/" className="flex items-baseline gap-2.5">
+              <span className="wordmark text-xl" style={{ color: 'var(--thread)' }}>
+                Ariadne
+              </span>
+              <span className="text-[12.5px]" style={{ color: 'var(--muted)' }}>
+                이름 뒤의 이야기
+              </span>
+            </Link>
+            <LevelSwitch />
           </header>
 
-          <main className="flex-1 pb-16">{children}</main>
+          <main className="flex-1">{children}</main>
           <ServiceWorker />
 
           <footer
-            className="border-t py-6 text-[12px]"
+            className="mt-10 border-t py-5 text-[12px]"
             style={{ borderColor: 'var(--line)', color: 'var(--muted)' }}
           >
-            미궁 속 테세우스에게 실타래를 건넨 아리아드네처럼, 흔적에서 원천까지 실을 잇는다.
+            미궁 속 테세우스에게 실타래를 건넨 아리아드네처럼, 오늘 쓰는 이름에서 그 이야기까지
+            실을 잇습니다.
           </footer>
         </div>
+        <TabBar />
       </body>
     </html>
   );

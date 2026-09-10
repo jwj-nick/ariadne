@@ -43,7 +43,7 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
       setMessage(
         capture.matched_trace_ids.length > 0
           ? `${capture.matched_trace_ids.length}개를 알아봤습니다.`
-          : '아는 흔적을 찾지 못했습니다. 새 흔적 후보로 남길 수 있습니다.',
+          : '아는 이름이 없습니다. 새로 만들어 달라고 신청할 수 있습니다.',
       );
     },
     [targets],
@@ -89,7 +89,7 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
     });
     store.updateCapture(capture.id, { status: 'candidate' });
     refresh();
-    setMessage('새 흔적 후보로 남기고 카드 요청서에 담았습니다.');
+    setMessage('새 항목 신청에 담았습니다.');
   };
 
   // 준비 전에도 안내와 입력 칸은 그린다. 첫 화면이 비어 보이지 않게 하기 위해서다.
@@ -99,7 +99,7 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
   const STATUS_LABEL: Record<Capture['status'], string> = {
     open: '아직 처리하지 않음',
     kept: '오늘 복습에 넣음',
-    candidate: '새 흔적 후보',
+    candidate: '새로 만들어 달라고 신청함',
     dismissed: '버림',
   };
 
@@ -185,13 +185,13 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
                   </div>
                 ) : (
                   <p className="mt-2 text-[13px]" style={{ color: 'var(--muted)' }}>
-                    아는 흔적이 없습니다.
+                    아는 이름이 없습니다.
                   </p>
                 )}
 
                 {viaSource.length > 0 && (
                   <p className="mt-1.5 text-[12px]" style={{ color: 'var(--muted)' }}>
-                    원천 이름 {[...new Set(viaSource.map((h) => h.hit))].join(', ')} 을 알아보고 이어 준 것입니다.
+                    이야기 쪽 이름 {[...new Set(viaSource.map((h) => h.hit))].join(', ')} 을 알아보고 이어 준 것입니다.
                   </p>
                 )}
 
@@ -213,7 +213,7 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
                       className="rounded-full px-3 py-1.5"
                       style={{ color: 'var(--thread)', boxShadow: 'inset 0 0 0 1px var(--thread)' }}
                     >
-                      카드 요청서에 담기
+                      새로 만들어 달라고 신청
                     </button>
                     <button
                       type="button"
@@ -233,9 +233,9 @@ export default function CaptureRunner({ targets }: { targets: MatchTarget[] }) {
 
       <section>
         <p className="text-[12.5px]" style={{ color: 'var(--muted)' }}>
-          카드 요청서에 담은 것은 <Link href="/request" className="thread-link">카드 요청서</Link> 화면에서
+          신청한 것은 <Link href="/request" className="thread-link">새 항목 신청</Link> 화면에서
           한 장의 글로 뽑아 개발 도구에 넘길 수 있습니다.
-          담아 둔 것은 이 기기 안에만 쌓이므로, 진도와 백업 화면에서 함께 내려받아 두십시오.
+          담아 둔 것은 이 기기 안에만 쌓이므로, 내 기록 화면에서 함께 내려받아 두십시오.
         </p>
       </section>
     </div>

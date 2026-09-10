@@ -21,9 +21,9 @@ export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Ariadne — 흔적에서 원천까지',
+    name: 'Ariadne — 이름 뒤의 이야기',
     short_name: 'Ariadne',
-    description: '오늘 본 로고, 용어, 행성, 그림, 영화 뒤에 무엇이 있는지 실을 이어 줍니다.',
+    description: '나이키는 승리의 여신, 목성은 신들의 왕. 매일 쓰는 이름이 어디서 왔는지 찾아봅니다.',
     lang: 'ko',
     start_url: `${bp}/`,
     scope: `${bp}/`,
@@ -42,8 +42,8 @@ export default function manifest(): MetadataRoute.Manifest {
       params: { title: 'title', text: 'text', url: 'url' },
     },
     shortcuts: [
-      { name: '오늘의 복습', url: `${bp}/quiz` },
-      { name: '조우 캡처', url: `${bp}/capture` },
+      { name: '오늘의 퀴즈', url: `${bp}/quiz` },
+      { name: '본 것 담기', url: `${bp}/capture` },
     ],
   };
 }

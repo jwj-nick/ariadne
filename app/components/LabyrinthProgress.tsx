@@ -45,7 +45,7 @@ export default function LabyrinthProgress({
       strokeLinecap="square"
       strokeLinejoin="miter"
       role="img"
-      aria-label={`흔적 ${total}개 가운데 ${seen}개를 보았고 ${settled}개가 자리 잡았습니다`}
+      aria-label={`이름 ${total}개 가운데 ${seen}개를 보았고 ${settled}개가 자리 잡았습니다`}
     >
       {/* 아직 가지 않은 길 */}
       <path d={PATH} pathLength={100} stroke="var(--line)" strokeWidth={4} />

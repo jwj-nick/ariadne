@@ -25,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const t = getTrace(slug);
-  if (!t) return { title: '없는 흔적' };
+  if (!t) return { title: '없는 이름' };
   return { title: `${t.name_ko} (${t.name_en})`, description: t.why };
 }
 
@@ -42,13 +42,13 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
 
   return (
     <article>
-      <Link href="/" className="text-[12px]" style={{ color: 'var(--muted)' }}>
-        ← 목록
+      <Link href="/find" className="text-[12px]" style={{ color: 'var(--muted)' }}>
+        ← 찾아보기
       </Link>
 
       <header className="mt-3 mb-6">
         <p className="text-[12px]" style={{ color: 'var(--thread)' }}>
-          흔적 · {CATEGORY_LABEL[trace.category] ?? trace.category}
+          {CATEGORY_LABEL[trace.category] ?? trace.category}
         </p>
         <h1 className="mt-1 text-[26px] leading-tight font-semibold">{trace.name_ko}</h1>
         <p className="wordmark mt-0.5 text-[15px]" style={{ color: 'var(--muted)' }}>
@@ -125,7 +125,7 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
       {siblings.length > 0 && (
         <section className="relative thread-rail mb-7">
           <h2 className="mb-2 text-[12px] tracking-wide" style={{ color: 'var(--muted)' }}>
-            같은 원천의 다른 흔적
+            같은 이야기에서 온 다른 이름
           </h2>
           <ul className="flex flex-wrap gap-1.5">
             {siblings.map((s) => (
@@ -146,7 +146,7 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
       <WishButton kind="trace" id={trace.id} label={trace.name_ko} />
 
       <p className="text-[11.5px]" style={{ color: 'var(--muted)' }}>
-        마주칠 확률 {trace.frequency} / 5 · 상태 {trace.status}
+        마주칠 확률 {trace.frequency} / 5
       </p>
     </article>
   );

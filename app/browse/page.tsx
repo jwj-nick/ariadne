@@ -3,8 +3,8 @@ import { emblemFor } from '../components/Emblem';
 import { CATEGORY_LABEL, DOMAIN_LABEL, getGraph } from '../lib/graph';
 
 export const metadata = {
-  title: '갈래별 둘러보기 · Ariadne',
-  description: '흔적과 원천을 갈래와 묶음으로 나누어 한눈에 봅니다.',
+  title: '분야별로 보기 · Ariadne',
+  description: '482개를 분야와 갈래로 나누어 그림과 함께 한눈에 봅니다.',
 };
 
 /**
@@ -97,10 +97,10 @@ export default function BrowsePage() {
   return (
     <div>
       <section className="mb-6">
-        <h1 className="text-[21px] leading-snug font-semibold">갈래별로 둘러보기</h1>
+        <h1 className="text-[21px] leading-snug font-semibold">분야별로 보기</h1>
         <p className="mt-2 text-[14px]" style={{ color: 'var(--muted)' }}>
-          무엇을 찾을지 정하지 않았을 때 쓰는 길입니다. 갈래를 펼치면 묶음이 나오고,
-          묶음을 펼치면 그 안의 카드가 전부 그림과 함께 깔립니다.
+          무엇을 찾을지 정하지 않았을 때 쓰는 길입니다. 분야를 펼치면 갈래가 나오고,
+          갈래를 펼치면 그 안의 카드가 전부 그림과 함께 깔립니다.
         </p>
         <p className="mt-1.5 text-[12.5px]" style={{ color: 'var(--muted)' }}>
           카드 {traceCards.length + sourceCards.length}장 · 그림 {withImage}장

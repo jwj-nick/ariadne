@@ -117,7 +117,7 @@ export default function RequestSlip({
     a.download = slipFileName(date);
     a.click();
     URL.revokeObjectURL(url);
-    setMessage('요청서를 파일로 내려받았습니다.');
+    setMessage('신청서를 파일로 내려받았습니다.');
   };
 
   const box = {
@@ -126,8 +126,8 @@ export default function RequestSlip({
   } as const;
 
   const ORIGIN_LABEL: Record<Wish['origin']['kind'], string> = {
-    trace: '흔적',
-    source: '원천',
+    trace: '이름',
+    source: '이야기',
     capture: '캡처',
     free: '직접',
   };
@@ -205,7 +205,7 @@ export default function RequestSlip({
       {wishes.length > 0 && (
         <section>
           <h2 className="mb-2 text-[12px]" style={{ color: 'var(--muted)' }}>
-            요청서
+            신청서
           </h2>
           <div className="flex flex-wrap gap-2">
             <button

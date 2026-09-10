@@ -60,12 +60,12 @@ export default function WishButton({
     return (
       <section className="mb-7 rounded-lg p-3.5" style={{ background: 'var(--thread-soft)' }}>
         <p className="text-[13.5px]" style={{ color: 'var(--thread)' }}>
-          요청서에 담아 두었습니다.
+          신청에 담아 두었습니다.
           {saved.note && <span className="ml-1" style={{ color: 'var(--muted)' }}>“{saved.note}”</span>}
         </p>
         <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[12.5px]">
           <Link href="/request" className="thread-link">
-            요청서 보기
+            신청 목록 보기
           </Link>
           <button type="button" onClick={drop} style={{ color: 'var(--muted)' }}>
             빼기
@@ -88,7 +88,7 @@ export default function WishButton({
             이것에 대해 더 알고 싶습니다
           </span>
           <span className="mt-0.5 block text-[12.5px]" style={{ color: 'var(--muted)' }}>
-            담아 두면 카드를 더 만들어 달라는 요청서로 뽑아 줍니다
+            담아 두면 새 카드를 만들어 달라는 글로 뽑아 줍니다
           </span>
         </button>
       </section>

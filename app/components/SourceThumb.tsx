@@ -50,7 +50,7 @@ export default function SourceThumb({
         />
       </span>
       <span className="min-w-0 text-[12px] leading-snug" style={{ color: 'var(--thread)' }}>
-        원천 {name} 의 모습 보러 가기
+        이 이름이 나온 이야기, {name} 보러 가기
       </span>
     </Link>
   );

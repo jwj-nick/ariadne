@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { progress } from '../lib/learning/sm2';
+import { initialState, progress, today } from '../lib/learning/sm2';
 import { store, type Level } from '../lib/store';
 import LabyrinthProgress from './LabyrinthProgress';
 
@@ -11,7 +11,8 @@ import LabyrinthProgress from './LabyrinthProgress';
  * 지금 학습 기록은 이 브라우저 안에만 있다 (D14). 방문 기록을 지우거나 기기를 바꾸면 사라진다.
  * Supabase 로 옮기기 전까지는 사용자가 직접 챙길 수 있어야 하므로 내보내기와 되돌리기를 둔다.
  */
-export default function Settings({ totalTraces }: { totalTraces: number }) {
+export default function Settings({ traceIds }: { traceIds: string[] }) {
+  const totalTraces = traceIds.length;
   const [ready, setReady] = useState(false);
   const [level, setLevel] = useState<Level>('adult');
   const [name, setName] = useState('');
@@ -23,7 +24,12 @@ export default function Settings({ totalTraces }: { totalTraces: number }) {
     const p = store.getProfile();
     setLevel(p.level);
     setName(p.name);
-    setStats(progress(store.allReviews(), totalTraces));
+    // 아직 한 번도 안 본 카드도 오늘 볼 것에 들어간다. 홈과 퀴즈가 세는 방식과 같아야
+    // 두 화면이 서로 다른 숫자를 말하지 않는다.
+    const day = today();
+    const saved = new Map(store.allReviews().map((r) => [r.itemId, r]));
+    const states = traceIds.map((id) => saved.get(id) ?? initialState(id, day));
+    setStats(progress(states, totalTraces, day));
   };
 
   useEffect(() => {
@@ -91,7 +97,7 @@ export default function Settings({ totalTraces }: { totalTraces: number }) {
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-[15px]">
-              흔적 {ready ? stats.total : totalTraces}개 가운데 <strong>{stats.seen}개</strong>를 한 번 이상 보았고,
+              이름 {ready ? stats.total : totalTraces}개 가운데 <strong>{stats.seen}개</strong>를 한 번 이상 보았고,
               그 가운데 <strong>{stats.settled}개</strong>는 복습 간격이 3주를 넘었습니다.
             </p>
             <p className="mt-2 text-[13.5px]" style={{ color: 'var(--muted)' }}>

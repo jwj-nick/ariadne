@@ -5,8 +5,8 @@ import { getGraph } from '../lib/graph';
 import { getQuiz } from '../lib/quiz-data';
 
 export const metadata: Metadata = {
-  title: '오늘의 복습',
-  description: '추측하고, 힌트를 받고, 답을 보고, 카드로 넘어갑니다.',
+  title: '퀴즈',
+  description: '먼저 추측하고, 힌트를 받고, 답을 확인한 다음 카드로 넘어갑니다.',
 };
 
 export default function QuizPage() {

@@ -1,46 +1,25 @@
-import Browser, { type BrowseItem } from './components/Browser';
+import Link from 'next/link';
+import DailyCard, { type DailyItem } from './components/DailyCard';
 import { emblemFor } from './components/Emblem';
 import TodayStrip from './components/TodayStrip';
-import { CATEGORY_LABEL, DOMAIN_LABEL, getGraph } from './lib/graph';
+import { CATEGORY_LABEL, getGraph } from './lib/graph';
 
+/**
+ * 홈 (D34).
+ *
+ * 예전에는 첫 화면이 곧 482개짜리 목록이었다. 그래서 앱을 켠 사람이
+ * "이걸로 무엇을 하는가" 를 묻는 자리에서 "여기 482개가 있다" 는 답을 받았다.
+ * 이제 홈은 세 가지만 한다.
+ *   1. 무엇을 하는 앱인지 한 문장으로 말한다.
+ *   2. 오늘 할 일을 보여 준다.
+ *   3. 실물 한 장을 그림째 보여 준다. 설명보다 이쪽이 빠르다.
+ * 목록과 검색은 "찾기" 로 옮겼다.
+ */
 export default function Home() {
   const g = getGraph();
   const sourceById = new Map(g.sources.map((s) => [s.id, s]));
 
-  const traces: BrowseItem[] = g.traces.map((t) => ({
-    id: t.id,
-    type: 'trace',
-    href: `/trace/${t.slug}`,
-    name_ko: t.name_ko,
-    name_en: t.name_en,
-    kicker: CATEGORY_LABEL[t.category] ?? t.category,
-    kickerKey: t.category,
-    blurb: t.why,
-    frequency: t.frequency,
-    terms: [t.name_ko, t.name_en, ...t.domain_hint].map((s) => s.toLowerCase()),
-    // 흔적도 그 원천의 문양을 함께 단다. 목록을 훑을 때 뿌리가 같은 것끼리 눈에 묶인다.
-    emblem: (() => {
-      const s = sourceById.get(t.sources[0] ?? '');
-      return s ? emblemFor(s.emblem, s.domain) : undefined;
-    })(),
-  }));
-
-  const sources: BrowseItem[] = g.sources.map((s) => ({
-    id: s.id,
-    type: 'source',
-    href: `/source/${s.slug}`,
-    name_ko: s.name_ko,
-    name_en: s.name_en,
-    kicker: DOMAIN_LABEL[s.domain] ?? s.domain,
-    kickerKey: s.domain,
-    blurb: s.level_adult,
-    // 원천은 그 자체의 빈도가 없으므로, 이 원천을 가리키는 흔적 가운데 가장 높은 값을 쓴다.
-    frequency: Math.max(0, ...g.traces.filter((t) => t.sources.includes(s.id)).map((t) => t.frequency)),
-    terms: [s.name_ko, s.name_en, ...s.aliases].map((x) => x.toLowerCase()),
-    emblem: emblemFor(s.emblem, s.domain),
-  }));
-
-  if (traces.length === 0) {
+  if (g.traces.length === 0) {
     return (
       <div className="py-16 text-center" style={{ color: 'var(--muted)' }}>
         <p className="text-[15px]">콘텐츠가 아직 빌드되지 않았습니다.</p>
@@ -51,24 +30,83 @@ export default function Home() {
     );
   }
 
+  // 오늘의 한 장 후보. 그림이 걸린 것 가운데 자주 마주치는 순으로 추린다.
+  const daily: DailyItem[] = g.traces
+    .map((t) => {
+      const s = sourceById.get(t.sources[0] ?? '');
+      return {
+        slug: t.slug,
+        name_ko: t.name_ko,
+        name_en: t.name_en,
+        why: t.why,
+        emblem: s ? emblemFor(s.emblem, s.domain) : 'thread',
+        file: t.image?.file ?? s?.image?.file,
+        frequency: t.frequency,
+      };
+    })
+    .filter((d) => Boolean(d.file))
+    .sort((a, b) => b.frequency - a.frequency)
+    .slice(0, 90)
+    .map(({ frequency: _f, ...rest }) => rest);
+
+  // 분야 미리보기. 카드가 많은 순으로 여섯 개만 이름을 보인다.
+  const topCategories = Object.entries(
+    g.traces.reduce<Record<string, number>>((acc, t) => {
+      acc[t.category] = (acc[t.category] ?? 0) + 1;
+      return acc;
+    }, {}),
+  )
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6);
+
   return (
     <div>
-      <TodayStrip traceIds={g.traces.map((t) => t.id)} />
-
-      <section className="mb-7">
-        <h1 className="text-[22px] leading-snug font-semibold">
-          오늘 본 이름 뒤에 무엇이 있는가
-        </h1>
-        <p className="mt-2 text-[14px]" style={{ color: 'var(--muted)' }}>
-          브랜드, 행성, 용어, 관용구, 영화 제목처럼 우리가 매일 마주치는 <strong>흔적</strong>에서
-          그 이름이 나온 신화와 성경과 역사, 곧 <strong>원천</strong>까지 실을 잇습니다.
-        </p>
-        <p className="mt-1.5 text-[12.5px]" style={{ color: 'var(--muted)' }}>
-          흔적 {g.meta.counts.traces}개 · 원천 {g.meta.counts.sources}개 · 연결 {g.meta.counts.edges}개
+      <section className="mb-6">
+        <h1 className="text-[24px] leading-snug font-semibold">이 이름, 어디서 왔을까</h1>
+        <p className="mt-2 text-[14px] leading-relaxed" style={{ color: 'var(--muted)' }}>
+          나이키는 승리의 여신, 목성은 신들의 왕, 판도라의 상자는 삼천 년 된 이야기입니다.
+          브랜드와 별과 관용구와 영화 제목까지, 매일 쓰는 이름이 어디서 왔는지 찾아봅니다.
         </p>
       </section>
 
-      <Browser traces={traces} sources={sources} />
+      <TodayStrip traceIds={g.traces.map((t) => t.id)} />
+
+      {/* 검색 상자 모양이지만 실제로는 찾기 화면으로 가는 문이다.
+          홈에서 바로 치게 만들면 홈이 다시 목록 화면이 된다. */}
+      <Link
+        href="/find"
+        className="flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-[14px]"
+        style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)', color: 'var(--muted)' }}
+      >
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+          <circle cx="11" cy="11" r="6.2" />
+          <path d="m15.6 15.6 4 4" strokeLinecap="round" />
+        </svg>
+        나이키, 아킬레스건, ㅍㄷㄹ…
+      </Link>
+
+      <Link
+        href="/browse"
+        className="mt-2 flex items-center gap-2.5 rounded-lg px-3.5 py-3"
+        style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
+      >
+        <span className="min-w-0 flex-1">
+          <span className="block text-[14px] font-medium">분야별로 훑어보기</span>
+          <span className="mt-0.5 block truncate text-[11.5px]" style={{ color: 'var(--muted)' }}>
+            {topCategories.map(([key]) => CATEGORY_LABEL[key] ?? key).join(' · ')} …
+          </span>
+        </span>
+        <span className="shrink-0 text-[15px]" style={{ color: 'var(--muted)' }}>
+          →
+        </span>
+      </Link>
+
+      <DailyCard items={daily} />
+
+      <p className="mt-7 text-center text-[12px]" style={{ color: 'var(--muted)' }}>
+        이름 {g.meta.counts.traces}개 · 이야기 {g.meta.counts.sources}개 · 연결{' '}
+        {g.meta.counts.edges}개
+      </p>
     </div>
   );
 }

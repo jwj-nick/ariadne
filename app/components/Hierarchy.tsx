@@ -115,8 +115,8 @@ export default function Hierarchy({
       <div className="mb-4 flex items-center gap-1.5">
         {(
           [
-            ['trace', '흔적', totals.trace],
-            ['source', '원천', totals.source],
+            ['trace', '이름', totals.trace],
+            ['source', '이야기', totals.source],
           ] as const
         ).map(([key, label, n]) => (
           <button

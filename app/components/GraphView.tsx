@@ -267,7 +267,7 @@ export default function GraphView({
         {chosen ? (
           <div className="rounded-lg p-3.5" style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}>
             <p className="text-[12px]" style={{ color: colorOf(chosen.domain) }}>
-              {chosen.type === 'source' ? '원천' : '흔적'} · {chosen.kicker}
+              {chosen.type === 'source' ? '이야기' : '이름'} · {chosen.kicker}
             </p>
             <p className="mt-0.5 text-[17px] font-semibold">{chosen.name_ko}</p>
             <p className="mt-1.5 text-[13px]" style={{ color: 'var(--muted)' }}>
@@ -280,7 +280,7 @@ export default function GraphView({
         ) : (
           <p className="text-[13px]" style={{ color: 'var(--muted)' }}>
             점을 누르면 그 둘레만 남고, 끌면 움직이며, 두 손가락으로 벌리면 커집니다.
-            굵은 점이 원천이고 작은 점이 흔적입니다.
+            굵은 점이 이야기이고 작은 점이 그것에서 나온 이름입니다.
           </p>
         )}
       </div>

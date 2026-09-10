@@ -160,7 +160,7 @@ try {
   }
   // 지금 빌드에 있는 경로가 전부 응답하는지 먼저 본다.
   // 하나라도 404 면 옛 빌드가 응답하고 있다는 뜻이므로 여기서 멈춘다.
-  for (const path of ['/', '/quiz', '/trace/nike', '/source/zeus']) {
+  for (const path of ['/', '/find', '/quiz', '/trace/nike', '/source/zeus']) {
     const r = await fetch(BASE + path);
     if (!r.ok) {
       console.error(`${path} 가 HTTP ${r.status} 입니다. 옛 빌드가 응답하고 있을 수 있습니다.`);
@@ -173,26 +173,36 @@ try {
   const get = async (path) => (await fetch(BASE + path)).text();
 
   const CHECKS = {
-    '/': ['오늘 본 이름', '나이키', '판도라의 상자', '오늘 볼 복습', '담아 둔 조우'],
-    '/graph': ['실 지도', '그리스·로마 신화', '전체 보기'],
+    '/': ['이 이름, 어디서 왔을까', '오늘의 퀴즈', '분야별로 훑어보기', '오늘의 한 장'],
+    '/find': ['찾아보기', '나이키', '판도라의 상자'],
+    '/graph': ['관계도', '그리스·로마 신화', '전체 보기'],
     '/trace/nike': ['나이키', '니케', '스우시', '사모트라케', '이 이름은 어디서 왔나'],
-    '/trace/pandora': ['같은 원천의 다른 흔적', '판도라의 상자'],
+    '/trace/pandora': ['같은 이야기에서 온 다른 이름', '판도라의 상자'],
     '/trace/pandoras-box': ['피토스', '픽시스'],
-    '/source/zeus': ['옥황상제', '여기서 나온 흔적', '목성', '한국 대응물'],
+    '/source/zeus': ['옥황상제', '여기서 나온 이름', '목성', '한국 대응물'],
     '/source/ariadne': ['실마리', '인셉션', 'level-kid', 'level-adult'],
     '/source/achilles': ['트로이 목마', '역린'],
     '/source/seven-deadly-sins': ['일곱 죄악', '삼독', '세븐'],
     // 클라이언트 화면도 서버 HTML 에 뼈대가 들어 있어야 한다. 없으면 첫 화면이 잠깐 빈다.
-    '/capture': ['조우 캡처', '붙여 넣', '담기'],
-    '/settings': ['진도와 백업', '백업 내려받기', '눈높이'],
-    // 담은 것이 없으면 요청서 구역은 접힌다. 서버 HTML 에는 안내와 입력 칸까지만 있으면 된다.
-    '/request': ['카드 요청서', '담아 둔 것', '개발 도구에 붙여 넣', '담기'],
-    '/quiz': ['오늘의 복습'],
+    '/capture': ['본 것 담기', '붙여 넣', '담기'],
+    '/settings': ['내 기록', '백업 내려받기', '눈높이', '그 밖의 화면'],
+    // 담은 것이 없으면 신청서 구역은 접힌다. 서버 HTML 에는 안내와 입력 칸까지만 있으면 된다.
+    '/request': ['새 항목 신청', '담아 둔 것', '개발 도구에 붙여 넣', '담기'],
+    '/quiz': ['퀴즈'],
   };
   for (const [path, probes] of Object.entries(CHECKS)) {
     const html = await get(path);
     const miss = probes.filter((p) => !html.includes(p));
     miss.length === 0 ? ok(path, `${html.length}b`) : bad(path, '없음: ' + miss.join(', '));
+  }
+
+  // 아래 길잡이 (D35). 어느 화면에서 열어도 다섯 자리가 그대로 있어야 한다.
+  for (const path of ['/', '/find', '/browse', '/quiz', '/settings', '/trace/nike']) {
+    const html = await get(path);
+    const miss = ['>홈<', '>찾기<', '>분야<', '>퀴즈<', '>내 기록<'].filter((t) => !html.includes(t));
+    miss.length === 0
+      ? ok(`아래 길잡이 ${path}`)
+      : bad(`아래 길잡이 ${path}`, '없음: ' + miss.join(', '));
   }
 
   const achilles = await get('/source/achilles');
@@ -270,9 +280,40 @@ try {
       const docW = await s.js('document.documentElement.scrollWidth');
       expect('모바일 390px 가로 넘침 없음', docW, 390);
 
+      // 홈 (D34). 첫 화면은 목록이 아니라 "무엇을 하는 앱인가" 와 "오늘 할 일" 을 보인다.
+      expect(
+        '홈에 목록이 깔리지 않는다',
+        await s.js(`document.querySelectorAll('main ul li a[href^="/trace/"]').length`),
+        0,
+      );
+      expect(
+        '홈의 미궁 진도가 퀴즈로 이어진다',
+        await s.js(`!!document.querySelector('main a[href="/quiz"] svg path[stroke-dasharray]')`),
+        true,
+      );
+      expect(
+        '처음 켠 사람에게는 시작하라고 말한다',
+        await s.js(`document.querySelector('main a[href="/quiz"]')?.textContent?.includes('처음이라면')`),
+        true,
+      );
+      expect(
+        '오늘의 한 장이 카드로 이어진다',
+        await s.js(`!!document.querySelector('main a[href^="/trace/"] img')`),
+        true,
+      );
+      expect(
+        '아래 길잡이가 다섯 자리다',
+        await s.js(`document.querySelectorAll('body > nav a').length`),
+        5,
+      );
+
+      // 목록과 검색은 찾기 화면으로 옮겼다.
+      await s.send('Page.navigate', { url: BASE + '/find' });
+      await sleep(1500);
+
       // 목록은 한 번에 60장씩 그린다. 삼백 장을 통째로 그리면 폰에서 첫 그림이 느려진다.
       const PAGE = 60;
-      expect('첫 화면 흔적 수', await s.js(CARDS), Math.min(PAGE, N_TRACE));
+      expect('찾기 화면 첫 묶음', await s.js(CARDS), Math.min(PAGE, N_TRACE));
       await s.js(
         `[...document.querySelectorAll('main button')].find((b) => b.textContent.includes('더 보기'))?.click()`,
       );
@@ -283,16 +324,6 @@ try {
         '목록의 모든 카드에 문양이 붙는다',
         await s.js(`document.querySelectorAll('main ul li a svg').length >= ${Math.min(60, N_TRACE)}`),
         true,
-      );
-      expect(
-        '미궁 진도가 그려진다',
-        await s.js(`!!document.querySelector('main a[href="/settings"] svg path[stroke-dasharray]')`),
-        true,
-      );
-      expect(
-        '오늘 할 일 줄이 숫자를 채운다',
-        await s.js(`[...document.querySelectorAll('main a[href="/quiz"] span')].pop()?.textContent`),
-        `${N_TRACE}개`,
       );
 
       await s.js('document.querySelector("input[type=search]").focus()');
@@ -358,16 +389,16 @@ try {
       await sleep(250);
       await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('브랜드')).click()`);
       await sleep(400);
-      expect('갈래 "브랜드" 필터', await s.js(CARDS), Math.min(PAGE, N_BRAND));
+      expect('분야 "브랜드" 필터', await s.js(CARDS), Math.min(PAGE, N_BRAND));
 
-      await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('원천')).click()`);
+      await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('이야기')).click()`);
       await sleep(400);
-      expect('원천 탭 (필터 초기화 포함)', await s.js(CARDS), Math.min(PAGE, N_SOURCE));
+      expect('이야기 탭 (필터 초기화 포함)', await s.js(CARDS), Math.min(PAGE, N_SOURCE));
       expect(
         '탭 옆 숫자는 전체를 보여 준다',
         await s.js(
           // 정규식의 역슬래시는 전달 과정에서 사라지므로 글자를 직접 걸러 낸다.
-          `[...[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('원천')).textContent].filter(c => c >= '0' && c <= '9').join('')`,
+          `[...[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('이야기')).textContent].filter(c => c >= '0' && c <= '9').join('')`,
         ),
         String(N_SOURCE),
       );
@@ -377,13 +408,13 @@ try {
       const moved = await s.js('location.pathname');
       String(moved).startsWith('/source/') ? ok('카드 클릭 이동', moved) : bad('카드 클릭 이동', moved);
 
-      // ── 2.5부. 갈래별 보기 (D31) ─────────────────────────────────
-      console.log('\n[2.5] 갈래별 보기');
+      // ── 2.5부. 분야별로 보기 (D31) ─────────────────────────────────
+      console.log('\n[2.5] 분야별로 보기');
       await s.send('Page.navigate', { url: BASE + '/browse' });
       await sleep(1500);
 
       const buckets = `[...document.querySelectorAll('main button[aria-expanded]')].length`;
-      expect('갈래가 접힌 채로 나온다', await s.js(buckets), 10);
+      expect('분야가 접힌 채로 나온다', await s.js(buckets), 10);
       expect(
         '펼치기 전에는 카드가 없다',
         await s.js(`document.querySelectorAll('main a[href^="/trace/"]').length`),
@@ -396,7 +427,7 @@ try {
       );
       await sleep(400);
       expect(
-        '갈래를 펼치면 묶음이 나온다',
+        '분야를 펼치면 갈래가 나온다',
         await s.js(
           `[...document.querySelectorAll('main button[aria-expanded]')].some(b => b.textContent.includes('타는 것'))`,
         ),
@@ -408,7 +439,7 @@ try {
       );
       await sleep(600);
       const gridCards = await s.js(`document.querySelectorAll('main a[href^="/trace/"]').length`);
-      gridCards > 0 ? ok('묶음을 펼치면 카드가 깔린다', gridCards + '장') : bad('묶음 펼치기', '0장');
+      gridCards > 0 ? ok('갈래를 펼치면 카드가 깔린다', gridCards + '장') : bad('갈래 펼치기', '0장');
       expect(
         '카드마다 그림이 걸려 있다',
         await s.js(`document.querySelectorAll('main a[href^="/trace/"] img').length`),
@@ -426,13 +457,13 @@ try {
       await s.send('Page.navigate', { url: BASE + '/trace/nike' });
       await sleep(1500);
       expect(
-        '로고를 걸 수 없는 흔적도 원천의 그림을 받는다',
+        '로고를 걸 수 없는 이름도 이야기의 그림을 받는다',
         await s.js(`document.querySelector('main figure img') !== null`),
         true,
       );
       expect(
-        '빌려 온 그림에는 원천 표시가 붙는다',
-        await s.js(`document.querySelector('main figcaption').textContent.includes('원천')`),
+        '빌려 온 그림에는 어느 이야기의 것인지 붙는다',
+        await s.js(`document.querySelector('main figcaption').textContent.includes('니케의 그림')`),
         true,
       );
 
@@ -473,7 +504,7 @@ try {
         await s.js(clickText('button', '답 보기'));
         await sleep(300);
         expect('답을 열면 까닭이 보인다', await s.js(`document.querySelector('main').textContent.includes('이 이름이 붙은 까닭')`), true);
-        expect('흔적에서 원천으로 실이 그려진다', await s.js(`!!document.querySelector('.thread-draw')`), true);
+        expect('이름에서 이야기로 실이 그려진다', await s.js(`!!document.querySelector('.thread-draw')`), true);
         expect('실이 도착하는 자리에 문양이 있다', await s.js(`!!document.querySelector('.thread-target svg')`), true);
         // 답 공개 화면도 눈으로 볼 수 있게 남긴다. 실이 다 그려질 때까지 기다린다.
         await sleep(1500);
@@ -521,7 +552,7 @@ try {
         `(document.querySelector('main div div span:last-child')?.textContent ?? '').replace(/[^0-9]/g, '')`,
       );
       Number(totalNow) === N_TRACE - 1
-        ? ok('푼 흔적은 오늘 대기열에서 빠진다', `남은 ${totalNow}개`)
+        ? ok('푼 이름은 오늘 대기열에서 빠진다', `남은 ${totalNow}개`)
         : bad('대기열 갱신', `남은 것이 ${totalNow}개로 나옵니다 (기대 ${N_TRACE - 1})`);
 
       // ── 4부. 눈높이 전환 (M1-5) ──────────────────────────────────
@@ -553,8 +584,8 @@ try {
       const kidChoices = await s.js(`document.querySelectorAll('main ul li button').length`);
       expect('아이 퀴즈는 선택지 3개', kidChoices, 3);
 
-      // ── 4.5부. 실 지도 (D27-C) ───────────────────────────────────
-      console.log('\n[4.5] 실 지도');
+      // ── 4.5부. 관계도 (D27-C) ───────────────────────────────────
+      console.log('\n[4.5] 관계도');
       await s.send('Page.navigate', { url: BASE + '/graph' });
       await sleep(1500);
       expect(
@@ -576,14 +607,14 @@ try {
         true,
       );
 
-      // ── 5부. 진도와 백업 ─────────────────────────────────────────
-      console.log('\n[5] 진도와 백업');
+      // ── 5부. 내 기록 ─────────────────────────────────────────
+      console.log('\n[5] 내 기록');
       await s.send('Page.navigate', { url: BASE + '/settings' });
       await sleep(1300);
       const settingsText = await s.js(`document.querySelector('main')?.textContent ?? ''`);
       settingsText.includes('한 번 이상 보았고') && settingsText.includes('백업 내려받기')
-        ? ok('진도와 백업 화면이 뜬다')
-        : bad('진도와 백업 화면', settingsText.slice(0, 60));
+        ? ok('내 기록 화면이 뜬다')
+        : bad('내 기록 화면', settingsText.slice(0, 60));
 
       // 눈높이를 여기서도 바꿀 수 있어야 한다.
       await s.js(clickText('main button', '어른'));
@@ -595,8 +626,8 @@ try {
         'adult',
       );
 
-      // ── 6부. 조우 캡처와 PWA (M2) ────────────────────────────────
-      console.log('\n[6] 조우 캡처와 PWA');
+      // ── 6부. 본 것 담기와 PWA (M2) ────────────────────────────────
+      console.log('\n[6] 본 것 담기와 PWA');
       const manifest = await (await fetch(BASE + '/manifest.webmanifest')).json();
       manifest.share_target?.method === 'GET' && manifest.share_target?.action?.endsWith('/capture')
         ? ok('매니페스트에 공유 대상이 있다', manifest.share_target.action)
@@ -616,7 +647,7 @@ try {
 
       const capText = await s.js(`document.querySelector('main')?.textContent ?? ''`);
       capText.includes('1개를 알아봤습니다') && capText.includes('나이키')
-        ? ok('공유로 들어온 글에서 흔적을 알아본다')
+        ? ok('공유로 들어온 글에서 이름을 알아본다')
         : bad('공유 캡처', capText.slice(0, 80));
 
       const stored = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.captures') || '[]')`);
@@ -638,7 +669,7 @@ try {
       await sleep(400);
       const bumped = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.reviews') || '[]')`);
       Array.isArray(bumped) && bumped.some((r) => r.itemId === 'trace:nike')
-        ? ok('캡처한 흔적이 오늘 복습에 들어간다', bumped[0]?.due)
+        ? ok('담아 둔 이름이 오늘 퀴즈에 들어간다', bumped[0]?.due)
         : bad('복습 편입', JSON.stringify(bumped));
 
       // 직접 붙여 넣는 길도 열려 있어야 한다 (아이폰에는 공유 대상이 없다).
@@ -660,17 +691,17 @@ try {
       await sleep(500);
       const viaSource = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.captures') || '[]').at(-1)`);
       viaSource?.matched_trace_ids?.includes('trace:nike') && viaSource?.hits?.[0]?.via === 'source'
-        ? ok('원천 이름만 적어도 흔적으로 이어진다', `${viaSource.hits[0].hit} → 나이키`)
-        : bad('원천 경유 매칭', JSON.stringify(viaSource?.matched_trace_ids));
+        ? ok('이야기 이름만 적어도 그 이름으로 이어진다', `${viaSource.hits[0].hit} → 나이키`)
+        : bad('이야기 경유 매칭', JSON.stringify(viaSource?.matched_trace_ids));
       expect(
-        '원천을 통해 이어졌다고 화면에 밝힌다',
-        await s.js(`document.querySelector('main').textContent.includes('원천 이름')`),
+        '이야기 쪽 이름을 통해 이어졌다고 화면에 밝힌다',
+        await s.js(`document.querySelector('main').textContent.includes('이야기 쪽 이름')`),
         true,
       );
 
 
-      // ── 7부. 카드 요청서 (D28) ────────────────────────────────
-      console.log(String.fromCharCode(10) + '[7] 카드 요청서');
+      // ── 7부. 새 항목 신청 (D28) ────────────────────────────────
+      console.log(String.fromCharCode(10) + '[7] 새 항목 신청');
       await s.js('localStorage.clear(); sessionStorage.clear();');
 
       // 카드 화면에서 담는다.
@@ -686,12 +717,12 @@ try {
 
       const wished = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.wishes') || '[]')`);
       wished.length === 1 && wished[0].origin?.id === 'trace:pandoras-box'
-        ? ok('카드 화면에서 요청서에 담긴다', wished[0].note)
+        ? ok('카드 화면에서 신청에 담긴다', wished[0].note)
         : bad('카드에서 담기', JSON.stringify(wished));
 
       expect(
         '담고 나면 담긴 것으로 보인다',
-        await s.js(`document.querySelector('main').textContent.includes('요청서에 담아 두었습니다')`),
+        await s.js(`document.querySelector('main').textContent.includes('신청에 담아 두었습니다')`),
         true,
       );
 
@@ -700,7 +731,7 @@ try {
       await sleep(1300);
       expect(
         '다시 열어도 담긴 상태가 남는다',
-        await s.js(`document.querySelector('main').textContent.includes('요청서에 담아 두었습니다')`),
+        await s.js(`document.querySelector('main').textContent.includes('신청에 담아 두었습니다')`),
         true,
       );
 
@@ -709,7 +740,7 @@ try {
       await sleep(1300);
       const slip = await s.js(`document.querySelectorAll('main textarea')[1]?.value ?? ''`);
       const wanted = [
-        'Ariadne 카드 요청서',
+        'Ariadne 새 카드 신청서',
         '판도라의 상자',
         '항아리였다는 이야기',
         'trace:pandoras-box',
@@ -719,8 +750,8 @@ try {
       ];
       const missing = wanted.filter((w) => !slip.includes(w));
       missing.length === 0
-        ? ok('요청서에 필요한 것이 모두 실린다', `${slip.length}자`)
-        : bad('요청서 내용', '없음: ' + missing.join(', '));
+        ? ok('신청서에 필요한 것이 모두 실린다', `${slip.length}자`)
+        : bad('신청서 내용', '없음: ' + missing.join(', '));
 
       // 자유 입력으로도 담긴다.
       await s.js(`document.querySelector('main textarea').focus()`);
@@ -739,12 +770,12 @@ try {
         url: BASE + '/capture?text=' + encodeURIComponent('다모클레스의 칼이라는 말을 들었다'),
       });
       await sleep(1600);
-      await s.js(clickText('main button', '카드 요청서에 담기'));
+      await s.js(clickText('main button', '새로 만들어 달라고 신청'));
       await sleep(400);
       const fromCapture = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.wishes') || '[]').at(-1)`);
       const cap = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.captures') || '[]').at(-1)`);
       fromCapture?.origin?.kind === 'capture' && cap?.status === 'candidate'
-        ? ok('캡처가 후보와 요청서로 한꺼번에 넘어간다', fromCapture.text.slice(0, 20))
+        ? ok('담아 둔 것이 후보와 신청으로 한꺼번에 넘어간다', fromCapture.text.slice(0, 20))
         : bad('캡처에서 요청', JSON.stringify({ w: fromCapture?.origin, c: cap?.status }));
 
       // 백업에 요청 쪽지가 함께 실린다.
@@ -760,6 +791,7 @@ try {
       // 스크린샷 남기기
       for (const [name, path] of [
         ['m-home', '/'],
+        ['m-find', '/find'],
         ['m-trace-nike', '/trace/nike'],
         ['m-source-ariadne', '/source/ariadne'],
         ['m-quiz', '/quiz'],
@@ -779,7 +811,7 @@ try {
         });
         writeFileSync(join(SHOTS, `${name}.png`), Buffer.from(shot.data, 'base64'));
       }
-      ok('스크린샷 8장', 'tests/e2e/shots/');
+      ok('스크린샷 9장', 'tests/e2e/shots/');
       s.ws.close();
     }
   }
