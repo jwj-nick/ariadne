@@ -48,6 +48,34 @@ export default function SettingsPage() {
           ))}
         </ul>
       </section>
+
+      {/* 안드로이드 껍데기 (D44). 아이폰에는 이런 길이 없어서 함께 밝혀 둔다. */}
+      <section className="mt-8">
+        <h2 className="mb-2 text-[13px] font-semibold" style={{ color: 'var(--muted)' }}>
+          앱으로 설치하기
+        </h2>
+        <div
+          className="rounded-lg px-4 py-3.5"
+          style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
+        >
+          <p className="text-[13px] leading-relaxed" style={{ color: 'var(--muted)' }}>
+            <strong style={{ color: 'var(--ink)' }}>안드로이드</strong>는 아래 파일을 받아 설치하면
+            주소창 없이 열립니다. 기록은 지금 쓰던 것을 그대로 이어 씁니다.
+            받을 때 "출처를 알 수 없는 앱" 을 한 번 허용해야 합니다.
+          </p>
+          <a
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/ariadne.apk`}
+            className="mt-2.5 inline-block rounded-lg px-4 py-2 text-[14px]"
+            style={{ background: 'var(--thread)', color: '#fff' }}
+          >
+            ariadne.apk 내려받기
+          </a>
+          <p className="mt-3 text-[12.5px] leading-relaxed" style={{ color: 'var(--muted)' }}>
+            <strong style={{ color: 'var(--ink)' }}>아이폰</strong>은 사파리에서 공유 단추를 누르고
+            <strong style={{ color: 'var(--ink)' }}> 홈 화면에 추가</strong>를 고르십시오. 같은 모습으로 열립니다.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

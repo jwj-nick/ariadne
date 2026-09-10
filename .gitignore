@@ -41,3 +41,18 @@ Thumbs.db
 *.tsbuildinfo
 
 .vercel
+
+# 안드로이드 APK 껍데기 (D44)
+# 리포가 공개이므로 서명 키와 비밀번호는 절대 올리지 않는다.
+# 키를 잃으면 덮어쓰기 설치가 안 되므로 40_apk/README.md 의 백업 위치를 지킨다.
+40_apk/*.keystore
+40_apk/*.jks
+40_apk/local.properties
+40_apk/app/
+40_apk/build/
+40_apk/.gradle/
+40_apk/gradle/
+40_apk/gradlew
+40_apk/gradlew.bat
+40_apk/*.idsig
+40_apk/aligned.apk
