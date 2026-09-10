@@ -175,6 +175,8 @@ try {
   const CHECKS = {
     '/': ['이 이름, 어디서 왔을까', '오늘의 퀴즈', '분야별로 훑어보기', '오늘의 한 장'],
     '/find': ['찾아보기', '나이키', '판도라의 상자'],
+    '/thread': ['이름의 무리', '하늘에서 지구만'],
+    '/thread/sky-names': ['유피테르', '이 실이 꿰는 카드', '천왕성'],
     '/graph': ['관계도', '그리스·로마 신화', '전체 보기'],
     '/trace/nike': ['나이키', '니케', '스우시', '사모트라케', '이 이름은 어디서 왔나'],
     '/trace/pandora': ['같은 이야기에서 온 다른 이름', '판도라의 상자'],
@@ -292,8 +294,8 @@ try {
         true,
       );
       expect(
-        '처음 켠 사람에게는 시작하라고 말한다',
-        await s.js(`document.querySelector('main a[href="/quiz"]')?.textContent?.includes('처음이라면')`),
+        '처음 켠 사람에게 오늘 배울 몫을 말한다',
+        await s.js(`document.querySelector('main a[href="/quiz"]')?.textContent?.includes('새로 5장')`),
         true,
       );
       expect(
@@ -476,6 +478,28 @@ try {
       await s.send('Page.navigate', { url: BASE + '/quiz' });
       await sleep(1800);
 
+      // 처음 만나는 이름은 카드를 먼저 보여 준다 (D36). 아무것도 모르는 자리에서 서술형부터 묻지 않는다.
+      const learnHead = await s.js('document.querySelector("main h1")?.textContent ?? ""');
+      expect(
+        '처음 만나는 이름은 먼저 보여 준다',
+        await s.js(`document.querySelector('main')?.textContent.includes('새로 배우기 1 / 5') ?? false`),
+        true,
+      );
+      expect(
+        '배우는 자리에 그림이 걸린다',
+        await s.js(`!!document.querySelector('main img')`),
+        true,
+      );
+      expect(
+        '어디서 왔는지를 먼저 알려 준다',
+        await s.js(`document.querySelector('main')?.textContent.includes('에서 왔습니다') ?? false`),
+        true,
+      );
+      learnHead.length > 0 ? ok('배우는 카드가 나온다', learnHead.slice(0, 24)) : bad('배우는 카드', '비어 있음');
+
+      // 읽고 나서 되묻는다.
+      await s.js(clickText('button', '맞혀 보겠습니다'));
+      await sleep(400);
       const firstPrompt = await s.js('document.querySelector("main h1")?.textContent ?? ""');
       firstPrompt.length > 0 ? ok('첫 문제가 나온다', firstPrompt.slice(0, 30) + '…') : bad('첫 문제', '비어 있음');
 
@@ -495,6 +519,11 @@ try {
       );
       expect('힌트 3단', hintCount, 3);
       expect('힌트를 다 열면 버튼이 사라진다', await s.js(clickText('button', '힌트 보기')), false);
+      expect(
+        '힌트를 다 열면 그림까지 내준다',
+        await s.js(`!!document.querySelector('main img')`),
+        true,
+      );
 
       // 답을 보고 자기평가하면 다음 문제로 넘어간다.
       const isSelf = await s.js('!!document.querySelector("main textarea")');
@@ -545,15 +574,14 @@ try {
       const logs = await s.js(`JSON.parse(localStorage.getItem('ariadne.v1.logs') || '[]')`);
       expect('퀴즈 기록이 남는다', Array.isArray(logs) && logs.length, 1);
 
-      // 다시 열면 방금 푼 것은 오늘 대기열에서 빠진다.
+      // 다시 열면 방금 배운 것이 오늘 새 몫에서 빠진다 (D36).
+      // 하루 몫이 5장인데 하나를 배웠으므로 넷이 남는다.
       await s.send('Page.navigate', { url: BASE + '/quiz' });
       await sleep(1500);
-      const totalNow = await s.js(
-        `(document.querySelector('main div div span:last-child')?.textContent ?? '').replace(/[^0-9]/g, '')`,
-      );
-      Number(totalNow) === N_TRACE - 1
-        ? ok('푼 이름은 오늘 대기열에서 빠진다', `남은 ${totalNow}개`)
-        : bad('대기열 갱신', `남은 것이 ${totalNow}개로 나옵니다 (기대 ${N_TRACE - 1})`);
+      const stageNow = await s.js(`document.querySelector('main')?.textContent ?? ''`);
+      stageNow.includes('새로 배우기 1 / 4')
+        ? ok('배운 것은 오늘 새 몫에서 빠진다', '남은 새 몫 4장')
+        : bad('하루 몫 갱신', stageNow.replace(/\s+/g, ' ').slice(0, 50));
 
       // ── 4부. 눈높이 전환 (M1-5) ──────────────────────────────────
       console.log('\n[4] 눈높이');
@@ -581,6 +609,9 @@ try {
       // 아이 눈높이의 퀴즈는 객관식이어야 한다.
       await s.send('Page.navigate', { url: BASE + '/quiz' });
       await sleep(1500);
+      // 아이도 처음 만나는 이름은 먼저 읽는다. 읽고 나서 객관식이 나와야 한다.
+      await s.js(clickText('button', '맞혀 보겠습니다'));
+      await sleep(400);
       const kidChoices = await s.js(`document.querySelectorAll('main ul li button').length`);
       expect('아이 퀴즈는 선택지 3개', kidChoices, 3);
 

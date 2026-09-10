@@ -80,10 +80,23 @@ export interface Layout {
   bounds: { minX: number; minY: number; maxX: number; maxY: number };
 }
 
+/** 여러 카드를 하나로 꿰는 짧은 글 (D39). */
+export interface Thread {
+  id: string;
+  slug: string;
+  title: string;
+  lede: string;
+  kicker: string;
+  /** 이 실이 꿰는 카드 id 들 */
+  cards: string[];
+  status: Status;
+  body: string;
+}
+
 export interface Graph {
   meta: {
     generated_at: string;
-    counts: { traces: number; sources: number; edges: number; orphan_sources: number };
+    counts: { traces: number; sources: number; edges: number; orphan_sources: number; threads: number };
     visible_statuses: Status[];
     /** 갈래별 묶음 정의. 배열 순서가 화면에 나오는 순서다. */
     groups: {
@@ -96,12 +109,13 @@ export interface Graph {
   edges: Edge[];
   index: IndexEntry[];
   layout: Layout;
+  threads: Thread[];
 }
 
 const EMPTY: Graph = {
   meta: {
     generated_at: '',
-    counts: { traces: 0, sources: 0, edges: 0, orphan_sources: 0 },
+    counts: { traces: 0, sources: 0, edges: 0, orphan_sources: 0, threads: 0 },
     visible_statuses: [],
     groups: { trace: {}, source: {} },
   },
@@ -110,6 +124,7 @@ const EMPTY: Graph = {
   edges: [],
   index: [],
   layout: { nodes: [], bounds: { minX: 0, minY: 0, maxX: 0, maxY: 0 } },
+  threads: [],
 };
 
 let cached: Graph | null = null;

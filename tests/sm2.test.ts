@@ -6,8 +6,10 @@ import {
   EASE_START,
   addDays,
   diffDays,
+  dailyPlan,
   dueQueue,
   initialState,
+  isNew,
   isDue,
   progress,
   review,
@@ -105,10 +107,10 @@ test('원래 상태를 바꾸지 않는다', () => {
 
 test('dueQueue 는 밀린 것부터, 같은 날짜면 어려운 것부터 준다', () => {
   const states: ReviewState[] = [
-    { itemId: 'easy', ease: 2.8, interval: 3, reps: 2, lapses: 0, due: '2026-09-08', lastAt: '2026-09-05' },
-    { itemId: 'hard', ease: 1.4, interval: 3, reps: 2, lapses: 3, due: '2026-09-08', lastAt: '2026-09-05' },
-    { itemId: 'overdue', ease: 2.5, interval: 3, reps: 2, lapses: 0, due: '2026-09-01', lastAt: '2026-08-29' },
-    { itemId: 'later', ease: 2.5, interval: 3, reps: 2, lapses: 0, due: '2026-09-20', lastAt: '2026-09-17' },
+    { itemId: 'easy', ease: 2.8, interval: 3, reps: 2, lapses: 0, due: '2026-09-08', lastAt: '2026-09-05', firstAt: '2026-09-05' },
+    { itemId: 'hard', ease: 1.4, interval: 3, reps: 2, lapses: 3, due: '2026-09-08', lastAt: '2026-09-05', firstAt: '2026-09-05' },
+    { itemId: 'overdue', ease: 2.5, interval: 3, reps: 2, lapses: 0, due: '2026-09-01', lastAt: '2026-08-29', firstAt: '2026-08-29' },
+    { itemId: 'later', ease: 2.5, interval: 3, reps: 2, lapses: 0, due: '2026-09-20', lastAt: '2026-09-17', firstAt: '2026-09-17' },
   ];
   assert.deepEqual(
     dueQueue(states, DAY).map((s) => s.itemId),
@@ -119,9 +121,9 @@ test('dueQueue 는 밀린 것부터, 같은 날짜면 어려운 것부터 준다
 
 test('progress 는 본 것, 오늘 볼 것, 자리 잡은 것을 센다', () => {
   const states: ReviewState[] = [
-    { itemId: 'a', ease: 2.5, interval: 30, reps: 5, lapses: 0, due: '2026-10-01', lastAt: '2026-09-01' },
-    { itemId: 'b', ease: 2.5, interval: 6, reps: 2, lapses: 0, due: '2026-09-08', lastAt: '2026-09-02' },
-    { itemId: 'c', ease: 2.5, interval: 0, reps: 0, lapses: 0, due: '2026-09-08', lastAt: '' },
+    { itemId: 'a', ease: 2.5, interval: 30, reps: 5, lapses: 0, due: '2026-10-01', lastAt: '2026-09-01', firstAt: '2026-09-01' },
+    { itemId: 'b', ease: 2.5, interval: 6, reps: 2, lapses: 0, due: '2026-09-08', lastAt: '2026-09-02', firstAt: '2026-09-02' },
+    { itemId: 'c', ease: 2.5, interval: 0, reps: 0, lapses: 0, due: '2026-09-08', lastAt: '', firstAt: '' },
   ];
   const p = progress(states, 23, DAY);
   assert.deepEqual(p, { seen: 2, due: 2, settled: 1, total: 23 });
@@ -164,4 +166,54 @@ test('힌트 없이 계속 맞히면 한 달 안에 복습 간격이 3주를 넘
   );
   // 3개월(약 90일) 안에 200장을 훑으려면 항목당 네 번이면 충분하다는 뜻이다.
   assert.ok(s.interval >= 21);
+});
+
+test('dailyPlan 은 새로 배울 것과 다시 볼 것을 가른다', () => {
+  const states: ReviewState[] = [
+    // 아직 만나지 않은 것 넷
+    initialState('n1', DAY),
+    initialState('n2', DAY),
+    initialState('n3', DAY),
+    initialState('n4', DAY),
+    // 오늘 볼 차례인 것 둘
+    { itemId: 'r1', ease: 2.5, interval: 3, reps: 2, lapses: 0, due: '2026-09-01', lastAt: '2026-08-29', firstAt: '2026-08-01' },
+    { itemId: 'r2', ease: 1.4, interval: 3, reps: 2, lapses: 3, due: '2026-09-08', lastAt: '2026-09-05', firstAt: '2026-08-01' },
+    // 아직 차례가 아닌 것
+    { itemId: 'later', ease: 2.5, interval: 30, reps: 5, lapses: 0, due: '2026-10-01', lastAt: '2026-09-01', firstAt: '2026-08-01' },
+  ];
+
+  const plan = dailyPlan(states, DAY, 3, 10);
+  assert.deepEqual(plan.learn.map((s) => s.itemId), ['n1', 'n2', 'n3']);
+  // 밀린 것부터 준다.
+  assert.deepEqual(plan.review.map((s) => s.itemId), ['r1', 'r2']);
+  assert.equal(plan.remaining, 4);
+  assert.equal(plan.learnedToday, 0);
+});
+
+test('오늘 이미 배운 만큼 새 몫에서 뺀다', () => {
+  const states: ReviewState[] = [
+    { itemId: 'done1', ease: 2.5, interval: 1, reps: 1, lapses: 0, due: '2026-09-09', lastAt: DAY, firstAt: DAY },
+    { itemId: 'done2', ease: 2.5, interval: 1, reps: 1, lapses: 0, due: '2026-09-09', lastAt: DAY, firstAt: DAY },
+    initialState('n1', DAY),
+    initialState('n2', DAY),
+    initialState('n3', DAY),
+  ];
+  // 하루 몫이 3인데 오늘 둘을 이미 만났으므로 하나만 더 준다.
+  assert.deepEqual(dailyPlan(states, DAY, 3, 10).learn.map((s) => s.itemId), ['n1']);
+  // 몫을 다 채웠으면 하나도 주지 않는다.
+  assert.equal(dailyPlan(states, DAY, 2, 10).learn.length, 0);
+});
+
+test('처음 만난 날은 한 번 적히면 바뀌지 않는다', () => {
+  const first = review(initialState('a', DAY), 5, DAY);
+  assert.equal(first.firstAt, DAY);
+  assert.equal(isNew(first), false);
+  const second = review(first, 5, '2026-09-20');
+  assert.equal(second.firstAt, DAY, '처음 만난 날은 그대로여야 한다');
+  assert.equal(second.lastAt, '2026-09-20');
+});
+
+test('한 번도 만나지 않은 것만 새 것이다', () => {
+  assert.equal(isNew(initialState('a', DAY)), true);
+  assert.equal(isNew(review(initialState('a', DAY), 0, DAY)), false, '틀렸어도 만난 것은 만난 것이다');
 });

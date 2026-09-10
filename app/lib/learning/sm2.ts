@@ -27,10 +27,28 @@ export interface ReviewState {
   due: string;
   /** 마지막으로 본 날. YYYY-MM-DD. */
   lastAt: string;
+  /**
+   * 처음 만난 날. YYYY-MM-DD. 아직 만나지 않았으면 빈 문자열이다.
+   *
+   * lastAt 과 따로 두는 이유가 있다. 하루에 새로 배울 몫을 정해 두려면
+   * "오늘 처음 만난 것이 몇 개인가" 를 알아야 하는데, lastAt 은 복습해도 바뀌므로
+   * 그 수를 셀 수 없다 (D36).
+   */
+  firstAt: string;
 }
 
 export const EASE_START = 2.5;
 export const EASE_MIN = 1.3;
+
+/**
+ * 하루 몫 (D36).
+ *
+ * 새로 배우는 것과 다시 보는 것을 가르지 않으면, 첫날에 항목 전부가 밀려 나온다.
+ * 간격 반복은 본래 **이미 배운 것을 다시 보는** 방법이라 첫 만남이 따로 있어야 한다.
+ * 하루 5장이면 삼백 장을 두 달에 한 바퀴 돈다.
+ */
+export const NEW_PER_DAY = 5;
+export const REVIEW_PER_DAY = 15;
 
 /** 오늘 날짜를 YYYY-MM-DD 로. 인자를 주면 그 시각 기준이다. */
 export function today(now: Date = new Date()): string {
@@ -58,7 +76,7 @@ export function diffDays(a: string, b: string): number {
 
 /** 아직 한 번도 보지 않은 항목의 초기 상태. 오늘 바로 볼 수 있다. */
 export function initialState(itemId: string, day: string = today()): ReviewState {
-  return { itemId, ease: EASE_START, interval: 0, reps: 0, lapses: 0, due: day, lastAt: '' };
+  return { itemId, ease: EASE_START, interval: 0, reps: 0, lapses: 0, due: day, lastAt: '', firstAt: '' };
 }
 
 /**
@@ -86,7 +104,17 @@ export function review(state: ReviewState, quality: Quality, day: string = today
   const delta = 0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02);
   const ease = Math.max(EASE_MIN, Number((state.ease + delta).toFixed(4)));
 
-  return { itemId: state.itemId, ease, interval, reps, lapses, due: addDays(day, interval), lastAt: day };
+  return {
+    itemId: state.itemId,
+    ease,
+    interval,
+    reps,
+    lapses,
+    due: addDays(day, interval),
+    lastAt: day,
+    // 처음 만난 날은 한 번 적히면 바뀌지 않는다.
+    firstAt: state.firstAt || day,
+  };
 }
 
 export const isDue = (state: ReviewState, day: string = today()): boolean => diffDays(state.due, day) <= 0;
@@ -102,6 +130,42 @@ export function dueQueue(states: ReviewState[], day: string = today(), limit?: n
     .filter((s) => isDue(s, day))
     .sort((a, b) => diffDays(a.due, b.due) || a.ease - b.ease || a.itemId.localeCompare(b.itemId));
   return limit === undefined ? q : q.slice(0, limit);
+}
+
+/** 아직 한 번도 만나지 않은 항목. */
+export const isNew = (state: ReviewState): boolean => state.firstAt === '';
+
+export interface DailyPlan {
+  /** 오늘 처음 만날 것. 들어온 순서를 그대로 지킨다 — 부르는 쪽이 중요한 순으로 넣는다. */
+  learn: ReviewState[];
+  /** 오늘 다시 볼 것. 밀린 것부터, 같은 날짜면 어려운 것부터. */
+  review: ReviewState[];
+  /** 오늘 이미 처음 만난 수. 하루 몫에서 이만큼을 뺀다. */
+  learnedToday: number;
+  /** 아직 한 번도 만나지 않은 것 전체. 진도 표시에 쓴다. */
+  remaining: number;
+}
+
+/**
+ * 오늘 할 몫을 짠다 (D36).
+ *
+ * 새로 배울 것과 다시 볼 것을 갈라 준다. 새 것은 하루 몫에서 오늘 이미 배운 만큼을 뺀 수만큼만,
+ * 다시 볼 것은 밀린 순서대로 준다. 같은 날 앱을 여러 번 열어도 새 것이 다시 쏟아지지 않는다.
+ */
+export function dailyPlan(
+  states: ReviewState[],
+  day: string = today(),
+  newPerDay: number = NEW_PER_DAY,
+  reviewPerDay: number = REVIEW_PER_DAY,
+): DailyPlan {
+  const learnedToday = states.filter((s) => s.firstAt === day).length;
+  const fresh = states.filter(isNew);
+  const learn = fresh.slice(0, Math.max(0, newPerDay - learnedToday));
+  const review = states
+    .filter((s) => !isNew(s) && isDue(s, day))
+    .sort((a, b) => diffDays(a.due, b.due) || a.ease - b.ease || a.itemId.localeCompare(b.itemId))
+    .slice(0, reviewPerDay);
+  return { learn, review, learnedToday, remaining: fresh.length };
 }
 
 export interface Progress {

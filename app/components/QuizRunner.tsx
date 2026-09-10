@@ -3,15 +3,26 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SELF_RATING_LABEL, qualityFromAuto, qualityFromSelf, type SelfRating } from '../lib/learning/grade';
-import { dueQueue, initialState, progress, review, today, type ReviewState } from '../lib/learning/sm2';
+import {
+  NEW_PER_DAY,
+  REVIEW_PER_DAY,
+  dailyPlan,
+  initialState,
+  progress,
+  review,
+  today,
+  type ReviewState,
+} from '../lib/learning/sm2';
 import { store, type Level } from '../lib/store';
+import LearnCard from './LearnCard';
+import { thumbUrl } from '../lib/image';
 import ThreadReveal from './ThreadReveal';
 
 export interface QuizItemView {
   id: string;
   trace_id: string;
   source_id: string;
-  type: 'trace_to_source' | 'idiom_origin' | 'explain_why';
+  type: 'trace_to_source' | 'idiom_origin' | 'explain_why' | 'source_group';
   level: Level;
   grading: 'auto' | 'self';
   prompt: string;
@@ -23,15 +34,47 @@ export interface QuizItemView {
 
 export interface NodeMeta {
   name_ko: string;
+  name_en?: string;
   slug: string;
   /** 흔적에만 있다. 답을 공개할 때 "왜 이 이름인가" 를 함께 보여 주기 위한 것이다. */
   why?: string;
   /** 원천에만 있다. 실이 도착하는 자리에 그릴 문양이다. */
   emblem?: string;
+  /** 갈래 이름. 처음 만나는 자리에 함께 보인다 (D36). */
+  kicker?: string;
+  /** 마주칠 확률. 새로 배울 것을 고르는 순서가 된다 (D36). */
+  frequency?: number;
+  /** 위키미디어 파일 이름. 처음 만나는 자리와 힌트에 쓴다 (D37). */
+  file?: string;
+}
+
+/** 답을 공개할 때 거는 그림 (D37). 못 불러오면 통째로 감춘다. */
+function QuizArt({ file }: { file: string }) {
+  const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  if (failed) return null;
+  return (
+    <div
+      className="mt-3 overflow-hidden rounded-lg"
+      style={{ aspectRatio: '16 / 10', background: 'var(--thread-soft)' }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={thumbUrl(file, 760)}
+        alt=""
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+        onError={() => setFailed(true)}
+        className="h-full w-full object-cover"
+        style={{ opacity: loaded ? 1 : 0, transition: 'opacity 250ms ease' }}
+      />
+    </div>
+  );
 }
 
 const TYPE_LABEL: Record<QuizItemView['type'], string> = {
   trace_to_source: '어디서 왔나',
+  source_group: '공통점 찾기',
   idiom_origin: '표현의 뿌리',
   explain_why: '이유 말하기',
 };
@@ -39,7 +82,14 @@ const TYPE_LABEL: Record<QuizItemView['type'], string> = {
 /** 정답 비교. scripts/lib/quiz.ts 의 normalize 와 같은 규칙이어야 한다. */
 const normalize = (s: string): string => s.toLowerCase().replace(/[\s·.,'"()[\]<>“”‘’]/g, '');
 
-export const SESSION_CAP = 20;
+/** 하루 한 판의 크기. 새로 배울 몫과 다시 볼 몫을 합한 것이다. */
+export const SESSION_CAP = NEW_PER_DAY + REVIEW_PER_DAY;
+
+/** 큐 한 자리. fresh 면 오늘 처음 만나는 것이라 카드를 먼저 보여 준다 (D36). */
+interface Slot {
+  traceId: string;
+  fresh: boolean;
+}
 
 export default function QuizRunner({
   items,
@@ -54,9 +104,12 @@ export default function QuizRunner({
 }) {
   const [ready, setReady] = useState(false);
   const [level, setLevel] = useState<Level>('adult');
-  const [queue, setQueue] = useState<string[]>([]);
+  const [queue, setQueue] = useState<Slot[]>([]);
   const [cursor, setCursor] = useState(0);
-  const [phase, setPhase] = useState<'ask' | 'reveal'>('ask');
+  const [phase, setPhase] = useState<'learn' | 'ask' | 'reveal'>('ask');
+  /** 하루 몫을 넘겨 더 배우겠다고 한 상태 */
+  const [extra, setExtra] = useState(false);
+  const [remaining, setRemaining] = useState(0);
   const [guess, setGuess] = useState('');
   const [hintsShown, setHintsShown] = useState(0);
   const [correct, setCorrect] = useState<boolean | null>(null);
@@ -75,21 +128,40 @@ export default function QuizRunner({
     return m;
   }, [items, level]);
 
-  const buildQueue = useCallback(() => {
-    const saved = store.allReviews();
-    const byId = new Map(saved.map((r) => [r.itemId, r]));
-    const states: ReviewState[] = [...itemsByTrace.keys()].map(
-      (traceId) => byId.get(traceId) ?? initialState(traceId, day),
-    );
-    setStats(progress(states, totalTraces, day));
-    setQueue(dueQueue(states, day, SESSION_CAP).map((s) => s.itemId));
-    setCursor(0);
-    setPhase('ask');
-    setGuess('');
-    setHintsShown(0);
-    setCorrect(null);
-    setDone(0);
-  }, [itemsByTrace, day, totalTraces]);
+  const buildQueue = useCallback(
+    (more = false) => {
+      const saved = store.allReviews();
+      const byId = new Map(saved.map((r) => [r.itemId, r]));
+      // 새로 배울 것은 마주칠 확률이 높은 것부터 고른다 (미션의 "넓게, 그러나 빈도순").
+      const ordered = [...itemsByTrace.keys()].sort(
+        (a, b) => (traces[b]?.frequency ?? 0) - (traces[a]?.frequency ?? 0) || a.localeCompare(b),
+      );
+      const states: ReviewState[] = ordered.map((traceId) => byId.get(traceId) ?? initialState(traceId, day));
+      setStats(progress(states, totalTraces, day));
+
+      // "더 배우기" 를 누르면 하루 몫을 한 판 더 준다.
+      const plan = dailyPlan(states, day, more ? NEW_PER_DAY : NEW_PER_DAY, REVIEW_PER_DAY);
+      const slots: Slot[] = [
+        ...plan.learn.map((s) => ({ traceId: s.itemId, fresh: true })),
+        ...plan.review.map((s) => ({ traceId: s.itemId, fresh: false })),
+      ];
+      // 하루 몫을 다 했는데도 더 하겠다면, 아직 안 만난 것을 이어서 준다.
+      if (more && slots.length === 0) {
+        const fresh = states.filter((s) => s.firstAt === '').slice(0, NEW_PER_DAY);
+        slots.push(...fresh.map((s) => ({ traceId: s.itemId, fresh: true })));
+      }
+      setRemaining(plan.remaining);
+      setQueue(slots);
+      setCursor(0);
+      setPhase(slots[0]?.fresh ? 'learn' : 'ask');
+      setGuess('');
+      setHintsShown(0);
+      setCorrect(null);
+      setDone(0);
+      setExtra(more);
+    },
+    [itemsByTrace, traces, day, totalTraces],
+  );
 
   useEffect(() => {
     setLevel(store.getProfile().level);
@@ -97,7 +169,7 @@ export default function QuizRunner({
   }, []);
 
   useEffect(() => {
-    if (ready) buildQueue();
+    if (ready) buildQueue(false);
   }, [ready, buildQueue]);
 
   // 머리말의 눈높이 전환과 같은 상태를 본다.
@@ -107,7 +179,8 @@ export default function QuizRunner({
     return () => window.removeEventListener('ariadne:level', onLevel);
   }, []);
 
-  const traceId = queue[cursor];
+  const slot = queue[cursor];
+  const traceId = slot?.traceId;
   const saved = traceId ? store.getReview(traceId) : undefined;
   const pool = traceId ? (itemsByTrace.get(traceId) ?? []) : [];
   // 같은 흔적을 다시 만날 때마다 다른 갈래의 문제가 나오도록 반복 횟수로 돌려 가며 고른다.
@@ -145,7 +218,8 @@ export default function QuizRunner({
   };
 
   const next = () => {
-    setPhase('ask');
+    const nextSlot = queue[cursor + 1];
+    setPhase(nextSlot?.fresh ? 'learn' : 'ask');
     setGuess('');
     setHintsShown(0);
     setCorrect(null);
@@ -166,17 +240,36 @@ export default function QuizRunner({
         <p className="mt-2 text-[13.5px]" style={{ color: 'var(--muted)' }}>
           본 이름 {stats.seen} / {stats.total} · 장기 기억으로 넘어간 것 {stats.settled}개
         </p>
+        {remaining > 0 && (
+          <p className="mt-1 text-[12.5px]" style={{ color: 'var(--muted)' }}>
+            아직 만나지 않은 이름 {remaining}개
+          </p>
+        )}
         <div className="mt-6 flex flex-wrap justify-center gap-2">
+          {remaining > 0 && (
+            <button
+              type="button"
+              onClick={() => buildQueue(true)}
+              className="rounded-full px-4 py-2 text-[14px]"
+              style={{ background: 'var(--thread)', color: '#fff' }}
+            >
+              {NEW_PER_DAY}장 더 배우기
+            </button>
+          )}
           <Link
             href="/find"
             className="rounded-full px-4 py-2 text-[14px]"
-            style={{ background: 'var(--thread)', color: '#fff' }}
+            style={
+              remaining > 0
+                ? { color: 'var(--muted)', boxShadow: 'inset 0 0 0 1px var(--line)' }
+                : { background: 'var(--thread)', color: '#fff' }
+            }
           >
             다른 이름 찾아보기
           </Link>
           <button
             type="button"
-            onClick={buildQueue}
+            onClick={() => buildQueue(false)}
             className="rounded-full px-4 py-2 text-[14px]"
             style={{ color: 'var(--muted)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
           >
@@ -190,6 +283,12 @@ export default function QuizRunner({
   const trace = traces[traceId];
   const source = sources[item.source_id];
   const total = queue.length;
+  const learnCount = queue.filter((q) => q.fresh).length;
+  const fresh = slot?.fresh ?? false;
+  // 두 몫을 따로 센다. "새로 배우기 2 / 5" 와 "복습 3 / 15" 는 마음가짐이 다른 일이다.
+  const stage = fresh
+    ? { label: '새로 배우기', at: cursor + 1, of: learnCount }
+    : { label: '복습', at: cursor - learnCount + 1, of: total - learnCount };
 
   return (
     <div>
@@ -197,9 +296,9 @@ export default function QuizRunner({
       <div className="mb-5">
         <div className="flex items-baseline justify-between text-[12px]" style={{ color: 'var(--muted)' }}>
           <span>
-            {cursor + 1} / {total} · {TYPE_LABEL[item.type]}
+            <span style={{ color: 'var(--thread)' }}>{stage.label}</span> {stage.at} / {stage.of}
           </span>
-          <span>오늘 볼 것 {stats.due}개</span>
+          <span>{phase === 'learn' ? '먼저 읽어 두십시오' : TYPE_LABEL[item.type]}</span>
         </div>
         <div className="mt-2 h-[3px] w-full rounded-full" style={{ background: 'var(--line)' }}>
           <div
@@ -209,8 +308,27 @@ export default function QuizRunner({
         </div>
       </div>
 
+      {/* 오늘 처음 만나는 이름이면 먼저 보여 주고 되묻는다 (D36). */}
+      {phase === 'learn' && trace && (
+        <LearnCard
+          key={traceId}
+          nameKo={trace.name_ko}
+          nameEn={trace.name_en ?? ''}
+          kicker={trace.kicker}
+          why={trace.why}
+          sourceName={source?.name_ko}
+          sourceKicker={source?.kicker}
+          emblem={source?.emblem}
+          file={trace.file}
+          slug={trace.slug}
+          onReady={() => setPhase('ask')}
+        />
+      )}
+
       {/* 문제 */}
-      <h1 className="text-[20px] leading-snug font-semibold">{item.prompt}</h1>
+      {phase !== 'learn' && (
+        <h1 className="text-[20px] leading-snug font-semibold">{item.prompt}</h1>
+      )}
 
       {/* 추측 → 힌트 → 답 → 카드. 이 순서를 깨지 않는다 (D6). */}
       {phase === 'ask' && (
@@ -292,6 +410,10 @@ export default function QuizRunner({
                 힌트 보기 ({hintsShown} / {item.hints.length})
               </button>
             )}
+            {/* 힌트를 다 열면 그림까지 내준다. 마지막 힌트는 본래 "거의 답" 자리다 (D37). */}
+            {hintsShown >= item.hints.length && (source?.file ?? trace?.file) && (
+              <QuizArt file={(source?.file ?? trace?.file)!} key={item.id + ':hint'} />
+            )}
           </div>
         </div>
       )}
@@ -330,10 +452,16 @@ export default function QuizRunner({
             )}
             {item.type === 'explain_why' && source && (
               <p className="mt-2 text-[13px]" style={{ color: 'var(--muted)' }}>
-                이 이름은 {source.name_ko} 에서 왔습니다.
+                이 이름은 {source.name_ko}에서 왔습니다.
               </p>
             )}
           </div>
+
+          {/* 답과 함께 그림을 건다 (D37). 글로 읽은 답보다 그림이 오래 남고,
+              다음에 이 그림을 어디서 다시 보면 그때 이름이 따라 올라온다. */}
+          {(trace?.file ?? source?.file) && (
+            <QuizArt file={(trace?.file ?? source?.file)!} key={item.id} />
+          )}
 
           {item.grading === 'self' ? (
             <div className="mt-5">

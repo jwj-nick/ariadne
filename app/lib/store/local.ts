@@ -94,7 +94,13 @@ export const localStore: Store = {
   },
 
   allReviews() {
-    return read<unknown[]>(K.reviews, []).filter(isReviewState);
+    return (
+      read<unknown[]>(K.reviews, [])
+        .filter(isReviewState)
+        // firstAt 은 D36 에서 생겼다. 그 전에 만든 기록은 마지막으로 본 날을 처음 만난 날로 삼는다.
+        // 그래야 이미 배운 것이 "새로 배울 것" 으로 되돌아오지 않는다.
+        .map((r) => (typeof r.firstAt === 'string' ? r : { ...r, firstAt: r.lastAt }))
+    );
   },
 
   saveReview(state) {

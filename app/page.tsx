@@ -101,6 +101,27 @@ export default function Home() {
         </span>
       </Link>
 
+      {/* 실은 이 앱에서 가장 읽을 값이 있는 글이라 홈에 자리를 준다 (D39). */}
+      {g.threads.length > 0 && (
+        <Link
+          href="/thread"
+          className="mt-2 flex items-center gap-2.5 rounded-lg px-3.5 py-3"
+          style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
+        >
+          <span className="min-w-0 flex-1">
+            <span className="block text-[14px] font-medium">
+              이름의 무리 <span style={{ color: 'var(--muted)' }}>{g.threads.length}편</span>
+            </span>
+            <span className="mt-0.5 block truncate text-[11.5px]" style={{ color: 'var(--muted)' }}>
+              {g.threads.map((t) => t.title).join(' · ')}
+            </span>
+          </span>
+          <span className="shrink-0 text-[15px]" style={{ color: 'var(--muted)' }}>
+            →
+          </span>
+        </Link>
+      )}
+
       <DailyCard items={daily} />
 
       <p className="mt-7 text-center text-[12px]" style={{ color: 'var(--muted)' }}>

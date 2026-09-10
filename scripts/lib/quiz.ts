@@ -12,7 +12,13 @@
  *    다만 흔적 이름이 원천 이름을 그대로 품은 경우(판도라의 상자 → 판도라, 아틀라스 → 아틀라스)에는
  *    문제가 곧 답이 되므로 만들지 않는다. 시드 23장 가운데 절반이 여기에 해당한다.
  *
- * 2) **이유 말하기** (`explain_why`)
+ * 2) **묶음 맞히기** (`source_group`)
+ *    한 원천에서 나온 흔적 셋을 나란히 놓고 공통의 뿌리를 묻는다.
+ *    "수성 · 에르메스 · 변덕스러운" 이 한 곳에서 나왔다는 것을 보는 눈이,
+ *    미션이 말하는 "서양 지식인 수준의 교양" 의 실체에 가장 가깝다 (D38).
+ *    흔적 이름이 원천 이름을 품고 있으면 그 흔적은 목록에서 뺀다. 답이 드러나기 때문이다.
+ *
+ * 3) **이유 말하기** (`explain_why`)
  *    흔적을 보여주고 왜 그 이름이 붙었는지 말하게 한다. 모든 흔적에 만들 수 있고,
  *    미션이 말하는 성공 조건("보자마자 원천과 이유를 말할 수 있다")에 곧바로 대응한다.
  *    어른은 스스로 답한 뒤 자기평가하고, 아이는 세 개의 이유 가운데 고른다.
@@ -26,7 +32,7 @@ import type { Card } from './content.ts';
 import { isSource, isTrace } from './content.ts';
 import { josa } from './korean.ts';
 
-export type QuizType = 'trace_to_source' | 'idiom_origin' | 'explain_why';
+export type QuizType = 'trace_to_source' | 'idiom_origin' | 'explain_why' | 'source_group';
 export type Level = 'kid' | 'adult';
 /** auto = 입력이나 선택을 대조해 채점. self = 답을 보고 사용자가 스스로 평가. */
 export type Grading = 'auto' | 'self';
@@ -293,6 +299,88 @@ export function buildQuiz(cards: Card[]): QuizBuildResult {
         answer: why,
         accept: [why],
         choices: shuffle(traceId + 'why', [why, ...whyDecoys]),
+      });
+    }
+  }
+
+  // ── 3) 묶음 맞히기 ────────────────────────────────────────────────
+  // 흔적 셋을 나란히 놓고 공통의 뿌리를 묻는다 (D38).
+  for (const source of sources) {
+    const sourceId = String(source.data.id);
+    const nameKo = String(source.data.name_ko);
+    const nameEn = String(source.data.name_en);
+    const domain = String(source.data.domain);
+    const aliases = Array.isArray(source.data.aliases) ? (source.data.aliases as string[]) : [];
+    const levelKid = String((source.data as Record<string, unknown>).level_kid ?? '');
+    const accept = acceptForms(nameKo, nameEn, aliases);
+
+    const mine = traces
+      .filter((t) => (Array.isArray(t.data.sources) ? (t.data.sources as string[]) : []).includes(sourceId))
+      // 이름 안에 답이 들어 있는 흔적은 뺀다. "사모트라케의 니케" 를 보여 주면 니케가 답이라고 말한 셈이다.
+      .filter((t) => !leaks([String(t.data.name_ko)], accept))
+      .sort(
+        (a, b) =>
+          Number(b.data.frequency ?? 0) - Number(a.data.frequency ?? 0) ||
+          String(a.data.id).localeCompare(String(b.data.id)),
+      );
+
+    // 흔적이 셋도 안 되는 원천이 대부분이다. 이것은 확인할 일이 아니라 아직 없는 것이므로
+    // 폐기 목록에 올리지 않는다. 올리면 빌드 로그가 그 얘기로만 가득 찬다.
+    if (mine.length < 3) continue;
+
+    const trio = mine.slice(0, 3).map((t) => String(t.data.name_ko));
+    const traceId = String(mine[0]!.data.id);
+    const context = DOMAIN_CONTEXT[domain] ?? '서양 문화의 오래된 이야기에서 왔습니다.';
+    const firstChar = [...nameKo][0] ?? '';
+    const promptAdult = `${trio.join(' · ')} — 이 셋은 모두 어디서 온 이름일까?`;
+    const promptKid = `${trio.join(', ')} 는 모두 같은 이야기에서 나왔어요. 어떤 이야기일까?`;
+    const hints = [
+      context,
+      levelKid || '오래전부터 전해 오는 이야기 속 존재입니다.',
+      `이름은 "${firstChar}"${josa(firstChar, '으로/로')} 시작하고 ${[...nameKo].length}글자입니다.`,
+    ];
+
+    const leak = accept.length < 2 ? '정답으로 인정할 표기가 2개도 되지 않습니다.' : leaks([promptAdult, promptKid, ...hints], accept);
+    if (leak) {
+      discarded.push({ trace_id: traceId, type: 'source_group', reason: leak });
+      continue;
+    }
+
+    items.push({
+      id: `${sourceId}#source_group#adult`,
+      trace_id: traceId,
+      source_id: sourceId,
+      type: 'source_group',
+      level: 'adult',
+      grading: 'auto',
+      prompt: promptAdult,
+      hints,
+      answer: nameKo,
+      accept,
+    });
+
+    const near = sources
+      .filter((o) => String(o.data.id) !== sourceId && String(o.data.domain) === domain)
+      .map((o) => String(o.data.name_ko));
+    const far = sources
+      .filter((o) => String(o.data.id) !== sourceId && String(o.data.domain) !== domain)
+      .map((o) => String(o.data.name_ko));
+    const decoys = pickDecoys(sourceId + 'group', near.sort(), far.sort()).filter(
+      (d) => normalize(d) !== normalize(nameKo),
+    );
+    if (decoys.length === 2) {
+      items.push({
+        id: `${sourceId}#source_group#kid`,
+        trace_id: traceId,
+        source_id: sourceId,
+        type: 'source_group',
+        level: 'kid',
+        grading: 'auto',
+        prompt: promptKid,
+        hints,
+        answer: nameKo,
+        accept,
+        choices: shuffle(sourceId + 'group', [nameKo, ...decoys]),
       });
     }
   }

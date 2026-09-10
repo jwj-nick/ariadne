@@ -14,6 +14,7 @@ import { runChecks, codeTitle } from './lib/checks.ts';
 import { VISIBLE_STATUSES, type Status } from './lib/schema.ts';
 import { TRACE_GROUPS, SOURCE_GROUPS } from './lib/groups.ts';
 import { buildQuiz } from './lib/quiz.ts';
+import { loadThreads, checkThreads } from './lib/threads.ts';
 import { computeLayout } from './lib/layout.ts';
 import { bodyIndex } from '../app/lib/search.ts';
 
@@ -227,6 +228,19 @@ const layout = computeLayout(
   edges,
 );
 
+// ── 6.5. 실 (D39) ─────────────────────────────────────────────────────
+// 카드를 여러 장 꿰는 짧은 글이다. 가리키는 카드가 실제로 있는지 여기서 본다.
+const allThreads = loadThreads();
+const threads = allThreads.filter((t) => VISIBLE_STATUSES.includes(t.status as Status));
+const knownIds = new Set<string>([...traces.map((t) => t.id), ...sources.map((s) => s.id)]);
+const threadFindings = checkThreads(threads, knownIds);
+if (threadFindings.length > 0) {
+  console.error(`
+  실(thread) 에 문제가 있습니다:`);
+  for (const f of threadFindings) console.error(`      ${f.slug} · ${f.message}`);
+  process.exit(1);
+}
+
 // ── 7. 출력 ───────────────────────────────────────────────────────────
 const orphans = sources.filter((s) => s.traces.length === 0);
 const graph = {
@@ -237,6 +251,7 @@ const graph = {
       sources: sources.length,
       edges: edges.length,
       orphan_sources: orphans.length,
+      threads: threads.length,
     },
     visible_statuses: VISIBLE_STATUSES,
     /**
@@ -250,6 +265,7 @@ const graph = {
   edges,
   index,
   layout,
+  threads,
 };
 
 const outDir = join(REPO_ROOT, 'app', 'data');

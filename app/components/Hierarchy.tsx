@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-import Emblem from './Emblem';
-import { thumbUrl } from '../lib/image';
+import CardCell from './CardCell';
 
 export interface TreeCard {
   id: string;
@@ -23,51 +22,6 @@ export interface TreeBucket {
   label: string;
   groups: Array<{ key: string; label: string; cards: TreeCard[] }>;
   total: number;
-}
-
-/** 격자 한 칸. 그림이 오면 그림이, 못 오면 문양이 남는다. */
-function Cell({ card }: { card: TreeCard }) {
-  const [failed, setFailed] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-  const src = card.file ? thumbUrl(card.file, 200) : null;
-
-  return (
-    <Link
-      href={card.href}
-      className="group flex flex-col overflow-hidden rounded-lg transition-transform active:scale-[0.98]"
-      style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
-    >
-      <div
-        className="relative flex items-center justify-center overflow-hidden"
-        style={{ aspectRatio: '1 / 1', background: 'var(--thread-soft)' }}
-      >
-        {src && !failed ? (
-          <img
-            src={src}
-            alt=""
-            loading="lazy"
-            decoding="async"
-            onLoad={() => setLoaded(true)}
-            onError={() => setFailed(true)}
-            className="h-full w-full object-cover"
-            style={{ opacity: loaded ? 1 : 0, transition: 'opacity 200ms ease' }}
-          />
-        ) : null}
-        {/* 그림이 아직 없거나 못 왔을 때 자리를 지킨다. */}
-        {(!src || failed || !loaded) && (
-          <span className="absolute" style={{ color: 'var(--thread)', opacity: 0.55 }}>
-            <Emblem name={card.emblem} size={30} strokeWidth={6} />
-          </span>
-        )}
-      </div>
-      <div className="px-2 py-1.5">
-        <div className="truncate text-[12.5px] font-medium leading-tight">{card.name_ko}</div>
-        <div className="wordmark truncate text-[10.5px] leading-tight" style={{ color: 'var(--muted)' }}>
-          {card.name_en}
-        </div>
-      </div>
-    </Link>
-  );
 }
 
 /**
@@ -223,7 +177,7 @@ export default function Hierarchy({
                         {groupOpen && (
                           <div className="mt-1.5 grid grid-cols-3 gap-1.5 sm:grid-cols-4">
                             {g.cards.map((c) => (
-                              <Cell key={c.id} card={c} />
+                              <CardCell key={c.id} card={c} />
                             ))}
                           </div>
                         )}

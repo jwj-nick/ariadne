@@ -36,6 +36,7 @@ ariadne/
 ├── content/
 │   ├── traces/<category>/<slug>.md    # 흔적 노드 (Markdown + YAML frontmatter)
 │   ├── sources/<domain>/<slug>.md     # 원천 노드
+│   ├── threads/<slug>.md              # 실 — 여러 카드를 꿰는 짧은 글 (D39)
 │   └── candidates/                     # 승인 대기 (harvester 출력)
 ├── scripts/                 # build(md→json), validate, harvest, seed
 ├── app/                     # Next.js (App Router) + Supabase + PWA

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Hierarchy, { type TreeBucket, type TreeCard } from '../components/Hierarchy';
 import { emblemFor } from '../components/Emblem';
 import { CATEGORY_LABEL, DOMAIN_LABEL, getGraph } from '../lib/graph';
@@ -106,6 +107,31 @@ export default function BrowsePage() {
           카드 {traceCards.length + sourceCards.length}장 · 그림 {withImage}장
         </p>
       </section>
+
+      {/* 분야를 훑으러 온 사람에게는 무리 글이 가장 좋은 들머리다 (D39). */}
+      {g.threads.length > 0 && (
+        <section className="mb-5">
+          <h2 className="mb-2 text-[13px] font-semibold" style={{ color: 'var(--muted)' }}>
+            이름의 무리
+          </h2>
+          <ul className="nav-scroll -mx-5 flex gap-2 overflow-x-auto px-5 pb-1">
+            {g.threads.map((t) => (
+              <li key={t.id} className="shrink-0" style={{ width: 208 }}>
+                <Link
+                  href={`/thread/${t.slug}`}
+                  className="flex h-full flex-col rounded-lg px-3.5 py-3"
+                  style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
+                >
+                  <span className="text-[13.5px] leading-snug font-medium">{t.title}</span>
+                  <span className="mt-1 text-[11.5px]" style={{ color: 'var(--thread)' }}>
+                    카드 {t.cards.length}장
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <Hierarchy traceBuckets={traceBuckets} sourceBuckets={sourceBuckets} />
     </div>
