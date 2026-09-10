@@ -3,6 +3,7 @@ id: source:draco-lawgiver
 type: source
 domain: history
 group: greece
+year: -621
 name_ko: 드라콘
 name_en: Draco
 aliases: [드라코, 드라콘의 법]

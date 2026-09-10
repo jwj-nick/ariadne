@@ -3,6 +3,7 @@ id: source:roman-republic
 type: source
 domain: history
 group: rome
+year: -509
 name_ko: 로마 공화정
 name_en: Roman Republic
 aliases: [공화정 로마, Res publica]

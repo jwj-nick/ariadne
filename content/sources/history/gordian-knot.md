@@ -3,6 +3,7 @@ id: source:gordian-knot
 type: source
 domain: history
 group: greece
+year: -333
 name_ko: 고르디우스의 매듭
 name_en: Gordian Knot
 aliases: [고르디온의 매듭]

@@ -3,6 +3,7 @@ id: source:astrology-influence
 type: source
 domain: history
 group: thinker
+year: -160
 name_ko: 별의 영향
 name_en: Astrological influence
 aliases: [아스트롤로지아]

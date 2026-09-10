@@ -3,6 +3,7 @@ id: source:seven-deadly-sins
 type: source
 domain: history
 group: beyond
+year: 590
 name_ko: 일곱 죄악
 name_en: Seven deadly sins
 aliases: [칠죄종, 7대 죄악, Seven capital vices]

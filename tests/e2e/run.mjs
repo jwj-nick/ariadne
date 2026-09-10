@@ -176,6 +176,7 @@ try {
     '/': ['이 이름, 어디서 왔을까', '오늘의 퀴즈', '분야별로 훑어보기', '오늘의 한 장'],
     '/find': ['찾아보기', '나이키', '판도라의 상자'],
     '/thread': ['이름의 무리', '하늘에서 지구만'],
+    '/timeline': ['연표', '함무라비 법전', '아테네의 시대', '기원전 776년', '호메로스'],
     '/thread/sky-names': ['유피테르', '이 실이 꿰는 카드', '천왕성'],
     '/graph': ['관계도', '그리스·로마 신화', '전체 보기'],
     '/trace/nike': ['나이키', '니케', '스우시', '사모트라케', '이 이름은 어디서 왔나'],
@@ -205,6 +206,15 @@ try {
     miss.length === 0
       ? ok(`아래 길잡이 ${path}`)
       : bad(`아래 길잡이 ${path}`, '없음: ' + miss.join(', '));
+  }
+
+  // 연표는 순서가 전부다 (D42). 이른 것이 앞에 나와야 한다.
+  {
+    const html = await get('/timeline');
+    const order = ['함무라비 법전', '고대 올림픽', '아테네 민주정', '플라톤', '루비콘 도하', '신곡', '햄릿', '모비 딕'];
+    const at = order.map((name) => html.indexOf(name));
+    const sorted = at.every((v, i) => v > 0 && (i === 0 || v > at[i - 1]));
+    sorted ? ok('연표가 시간순이다', order.length + '개 확인') : bad('연표 순서', JSON.stringify(at));
   }
 
   const achilles = await get('/source/achilles');

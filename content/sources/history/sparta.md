@@ -3,6 +3,7 @@ id: source:sparta
 type: source
 domain: history
 group: greece
+year: -700
 name_ko: 스파르타
 name_en: Sparta
 aliases: [라케다이몬, 라코니아]

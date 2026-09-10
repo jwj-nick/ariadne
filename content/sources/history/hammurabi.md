@@ -3,6 +3,7 @@ id: source:hammurabi
 type: source
 domain: history
 group: beyond
+year: -1754
 name_ko: 함무라비 법전
 name_en: Code of Hammurabi
 aliases: []

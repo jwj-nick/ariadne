@@ -3,6 +3,7 @@ id: source:vlad-dracula
 type: source
 domain: history
 group: beyond
+year: 1450
 name_ko: 블라드 드라쿨라
 name_en: Vlad Dracula
 aliases: [블라드 3세, 가시공]

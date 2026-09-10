@@ -3,6 +3,7 @@ id: source:arthur-avalon
 type: source
 domain: literature
 group: fable
+year: 1136
 name_ko: 아발론
 name_en: Avalon
 aliases: [아서왕의 섬]

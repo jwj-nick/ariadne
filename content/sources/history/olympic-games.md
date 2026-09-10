@@ -3,6 +3,7 @@ id: source:olympic-games
 type: source
 domain: history
 group: greece
+year: -776
 name_ko: 고대 올림픽
 name_en: Ancient Olympic Games
 aliases: [올림피아 제전]

@@ -3,6 +3,7 @@ id: source:archimedes
 type: source
 domain: history
 group: thinker
+year: -250
 name_ko: 아르키메데스
 name_en: Archimedes
 aliases: [아르키메데스의 원리]

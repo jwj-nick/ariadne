@@ -52,6 +52,12 @@ interface GraphSource {
   korea_parallel: string;
   /** 이 원천을 나타내는 선 그림 이름 */
   emblem: string;
+  /**
+   * 대표 연도. 기원전은 음수다 (D42).
+   * 사람은 활동기, 작품은 나온 해, 제도는 세워진 해를 쓴다.
+   * 신화와 성경에는 두지 않는다. 연대를 못 박으면 없는 사실을 만들어 내게 된다.
+   */
+  year?: number;
   /** 빌드가 채우는 역링크 */
   traces: string[];
   status: Status;
@@ -179,6 +185,10 @@ const sources: GraphSource[] = sourceCards.map((c) => {
     level_adult: str((c.data as Record<string, unknown>).level_adult),
     korea_parallel: str((c.data as Record<string, unknown>).korea_parallel),
     emblem: str((c.data as Record<string, unknown>).emblem),
+    year:
+      typeof (c.data as Record<string, unknown>).year === 'number'
+        ? ((c.data as Record<string, unknown>).year as number)
+        : undefined,
     traces: (backlinks.get(id) ?? []).sort(),
     status: c.data.status as Status,
     image: image(c.data as Record<string, unknown>),

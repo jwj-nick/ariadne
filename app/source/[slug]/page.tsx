@@ -51,6 +51,12 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
         <div className="min-w-0 flex-1">
         <p className="text-[12px]" style={{ color: 'var(--thread)' }}>
           {DOMAIN_LABEL[source.domain] ?? source.domain}
+          {typeof source.year === 'number' && (
+            <span style={{ color: 'var(--muted)' }}>
+              {' · '}
+              {source.year < 0 ? `기원전 ${-source.year}년` : `${source.year}년`}
+            </span>
+          )}
         </p>
         <h1 className="mt-1 text-[26px] leading-tight font-semibold">{source.name_ko}</h1>
         <p className="wordmark mt-0.5 text-[15px]" style={{ color: 'var(--muted)' }}>

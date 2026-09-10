@@ -3,6 +3,7 @@ id: source:divine-comedy
 type: source
 domain: literature
 group: epic
+year: 1320
 name_ko: 신곡
 name_en: The Divine Comedy
 aliases: [단테의 신곡, 라 디비나 코메디아]

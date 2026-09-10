@@ -3,6 +3,7 @@ id: source:libertas
 type: source
 domain: history
 group: rome
+year: -238
 name_ko: 리베르타스
 name_en: Libertas
 aliases: [자유의 여신]

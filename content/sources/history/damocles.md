@@ -3,6 +3,7 @@ id: source:damocles
 type: source
 domain: history
 group: greece
+year: -380
 name_ko: 다모클레스
 name_en: Damocles
 aliases: [다모클레스의 검]

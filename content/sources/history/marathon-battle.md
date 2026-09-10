@@ -3,6 +3,7 @@ id: source:marathon-battle
 type: source
 domain: history
 group: greece
+year: -490
 name_ko: 마라톤 전투
 name_en: Battle of Marathon
 aliases: [마라톤 벌판]

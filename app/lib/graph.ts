@@ -45,6 +45,8 @@ export interface Source {
   level_adult: string;
   korea_parallel: string;
   emblem: string;
+  /** 대표 연도. 기원전은 음수다 (D42). 신화와 성경에는 없다. */
+  year?: number;
   traces: string[];
   status: Status;
   /** 위키미디어에 걸어 둔 그림. 파일 이름으로 주소를 만든다. */

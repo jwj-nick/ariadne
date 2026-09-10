@@ -3,6 +3,7 @@ id: source:thomas-more-utopia
 type: source
 domain: literature
 group: fable
+year: 1516
 name_ko: 유토피아
 name_en: Utopia
 aliases: [토머스 모어]

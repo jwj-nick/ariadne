@@ -133,6 +133,23 @@ export default function BrowsePage() {
         </section>
       )}
 
+      {/* 무엇이 있는지를 갈래로 보는 길 옆에, 언제의 것인지로 보는 길을 둔다 (D42). */}
+      <Link
+        href="/timeline"
+        className="mb-5 flex items-center gap-2.5 rounded-lg px-3.5 py-3"
+        style={{ background: 'var(--surface)', boxShadow: 'inset 0 0 0 1px var(--line)' }}
+      >
+        <span className="min-w-0 flex-1">
+          <span className="block text-[14px] font-medium">연표로 보기</span>
+          <span className="mt-0.5 block text-[11.5px]" style={{ color: 'var(--muted)' }}>
+            제우스와 셰익스피어 중 누가 먼저인가
+          </span>
+        </span>
+        <span className="shrink-0 text-[15px]" style={{ color: 'var(--muted)' }}>
+          →
+        </span>
+      </Link>
+
       <Hierarchy traceBuckets={traceBuckets} sourceBuckets={sourceBuckets} />
     </div>
   );

@@ -3,6 +3,7 @@ id: source:gullivers-travels
 type: source
 domain: literature
 group: fable
+year: 1726
 name_ko: 걸리버 여행기
 name_en: Gulliver's Travels
 aliases: []

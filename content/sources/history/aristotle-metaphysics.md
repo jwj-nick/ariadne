@@ -3,6 +3,7 @@ id: source:aristotle-metaphysics
 type: source
 domain: history
 group: thinker
+year: -335
 name_ko: 아리스토텔레스의 형이상학
 name_en: Metaphysics
 aliases: [메타피지카]

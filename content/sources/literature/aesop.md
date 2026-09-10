@@ -3,6 +3,7 @@ id: source:aesop
 type: source
 domain: literature
 group: fable
+year: -570
 name_ko: 이솝
 name_en: Aesop
 aliases: [아이소포스, Aisopos]

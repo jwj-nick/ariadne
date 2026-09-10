@@ -3,6 +3,7 @@ id: source:athenian-democracy
 type: source
 domain: history
 group: greece
+year: -508
 name_ko: 아테네 민주정
 name_en: Athenian democracy
 aliases: [고대 아테네 민주주의]

@@ -3,6 +3,7 @@ id: source:hermes-trismegistus
 type: source
 domain: history
 group: thinker
+year: 200
 name_ko: 헤르메스 트리스메기스토스
 name_en: Hermes Trismegistus
 aliases: [세 번 위대한 헤르메스]

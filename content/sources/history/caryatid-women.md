@@ -3,6 +3,7 @@ id: source:caryatid-women
 type: source
 domain: history
 group: greece
+year: -415
 name_ko: 카리아티드
 name_en: Caryatid
 aliases: [여인 기둥]

@@ -13,6 +13,7 @@ const MORE = [
   { href: '/capture', title: '본 것 담기', desc: '밖에서 마주친 이름을 넣어 두면 오늘 퀴즈로 이어집니다' },
   { href: '/request', title: '새 항목 신청', desc: '여기에 없는 이름을 만들어 달라고 신청합니다' },
   { href: '/graph', title: '관계도', desc: '이름과 이야기가 어떻게 얽혀 있는지 한 장으로 봅니다' },
+  { href: '/timeline', title: '연표', desc: '신화는 언제 글이 되었고 로마와 셰익스피어는 어느 순서인가' },
 ];
 
 export default function SettingsPage() {

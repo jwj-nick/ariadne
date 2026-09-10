@@ -3,6 +3,7 @@ id: source:plato
 type: source
 domain: history
 group: thinker
+year: -380
 name_ko: 플라톤
 name_en: Plato
 aliases: [플라톤과 아리스토텔레스]

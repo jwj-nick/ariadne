@@ -3,6 +3,7 @@ id: source:greek-tyranny
 type: source
 domain: history
 group: greece
+year: -650
 name_ko: 참주
 name_en: Tyrannos
 aliases: [티라노스, 참주정]

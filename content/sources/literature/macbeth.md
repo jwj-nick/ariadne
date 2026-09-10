@@ -3,6 +3,7 @@ id: source:macbeth
 type: source
 domain: literature
 group: shakespeare
+year: 1606
 name_ko: 맥베스
 name_en: Macbeth
 aliases: []

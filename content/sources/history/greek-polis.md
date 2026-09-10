@@ -3,6 +3,7 @@ id: source:greek-polis
 type: source
 domain: history
 group: greece
+year: -750
 name_ko: 폴리스
 name_en: Polis
 aliases: [도시 국가]

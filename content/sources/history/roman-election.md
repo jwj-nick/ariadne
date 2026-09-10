@@ -3,6 +3,7 @@ id: source:roman-election
 type: source
 domain: history
 group: rome
+year: -250
 name_ko: 로마의 선거
 name_en: Roman elections
 aliases: [캔디다투스, candidatus]

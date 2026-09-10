@@ -3,6 +3,7 @@ id: source:visconti-biscione
 type: source
 domain: history
 group: beyond
+year: 1250
 name_ko: 비스콘티의 뱀
 name_en: Biscione
 aliases: [비쇼네]

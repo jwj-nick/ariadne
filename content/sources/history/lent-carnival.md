@@ -3,6 +3,7 @@ id: source:lent-carnival
 type: source
 domain: history
 group: beyond
+year: 400
 name_ko: 사순절과 카니발
 name_en: Lent and Carnival
 aliases: [재의 수요일]

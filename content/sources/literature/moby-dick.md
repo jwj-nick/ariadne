@@ -3,6 +3,7 @@ id: source:moby-dick
 type: source
 domain: literature
 group: epic
+year: 1851
 name_ko: 모비 딕
 name_en: Moby-Dick
 aliases: [백경, 흰 고래]

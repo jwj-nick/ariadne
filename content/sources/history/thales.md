@@ -3,6 +3,7 @@ id: source:thales
 type: source
 domain: history
 group: thinker
+year: -585
 name_ko: 탈레스
 name_en: Thales
 aliases: [밀레토스의 탈레스]

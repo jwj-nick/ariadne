@@ -3,6 +3,7 @@ id: source:democritus
 type: source
 domain: history
 group: thinker
+year: -420
 name_ko: 데모크리토스
 name_en: Democritus
 aliases: [웃는 철학자]

@@ -3,6 +3,7 @@ id: source:healthy-mind
 type: source
 domain: literature
 group: fable
+year: 100
 name_ko: 건강한 몸에 건강한 마음
 name_en: Mens sana in corpore sano
 aliases: [유베날리스의 풍자시, mens sana]

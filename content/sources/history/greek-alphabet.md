@@ -3,6 +3,7 @@ id: source:greek-alphabet
 type: source
 domain: history
 group: greece
+year: -800
 name_ko: 그리스 알파벳
 name_en: Greek alphabet
 aliases: [헬라 문자]

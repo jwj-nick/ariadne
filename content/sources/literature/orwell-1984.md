@@ -3,6 +3,7 @@ id: source:orwell-1984
 type: source
 domain: literature
 group: fable
+year: 1949
 name_ko: "1984"
 name_en: Nineteen Eighty-Four
 aliases: [오웰]
