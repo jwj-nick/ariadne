@@ -11,6 +11,8 @@ relations:
   - {rel: spouse_of, target: source:gaia}
 level_kid: 가장 먼저 하늘이 된 존재이며, 티탄들의 아버지.
 level_adult: 그리스 신화에서 하늘 그 자체인 존재. 땅인 가이아와 짝을 이루어 티탄들을 낳았으나, 자식들을 가두어 두었다가 막내 크로노스에게 밀려났다. 천왕성과 원소 우라늄의 이름이 여기서 왔다.
+say_en: "YOOR-uh-nus"
+say_ko: "유러너스"
 emblem: star
 korea_parallel: ""
 traces: []

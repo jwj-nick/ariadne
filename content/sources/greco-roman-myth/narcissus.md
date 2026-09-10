@@ -12,6 +12,8 @@ relations:
   - {rel: transforms_into, target: source:narcissus-flower}
 level_kid: 물에 비친 자기 얼굴에 반해서, 그 자리를 떠나지 못하고 꽃이 된 소년.
 level_adult: 그리스 신화에 나오는 아름다운 소년. 자기를 사랑하는 이들을 모두 물리쳤다가 응보의 여신 네메시스의 벌을 받아, 샘에 비친 자기 모습에 반해 그 자리를 떠나지 못하고 죽었다. 그 자리에서 수선화가 피었다고 전해진다. 로마 시인 오비디우스의 <변신 이야기>에 담긴 판본이 가장 널리 알려져 있다.
+say_en: "nar-SIS-us"
+say_ko: "나시서스"
 emblem: mirror
 korea_parallel: ""
 traces: []

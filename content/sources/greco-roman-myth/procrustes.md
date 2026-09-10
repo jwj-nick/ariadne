@@ -10,6 +10,8 @@ relations:
   - {rel: killed_by, target: source:theseus-minotaur}
 level_kid: 나그네를 침대에 눕혀 놓고, 침대에 맞춰 몸을 늘이거나 잘랐다는 강도.
 level_adult: 아테네로 가는 길에 있던 강도. 나그네를 붙잡아 자기 침대에 눕히고, 침대보다 짧으면 잡아 늘이고 길면 잘라 냈다. 테세우스가 지나가다 같은 방식으로 그를 없앴다. 사실을 자기 틀에 억지로 맞추는 태도를 가리키는 말로 남았다.
+say_en: "proh-KRUS-teez"
+say_ko: "프로크러스티즈"
 emblem: sword
 korea_parallel: ""
 traces: []

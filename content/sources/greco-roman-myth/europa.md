@@ -11,6 +11,8 @@ relations:
   - {rel: parent_of, target: source:minos}
 level_kid: 흰 황소로 변한 제우스의 등에 타고 바다를 건너간 공주.
 level_adult: 페니키아의 공주. 흰 황소로 변신한 제우스에게 이끌려 바다를 건너 크레타 섬으로 갔고, 그곳에서 미노스를 비롯한 아들들을 낳았다. 그가 건너간 쪽의 땅을 유럽이라 부르게 되었다는 이야기가 대륙 이름의 유래로 오래 전해진다.
+say_en: "yoo-ROH-puh"
+say_ko: "유로퍼"
 emblem: bull
 korea_parallel: ""
 traces: []

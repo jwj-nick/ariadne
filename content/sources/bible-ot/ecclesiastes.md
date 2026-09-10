@@ -9,6 +9,8 @@ aliases: [코헬렛]
 relations: []
 level_kid: 모든 것이 헛되다고 말하면서도 오늘을 살라고 권하는 구약의 지혜서다.
 level_adult: 모든 것이 헛되고 헛되다는 문장으로 시작하는 구약의 책이며, 해 아래 새것이 없다는 구절이 여기서 나왔다. 부와 지혜와 쾌락을 모두 좇아 본 자가 그 어느 것도 남지 않는다고 말하지만, 결론은 절망이 아니라 오늘 먹고 마시고 일하라는 권유다. 서양 문학이 삶의 덧없음을 말할 때 가장 자주 인용하는 책이다.
+say_en: "i-klee-zee-AS-teez"
+say_ko: "이클리지애스티즈"
 emblem: hourglass
 korea_parallel: ""
 traces: []

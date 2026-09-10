@@ -10,6 +10,8 @@ relations:
   - {rel: appears_in, target: source:last-supper}
 level_kid: 스승을 잡으러 온 사람들에게 입맞춤으로 알려 준 제자.
 level_adult: 신약 성경에 나오는 예수의 열두 제자 가운데 하나. 은전 서른 닢을 받고 예수가 있는 곳을 알려 주었고, 어두운 밤에 누구인지 지목하기 위해 입을 맞췄다고 전한다. 서양 언어에서 배신자를 뜻하는 보통명사가 되었고, 미술에서는 <최후의 만찬>과 체포 장면의 중심 인물로 반복해 그려진다.
+say_en: "JOO-dus"
+say_ko: "주더스"
 emblem: coin
 korea_parallel: ""
 traces: []

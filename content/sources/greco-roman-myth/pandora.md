@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:zeus}
 level_kid: 열지 말라던 항아리를 열어, 세상에 온갖 나쁜 것을 퍼뜨린 최초의 여자.
 level_adult: 그리스 신화에서 신들이 흙으로 빚어 만든 최초의 여자. 프로메테우스가 불을 훔쳐 인간에게 준 데 대한 벌로 제우스가 지상에 내려보냈다. 열지 말라고 한 항아리를 열어 온갖 재앙을 세상에 퍼뜨렸고, 바닥에는 희망만 남았다.
+say_en: "pan-DOR-uh"
+say_ko: "팬도러"
 emblem: jar
 korea_parallel: ""
 traces: []

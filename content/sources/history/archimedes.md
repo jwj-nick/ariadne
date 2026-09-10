@@ -10,6 +10,8 @@ aliases: [아르키메데스의 원리]
 relations: []
 level_kid: 목욕탕에서 문제의 답을 깨닫고 유레카라고 외쳤다는 고대의 수학자.
 level_adult: 기원전 3세기 시라쿠사의 수학자이자 발명가. 왕관이 순금인지 알아내라는 문제를 받고 목욕탕에서 물이 넘치는 것을 보다 답을 깨달았다고 전한다. 그때 외친 말이 알아냈다는 뜻의 유레카다. 지렛대와 부력을 다룬 그의 연구는 오늘날 물리학의 바탕이 되었다.
+say_en: "ar-kuh-MEE-deez"
+say_ko: "아커미디즈"
 emblem: column
 korea_parallel: ""
 traces: []

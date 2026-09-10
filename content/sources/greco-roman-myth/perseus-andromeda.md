@@ -11,6 +11,8 @@ relations:
   - {rel: kills, target: source:medusa}
 level_kid: 메두사를 벤 영웅이 바위에 묶인 공주를 구하는 이야기이며, 등장인물이 모두 별자리가 되었다.
 level_adult: 제우스의 아들 페르세우스는 메두사의 목을 베어 돌아오는 길에, 바위에 묶인 채 바다 괴물에게 바쳐질 공주 안드로메다를 만난다. 그 어머니 카시오페이아가 자기 딸이 바다 요정들보다 아름답다고 자랑한 탓에 내려진 벌이었다. 페르세우스는 메두사의 머리로 괴물을 굳혀 죽이고 공주를 아내로 맞았으며, 이 이야기의 인물이 모두 하늘로 올라 가을 별자리가 되었다.
+say_en: "PUR-see-us / an-DROM-i-duh"
+say_ko: "퍼시어스 / 앤드라미더"
 emblem: sword
 korea_parallel: ""
 traces: []

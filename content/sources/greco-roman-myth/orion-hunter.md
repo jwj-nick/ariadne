@@ -10,6 +10,8 @@ relations:
   - {rel: enemy_of, target: source:artemis}
 level_kid: 거인 사냥꾼이며, 죽은 뒤 겨울 밤하늘의 별자리가 되었다.
 level_adult: 바다의 신 포세이돈의 아들로 태어난 거인 사냥꾼이다. 세상의 모든 짐승을 잡겠다고 큰소리치자 대지가 전갈을 보내 그를 죽였다는 이야기, 아르테미스가 잘못 쏘아 죽였다는 이야기가 함께 전한다. 죽은 뒤 하늘에 올려져 별자리가 되었고, 그를 죽인 전갈자리가 뜨면 오리온자리는 진다.
+say_en: "oh-RY-un"
+say_ko: "오라이언"
 emblem: star
 korea_parallel: ""
 traces: []

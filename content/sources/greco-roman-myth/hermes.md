@@ -11,6 +11,8 @@ relations:
   - {rel: companion_of, target: source:apollo}
 level_kid: 날개 달린 신발을 신고 신들의 말을 전하러 다니는, 발 빠른 신.
 level_adult: 제우스와 마이아의 아들이며 신들의 전령. 길, 여행자, 상인, 도둑, 웅변을 맡는다. 죽은 이를 저승으로 이끄는 일도 그의 몫이다. 로마 신화의 메르쿠리우스와 같은 존재로 다루며, 날개 달린 모자와 신발, 뱀 두 마리가 감긴 지팡이로 그려진다.
+say_en: "HUR-meez"
+say_ko: "허미즈"
 emblem: staff
 korea_parallel: ""
 traces: []

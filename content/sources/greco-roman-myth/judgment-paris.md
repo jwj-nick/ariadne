@@ -10,6 +10,8 @@ relations:
   - {rel: precedes, target: source:trojan-horse}
 level_kid: 가장 아름다운 이에게 주라는 황금 사과 하나가 트로이 전쟁의 시작이 되었다.
 level_adult: 불화의 여신이 잔치에 던져 넣은 황금 사과에 가장 아름다운 이에게라고 적혀 있었고, 헤라와 아테나와 아프로디테가 서로 갖겠다고 다투었다. 판정을 맡은 트로이의 왕자 파리스에게 셋이 각각 권력과 지혜와 가장 아름다운 여인을 약속했고, 파리스는 아프로디테를 골랐다. 그 대가로 받은 여인이 스파르타 왕비 헬레네였고, 그를 데려간 일이 트로이 전쟁이 되었다.
+say_en: "PAR-is"
+say_ko: "패리스"
 emblem: apple
 korea_parallel: ""
 traces: []

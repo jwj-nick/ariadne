@@ -10,6 +10,8 @@ aliases: []
 relations: []
 level_kid: 늑대의 젖을 먹고 자란 쌍둥이이며, 형이 아우를 죽이고 로마를 세웠다.
 level_adult: 강에 버려진 쌍둥이가 암늑대의 젖을 먹고 살아남아 목동에게 길러졌다는 로마의 건국 이야기다. 자란 뒤 도시를 세울 자리를 두고 다투다 로물루스가 레무스를 죽였고, 자기 이름을 따 그 도시를 로마라 불렀다. 젖을 먹이는 암늑대의 청동상이 로마시의 상징으로 남아 있다.
+say_en: "ROM-yuh-lus / REE-mus"
+say_ko: "람율러스 / 리머스"
 emblem: wolf
 korea_parallel: ""
 traces: []

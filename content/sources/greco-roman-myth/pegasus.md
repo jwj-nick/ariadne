@@ -11,6 +11,8 @@ relations:
   - {rel: child_of, target: source:poseidon}
 level_kid: 날개 달린 하늘의 말이다.
 level_adult: 메두사의 잘린 목에서 솟아난 날개 달린 말이다. 영웅 벨레로폰이 이 말을 타고 괴물 키마이라를 무찔렀으나, 하늘 끝 올림포스까지 오르려다 제우스가 보낸 등에에 놀란 말에서 떨어졌다. 페가수스만은 하늘에 남아 제우스의 번개를 나르는 일을 맡았고 별자리가 되었다.
+say_en: "PEG-uh-sus"
+say_ko: "페거서스"
 emblem: wing
 korea_parallel: ""
 traces: []

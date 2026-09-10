@@ -11,6 +11,8 @@ relations:
   - {rel: parent_of, target: source:zeus}
 level_kid: 아버지를 밀어내고 세상을 다스렸다가, 아들 제우스에게 밀려난 티탄의 우두머리.
 level_adult: 티탄족의 막내이자 우두머리. 아버지 우라노스를 밀어내고 세상을 다스렸으나, 자식에게 밀려나리라는 예언 때문에 태어나는 아이를 삼켰다가 막내 제우스에게 무너졌다. 로마 신화의 사투르누스와 같은 존재이며, 토성과 토요일 이름이 여기서 왔다.
+say_en: "KROH-nus"
+say_ko: "크로너스"
 emblem: mountain
 korea_parallel: ""
 traces: []

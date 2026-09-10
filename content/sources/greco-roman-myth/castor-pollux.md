@@ -11,6 +11,8 @@ relations:
   - {rel: sibling_of, target: source:helios}
 level_kid: 한쪽은 죽을 수 있고 한쪽은 그렇지 않은 쌍둥이이며, 죽음을 나눠 가져 함께 별자리가 되었다.
 level_adult: 같은 어머니에게서 났으나 아버지가 달라, 폴룩스는 제우스의 아들로 죽지 않고 카스토르는 인간의 아들로 죽을 수 있었다. 카스토르가 싸움에서 죽자 폴룩스가 자기 불사를 나누어 달라고 빌었고, 제우스가 두 사람이 하루씩 번갈아 저승과 하늘에 머물게 했다. 쌍둥이자리의 두 밝은 별이 이들이며, 뱃사람의 수호신으로 오래 섬겨졌다.
+say_en: "KAS-tur / POL-uks"
+say_ko: "캐스터 / 팔럭스"
 emblem: star
 korea_parallel: ""
 traces: []

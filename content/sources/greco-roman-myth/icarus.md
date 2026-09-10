@@ -11,6 +11,8 @@ relations:
   - {rel: appears_in, target: source:theseus-minotaur}
 level_kid: 아버지가 만든 밀랍 날개를 달고 날다가, 해에 너무 가까이 가서 떨어진 소년.
 level_adult: 미궁을 지은 장인 다이달로스의 아들. 아버지와 함께 밀랍으로 붙인 날개를 달고 크레타를 탈출했으나, 너무 높이 날지 말라는 말을 잊고 해에 가까이 갔다가 밀랍이 녹아 바다에 떨어졌다. 분수를 넘어선 도전이 부르는 파멸의 상징으로 서양 문학에 되풀이해 쓰인다.
+say_en: "IK-uh-rus"
+say_ko: "이커러스"
 emblem: wing
 korea_parallel: ""
 traces: []

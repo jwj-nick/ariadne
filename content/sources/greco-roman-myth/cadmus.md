@@ -10,6 +10,8 @@ relations:
   - {rel: sibling_of, target: source:europa}
 level_kid: 누이를 찾아 나섰다가 테베를 세운 인물이며, 그리스에 알파벳을 가져왔다고 전한다.
 level_adult: 황소로 변한 제우스에게 끌려간 누이 에우로페를 찾아 나섰다가 찾지 못하고, 신탁을 따라 그 자리에 테베를 세웠다. 용을 죽이고 그 이빨을 땅에 뿌리자 무장한 병사들이 솟아나 서로 싸웠고, 살아남은 다섯이 테베의 귀족이 되었다. 페니키아에서 왔으므로 그가 그리스에 알파벳을 전했다고 그리스 사람들은 믿었다.
+say_en: "KAD-mus"
+say_ko: "캐드머스"
 emblem: tower
 korea_parallel: ""
 traces: []

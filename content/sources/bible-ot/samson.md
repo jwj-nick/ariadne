@@ -10,6 +10,8 @@ relations:
   - {rel: enemy_of, target: source:david-and-goliath}
 level_kid: 머리카락에 힘이 깃들어 있던 이스라엘의 장사다.
 level_adult: 태어나기 전부터 하나님께 바쳐진 사람이라 평생 머리를 깎지 않기로 되어 있었고, 그 머리카락에 놀라운 힘이 깃들어 있었다. 사자를 맨손으로 찢고 성문을 통째로 뽑았으나, 들릴라에게 힘의 비밀을 말한 뒤 머리카락이 잘려 힘을 잃고 눈이 뽑힌 채 붙잡혔다. 머리카락이 다시 자란 뒤 신전 기둥을 밀어 무너뜨리며 적과 함께 죽었다.
+say_en: "SAM-sun"
+say_ko: "샘슨"
 emblem: lion
 korea_parallel: ""
 traces: []

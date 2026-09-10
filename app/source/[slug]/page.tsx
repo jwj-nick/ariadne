@@ -62,6 +62,18 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
         <p className="wordmark mt-0.5 text-[15px]" style={{ color: 'var(--muted)' }}>
           {source.name_en}
         </p>
+        {/* 영어로는 어떻게 읽는가 (D43). 한국어 표기는 그리스어 원음을 따르고
+            영어 화자는 라틴어를 거친 소리로 읽어서, 같은 이름이 서로 다르게 들린다. */}
+        {source.say_en && (
+          <p
+            className="mt-2 inline-flex items-baseline gap-1.5 rounded px-2 py-0.5 text-[12px]"
+            style={{ background: 'var(--thread-soft)', color: 'var(--thread)' }}
+          >
+            <span style={{ opacity: 0.7 }}>영어로는</span>
+            <span className="wordmark font-medium">{source.say_en}</span>
+            {source.say_ko && <span style={{ opacity: 0.7 }}>[{source.say_ko}]</span>}
+          </p>
+        )}
         {source.aliases.length > 0 && (
           <p className="mt-1 text-[12px]" style={{ color: 'var(--muted)' }}>
             다른 이름 {source.aliases.join(' · ')}

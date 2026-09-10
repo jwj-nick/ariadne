@@ -10,6 +10,8 @@ relations:
   - {rel: parallel_of, target: source:hades}
 level_kid: 영웅과 의인이 죽은 뒤 가는, 저승 안의 복된 들판이다.
 level_adult: 저승에 있으되 다른 곳과 달리 해가 비치고 바람이 부는 들판으로, 신에게 사랑받은 영웅과 의인만이 그리로 간다. 호메로스는 눈도 비도 없고 서풍만 부는 곳이라 했고, 뒷날의 시인들은 그곳에서 죽은 이들이 노래하고 겨루며 지낸다고 적었다. 서양에서 낙원을 가리키는 가장 오래된 이름 가운데 하나다.
+say_en: "i-LIZH-ee-um"
+say_ko: "일리지엄"
 emblem: tree
 korea_parallel: ""
 traces: []

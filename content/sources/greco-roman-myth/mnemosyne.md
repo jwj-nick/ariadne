@@ -11,6 +11,8 @@ relations:
   - {rel: parent_of, target: source:apollo}
 level_kid: 기억 그 자체인 티탄이며, 아홉 뮤즈의 어머니다.
 level_adult: 우라노스와 가이아 사이에서 태어난 티탄이며 기억 그 자체다. 제우스와 아홉 밤을 지내 아홉 뮤즈를 낳았으므로, 모든 예술과 학문이 기억에서 태어난 셈이다. 글이 없던 시절에 시인은 외워서 노래했으므로, 기억이 예술의 어머니라는 계보는 그 시대의 실제를 담고 있다.
+say_en: "ni-MOS-uh-nee"
+say_ko: "니마서니"
 emblem: harp
 korea_parallel: ""
 traces: []

@@ -11,6 +11,8 @@ relations:
   - {rel: sibling_of, target: source:hygieia}
 level_kid: 모든 것을 고치는 여신이며, 만병통치약을 뜻하는 낱말이 되었다.
 level_adult: 의술의 신 아스클레피오스의 딸이며, 이름 자체가 모든 것을 고친다는 뜻이다. 위생을 맡은 언니 히기에이아와 짝을 이루어, 병을 미리 막는 일과 이미 걸린 병을 고치는 일이 자매로 나뉘어 있다. 지금 만병통치약을 뜻하는 낱말이 이 이름 그대로다.
+say_en: "pan-uh-SEE-uh"
+say_ko: "패너시어"
 emblem: cup
 korea_parallel: ""
 traces: []

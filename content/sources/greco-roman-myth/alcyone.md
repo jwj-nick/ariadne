@@ -9,6 +9,8 @@ aliases: [할키온, Halcyon]
 relations: []
 level_kid: 남편을 따라 바다에 몸을 던진 여인이며, 둘이 물총새가 되어 겨울 바다를 잠재운다.
 level_adult: 남편 케익스가 바다에서 죽자 슬픔에 몸을 던졌고, 신들이 가엾이 여겨 둘을 물총새로 바꾸었다. 이 새가 겨울 바다에 둥지를 트는 이레 동안은 바람이 자고 물결이 잔잔해진다고 여겨졌고, 그 시기를 할키온의 날들이라 불렀다. 지금 평온하고 좋았던 시절을 가리키는 표현이 여기서 왔다.
+say_en: "al-SY-uh-nee"
+say_ko: "앨사이어니"
 emblem: wave
 korea_parallel: ""
 traces: []

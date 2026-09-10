@@ -10,6 +10,8 @@ relations:
   - {rel: child_of, target: source:hypnos}
 level_kid: 꿈속에서 사람의 모습으로 나타나는 꿈의 신.
 level_adult: 그리스 신화에서 꿈을 맡은 신. 잠의 신 힙노스의 아들이며, 사람의 모습을 하고 꿈에 나타난다. 이름 자체가 모양이나 형태를 뜻하는 말에서 왔다. 진통제 모르핀이 이 이름에서 나왔다.
+say_en: "MOR-fee-us"
+say_ko: "모피어스"
 emblem: moon
 korea_parallel: ""
 traces: []

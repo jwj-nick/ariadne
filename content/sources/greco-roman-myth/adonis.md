@@ -10,6 +10,8 @@ relations:
   - {rel: lover_of, target: source:aphrodite}
 level_kid: 아프로디테가 사랑한 아름다운 청년이며, 멧돼지에게 죽어 아네모네가 되었다.
 level_adult: 빼어나게 아름다운 청년이라 아프로디테와 페르세포네가 서로 곁에 두려 다투었고, 제우스가 한 해를 나누어 지내게 했다. 사냥하다 멧돼지에게 받혀 죽었고, 그 피에서 아네모네가 피었다고 전한다. 지금 아름다운 남자를 가리키는 낱말이 이 이름 그대로다.
+say_en: "uh-DON-is"
+say_ko: "어다니스"
 emblem: seed
 korea_parallel: ""
 traces: []

@@ -10,6 +10,8 @@ aliases: [다모클레스의 검]
 relations: []
 level_kid: 왕의 자리에 앉아 보았다가, 머리 위에 매달린 칼을 보고 물러난 신하.
 level_adult: 기원전 4세기 시라쿠사의 참주 디오니시오스의 신하. 왕이 부럽다고 말하자 왕이 하루 동안 자리를 바꿔 주었는데, 머리 위에 말총 한 올로 매달린 칼이 있었다. 권력에는 늘 위험이 따른다는 것을 보여 준 이야기이며, 키케로가 기록해 서양에 널리 알려졌다.
+say_en: "DAM-uh-kleez"
+say_ko: "대머클리즈"
 emblem: sword
 korea_parallel: ""
 traces: []

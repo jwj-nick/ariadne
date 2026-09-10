@@ -10,6 +10,8 @@ relations:
   - {rel: appears_in, target: source:trojan-horse}
 level_kid: 목마를 성 안에 들이지 말라고 말렸다가, 두 아들과 함께 뱀에게 감겨 죽은 신관.
 level_adult: 트로이의 신관. 그리스군이 두고 간 목마를 성 안에 들이지 말라고 경고했으나 아무도 듣지 않았고, 바다에서 나온 큰 뱀 두 마리에게 두 아들과 함께 감겨 죽었다. 옳은 말을 하고도 파멸하는 인물의 상징이며, 바티칸의 조각 <라오콘 군상>으로 널리 알려져 있다.
+say_en: "lay-OK-oh-on"
+say_ko: "레이아코온"
 emblem: staff
 korea_parallel: ""
 traces: []

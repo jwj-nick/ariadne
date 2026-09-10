@@ -11,6 +11,8 @@ relations:
   - {rel: spouse_of, target: source:persephone}
 level_kid: 죽은 이들이 가는 곳을 다스리는 신이며, 그 세계의 이름이기도 하다.
 level_adult: 그리스 신화에서 저승을 다스리는 신. 제우스, 포세이돈과 형제이며 세상을 나눌 때 저승을 맡았다. 이름이 그가 다스리는 세계의 이름이기도 하다. 로마에서는 플루톤이라 불렀고 그 이름이 부를 뜻하는 말과 이어져, 명왕성과 플루토늄의 이름이 되었다.
+say_en: "HAY-deez"
+say_ko: "헤이디즈"
 emblem: void
 korea_parallel: ""
 traces: []

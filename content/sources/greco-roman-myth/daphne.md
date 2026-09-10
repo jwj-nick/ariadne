@@ -10,6 +10,8 @@ relations:
   - {rel: enemy_of, target: source:apollo}
 level_kid: 아폴론에게 쫓기다 월계수로 변한 님프이며, 그 잎으로 엮은 관이 승리의 표지가 되었다.
 level_adult: 에로스의 화살에 맞아 사랑에 빠진 아폴론이 그를 쫓았고, 반대로 사랑을 거부하는 화살을 맞은 다프네는 달아났다. 붙잡히기 직전 아버지인 강의 신에게 빌어 월계수로 변했고, 아폴론은 그 나무를 자기 나무로 삼아 잎으로 관을 엮었다. 그 뒤로 월계관이 승리와 영예의 표지가 되었다.
+say_en: "DAF-nee"
+say_ko: "대프니"
 emblem: laurel
 korea_parallel: ""
 traces: []

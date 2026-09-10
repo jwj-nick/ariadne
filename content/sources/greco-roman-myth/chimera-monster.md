@@ -10,6 +10,8 @@ relations:
   - {rel: killed_by, target: source:pegasus}
 level_kid: 사자와 염소와 뱀이 한 몸에 붙어 있고 불을 뿜는 괴물이다.
 level_adult: 앞은 사자, 가운데는 염소, 꼬리는 뱀인 괴물이며 입에서 불을 뿜었다. 영웅 벨레로폰이 페가수스를 타고 하늘에서 납덩이를 매단 창을 던져 죽였고, 녹은 납이 목구멍을 막아 숨이 끊겼다. 서로 다른 것들이 한 몸에 섞여 있다는 성격 때문에, 지금은 생물학에서 유전자가 다른 세포가 한 개체에 섞인 상태를 가리키는 말이 되었다.
+say_en: "ky-MEER-uh"
+say_ko: "카이미어러"
 emblem: goat
 korea_parallel: ""
 traces: []

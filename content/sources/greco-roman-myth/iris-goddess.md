@@ -10,6 +10,8 @@ relations:
   - {rel: companion_of, target: source:hera}
 level_kid: 무지개 그 자체이며, 신들의 말을 사람에게 나르는 전령이다.
 level_adult: 무지개 그 자체이자 신들의 전령이며, 특히 헤라의 심부름을 맡는다. 무지개가 하늘과 땅을 잇는 다리로 보였기에 그 다리를 오가는 전령이 된 것이다. 눈의 홍채와 붓꽃과 무지갯빛을 가리키는 낱말이 모두 이 이름에서 나왔다.
+say_en: "EYE-ris"
+say_ko: "아이리스"
 emblem: wave
 korea_parallel: ""
 traces: []

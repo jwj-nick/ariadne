@@ -11,6 +11,8 @@ relations:
   - {rel: parent_of, target: source:morpheus}
 level_kid: 사람을 잠들게 하는 잠의 신이며, 죽음의 신과 쌍둥이다.
 level_adult: 그리스 신화에서 잠을 맡은 신. 밤의 여신 닉스의 아들이며 죽음의 신 타나토스와 쌍둥이다. 잠과 죽음을 형제로 놓은 이 계보가 서양 문학에서 되풀이해 인용된다. 최면을 뜻하는 hypnosis 가 이 이름에서 나왔다.
+say_en: "HIP-nos"
+say_ko: "힙나스"
 emblem: moon
 korea_parallel: ""
 traces: []

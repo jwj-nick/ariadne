@@ -10,6 +10,8 @@ relations:
   - {rel: enemy_of, target: source:athena}
 level_kid: 베 짜는 솜씨를 아테나와 겨루었다가 거미가 된 여인이다.
 level_adult: 베 짜는 솜씨가 뛰어난 여인이었고, 아테나와 겨루어도 지지 않는다고 큰소리쳤다. 실제로 겨루었을 때 그가 짠 천에는 신들이 사람을 속이고 겁탈한 장면이 담겨 있었고, 흠잡을 데 없는 솜씨였다. 아테나가 그 천을 찢고 그를 치자 목을 매려 했고, 여신이 그를 거미로 바꾸어 영원히 실을 잣게 했다.
+say_en: "uh-RAK-nee"
+say_ko: "어랙니"
 emblem: spider
 korea_parallel: ""
 traces: []

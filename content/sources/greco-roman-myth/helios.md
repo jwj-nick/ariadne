@@ -11,6 +11,8 @@ relations:
   - {rel: parent_of, target: source:phaethon}
 level_kid: 해를 마차에 싣고 하늘을 가로지르는 신.
 level_adult: 그리스 신화에서 해 그 자체인 신. 날마다 네 마리 말이 끄는 불 마차를 몰고 동쪽에서 서쪽으로 하늘을 가로지른다. 후대에 아폴론과 하나로 합쳐 이야기되는 일이 많다. 원소 헬륨의 이름이 여기서 왔다.
+say_en: "HEE-lee-os"
+say_ko: "힐리아스"
 emblem: star
 korea_parallel: ""
 traces: []

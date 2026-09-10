@@ -12,6 +12,8 @@ relations:
   - {rel: enemy_of, target: source:zeus}
 level_kid: 하늘에서 불을 훔쳐 사람에게 준 벌로, 바위에 묶여 날마다 간을 쪼이게 된 티탄.
 level_adult: 티탄족의 하나. 이름이 미리 아는 자라는 뜻이다. 제우스가 감춘 불을 훔쳐 사람에게 주었고, 그 벌로 바위에 묶여 날마다 독수리에게 간을 쪼이는 형벌을 받았다. 사람을 위해 신에게 맞선 인물이라 서양 문학에서 저항과 창조의 상징으로 되풀이해 쓰인다.
+say_en: "pruh-MEE-thee-us"
+say_ko: "프러미씨어스"
 emblem: flame
 korea_parallel: ""
 traces: []

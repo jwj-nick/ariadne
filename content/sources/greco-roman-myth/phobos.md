@@ -10,6 +10,8 @@ relations:
   - {rel: child_of, target: source:ares}
 level_kid: 공포 그 자체이며, 전쟁의 신 아레스를 따라다니는 아들이다.
 level_adult: 전쟁의 신 아레스의 아들이며 공포 그 자체다. 형제 데이모스는 두려움을 맡아, 둘이 아버지의 전차를 몰고 싸움터를 따라다닌다. 공포증을 뜻하는 낱말이 이 이름에서 나왔고, 화성의 두 위성도 이 형제의 이름을 지녔다.
+say_en: "FOH-bos"
+say_ko: "포보스"
 emblem: helmet
 korea_parallel: ""
 traces: []

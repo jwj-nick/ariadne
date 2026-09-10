@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:odysseus}
 level_kid: 삼지창을 든 바다의 신이며, 화가 나면 땅을 흔든다.
 level_adult: 그리스 신화에서 바다를 다스리는 신. 제우스, 하데스와 형제이며 세상을 나눌 때 바다를 맡았다. 삼지창이 그의 상징이고, 지진을 일으키는 신이기도 하다. 로마 신화의 넵투누스와 같은 존재로 다루며, 해왕성 이름이 여기서 왔다.
+say_en: "puh-SY-dun"
+say_ko: "퍼사이던"
 emblem: wave
 korea_parallel: ""
 traces: []

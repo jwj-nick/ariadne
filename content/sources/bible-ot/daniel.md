@@ -10,6 +10,8 @@ relations:
   - {rel: appears_in, target: source:babylonian-exile}
 level_kid: 바빌론에 끌려가 왕의 꿈을 풀이한 인물이며, 사자 굴에서 살아 나온 이야기로 알려져 있다.
 level_adult: 바빌론에 끌려간 유대 청년으로, 왕의 꿈을 풀이해 높은 자리에 올랐다. 왕의 잔치에서 벽에 저절로 글자가 나타났을 때 그것을 읽어 나라가 곧 무너진다고 알렸고, 그날 밤 그 일이 벌어졌다. 왕에게만 기도하라는 법을 어겨 사자 굴에 던져졌으나 상하지 않고 나왔다.
+say_en: "DAN-yul"
+say_ko: "대니얼"
 emblem: lion
 korea_parallel: ""
 traces: []

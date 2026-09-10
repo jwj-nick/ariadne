@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:poseidon}
 level_kid: 지혜와 전략과 기술을 맡은 여신이며, 아테네라는 도시의 이름이 여기서 왔다.
 level_adult: 제우스의 머리에서 갑옷을 갖춰 입은 채 태어났다고 전하며, 지혜와 전략과 손기술을 맡는다. 아레스가 싸움 그 자체를 맡는다면 이 여신은 싸움에서 이기는 방법을 맡아, 둘은 늘 대비된다. 포세이돈과 도시를 두고 겨룰 때 올리브 나무를 내놓아 이겼고, 그 도시가 아테네가 되었다.
+say_en: "uh-THEE-nuh"
+say_ko: "어씨나"
 emblem: owl
 korea_parallel: ""
 traces: []

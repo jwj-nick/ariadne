@@ -10,6 +10,8 @@ relations:
   - {rel: child_of, target: source:atlas}
 level_kid: 아틀라스의 일곱 딸이며, 쫓기다가 하늘로 올려져 별 무리가 되었다.
 level_adult: 하늘을 떠받치는 아틀라스의 일곱 딸이며, 사냥꾼 오리온에게 쫓기자 제우스가 비둘기로 바꾸었다가 하늘에 올려 별 무리로 만들었다. 맨눈으로는 예닐곱 개가 보이지만 실제로는 훨씬 많은 별이 모여 있으며, 서로 중력으로 묶인 진짜 무리다. 봄에 이 별이 지고 가을에 다시 뜨는 것을 보고 농사와 항해의 때를 정한 문화가 세계 곳곳에 있었다.
+say_en: "PLEE-uh-deez"
+say_ko: "플리어디즈"
 emblem: star
 korea_parallel: ""
 traces: []

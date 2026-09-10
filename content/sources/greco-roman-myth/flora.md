@@ -10,6 +10,8 @@ relations:
   - {rel: spouse_of, target: source:pan-god}
 level_kid: 꽃과 봄을 맡은 여신이며, 식물상을 뜻하는 낱말이 여기서 왔다.
 level_adult: 로마에서 꽃과 봄을 맡은 여신이며, 그리스의 님프 클로리스와 겹쳐 다뤄진다. 서풍의 신에게 붙들린 클로리스가 꽃의 여신 플로라로 바뀌었다는 이야기가 오비디우스에게 전하며, 보티첼리의 <봄>이 그 변화의 순간을 한 화면에 담았다. 지금 한 지역의 식물 전체를 뜻하는 낱말이 이 이름 그대로다.
+say_en: "FLOR-uh"
+say_ko: "플로러"
 emblem: seed
 korea_parallel: ""
 traces: []

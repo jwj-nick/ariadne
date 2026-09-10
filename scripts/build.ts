@@ -58,6 +58,14 @@ interface GraphSource {
    * 신화와 성경에는 두지 않는다. 연대를 못 박으면 없는 사실을 만들어 내게 된다.
    */
   year?: number;
+  /**
+   * 영어권에서 읽는 방식 (D43). 대문자가 강세다.
+   * 한국어 표기는 대개 그리스어 원음을 따르는데, 영어 화자는 라틴어를 거친 소리로 읽는다.
+   * 니케를 [나이키]로, 모세를 [모지즈]로 읽는 것을 모르면 영어로 말이 통하지 않는다.
+   */
+  say_en?: string;
+  /** 그것을 한글로 옮기면 */
+  say_ko?: string;
   /** 빌드가 채우는 역링크 */
   traces: string[];
   status: Status;
@@ -189,6 +197,8 @@ const sources: GraphSource[] = sourceCards.map((c) => {
       typeof (c.data as Record<string, unknown>).year === 'number'
         ? ((c.data as Record<string, unknown>).year as number)
         : undefined,
+    say_en: str((c.data as Record<string, unknown>).say_en) || undefined,
+    say_ko: str((c.data as Record<string, unknown>).say_ko) || undefined,
     traces: (backlinks.get(id) ?? []).sort(),
     status: c.data.status as Status,
     image: image(c.data as Record<string, unknown>),

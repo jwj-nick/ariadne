@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:zeus}
 level_kid: 눈앞의 물과 열매에 닿지 못한 채 영원히 굶주리게 된 왕.
 level_adult: 그리스 신화의 왕. 신들을 시험하려다 벌을 받아, 물속에 서 있는데도 마시려 하면 물이 빠지고 머리 위 열매를 따려 하면 가지가 물러나는 형벌을 받았다. 눈앞에 두고도 얻지 못하는 상태를 뜻하는 영어 낱말 tantalize 가 이 이름에서 나왔다.
+say_en: "TAN-tuh-lus"
+say_ko: "탠털러스"
 emblem: apple
 korea_parallel: ""
 traces: []

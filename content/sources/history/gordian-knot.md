@@ -11,6 +11,8 @@ relations:
   - {rel: precedes, target: source:alexander}
 level_kid: 푸는 사람이 아시아의 주인이 된다던, 아무도 풀지 못한 매듭.
 level_adult: 프리기아의 도시 고르디온에 있던 매듭. 풀어내는 사람이 아시아를 다스리게 된다는 말이 전해졌고, 아무도 풀지 못했다. 기원전 333년에 알렉산드로스가 이곳에 이르러 매듭을 칼로 잘라 버렸다고 전한다. 얽힌 문제를 정면으로 풀지 않고 단칼에 없애는 방식을 가리키는 말로 남았다.
+say_en: "GOR-dee-un"
+say_ko: "고디언"
 emblem: thread
 korea_parallel: ""
 traces: []

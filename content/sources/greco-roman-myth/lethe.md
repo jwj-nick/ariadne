@@ -10,6 +10,8 @@ relations:
   - {rel: companion_of, target: source:hades}
 level_kid: 저승에 흐르는 망각의 강이며, 그 물을 마시면 지난 삶을 잊는다.
 level_adult: 저승에 흐르는 다섯 강 가운데 하나이며, 그 물을 마시면 지난 삶을 모두 잊는다. 다시 태어나는 영혼은 반드시 이 물을 마셔야 했으므로, 사람이 전생을 기억하지 못하는 이유로 설명되었다. 진실을 뜻하는 그리스어 알레테이아는 이 낱말에 부정을 붙인 것으로, 잊히지 않은 것이라는 뜻이다.
+say_en: "LEE-thee"
+say_ko: "리씨"
 emblem: river
 korea_parallel: ""
 traces: []

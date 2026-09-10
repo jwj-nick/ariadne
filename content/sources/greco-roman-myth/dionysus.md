@@ -10,6 +10,8 @@ relations:
   - {rel: child_of, target: source:zeus}
 level_kid: 포도주와 도취와 연극의 신이다.
 level_adult: 제우스와 인간 세멜레 사이에서 태어났고, 어머니가 타 죽은 뒤 제우스의 넓적다리에서 자라 두 번 태어난 신이라 불린다. 포도 재배와 포도주를 사람에게 가르쳤고, 그를 따르는 무리는 도취 상태에서 춤추고 노래했다. 그 노래와 춤이 자라나 그리스 비극이 되었으므로, 서양 연극은 이 신의 축제에서 시작되었다.
+say_en: "dy-uh-NY-sus"
+say_ko: "다이어나이서스"
 emblem: grape
 korea_parallel: ""
 traces: []

@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:zeus}
 level_kid: 벌을 받아 하늘을 어깨로 떠받치고 서 있는 거인 신.
 level_adult: 티탄족의 하나. 올림포스 신들과의 전쟁에서 진 뒤, 세상 서쪽 끝에 서서 하늘을 어깨로 떠받치라는 벌을 받았다. 황금 사과를 구하러 온 헤라클레스에게 잠시 짐을 넘기고 벗어나려 했으나 다시 속아 제자리로 돌아갔다는 이야기가 유명하다.
+say_en: "AT-lus"
+say_ko: "애틀러스"
 emblem: shoulders
 korea_parallel: ""
 traces: []

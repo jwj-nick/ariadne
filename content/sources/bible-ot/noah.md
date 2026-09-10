@@ -10,6 +10,8 @@ relations:
   - {rel: appears_in, target: source:genesis-book}
 level_kid: 큰 홍수가 오기 전에 배를 지어 가족과 짐승을 태운 사람.
 level_adult: 구약 성경 창세기에 나오는 인물. 세상을 덮을 홍수가 온다는 말을 듣고 커다란 배를 지어 가족과 온갖 짐승을 태웠다. 물이 빠진 뒤 비둘기를 날려 마른 땅을 확인했고, 하늘의 무지개가 다시는 물로 덮지 않겠다는 표시가 되었다. 대홍수 이야기는 메소포타미아를 비롯해 여러 문화에 있다.
+say_en: "NOH-uh"
+say_ko: "노어"
 emblem: ship
 korea_parallel: ""
 traces: []

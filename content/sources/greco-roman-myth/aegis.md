@@ -10,6 +10,8 @@ relations:
   - {rel: parallel_of, target: source:zeus}
 level_kid: 제우스와 아테나가 지닌 방패이며, 가운데에 메두사의 얼굴이 붙어 있다.
 level_adult: 제우스가 지닌 방패이자 아테나가 물려받아 쓴 방패다. 흔들면 천둥과 폭풍이 일어나 적을 흩는다고 전하며, 한가운데에는 메두사의 머리가 붙어 그것을 본 자를 굳게 만든다. 그래서 이 낱말은 지금도 무엇을 완전히 감싸 지키는 보호막을 뜻한다.
+say_en: "EE-jis"
+say_ko: "이지스"
 emblem: shield
 korea_parallel: ""
 traces: []

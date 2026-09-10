@@ -10,6 +10,8 @@ relations:
   - {rel: lover_of, target: source:aphrodite}
 level_kid: 자기가 조각한 여인상을 사랑해, 사람이 되게 해 달라고 빈 조각가.
 level_adult: 키프로스의 조각가. 상아로 여인상을 새기고 그것을 사랑하게 되어, 아프로디테에게 그와 같은 아내를 달라고 빌었다. 여신이 조각상에 생명을 주어 둘이 부부가 되었다. 기대가 상대를 실제로 바꾸어 놓는다는 심리학 용어의 이름이 여기서 왔다.
+say_en: "pig-MAY-lee-un"
+say_ko: "피그메일리언"
 emblem: shell
 korea_parallel: ""
 traces: []

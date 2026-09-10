@@ -11,6 +11,8 @@ relations:
   - {rel: sibling_of, target: source:cronus}
 level_kid: 땅을 둘러싸고 흐르는 거대한 강이며, 그 강 자체인 티탄이다.
 level_adult: 우라노스와 가이아 사이에서 태어난 티탄이며, 땅을 빙 둘러 흐르는 거대한 강 그 자체다. 그리스 사람들은 세계가 평평한 원판이고 그 가장자리를 이 강이 감돌아 흐른다고 여겼으며, 모든 강과 샘이 여기서 나온다고 했다. 지금 대양을 뜻하는 낱말이 이 이름에서 왔다.
+say_en: "oh-SEE-uh-nus"
+say_ko: "오시어너스"
 emblem: river
 korea_parallel: ""
 traces: []

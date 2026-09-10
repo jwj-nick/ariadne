@@ -10,6 +10,8 @@ relations:
   - {rel: appears_in, target: source:zeus}
 level_kid: 신들이 모여 사는 그리스에서 가장 높은 산.
 level_adult: 그리스 북부에 실제로 있는 산이며, 그리스 신화에서 신들이 모여 사는 곳이다. 열두 신을 올림포스 신족이라 부르는 것이 여기서 나왔다. 높이가 2917미터로 그리스에서 가장 높다. 카메라 브랜드 올림푸스가 이 이름을 썼다.
+say_en: "oh-LIM-pus"
+say_ko: "올림퍼스"
 emblem: mountain
 korea_parallel: ""
 traces: []

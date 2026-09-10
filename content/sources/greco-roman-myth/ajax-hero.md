@@ -11,6 +11,8 @@ relations:
   - {rel: appears_in, target: source:trojan-horse}
 level_kid: 아킬레우스 다음으로 강했던 그리스 전사이며, 큰 방패를 든 것으로 유명하다.
 level_adult: 트로이 전쟁에 나온 그리스의 전사. 아킬레우스 다음으로 강했다고 전해지며, 소 일곱 마리 가죽을 겹쳐 만든 큰 방패로 알려져 있다. 아킬레우스가 죽은 뒤 그의 갑옷을 오디세우스에게 빼앗기자 실성해 스스로 목숨을 끊었다. 세제와 축구팀 이름으로 남았다.
+say_en: "AY-jaks"
+say_ko: "에이잭스"
 emblem: shell
 korea_parallel: ""
 traces: []

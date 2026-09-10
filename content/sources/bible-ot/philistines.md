@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:samson}
 level_kid: 구약에서 이스라엘과 오래 다툰 이웃 민족이며, 그 이름이 속물을 뜻하는 낱말이 되었다.
 level_adult: 지중해 연안에 자리 잡고 구약 시대 내내 이스라엘과 다툰 민족이며, 골리앗과 들릴라가 이 무리에 속한다. 성경이 적의 시선으로 기록했으므로 거칠고 우상을 섬기는 무리로 그려지지만, 고고학은 그들이 앞선 철기 문화를 지녔음을 보여 준다. 19세기 독일에서 대학생들이 교양 없는 시민을 이 이름으로 부른 뒤, 지금은 예술을 모르는 속물을 가리키는 낱말이 되었다.
+say_en: "FIL-uh-steenz"
+say_ko: "필러스틴즈"
 emblem: sword
 korea_parallel: ""
 traces: []

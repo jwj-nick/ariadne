@@ -9,6 +9,8 @@ aliases: [묵시록, Revelation]
 relations: []
 level_kid: 세상의 끝을 그린 신약의 마지막 책이며, 드러냄이라는 뜻이다.
 level_adult: 신약의 마지막 책이며, 그리스어 제목은 감춘 것을 벗긴다는 뜻의 아포칼립시스다. 일곱 봉인과 네 기사와 짐승과 마지막 심판이 잇달아 나오며, 서양 미술과 문학이 세상의 끝을 그릴 때 늘 이 책으로 돌아간다. 지금 아포칼립스는 종말 그 자체를 뜻하는 낱말이 되었다.
+say_en: "uh-POK-uh-lips"
+say_ko: "어파컬립스"
 emblem: scroll
 korea_parallel: ""
 traces: []

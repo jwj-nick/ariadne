@@ -10,6 +10,8 @@ relations:
   - {rel: appears_in, target: source:genesis-book}
 level_kid: 하늘까지 닿는 탑을 쌓으려다, 서로 말이 달라져서 흩어지게 된 이야기.
 level_adult: 구약 성경 창세기에 실린 이야기. 온 세상이 한 가지 말을 쓰던 때에 사람들이 꼭대기가 하늘에 닿는 탑을 세우려 했고, 그 결과 말이 갈라져 서로 알아듣지 못하게 되어 온 땅으로 흩어졌다. 언어가 여럿인 까닭을 설명하는 이야기이자, 인간의 오만을 다루는 이야기로 읽힌다.
+say_en: "BAY-bul"
+say_ko: "베이블"
 emblem: tower
 korea_parallel: ""
 traces: []

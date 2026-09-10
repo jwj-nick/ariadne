@@ -10,6 +10,8 @@ relations:
   - {rel: child_of, target: source:poseidon}
 level_kid: 소라고둥을 불어 파도를 일으키고 잠재우는, 반은 사람이고 반은 물고기인 바다의 신이다.
 level_adult: 포세이돈의 아들이며, 상반신은 사람이고 하반신은 물고기다. 소라고둥을 불어 파도를 일으키기도 하고 잠재우기도 하며, 아버지의 전령 노릇을 한다. 인어의 원형으로 여겨져 유럽의 분수와 조각에 자주 등장한다.
+say_en: "TRY-tun"
+say_ko: "트라이턴"
 emblem: shell
 korea_parallel: ""
 traces: []

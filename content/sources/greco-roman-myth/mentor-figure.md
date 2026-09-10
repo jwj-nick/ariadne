@@ -11,6 +11,8 @@ relations:
   - {rel: appears_in, target: source:odyssey}
 level_kid: 오디세우스가 전쟁에 나가면서 아들을 맡긴 오랜 친구.
 level_adult: 호메로스의 <오디세이아>에 나오는 이타카 사람. 오디세우스가 트로이로 떠나며 아들 텔레마코스와 집안을 맡긴 친구다. 정작 이야기 속에서 텔레마코스를 이끄는 것은 그의 모습을 빌린 아테나이며, 이 이름이 스승을 뜻하는 보통명사가 된 것은 17세기 프랑스 소설을 거친 뒤의 일이다.
+say_en: "MEN-tor"
+say_ko: "멘토"
 emblem: owl
 korea_parallel: ""
 traces: []

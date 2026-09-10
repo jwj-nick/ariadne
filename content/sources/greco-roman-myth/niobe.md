@@ -10,6 +10,8 @@ relations:
   - {rel: child_of, target: source:tantalus}
 level_kid: 자식이 많다고 자랑했다가 모두 잃고 돌이 되어 운 여인이다.
 level_adult: 탄탈로스의 딸이며 테베의 왕비였다. 자식이 열넷이나 되는 것을 자랑하며 아이가 둘뿐인 레토를 깔보았고, 그 두 아이 아폴론과 아르테미스가 활을 들어 니오베의 자식을 모두 쏘아 죽였다. 슬픔에 굳어 돌이 되었고, 그 바위에서는 지금도 물이 흘러내린다고 전한다.
+say_en: "NY-uh-bee"
+say_ko: "나이어비"
 emblem: rock
 korea_parallel: ""
 traces: []

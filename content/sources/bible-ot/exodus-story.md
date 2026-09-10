@@ -10,6 +10,8 @@ relations:
   - {rel: precedes, target: source:ten-commandments}
 level_kid: 이집트에서 노예로 살던 사람들이 모세를 따라 그곳을 빠져나온 이야기.
 level_adult: 구약 성경 출애굽기에 실린 이야기. 이집트에서 노예로 지내던 이스라엘 사람들이 모세를 따라 그 땅을 떠나고, 갈라진 바다를 건너 광야로 나아가 시나이 산에서 열 가지 계명을 받는다. 서양 문학과 음악과 영화에서 억압에서 벗어나는 이야기의 원형으로 반복해 쓰인다.
+say_en: "EK-suh-dus"
+say_ko: "엑서더스"
 emblem: river
 korea_parallel: ""
 traces: []

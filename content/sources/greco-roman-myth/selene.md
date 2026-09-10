@@ -11,6 +11,8 @@ relations:
   - {rel: sibling_of, target: source:eos}
 level_kid: 달 그 자체이며, 밤마다 은빛 수레를 몰고 하늘을 건넌다.
 level_adult: 해를 모는 헬리오스와 새벽을 여는 에오스의 누이이며, 달 그 자체다. 밤마다 은빛 수레를 몰고 하늘을 건너며, 잠든 미소년 엔디미온을 사랑해 밤마다 내려가 그를 보았다고 전한다. 제우스가 엔디미온에게 영원한 잠을 주어, 그는 늙지 않은 채 영원히 잠들어 있다.
+say_en: "suh-LEE-nee"
+say_ko: "설리니"
 emblem: moon
 korea_parallel: ""
 traces: []

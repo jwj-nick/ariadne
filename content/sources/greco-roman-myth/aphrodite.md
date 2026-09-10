@@ -12,6 +12,8 @@ relations:
   - {rel: parent_of, target: source:eros}
 level_kid: 아름다움과 사랑을 맡은 여신.
 level_adult: 그리스 신화에서 아름다움과 사랑을 맡은 여신. 바다 거품에서 태어났다는 이야기로 잘 알려져 있다. 로마 신화의 베누스와 같은 존재로 다루며, 그의 이름이 금성과 여러 예술 작품에 남았다. 트로이 전쟁이 시작된 황금 사과 다툼의 당사자이기도 하다.
+say_en: "af-ruh-DY-tee"
+say_ko: "애프러다이티"
 emblem: shell
 korea_parallel: ""
 traces: []

@@ -10,6 +10,8 @@ relations:
   - {rel: sibling_of, target: source:oedipus}
 level_kid: 아버지를 죽인 어머니에게 복수하려고 동생을 부추긴 딸이다.
 level_adult: 트로이에서 돌아온 아버지 아가멤논이 어머니 클리타임네스트라에게 살해되자, 멀리 보내진 동생 오레스테스가 돌아오기를 기다리며 복수를 벼른 딸이다. 동생이 돌아오자 그를 부추겨 어머니와 그 정부를 죽이게 했다. 그리스 비극 작가 셋이 모두 이 인물을 다루었고, 융이 오이디푸스 콤플렉스의 여성판에 이 이름을 붙였다.
+say_en: "i-LEK-truh"
+say_ko: "일렉트러"
 emblem: sword
 korea_parallel: ""
 traces: []

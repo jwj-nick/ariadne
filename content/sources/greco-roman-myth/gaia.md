@@ -11,6 +11,8 @@ relations:
   - {rel: spouse_of, target: source:uranus-sky}
 level_kid: 땅 그 자체이며, 신들의 어머니이자 최초의 존재 가운데 하나다.
 level_adult: 혼돈에서 가장 먼저 생겨난 존재 가운데 하나이며, 땅 그 자체다. 하늘인 우라노스를 낳아 짝으로 삼았고, 그 사이에서 티탄들이 태어났다. 우라노스가 자식을 가두자 막내 크로노스에게 낫을 주어 아버지를 치게 했고, 그 크로노스도 제 자식 제우스에게 자리를 빼앗겼다.
+say_en: "GY-uh"
+say_ko: "가이어"
 emblem: mountain
 korea_parallel: ""
 traces: []

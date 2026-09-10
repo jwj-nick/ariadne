@@ -10,6 +10,8 @@ relations:
   - {rel: killed_by, target: source:poseidon}
 level_kid: 눈이 마주친 사람을 돌로 만드는, 머리카락이 뱀인 괴물이다.
 level_adult: 고르곤 세 자매 가운데 유일하게 죽을 수 있는 존재였다. 원래 아름다운 여인이었으나 아테나의 신전에서 포세이돈과 얽힌 일로 저주를 받아 머리카락이 뱀이 되었다는 이야기가 널리 알려져 있다. 페르세우스가 거울처럼 닦은 방패에 비친 모습만 보고 목을 베었고, 그 머리는 이후 아테나의 방패에 붙어 적을 굳게 만드는 무기가 되었다.
+say_en: "muh-DOO-suh"
+say_ko: "머두서"
 emblem: serpent
 korea_parallel: ""
 traces: []

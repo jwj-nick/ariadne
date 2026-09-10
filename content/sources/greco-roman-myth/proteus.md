@@ -10,6 +10,8 @@ relations:
   - {rel: companion_of, target: source:poseidon}
 level_kid: 무엇으로든 모습을 바꿀 수 있는 바다의 신이며, 붙잡고 놓지 않아야 답을 얻는다.
 level_adult: 바다의 노인이라 불리는 신이며, 앞일을 알지만 말하기를 꺼려 붙잡으려 하면 사자와 뱀과 물과 불로 모습을 바꾸어 달아난다. 그 모든 변신을 견디며 놓지 않아야 비로소 본모습으로 돌아와 답을 준다. 무엇으로든 변한다는 성격에서 변화무쌍하다는 뜻의 낱말이 나왔다.
+say_en: "PROH-tee-us"
+say_ko: "프로티어스"
 emblem: wave
 korea_parallel: ""
 traces: []

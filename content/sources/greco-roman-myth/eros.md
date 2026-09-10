@@ -11,6 +11,8 @@ relations:
   - {rel: lover_of, target: source:psyche}
 level_kid: 사랑에 빠지게 만드는 화살을 쏘는, 날개 달린 신.
 level_adult: 그리스 신화에서 사랑과 욕망을 맡은 신. 로마에서는 쿠피도라고 불렀고 그것이 영어 큐피드가 되었다. 금 화살은 사랑하게 만들고 납 화살은 미워하게 만든다. 초기에는 청년으로 그려졌으나 후대에 아기 모습으로 굳었다.
+say_en: "AIR-ohs"
+say_ko: "에어로스"
 emblem: bow
 korea_parallel: ""
 traces: []

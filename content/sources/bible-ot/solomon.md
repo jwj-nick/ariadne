@@ -10,6 +10,8 @@ relations:
   - {rel: child_of, target: source:david-and-goliath}
 level_kid: 지혜로 이름난 왕이며, 두 여인의 다툼을 판가름한 재판으로 알려져 있다.
 level_adult: 다윗의 아들이며, 신이 무엇을 원하느냐 묻자 재물이나 장수가 아니라 판단할 지혜를 달라고 했다. 한 아기를 두고 서로 어머니라 주장하는 두 여인에게 아기를 반으로 갈라 나누라 명했고, 그 말에 놀라 포기한 쪽이 진짜 어머니임을 가려냈다. 예루살렘에 성전을 지었고, 잠언과 전도서와 아가가 그의 이름으로 전한다.
+say_en: "SOL-uh-mun"
+say_ko: "살러먼"
 emblem: scale
 korea_parallel: ""
 traces: []

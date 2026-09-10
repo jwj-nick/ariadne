@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:apollo}
 level_kid: 앞일을 정확히 알지만 아무도 믿어 주지 않게 된 트로이의 공주.
 level_adult: 트로이 왕 프리아모스의 딸. 아폴론에게 예언하는 능력을 얻었으나 그의 사랑을 거절해, 아무도 그 예언을 믿지 않게 되는 저주를 함께 받았다. 목마를 들이지 말라는 경고도 받아들여지지 않았다. 옳은 경고가 무시당하는 상황을 가리키는 말로 남았다.
+say_en: "kuh-SAN-druh"
+say_ko: "커샌드라"
 emblem: mask
 korea_parallel: ""
 traces: []

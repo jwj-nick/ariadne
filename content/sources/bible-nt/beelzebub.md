@@ -10,6 +10,8 @@ relations:
   - {rel: enemy_of, target: source:last-supper}
 level_kid: 파리의 왕이라는 뜻으로 불리는 악마의 이름.
 level_adult: 신약 성경에 악마의 우두머리를 가리키는 이름으로 나온다. 이름이 파리의 왕이라는 뜻으로 풀이되며, 원래는 이웃 민족이 섬기던 신의 이름을 낮추어 부른 말에서 왔다고 본다. 밀턴의 <실낙원>에서 사탄 다음가는 자리에 놓였고, 윌리엄 골딩의 소설 제목이 이 뜻을 그대로 옮긴 것이다.
+say_en: "bee-EL-zuh-bub"
+say_ko: "비엘저법"
 emblem: mask
 korea_parallel: ""
 traces: []

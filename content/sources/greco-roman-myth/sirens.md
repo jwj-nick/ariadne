@@ -10,6 +10,8 @@ relations:
   - {rel: enemy_of, target: source:odysseus}
 level_kid: 노랫소리로 뱃사람을 홀려 배를 부수게 만드는 바다의 요괴.
 level_adult: 그리스 신화에 나오는 바다의 존재. 아름다운 노래로 뱃사람을 홀려 바위로 끌어들인다. 오디세우스는 부하들의 귀를 밀랍으로 막고 자기 몸을 돛대에 묶어 그 노래를 들으면서도 살아남았다. 경보음을 뜻하는 사이렌이 이 이름에서 나왔다.
+say_en: "SY-runz"
+say_ko: "사이런즈"
 emblem: wave
 korea_parallel: ""
 traces: []

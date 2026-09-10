@@ -10,6 +10,8 @@ relations:
   - {rel: companion_of, target: source:hades}
 level_kid: 머리가 셋 달린 개이며, 저승의 문을 지켜 아무도 나가지 못하게 한다.
 level_adult: 저승의 문을 지키는 머리 셋 달린 개다. 들어오는 자는 막지 않고 나가려는 자만 막는다는 점이 이 짐승의 성격이며, 죽음이 한 방향이라는 뜻을 담고 있다. 헤라클레스의 열두 과업 가운데 마지막이 이 개를 산 채로 끌고 오는 일이었다.
+say_en: "SUR-buh-rus"
+say_ko: "서버러스"
 emblem: lion
 korea_parallel: ""
 traces: []

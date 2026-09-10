@@ -12,6 +12,8 @@ relations:
   - {rel: parent_of, target: source:amazons}
 level_kid: 싸움을 맡은 신이며, 전쟁터의 사납고 거친 쪽을 나타낸다.
 level_adult: 그리스 신화의 전쟁의 신. 같은 전쟁이라도 아테나가 지혜와 전략을 맡는다면 아레스는 피와 광기와 파괴를 맡는다. 그리스 이야기에서는 난폭하고 인기 없는 신으로 그려지지만, 로마의 마르스는 나라를 지키는 존경받는 신이었다.
+say_en: "AIR-eez"
+say_ko: "에어리즈"
 emblem: sword
 korea_parallel: ""
 traces: []

@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:aphrodite}
 level_kid: 얼굴을 보지 말라는 약속을 어겼다가 사랑을 잃고, 다시 찾아 나선 여인.
 level_adult: 그리스 신화에 나오는 사람의 여인. 아름다움 때문에 아프로디테의 미움을 샀고, 얼굴을 보지 말라는 약속을 어겨 에로스를 잃은 뒤 온갖 시련을 거쳐 다시 만난다. 이름이 그리스어로 영혼이나 나비를 뜻하며, 심리학을 가리키는 psychology 의 뿌리다.
+say_en: "SY-kee"
+say_ko: "사이키"
 emblem: wing
 korea_parallel: 금기를 어겨 사랑을 잃는 짜임이 한국의 「선녀와 나무꾼」과 같다.
 traces: []

@@ -10,6 +10,8 @@ relations:
   - {rel: sibling_of, target: source:hypnos}
 level_kid: 죽음 그 자체이며, 잠의 신 히프노스와 쌍둥이다.
 level_adult: 죽음을 맡은 신이며 잠의 신 히프노스와 쌍둥이 형제다. 그리스 미술에서는 무서운 존재가 아니라 조용한 젊은이로 그려지고, 잠든 이를 데려가듯 손을 얹는다. 프로이트가 삶을 향한 충동인 에로스와 짝을 이루는 죽음 충동에 이 이름을 붙이면서, 심리학의 용어가 되었다.
+say_en: "THAN-uh-tos"
+say_ko: "쌔너타스"
 emblem: moon
 korea_parallel: ""
 traces: []

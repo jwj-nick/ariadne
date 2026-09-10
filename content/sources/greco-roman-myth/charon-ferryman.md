@@ -10,6 +10,8 @@ relations:
   - {rel: companion_of, target: source:hades}
 level_kid: 죽은 이를 저승의 강 건너로 실어 나르는 뱃사공이다.
 level_adult: 스틱스 또는 아케론이라 불리는 저승의 강에서 죽은 이를 건너편으로 실어 나르는 뱃사공이다. 뱃삯을 받아야만 태워 주었으므로, 그리스 사람들은 죽은 이의 입에 동전 한 닢을 넣어 묻었다. 삯을 내지 못한 영혼은 백 년 동안 강가를 떠돌아야 했다.
+say_en: "KAIR-un"
+say_ko: "캐런"
 emblem: ship
 korea_parallel: ""
 traces: []

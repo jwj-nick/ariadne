@@ -10,6 +10,8 @@ relations:
   - {rel: appears_in, target: source:exodus-story}
 level_kid: 이집트에서 노예로 살던 무리를 이끌고 나와 율법을 받은 인물이다.
 level_adult: 갈대 상자에 담겨 강에 띄워진 아기가 이집트 공주에게 거두어져 왕궁에서 자랐고, 뒤에 자기 뿌리를 알고 노예로 살던 무리를 이끌고 이집트를 떠났다. 바다가 갈라지는 길을 지나 광야로 나왔고, 시내산에서 십계를 받았다. 약속된 땅을 눈으로만 보고 들어가지는 못한 채 죽었다.
+say_en: "MOH-ziz"
+say_ko: "모지즈"
 emblem: staff
 korea_parallel: ""
 traces: []

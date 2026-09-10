@@ -11,6 +11,8 @@ relations:
   - {rel: child_of, target: source:cronus}
 level_kid: 올림포스의 여왕이며 결혼을 지키는 여신이다.
 level_adult: 제우스의 아내이자 누이이며, 결혼과 출산을 지키는 여신이다. 남편의 끝없는 바람기 때문에 질투하는 아내로 그려지는 일이 많고, 그 상대와 자식들을 집요하게 괴롭히는 이야기가 여럿 전한다. 헤라클레스라는 이름부터가 헤라의 영광이라는 뜻인데, 정작 그는 이 여신에게 평생 시달렸다.
+say_en: "HEER-uh"
+say_ko: "히러"
 emblem: crown
 korea_parallel: ""
 traces: []

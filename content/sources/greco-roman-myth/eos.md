@@ -10,6 +10,8 @@ relations:
   - {rel: sibling_of, target: source:helios}
 level_kid: 새벽을 맡은 여신이며, 날마다 먼저 나아가 하늘의 문을 연다.
 level_adult: 해를 모는 헬리오스의 누이이며, 날마다 오빠보다 먼저 나아가 하늘의 문을 열고 길을 낸다. 호메로스는 그를 장밋빛 손가락을 지녔다고 되풀이해 불렀다. 인간 티토노스를 사랑해 제우스에게 영원한 삶을 빌었으나 영원한 젊음을 함께 빌지 못해, 그는 죽지도 못한 채 한없이 늙어 갔다.
+say_en: "EE-os"
+say_ko: "이아스"
 emblem: sun
 korea_parallel: ""
 traces: []

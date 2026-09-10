@@ -10,6 +10,8 @@ relations:
   - {rel: companion_of, target: source:zeus}
 level_kid: 아기 제우스에게 젖을 먹인 염소이며, 그 뿔이 무엇이든 끝없이 내놓는 풍요의 뿔이 되었다.
 level_adult: 아버지 크로노스에게 삼켜지지 않으려고 숨겨진 아기 제우스에게 젖을 먹인 염소다. 제우스가 놀다가 그 뿔 하나를 부러뜨렸고, 미안한 마음에 그 뿔에서 무엇이든 원하는 것이 끝없이 나오게 했다. 열매와 곡식이 쏟아져 나오는 뿔 그림이 서양 미술에서 풍요를 나타내는 표지가 되었다.
+say_en: "am-uhl-THEE-uh"
+say_ko: "애멀씨어"
 emblem: goat
 korea_parallel: ""
 traces: []

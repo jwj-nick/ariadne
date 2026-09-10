@@ -10,6 +10,8 @@ relations:
   - {rel: companion_of, target: source:zeus}
 level_kid: 가장 아름다운 인간이라 하여 독수리에게 채여 올라간 소년이며, 신들의 술을 따르는 일을 맡았다.
 level_adult: 트로이의 왕자였으며 인간 가운데 가장 아름답다 하여 제우스가 독수리로 변해 채어 올라갔다. 올림포스에서 신들의 잔에 술을 따르는 일을 맡았고, 그 대가로 아버지에게는 신의 말이 주어졌다. 영원한 젊음을 얻은 인물로 그려지며, 물병자리가 그를 하늘에 올린 것이라고 전한다.
+say_en: "GAN-uh-meed"
+say_ko: "개너미드"
 emblem: cup
 korea_parallel: ""
 traces: []

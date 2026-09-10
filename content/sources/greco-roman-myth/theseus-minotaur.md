@@ -11,6 +11,8 @@ relations:
   - {rel: appears_in, target: source:ariadne}
 level_kid: 해마다 아이들을 바쳐야 했던 미궁의 괴물을, 아테네 왕자가 들어가 물리친 이야기.
 level_adult: 크레타의 미궁에 갇힌 소머리 괴물 미노타우로스에게 아테네가 해마다 젊은이들을 바쳐야 했고, 왕자 테세우스가 스스로 그 무리에 끼어 들어가 괴물을 죽인 이야기. 아리아드네가 준 실타래 덕에 미궁을 빠져나왔다. 강자에게 바치는 조공과 그것을 끊는 영웅이라는 짜임이 뒷날 여러 작품에 되풀이해 쓰인다.
+say_en: "THEE-see-us / MIN-uh-tor"
+say_ko: "씨시어스 / 미너토"
 emblem: maze
 korea_parallel: ""
 traces: []

@@ -10,6 +10,8 @@ relations:
   - {rel: child_of, target: source:asclepius}
 level_kid: 병에 걸리지 않도록 지켜 주는 건강의 여신.
 level_adult: 그리스 신화에서 건강과 청결을 맡은 여신. 의술의 신 아스클레피오스의 딸이며, 병을 고치는 쪽이 아버지라면 애초에 병에 걸리지 않게 하는 쪽이 딸이다. 위생을 뜻하는 hygiene 이 이 이름에서 왔다. 뱀이 잔에서 물을 마시는 그림이 약국의 상징으로 유럽에 널리 쓰인다.
+say_en: "hy-JEE-uh"
+say_ko: "하이지어"
 emblem: staff
 korea_parallel: ""
 traces: []

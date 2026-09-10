@@ -11,6 +11,8 @@ relations:
   - {rel: parent_of, target: source:hygieia}
 level_kid: 죽은 사람까지 살려 낸 의술의 신이며, 뱀이 감긴 지팡이가 그의 표지다.
 level_adult: 아폴론의 아들이며 케이론에게서 의술을 배웠다. 솜씨가 뛰어나 죽은 사람까지 되살리자, 저승이 비어 간다는 하데스의 항의를 받은 제우스가 번개로 그를 쳤다. 죽은 뒤 신이 되었고, 뱀 한 마리가 감긴 지팡이가 그의 표지로 남아 지금도 의료 기관의 표지로 쓰인다.
+say_en: "uh-SKLEE-pee-us"
+say_ko: "어스클리피어스"
 emblem: staff
 korea_parallel: ""
 traces: []

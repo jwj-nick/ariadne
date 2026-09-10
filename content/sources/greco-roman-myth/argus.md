@@ -10,6 +10,8 @@ relations:
   - {rel: killed_by, target: source:hermes}
 level_kid: 온몸에 백 개의 눈이 달려, 잠들 때도 절반은 뜨고 있는 파수꾼이다.
 level_adult: 헤라가 감시를 맡긴 거인으로, 온몸에 백 개의 눈이 달려 있어 잠들어도 절반은 뜨고 있었다. 제우스가 헤르메스를 보내 이야기와 피리로 모든 눈을 잠재운 뒤 목을 베게 했다. 헤라는 그 눈들을 거두어 공작의 꼬리에 붙였고, 그래서 공작 깃에는 지금도 눈 무늬가 있다.
+say_en: "AR-gus"
+say_ko: "아거스"
 emblem: eye
 korea_parallel: ""
 traces: []

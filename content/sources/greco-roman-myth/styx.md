@@ -10,6 +10,8 @@ relations:
   - {rel: companion_of, target: source:hades}
 level_kid: 저승을 감돌아 흐르는 강이며, 신들조차 이 강에 걸고 한 맹세는 어기지 못한다.
 level_adult: 저승을 아홉 번 감돌아 흐르는 강이며, 죽은 이가 건너야 하는 물이다. 신들이 이 강에 걸고 맹세하면 결코 어길 수 없었고, 어기면 아홉 해 동안 말도 못 하고 신들의 자리에서 쫓겨났다. 아킬레우스의 어머니가 아기를 이 물에 담가 상하지 않는 몸으로 만들었다.
+say_en: "STIKS"
+say_ko: "스틱스"
 emblem: river
 korea_parallel: ""
 traces: []

@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:hera}
 level_kid: 제우스에게 사랑받아 암소가 된 여인이며, 등에에 쫓겨 헤맨 바다에 그 이름이 남았다.
 level_adult: 헤라의 여사제였으나 제우스의 눈에 들었고, 헤라의 눈을 피하려고 제우스가 그를 흰 암소로 바꾸었다. 헤라가 그 소를 달라 하여 백 개의 눈을 가진 아르고스에게 지키게 했고, 헤르메스가 아르고스를 죽인 뒤에는 등에를 보내 소를 쫓게 했다. 이오가 미친 듯 헤매며 건넌 바다가 보스포루스이며, 그 이름이 소가 건넌 곳이라는 뜻이다.
+say_en: "EYE-oh"
+say_ko: "아이오"
 emblem: bull
 korea_parallel: ""
 traces: []

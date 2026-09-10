@@ -10,6 +10,8 @@ relations:
   - {rel: killed_by, target: source:heracles}
 level_kid: 목을 하나 자르면 둘이 돋아나는 여러 머리의 물뱀이다.
 level_adult: 레르나의 늪에 살던 여러 머리의 물뱀이며, 목을 하나 자르면 그 자리에서 둘이 돋아났다. 헤라클레스의 열두 과업 가운데 둘째가 이것을 죽이는 일이었고, 조카 이올라오스가 자른 자리를 불로 지져 새 머리가 돋지 못하게 하여 겨우 처치했다. 그 피에 담근 화살이 낫지 않는 상처를 남기게 되어, 나중에 헤라클레스 자신과 케이론이 그 화살에 당한다.
+say_en: "HY-druh"
+say_ko: "하이드러"
 emblem: serpent
 korea_parallel: ""
 traces: []

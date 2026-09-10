@@ -11,6 +11,8 @@ relations:
   - {rel: child_of, target: source:aphrodite}
 level_kid: 님프와 한 몸이 되어 남녀가 겹친 존재가 된 미소년이다.
 level_adult: 헤르메스와 아프로디테 사이에서 태어난 미소년이며, 이름은 두 부모의 이름을 이어 붙인 것이다. 살마키스라는 님프가 그를 사랑해 샘에서 껴안고 둘이 결코 떨어지지 않게 해 달라고 빌었고, 신들이 그 소원을 그대로 들어주어 두 몸이 하나가 되었다. 남녀의 특징을 함께 지닌 상태를 가리키는 낱말이 이 이름에서 나왔다.
+say_en: "hur-maf-ruh-DY-tus"
+say_ko: "허매프러다이터스"
 emblem: mirror
 korea_parallel: ""
 traces: []

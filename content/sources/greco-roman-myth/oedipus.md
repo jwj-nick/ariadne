@@ -11,6 +11,8 @@ relations:
   - {rel: enemy_of, target: source:sphinx}
 level_kid: 스핑크스의 수수께끼를 풀었지만, 피하려 했던 예언대로 살게 된 왕.
 level_adult: 테베의 왕. 아버지를 죽이고 어머니와 혼인하리라는 신탁을 피하려 했으나, 피하려 한 행동이 도리어 그대로 이루어졌다. 스핑크스의 수수께끼를 푼 인물이기도 하다. 소포클레스의 비극 <오이디푸스 왕>이 서양 연극의 표본으로 꼽히며, 프로이트가 여기서 개념 이름을 가져왔다.
+say_en: "ED-uh-pus"
+say_ko: "에더퍼스"
 emblem: mask
 korea_parallel: ""
 traces: []
