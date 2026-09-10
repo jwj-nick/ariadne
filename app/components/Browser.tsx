@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Emblem from './Emblem';
-import { score } from '../lib/search';
+import { josa } from '../lib/korean';
+import { score, suggest } from '../lib/search';
 
 export interface BrowseItem {
   id: string;
@@ -91,6 +92,26 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
       .sort((a, b) => b.s - a.s || b.it.frequency - a.it.frequency || a.it.name_ko.localeCompare(b.it.name_ko, 'ko'))
       .map((r) => r.it);
   }, [pool, q, group, bodies]);
+
+  /**
+   * 헛쳤을 때 가장 가까운 이름 (D41).
+   *
+   * 결과가 하나라도 있으면 계산하지 않는다. 0건일 때만 한 번 도는 것이므로
+   * 오백 장을 다 훑어도 폰에서 느껴지지 않는다.
+   * 갈래로 좁혀 둔 상태에서도 이름은 전체에서 찾는다. 다른 갈래에 있는 것을
+   * 못 찾았을 수도 있기 때문이다.
+   */
+  const hint = useMemo(() => {
+    if (results.length > 0 || !q.trim()) return null;
+    const docs = [...traces, ...sources].map((it) => ({
+      id: it.id,
+      ko: it.name_ko.toLowerCase(),
+      en: it.name_en.toLowerCase(),
+      terms: it.terms,
+      blurb: '',
+    }));
+    return suggest(docs, q);
+  }, [results.length, q, traces, sources]);
 
   // 검색어나 갈래가 바뀌면 다시 처음부터 보여 준다.
   useEffect(() => setShown(PAGE), [q, group, tab]);
@@ -198,6 +219,22 @@ export default function Browser({ traces, sources }: { traces: BrowseItem[]; sou
       <p className="mt-5 mb-2 text-[12px]" style={{ color: 'var(--muted)' }}>
         {results.length}개
       </p>
+
+      {/* 헛쳤을 때 (D41). 0건이라고만 하고 끝내면 사람은 자기가 틀린 줄 모른다. */}
+      {hint && (
+        <button
+          type="button"
+          onClick={() => {
+            setQ(hint.term);
+            setGroup(null);
+          }}
+          className="mb-2 w-full rounded-lg px-3.5 py-3 text-left text-[14px]"
+          style={{ background: 'var(--thread-soft)', color: 'var(--thread)' }}
+        >
+          혹시 <strong>{hint.term}</strong>
+          {josa(hint.term, '을/를')} 찾으셨습니까?
+        </button>
+      )}
 
       <ul className="flex flex-col gap-2">
         {results.slice(0, shown).map((it) => (

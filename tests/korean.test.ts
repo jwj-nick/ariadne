@@ -1,7 +1,7 @@
 /** 한국어 조사 선택기 테스트. 퀴즈 문제의 말이 어색해지는 것을 막는다. */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { hasBatchim, josa, withJosa } from '../scripts/lib/korean.ts';
+import { hasBatchim, josa, withJosa } from '../app/lib/korean.ts';
 
 test('한글 받침을 알아본다', () => {
   assert.equal(hasBatchim('아킬레스건'), true);

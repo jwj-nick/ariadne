@@ -15,7 +15,7 @@ import {
 } from '../lib/learning/sm2';
 import { store, type Level } from '../lib/store';
 import LearnCard from './LearnCard';
-import { thumbUrl } from '../lib/image';
+import { framing, thumbUrl } from '../lib/image';
 import ThreadReveal from './ThreadReveal';
 
 export interface QuizItemView {
@@ -52,21 +52,29 @@ export interface NodeMeta {
 function QuizArt({ file }: { file: string }) {
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [pos, setPos] = useState('center');
+  // 세로로 긴 그림은 16:10 칸에서 특히 심하게 잘린다. 위쪽을 남긴다 (D40).
+  const [tall, setTall] = useState(false);
   if (failed) return null;
   return (
     <div
       className="mt-3 overflow-hidden rounded-lg"
-      style={{ aspectRatio: '16 / 10', background: 'var(--thread-soft)' }}
+      style={{ aspectRatio: tall ? '4 / 3' : '16 / 10', background: 'var(--thread-soft)' }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={thumbUrl(file, 760)}
         alt=""
         decoding="async"
-        onLoad={() => setLoaded(true)}
+        onLoad={(e) => {
+          const img = e.currentTarget;
+          setTall(img.naturalHeight > img.naturalWidth * 1.15);
+          setPos(framing(img));
+          setLoaded(true);
+        }}
         onError={() => setFailed(true)}
         className="h-full w-full object-cover"
-        style={{ opacity: loaded ? 1 : 0, transition: 'opacity 250ms ease' }}
+        style={{ objectPosition: pos, opacity: loaded ? 1 : 0, transition: 'opacity 250ms ease' }}
       />
     </div>
   );

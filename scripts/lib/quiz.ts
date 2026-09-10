@@ -30,7 +30,7 @@
  */
 import type { Card } from './content.ts';
 import { isSource, isTrace } from './content.ts';
-import { josa } from './korean.ts';
+import { josa } from '../../app/lib/korean.ts';
 
 export type QuizType = 'trace_to_source' | 'idiom_origin' | 'explain_why' | 'source_group';
 export type Level = 'kid' | 'adult';

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Emblem from './Emblem';
-import { thumbUrl } from '../lib/image';
+import { framing, thumbUrl } from '../lib/image';
 
 export interface CellCard {
   id: string;
@@ -24,6 +24,7 @@ export interface CellCard {
 export default function CardCell({ card }: { card: CellCard }) {
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [pos, setPos] = useState('center');
   const src = card.file ? thumbUrl(card.file, 200) : null;
 
   return (
@@ -43,10 +44,13 @@ export default function CardCell({ card }: { card: CellCard }) {
             alt=""
             loading="lazy"
             decoding="async"
-            onLoad={() => setLoaded(true)}
+            onLoad={(e) => {
+              setPos(framing(e.currentTarget));
+              setLoaded(true);
+            }}
             onError={() => setFailed(true)}
             className="h-full w-full object-cover"
-            style={{ opacity: loaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+            style={{ objectPosition: pos, opacity: loaded ? 1 : 0, transition: 'opacity 200ms ease' }}
           />
         ) : null}
         {/* 그림이 아직 없거나 못 왔을 때 자리를 지킨다. */}

@@ -19,3 +19,17 @@ export function thumbUrl(file: string, width = 200): string {
 export function sourcePage(file: string): string {
   return `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, '_'))}`;
 }
+
+/**
+ * 잘라 낼 때 어디를 남길지 정한다 (D40).
+ *
+ * 격자 칸은 정사각형인데 조각상과 초상화는 세로로 길다. 가운데를 기준으로 자르면
+ * 머리가 잘려 나가 누구인지 알아볼 수 없게 된다. 볼보 카드의 아레스 상이 그랬다.
+ * 세로로 긴 그림만 위쪽을 남기고, 가로로 긴 그림과 정사각형에 가까운 것은 그대로 둔다.
+ *
+ * 그림을 받아 보기 전에는 비율을 알 수 없으므로 onLoad 에서 부른다.
+ */
+export function framing(img: { naturalWidth: number; naturalHeight: number }): string {
+  if (img.naturalWidth === 0) return 'center';
+  return img.naturalHeight > img.naturalWidth * 1.15 ? 'center 18%' : 'center';
+}

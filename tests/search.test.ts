@@ -7,7 +7,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-const { score, chosung, tokenize, bodyIndex } = await import('../app/lib/search.ts');
+const { score, chosung, tokenize, bodyIndex, editDistance, suggest } = await import('../app/lib/search.ts');
 
 const nike = {
   id: 'trace:nike',
@@ -118,4 +118,47 @@ test('본문 색인은 겹치는 낱말을 지우고 한 글자를 버린다', (
 test('빈 검색어는 아무 것도 맞히지 않는다', () => {
   assert.equal(score(nike, ''), 0);
   assert.equal(score(nike, '   '), 0);
+});
+
+// ── 오타 교정 (D41) ─────────────────────────────────────────────────
+const heracles = {
+  id: 'source:heracles',
+  ko: '헤라클레스',
+  en: 'heracles',
+  terms: ['헤라클레스', 'heracles', 'hercules', '헤르쿨레스'],
+  blurb: '열두 과업을 치른 영웅이다.',
+};
+const docs = [nike, pandorasBox, heracles];
+
+test('편집 거리 — 한 글자 차이', () => {
+  assert.equal(editDistance('헤라클레스', '헤라클레스'), 0);
+  assert.equal(editDistance('헤라클래스', '헤라클레스'), 1);
+  assert.equal(editDistance('헤라크래스', '헤라클레스'), 2);
+  // 한계를 넘으면 끝까지 세지 않는다.
+  assert.ok(editDistance('가나다라마', '헤라클레스', 2) > 2);
+  // 길이 차이가 한계를 넘으면 바로 돌려준다.
+  assert.ok(editDistance('헤', '헤라클레스', 2) > 2);
+});
+
+test('헛친 검색어에 가장 가까운 이름을 찾는다', () => {
+  assert.equal(suggest(docs, '헤라클래스')?.term, '헤라클레스');
+  assert.equal(suggest(docs, '나이크')?.term, '나이키');
+  assert.equal(suggest(docs, 'heracels')?.term, 'heracles');
+});
+
+test('제대로 친 말은 교정하지 않는다', () => {
+  // 맞는 말이라도 자기 자신이 거리 0 으로 걸린다. 부르는 쪽이 결과 0건일 때만 부르므로 문제되지 않는다.
+  assert.equal(suggest(docs, '헤라클레스')?.distance, 0);
+});
+
+test('너무 짧거나 너무 먼 말은 교정하지 않는다', () => {
+  // 두 글자 이하는 한 글자만 달라도 다른 낱말이 된다.
+  assert.equal(suggest(docs, '나이'), null);
+  assert.equal(suggest(docs, '고구려백제신라'), null);
+});
+
+test('짧은 말일수록 좁게 본다', () => {
+  // 세 글자는 한 글자까지만 봐준다.
+  assert.equal(suggest(docs, '나이키')?.distance, 0);
+  assert.equal(suggest(docs, '가나다'), null);
 });

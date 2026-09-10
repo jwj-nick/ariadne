@@ -11,8 +11,8 @@
  *  3. 어디서 걸렸는지에 따라 점수를 매겨 정렬한다. 이름이 걸린 것이 본문이 걸린 것보다 앞에 온다.
  *  4. 한글 초성만 친 경우에는 초성으로 맞춰 본다. 폰에서 길게 치지 않아도 되게 하려는 것이다.
  *
- * 여기에 없는 것: 오타 교정. 편집 거리 계산은 삼백 장 × 낱말마다 돌리기에 무거워,
- * 실제로 필요해지는 시점까지 미룬다.
+ * 오타 교정(D41)은 **결과가 하나도 없을 때만** 돈다. 편집 거리 계산은 글자마다 돌리기에는
+ * 무겁지만, 헛친 뒤 한 번 도는 것은 오백 장이라도 순식간이다.
  */
 
 export interface SearchDoc {
@@ -156,4 +156,67 @@ export function bodyIndex(body: string): string {
   const seen = new Set(headWords);
   const restWords = words(rest).filter((w) => !seen.has(w));
   return headWords.join(' ') + '\t' + restWords.join(' ');
+}
+
+/**
+ * 두 낱말이 얼마나 다른가 (Levenshtein 편집 거리).
+ *
+ * 한글은 글자 단위로 센다. "헤라클래스" 와 "헤라클레스" 는 한 글자 차이다.
+ * 자모까지 쪼개면 더 정확하지만, 실제로 틀리는 것은 대개 한 글자라 여기까지면 충분하다.
+ *
+ * limit 을 넘어서면 계산을 멈추고 limit + 1 을 돌려준다. 먼 것을 끝까지 세어 봐야 쓸 데가 없다.
+ */
+export function editDistance(a: string, b: string, limit = 2): number {
+  if (a === b) return 0;
+  if (Math.abs(a.length - b.length) > limit) return limit + 1;
+  let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i];
+    let best = i;
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      const v = Math.min(prev[j]! + 1, cur[j - 1]! + 1, prev[j - 1]! + cost);
+      cur.push(v);
+      if (v < best) best = v;
+    }
+    // 이 줄에서 가장 가까운 값조차 한계를 넘으면 더 볼 것이 없다.
+    if (best > limit) return limit + 1;
+    prev = cur;
+  }
+  return prev[b.length]!;
+}
+
+export interface Suggestion {
+  /** 찾아 준 이름 */
+  term: string;
+  /** 몇 글자 다른가 */
+  distance: number;
+}
+
+/**
+ * 헛친 검색어에 가장 가까운 이름을 찾는다 (D41).
+ *
+ * 결과가 0건일 때만 부른다. 검색어가 짧으면 한 글자만 달라도 다른 낱말이 되므로
+ * 길이에 따라 허용 범위를 좁힌다. 두 글자 이하는 아예 교정하지 않는다.
+ */
+export function suggest(docs: SearchDoc[], query: string): Suggestion | null {
+  const q = query.trim().toLowerCase().replace(/\s+/g, '');
+  if (q.length < 3) return null;
+  // 세 글자면 한 글자, 다섯 글자부터 두 글자까지 봐준다.
+  const limit = q.length >= 5 ? 2 : 1;
+
+  let best: Suggestion | null = null;
+  for (const doc of docs) {
+    for (const raw of [doc.ko, doc.en, ...doc.terms]) {
+      const cand = raw.replace(/\s+/g, '');
+      if (!cand || cand.length < 3) continue;
+      const d = editDistance(q, cand, limit);
+      if (d > limit) continue;
+      if (!best || d < best.distance || (d === best.distance && raw.length < best.term.length)) {
+        best = { term: raw, distance: d };
+      }
+      if (best.distance === 1) break;
+    }
+  }
+  return best;
 }

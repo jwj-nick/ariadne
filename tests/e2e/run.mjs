@@ -387,6 +387,26 @@ try {
       // 이름에는 없고 domain_hint 로만 걸리는 검색이다.
       expect('검색 "nasa" (domain_hint)', await s.js(CARDS), searchHits('nasa'));
 
+      // 헛쳐도 가까운 이름을 찾아 준다 (D41).
+      await s.js(clearSearch);
+      await sleep(250);
+      await s.js('document.querySelector("input[type=search]").focus()');
+      await s.send('Input.insertText', { text: '헤라클래스' });
+      await sleep(700);
+      expect('헛친 검색은 0건이다', await s.js(CARDS), 0);
+      expect(
+        '헛치면 가까운 이름을 알려 준다',
+        await s.js(`document.querySelector('main')?.textContent.includes('혹시 헤라클레스') ?? false`),
+        true,
+      );
+      await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('혹시')).click()`);
+      await sleep(600);
+      expect(
+        '눌러 주면 그 이름으로 다시 찾는다',
+        await s.js(`document.querySelector('input[type=search]')?.value`),
+        '헤라클레스',
+      );
+
       await s.js(clearSearch);
       await sleep(250);
       await s.js(`[...document.querySelectorAll('main button')].find(b => b.textContent.startsWith('브랜드')).click()`);

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Emblem from './Emblem';
-import { thumbUrl } from '../lib/image';
+import { framing, thumbUrl } from '../lib/image';
 
 /**
  * 오늘 처음 만나는 이름을 보여 주는 자리 (D36).
@@ -39,6 +39,7 @@ export default function LearnCard({
 }) {
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [pos, setPos] = useState('center');
   const src = file ? thumbUrl(file, 760) : null;
 
   return (
@@ -53,10 +54,13 @@ export default function LearnCard({
             src={src}
             alt=""
             decoding="async"
-            onLoad={() => setLoaded(true)}
+            onLoad={(e) => {
+              setPos(framing(e.currentTarget));
+              setLoaded(true);
+            }}
             onError={() => setFailed(true)}
             className="h-full w-full object-cover"
-            style={{ opacity: loaded ? 1 : 0, transition: 'opacity 250ms ease' }}
+            style={{ objectPosition: pos, opacity: loaded ? 1 : 0, transition: 'opacity 250ms ease' }}
           />
         ) : null}
         {(!src || failed || !loaded) && (

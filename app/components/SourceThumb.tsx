@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { thumbUrl } from '../lib/image';
+import { framing, thumbUrl } from '../lib/image';
 
 /**
  * 흔적 카드에 곁들이는 원천의 작은 그림 (D32).
@@ -25,6 +25,7 @@ export default function SourceThumb({
 }) {
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [pos, setPos] = useState('center');
   if (failed) return null;
 
   return (
@@ -43,10 +44,13 @@ export default function SourceThumb({
           alt=""
           loading="lazy"
           decoding="async"
-          onLoad={() => setLoaded(true)}
+          onLoad={(e) => {
+              setPos(framing(e.currentTarget));
+              setLoaded(true);
+            }}
           onError={() => setFailed(true)}
           className="h-full w-full object-cover"
-          style={{ opacity: loaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+          style={{ objectPosition: pos, opacity: loaded ? 1 : 0, transition: 'opacity 200ms ease' }}
         />
       </span>
       <span className="min-w-0 text-[12px] leading-snug" style={{ color: 'var(--thread)' }}>

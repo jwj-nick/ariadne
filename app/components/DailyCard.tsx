@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Emblem from './Emblem';
-import { thumbUrl } from '../lib/image';
+import { framing, thumbUrl } from '../lib/image';
 import { today } from '../lib/learning/sm2';
 
 export interface DailyItem {
@@ -41,6 +41,7 @@ export default function DailyCard({ items }: { items: DailyItem[] }) {
   const item = items[idx];
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [pos, setPos] = useState('center');
 
   // 고른 것이 바뀌면 그림도 처음부터 다시 받는다.
   useEffect(() => {
@@ -71,10 +72,13 @@ export default function DailyCard({ items }: { items: DailyItem[] }) {
               src={src}
               alt=""
               decoding="async"
-              onLoad={() => setLoaded(true)}
+              onLoad={(e) => {
+              setPos(framing(e.currentTarget));
+              setLoaded(true);
+            }}
               onError={() => setFailed(true)}
               className="h-full w-full object-cover"
-              style={{ opacity: loaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+              style={{ objectPosition: pos, opacity: loaded ? 1 : 0, transition: 'opacity 200ms ease' }}
             />
           ) : null}
           {(!src || failed || !loaded) && (
