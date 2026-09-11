@@ -3,6 +3,7 @@ id: trace:bosphorus
 type: trace
 category: place
 group: sea
+map_spot: bosphorus
 name_ko: 보스포루스
 name_en: Bosphorus
 sources: [source:io]

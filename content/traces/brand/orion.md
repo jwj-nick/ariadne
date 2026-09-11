@@ -3,6 +3,7 @@ id: trace:orion
 type: trace
 category: brand
 group: food
+constellation: orion
 name_ko: 오리온
 name_en: Orion
 sources: [source:orion-hunter]

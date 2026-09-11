@@ -27,6 +27,10 @@ export interface Trace {
   status: Status;
   /** 위키미디어에 걸어 둔 그림. 파일 이름으로 주소를 만든다. */
   image?: { file: string; caption: string; license: string };
+  /** 맨눈으로 보이는 별자리 모양 (D46) */
+  constellation?: string;
+  /** 지중해 약도에서의 자리 (D47) */
+  map_spot?: string;
   body: string;
   sections: Record<string, string>;
 }
@@ -55,6 +59,10 @@ export interface Source {
   status: Status;
   /** 위키미디어에 걸어 둔 그림. 파일 이름으로 주소를 만든다. */
   image?: { file: string; caption: string; license: string };
+  /** 맨눈으로 보이는 별자리 모양 (D46) */
+  constellation?: string;
+  /** 지중해 약도에서의 자리 (D47) */
+  map_spot?: string;
   body: string;
   sections: Record<string, string>;
 }

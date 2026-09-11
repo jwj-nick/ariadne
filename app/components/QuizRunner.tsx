@@ -22,7 +22,13 @@ export interface QuizItemView {
   id: string;
   trace_id: string;
   source_id: string;
-  type: 'trace_to_source' | 'idiom_origin' | 'explain_why' | 'source_group';
+  type:
+    | 'trace_to_source'
+    | 'idiom_origin'
+    | 'explain_why'
+    | 'source_group'
+    | 'source_to_trace'
+    | 'odd_one_out';
   level: Level;
   grading: 'auto' | 'self';
   prompt: string;
@@ -30,6 +36,8 @@ export interface QuizItemView {
   answer: string;
   accept: string[];
   choices?: string[];
+  /** 문제에 거는 그림. 거꾸로 묻기에서는 그림이 문제의 절반이다 (D45). */
+  image_file?: string;
 }
 
 export interface NodeMeta {
@@ -83,6 +91,8 @@ function QuizArt({ file }: { file: string }) {
 const TYPE_LABEL: Record<QuizItemView['type'], string> = {
   trace_to_source: '어디서 왔나',
   source_group: '공통점 찾기',
+  source_to_trace: '거꾸로 묻기',
+  odd_one_out: '하나만 다른 것',
   idiom_origin: '표현의 뿌리',
   explain_why: '이유 말하기',
 };
@@ -337,6 +347,10 @@ export default function QuizRunner({
       {phase !== 'learn' && (
         <h1 className="text-[20px] leading-snug font-semibold">{item.prompt}</h1>
       )}
+
+      {/* 거꾸로 묻기에서는 그림이 문제의 절반이다 (D45).
+          얼굴을 보고 이름을 떠올리는 일이 글자만 보고 떠올리는 것보다 실제 마주침에 가깝다. */}
+      {phase === 'ask' && item.image_file && <QuizArt file={item.image_file} key={item.id + ':q'} />}
 
       {/* 추측 → 힌트 → 답 → 카드. 이 순서를 깨지 않는다 (D6). */}
       {phase === 'ask' && (

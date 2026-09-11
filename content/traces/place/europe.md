@@ -3,6 +3,7 @@ id: trace:europe
 type: trace
 category: place
 group: land
+map_spot: europe
 name_ko: 유럽
 name_en: Europe
 sources: [source:europa]

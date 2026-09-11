@@ -3,6 +3,7 @@ id: trace:cassiopeia
 type: trace
 category: science-astro
 group: star
+constellation: cassiopeia
 name_ko: 카시오페이아자리
 name_en: Cassiopeia
 sources: [source:perseus-andromeda]

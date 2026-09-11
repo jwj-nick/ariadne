@@ -18,7 +18,17 @@
  *    미션이 말하는 "서양 지식인 수준의 교양" 의 실체에 가장 가깝다 (D38).
  *    흔적 이름이 원천 이름을 품고 있으면 그 흔적은 목록에서 뺀다. 답이 드러나기 때문이다.
  *
- * 3) **이유 말하기** (`explain_why`)
+ * 3) **거꾸로 묻기** (`source_to_trace`)
+ *    원천의 그림과 설명을 보여주고 **거기서 이름을 가져간 흔적**을 맞힌다 (D45).
+ *    흔적 → 원천 방향만 되풀이하면 한쪽으로만 길이 난다. 양쪽으로 물어야 실이 두 방향으로 이어진다.
+ *    원천에서 원천으로 묻는 것은 여전히 하지 않는다. 답은 언제나 흔적이다.
+ *
+ * 4) **하나만 다른 것** (`odd_one_out`)
+ *    같은 갈래의 이름 셋을 놓고 뿌리가 다른 하나를 고르게 한다 (D45).
+ *    셋을 같은 갈래에서 뽑아야 어렵다. 브랜드 셋 중에 고르는 것과
+ *    브랜드 둘에 행성 하나를 섞는 것은 난이도가 다르다.
+ *
+ * 5) **이유 말하기** (`explain_why`)
  *    흔적을 보여주고 왜 그 이름이 붙었는지 말하게 한다. 모든 흔적에 만들 수 있고,
  *    미션이 말하는 성공 조건("보자마자 원천과 이유를 말할 수 있다")에 곧바로 대응한다.
  *    어른은 스스로 답한 뒤 자기평가하고, 아이는 세 개의 이유 가운데 고른다.
@@ -32,7 +42,13 @@ import type { Card } from './content.ts';
 import { isSource, isTrace } from './content.ts';
 import { josa } from '../../app/lib/korean.ts';
 
-export type QuizType = 'trace_to_source' | 'idiom_origin' | 'explain_why' | 'source_group';
+export type QuizType =
+  | 'trace_to_source'
+  | 'idiom_origin'
+  | 'explain_why'
+  | 'source_group'
+  | 'source_to_trace'
+  | 'odd_one_out';
 export type Level = 'kid' | 'adult';
 /** auto = 입력이나 선택을 대조해 채점. self = 답을 보고 사용자가 스스로 평가. */
 export type Grading = 'auto' | 'self';
@@ -52,6 +68,12 @@ export interface QuizItem {
   accept: string[];
   /** 객관식 선택지. 정답이 반드시 하나 들어 있다. */
   choices?: string[];
+  /**
+   * 문제에 거는 그림의 위키미디어 파일 이름 (D45).
+   * 거꾸로 묻기에서는 그림이 문제의 절반이다. 얼굴을 보고 이름을 떠올리는 일이
+   * 글자만 보고 떠올리는 것보다 실제 마주침에 가깝다.
+   */
+  image_file?: string;
 }
 
 export interface QuizBuildResult {
@@ -303,7 +325,143 @@ export function buildQuiz(cards: Card[]): QuizBuildResult {
     }
   }
 
-  // ── 3) 묶음 맞히기 ────────────────────────────────────────────────
+  // ── 3) 거꾸로 묻기 · 하나만 다른 것 (D45) ──────────────────────────
+  for (const source of sources) {
+    const sourceId = String(source.data.id);
+    const nameKo = String(source.data.name_ko);
+    const domain = String(source.data.domain);
+    const levelAdult = String((source.data as Record<string, unknown>).level_adult ?? '');
+    const levelKid = String((source.data as Record<string, unknown>).level_kid ?? '');
+    const img = (source.data as Record<string, unknown>).image as Record<string, unknown> | undefined;
+    const imageFile = typeof img?.file === 'string' ? img.file : undefined;
+
+    const mine = traces
+      .filter((t) => (Array.isArray(t.data.sources) ? (t.data.sources as string[]) : []).includes(sourceId))
+      .sort(
+        (a, b) =>
+          Number(b.data.frequency ?? 0) - Number(a.data.frequency ?? 0) ||
+          String(a.data.id).localeCompare(String(b.data.id)),
+      );
+    if (mine.length === 0) continue;
+
+    // ── 거꾸로 묻기 ──
+    {
+      const target = mine[0]!;
+      const traceId = String(target.data.id);
+      const traceKo = String(target.data.name_ko);
+      const traceEn = String(target.data.name_en);
+      const category = String(target.data.category);
+      const word = CATEGORY_WORD[category] ?? '이름';
+      const acceptTrace = acceptForms(traceKo, traceEn, []);
+
+      // 설명이 길면 첫 문장만 쓴다. 문제는 짧아야 읽힌다.
+      const lede = (levelAdult.split(/(?<=다\.)\s/)[0] ?? levelAdult).trim();
+      const firstOfTrace = [...traceKo][0] ?? '';
+      const prompt = `${lede} — 여기서 이름을 가져간 ${word}${josa(word, '은/는')} 무엇일까?`;
+      const hints = [
+        `이것은 "${nameKo}"의 이야기입니다.`,
+        levelKid || '오래전부터 전해 오는 이야기 속 존재입니다.',
+        `${word} 이름이며, "${firstOfTrace}"${josa(firstOfTrace, '으로/로')} 시작하고 ${[...traceKo].length}글자입니다.`,
+      ];
+
+      const leak = acceptTrace.length < 1 ? '정답 표기가 없습니다.' : leaks([prompt, ...hints], acceptTrace);
+      if (leak) {
+        discarded.push({ trace_id: traceId, type: 'source_to_trace', reason: leak });
+      } else {
+        items.push({
+          id: `${sourceId}#source_to_trace#adult`,
+          trace_id: traceId,
+          source_id: sourceId,
+          type: 'source_to_trace',
+          level: 'adult',
+          grading: 'auto',
+          prompt,
+          hints,
+          answer: traceKo,
+          accept: acceptTrace,
+          image_file: imageFile,
+        });
+
+        // 아이는 같은 갈래의 다른 이름으로 고른다. 갈래가 다르면 답이 너무 쉽게 드러난다.
+        const near = traces
+          .filter((o) => String(o.data.id) !== traceId && String(o.data.category) === category)
+          .map((o) => String(o.data.name_ko));
+        const far = traces
+          .filter((o) => String(o.data.id) !== traceId && String(o.data.category) !== category)
+          .map((o) => String(o.data.name_ko));
+        const decoys = pickDecoys(sourceId + 'rev', near.sort(), far.sort()).filter(
+          (d) => normalize(d) !== normalize(traceKo),
+        );
+        if (decoys.length === 2) {
+          items.push({
+            id: `${sourceId}#source_to_trace#kid`,
+            trace_id: traceId,
+            source_id: sourceId,
+            type: 'source_to_trace',
+            level: 'kid',
+            grading: 'auto',
+            prompt: `${levelKid || lede} 여기서 이름을 가져간 것은 무엇일까?`,
+            hints,
+            answer: traceKo,
+            accept: acceptTrace,
+            choices: shuffle(sourceId + 'rev', [traceKo, ...decoys]),
+            image_file: imageFile,
+          });
+        }
+      }
+    }
+
+    // ── 하나만 다른 것 ──
+    // 같은 갈래의 흔적이 둘 이상 있어야 한다. 셋을 같은 갈래로 맞춰야 문제가 어려워진다.
+    {
+      const byCategory = new Map<string, Card[]>();
+      for (const t of mine) {
+        const c = String(t.data.category);
+        byCategory.set(c, [...(byCategory.get(c) ?? []), t]);
+      }
+      const pair = [...byCategory.entries()].find(([, list]) => list.length >= 2);
+      if (pair) {
+        const [category, list] = pair;
+        const two = list.slice(0, 2).map((t) => String(t.data.name_ko));
+        const traceId = String(list[0]!.data.id);
+        // 다른 뿌리에서 온, 같은 갈래의 이름 하나.
+        const outsider = traces
+          .filter(
+            (o) =>
+              String(o.data.category) === category &&
+              !(Array.isArray(o.data.sources) ? (o.data.sources as string[]) : []).includes(sourceId),
+          )
+          .map((o) => String(o.data.name_ko))
+          .sort();
+        const odd = outsider[hash(sourceId + 'odd') % Math.max(1, outsider.length)];
+        if (odd && !two.includes(odd)) {
+          const word = CATEGORY_WORD[category] ?? '이름';
+          for (const level of ['adult', 'kid'] as const) {
+            items.push({
+              id: `${sourceId}#odd_one_out#${level}`,
+              trace_id: traceId,
+              source_id: sourceId,
+              type: 'odd_one_out',
+              level,
+              grading: 'auto',
+              prompt: `다음 ${word} 셋 가운데 둘은 같은 곳에서 왔고 하나는 다른 곳에서 왔습니다. 다른 하나는?`,
+              // 셋 다 같은 갈래라서 갈래 이름만으로는 답을 좁힐 수 없다. 그것이 이 문제의 핵심이다.
+              hints: [
+                `둘은 "${nameKo}"에서 왔습니다.`,
+                DOMAIN_CONTEXT[domain] ?? '서양 문화의 오래된 이야기에서 왔습니다.',
+                `남은 하나만 뿌리가 다릅니다.`,
+              ],
+              answer: odd,
+              accept: acceptForms(odd, '', []),
+              choices: shuffle(sourceId + 'odd', [...two, odd]),
+            });
+          }
+        }
+      }
+    }
+  }
+
+  // ── 4) 묶음 맞히기 ────────────────────────────────────────────────
   // 흔적 셋을 나란히 놓고 공통의 뿌리를 묻는다 (D38).
   for (const source of sources) {
     const sourceId = String(source.data.id);

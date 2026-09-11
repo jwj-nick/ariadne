@@ -100,3 +100,63 @@ test('빌드를 두 번 해도 같은 결과가 나온다', () => {
   const again = buildQuiz(cards);
   assert.deepEqual(again.items, items, '생성 결과가 빌드마다 달라집니다');
 });
+
+// ── 새 갈래 (D45) ────────────────────────────────────────────────────
+test('거꾸로 묻기의 답은 언제나 흔적이다', () => {
+  const names = new Set(traces.map((t) => normalize(String(t.data.name_ko))));
+  const rev = items.filter((i) => i.type === 'source_to_trace');
+  assert.ok(rev.length > 0, '거꾸로 묻기가 하나도 없습니다');
+  for (const it of rev) {
+    assert.ok(
+      names.has(normalize(it.answer)),
+      `${it.id} 의 답 "${it.answer}" 이 흔적 이름이 아닙니다. 원천에서 원천으로 물으면 안 됩니다.`,
+    );
+  }
+});
+
+test('거꾸로 묻기에는 그림이 걸린다', () => {
+  const rev = items.filter((i) => i.type === 'source_to_trace');
+  const withImage = rev.filter((i) => i.image_file);
+  assert.ok(
+    withImage.length / rev.length > 0.9,
+    `그림이 걸린 것이 ${withImage.length}/${rev.length} 뿐입니다`,
+  );
+});
+
+test('하나만 다른 것은 셋이 모두 같은 갈래다', () => {
+  const categoryOf = new Map(
+    traces.map((t) => [normalize(String(t.data.name_ko)), String(t.data.category)]),
+  );
+  const odd = items.filter((i) => i.type === 'odd_one_out');
+  assert.ok(odd.length > 0, '하나만 다른 것이 하나도 없습니다');
+  for (const it of odd) {
+    const cats = new Set((it.choices ?? []).map((c) => categoryOf.get(normalize(c))));
+    assert.equal(
+      cats.size,
+      1,
+      `${it.id} 의 보기가 여러 갈래에 걸쳐 있습니다. 갈래가 다르면 답이 그냥 보입니다.`,
+    );
+  }
+});
+
+test('하나만 다른 것의 답은 나머지 둘과 뿌리가 다르다', () => {
+  const sourcesOf = new Map(
+    traces.map((t) => [
+      normalize(String(t.data.name_ko)),
+      new Set(Array.isArray(t.data.sources) ? (t.data.sources as string[]) : []),
+    ]),
+  );
+  for (const it of items.filter((i) => i.type === 'odd_one_out')) {
+    const answerSources = sourcesOf.get(normalize(it.answer)) ?? new Set();
+    assert.ok(
+      !answerSources.has(it.source_id),
+      `${it.id} 의 답 "${it.answer}" 이 나머지 둘과 같은 뿌리입니다`,
+    );
+    for (const c of (it.choices ?? []).filter((x) => normalize(x) !== normalize(it.answer))) {
+      assert.ok(
+        (sourcesOf.get(normalize(c)) ?? new Set()).has(it.source_id),
+        `${it.id} 의 보기 "${c}" 가 그 뿌리에서 나오지 않았습니다`,
+      );
+    }
+  }
+});

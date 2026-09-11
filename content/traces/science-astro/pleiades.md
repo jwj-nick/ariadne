@@ -3,6 +3,7 @@ id: trace:pleiades
 type: trace
 category: science-astro
 group: star
+constellation: pleiades
 name_ko: 플레이아데스
 name_en: Pleiades
 sources: [source:pleiades-myth]

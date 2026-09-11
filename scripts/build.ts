@@ -31,6 +31,12 @@ interface GraphTrace {
   frequency: number;
   domain_hint: string[];
   status: Status;
+  /**
+   * 맨눈으로 보이는 별자리 모양 (D46) 과 지중해 약도의 자리 (D47).
+   * 사진만으로는 "그게 하늘 어디에 있는 무엇인가", "그게 어디쯤인가" 가 전해지지 않는다.
+   */
+  constellation?: string;
+  map_spot?: string;
   /** 위키미디어에 걸어 둔 그림. 리포에는 파일 이름만 둔다. */
   image?: { file: string; caption: string; license: string };
   body: string;
@@ -66,6 +72,13 @@ interface GraphSource {
   say_en?: string;
   /** 그것을 한글로 옮기면 */
   say_ko?: string;
+  /**
+   * 맨눈으로 보이는 별자리 모양 (D46) 과 지중해 약도의 자리 (D47).
+   * 사진만으로는 "그게 하늘 어디에 있는 무엇인가", "그게 어디쯤인가" 가 전해지지 않는다.
+   */
+  constellation?: string;
+  map_spot?: string;
+
   /** 빌드가 채우는 역링크 */
   traces: string[];
   status: Status;
@@ -163,6 +176,8 @@ const traces: GraphTrace[] = traceCards.map((c) => ({
   domain_hint: arr((c.data as Record<string, unknown>).domain_hint),
   status: c.data.status as Status,
   image: image(c.data as Record<string, unknown>),
+  constellation: str((c.data as Record<string, unknown>).constellation) || undefined,
+  map_spot: str((c.data as Record<string, unknown>).map_spot) || undefined,
   body: c.body.trim(),
   sections: splitSections(c.body),
 }));
@@ -202,6 +217,8 @@ const sources: GraphSource[] = sourceCards.map((c) => {
     traces: (backlinks.get(id) ?? []).sort(),
     status: c.data.status as Status,
     image: image(c.data as Record<string, unknown>),
+    constellation: str((c.data as Record<string, unknown>).constellation) || undefined,
+    map_spot: str((c.data as Record<string, unknown>).map_spot) || undefined,
     body: c.body.trim(),
     sections: splitSections(c.body),
   };

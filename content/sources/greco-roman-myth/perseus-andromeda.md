@@ -3,6 +3,7 @@ id: source:perseus-andromeda
 type: source
 domain: greco-roman-myth
 group: hero
+constellation: andromeda
 name_ko: 페르세우스와 안드로메다
 name_en: Perseus and Andromeda
 aliases: [페르세우스, Perseus, 안드로메다, Andromeda, 카시오페이아, Cassiopeia]

@@ -3,6 +3,7 @@ id: trace:sirius
 type: trace
 category: science-astro
 group: star
+constellation: canis-major
 name_ko: 시리우스
 name_en: Sirius
 sources: [source:orion-hunter]

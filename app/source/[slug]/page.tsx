@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Emblem, { emblemFor } from '../../components/Emblem';
 import Artwork from '../../components/Artwork';
+import Constellation from '../../components/Constellation';
+import MapFigure from '../../components/MapFigure';
 import Section from '../../components/Section';
 import WishButton from '../../components/WishButton';
 import { DOMAIN_LABEL, REL_LABEL, getGraph, getSource, resolve, tracesOf } from '../../lib/graph';
@@ -137,6 +139,10 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
       {source.image && (
         <Artwork file={source.image.file} caption={source.image.caption} license={source.image.license} />
       )}
+
+      {/* 맨눈으로 보이는 모양과 자리 (D46·D47) */}
+      {source.constellation && <Constellation name={source.constellation} />}
+      {source.map_spot && <MapFigure spot={source.map_spot} />}
 
       <Section title="한 줄 정의" text={source.sections['한 줄 정의']} />
       <Section title="3문장 스토리" text={source.sections['3문장 스토리']} />

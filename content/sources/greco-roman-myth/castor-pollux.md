@@ -3,6 +3,7 @@ id: source:castor-pollux
 type: source
 domain: greco-roman-myth
 group: hero
+constellation: gemini
 name_ko: 카스토르와 폴룩스
 name_en: Castor and Pollux
 aliases: [디오스쿠로이, 쌍둥이자리]

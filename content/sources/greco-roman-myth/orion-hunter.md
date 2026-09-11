@@ -3,6 +3,7 @@ id: source:orion-hunter
 type: source
 domain: greco-roman-myth
 group: realm
+constellation: orion
 name_ko: 오리온
 name_en: Orion
 aliases: []

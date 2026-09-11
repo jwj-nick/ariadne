@@ -3,6 +3,7 @@ id: source:pleiades-myth
 type: source
 domain: greco-roman-myth
 group: realm
+constellation: pleiades
 name_ko: 플레이아데스
 name_en: Pleiades
 aliases: [일곱 자매, 좀생이별]
