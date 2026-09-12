@@ -142,7 +142,7 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
 
       {/* 맨눈으로 보이는 모양과 자리 (D46·D47) */}
       {source.constellation && <Constellation name={source.constellation} />}
-      {source.map_spot && <MapFigure spot={source.map_spot} />}
+      {source.map && <MapFigure pin={source.map} name={source.name_ko} />}
 
       <Section title="한 줄 정의" text={source.sections['한 줄 정의']} />
       <Section title="3문장 스토리" text={source.sections['3문장 스토리']} />

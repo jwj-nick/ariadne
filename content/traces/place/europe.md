@@ -3,7 +3,12 @@ id: trace:europe
 type: trace
 category: place
 group: land
-map_spot: europe
+map:
+  lat: 41.3
+  lng: 21.5
+  spread: 9
+  open: false
+  note: 처음에는 에게해 서쪽 땅만을 가리키던 이름이고, 나중에 대륙 전체로 넓어졌다.
 name_ko: 유럽
 name_en: Europe
 sources: [source:europa]

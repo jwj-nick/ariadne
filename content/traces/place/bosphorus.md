@@ -3,7 +3,11 @@ id: trace:bosphorus
 type: trace
 category: place
 group: sea
-map_spot: bosphorus
+map:
+  lat: 41.118
+  lng: 29.068
+  span: 17
+  note: 흑해에서 내려오는 물길이 여기서 가장 좁아진다. 서쪽 기슭이 유럽이고 동쪽 기슭이 아시아다.
 name_ko: 보스포루스
 name_en: Bosphorus
 sources: [source:io]

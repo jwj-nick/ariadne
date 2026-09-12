@@ -3,7 +3,11 @@ id: trace:athens
 type: trace
 category: place
 group: land
-map_spot: athens
+map:
+  lat: 37.9755
+  lng: 23.7348
+  span: 13
+  note: 에게해 서쪽 기슭의 도시다. 아크로폴리스 위에 아테나의 신전이 남아 있다.
 name_ko: 아테네
 name_en: Athens
 sources: [source:athena]

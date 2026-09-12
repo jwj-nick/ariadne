@@ -3,7 +3,13 @@ id: trace:atlantic
 type: trace
 category: place
 group: sea
-map_spot: atlantic
+map:
+  base: world
+  lat: 34.0
+  lng: -35.0
+  span: 95
+  spread: 22
+  note: 지브롤터 바깥의 큰 바다다. 고대 사람들에게는 여기부터가 세상의 바깥이었다.
 name_ko: 대서양
 name_en: Atlantic Ocean
 sources: [source:atlas]

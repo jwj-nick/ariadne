@@ -3,7 +3,12 @@ id: trace:asia
 type: trace
 category: place
 group: land
-map_spot: asia
+map:
+  lat: 39.0
+  lng: 31.5
+  spread: 8.5
+  open: false
+  note: 처음에는 에게해 건너편, 지금의 아나톨리아만을 가리키던 이름이다.
 name_ko: 아시아
 name_en: Asia
 sources: [source:asia-titaness]

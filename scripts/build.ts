@@ -17,6 +17,7 @@ import { buildQuiz } from './lib/quiz.ts';
 import { loadThreads, checkThreads } from './lib/threads.ts';
 import { computeLayout } from './lib/layout.ts';
 import { bodyIndex } from '../app/lib/search.ts';
+import type { MapPin } from '../app/lib/map.ts';
 
 interface GraphTrace {
   id: string;
@@ -32,11 +33,11 @@ interface GraphTrace {
   domain_hint: string[];
   status: Status;
   /**
-   * 맨눈으로 보이는 별자리 모양 (D46) 과 지중해 약도의 자리 (D47).
+   * 맨눈으로 보이는 별자리 모양 (D46) 과 실제 지도 위의 자리 (D48).
    * 사진만으로는 "그게 하늘 어디에 있는 무엇인가", "그게 어디쯤인가" 가 전해지지 않는다.
    */
   constellation?: string;
-  map_spot?: string;
+  map?: MapPin;
   /** 위키미디어에 걸어 둔 그림. 리포에는 파일 이름만 둔다. */
   image?: { file: string; caption: string; license: string };
   body: string;
@@ -73,11 +74,11 @@ interface GraphSource {
   /** 그것을 한글로 옮기면 */
   say_ko?: string;
   /**
-   * 맨눈으로 보이는 별자리 모양 (D46) 과 지중해 약도의 자리 (D47).
+   * 맨눈으로 보이는 별자리 모양 (D46) 과 실제 지도 위의 자리 (D48).
    * 사진만으로는 "그게 하늘 어디에 있는 무엇인가", "그게 어디쯤인가" 가 전해지지 않는다.
    */
   constellation?: string;
-  map_spot?: string;
+  map?: MapPin;
 
   /** 빌드가 채우는 역링크 */
   traces: string[];
@@ -158,6 +159,33 @@ function image(data: Record<string, unknown>): { file: string; caption: string; 
   return { file, caption: str(o.caption), license: str(o.license) };
 }
 
+/**
+ * 지도 자리를 꺼낸다 (D48).
+ *
+ * 위경도만 있으면 나머지는 없어도 된다. 값이 온전하지 않으면 지도를 아예 달지 않는다.
+ * 어긋난 값은 감사(W11)가 따로 잡아 준다.
+ */
+function mapPin(data: Record<string, unknown>): MapPin | undefined {
+  const raw = data.map;
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return undefined;
+  const o = raw as Record<string, unknown>;
+  const num = (v: unknown): number | undefined =>
+    typeof v === 'number' && Number.isFinite(v) ? v : undefined;
+  const lat = num(o.lat);
+  const lng = num(o.lng);
+  if (lat === undefined || lng === undefined) return undefined;
+  return {
+    lat,
+    lng,
+    span: num(o.span),
+    spread: num(o.spread),
+    base: str(o.base) || undefined,
+    label: str(o.label) || undefined,
+    note: str(o.note) || undefined,
+    open: o.open === false ? false : undefined,
+  };
+}
+
 const traceCards = all.filter(isTrace).filter(visible);
 const sourceCards = all.filter(isSource).filter(visible);
 const visibleSourceIds = new Set(sourceCards.map((c) => String(c.data.id)));
@@ -177,7 +205,7 @@ const traces: GraphTrace[] = traceCards.map((c) => ({
   status: c.data.status as Status,
   image: image(c.data as Record<string, unknown>),
   constellation: str((c.data as Record<string, unknown>).constellation) || undefined,
-  map_spot: str((c.data as Record<string, unknown>).map_spot) || undefined,
+  map: mapPin(c.data as Record<string, unknown>),
   body: c.body.trim(),
   sections: splitSections(c.body),
 }));
@@ -218,7 +246,7 @@ const sources: GraphSource[] = sourceCards.map((c) => {
     status: c.data.status as Status,
     image: image(c.data as Record<string, unknown>),
     constellation: str((c.data as Record<string, unknown>).constellation) || undefined,
-    map_spot: str((c.data as Record<string, unknown>).map_spot) || undefined,
+    map: mapPin(c.data as Record<string, unknown>),
     body: c.body.trim(),
     sections: splitSections(c.body),
   };

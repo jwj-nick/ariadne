@@ -9,6 +9,7 @@
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import type { MapPin } from './map';
 
 export type Status = 'candidate' | 'reviewed' | 'published' | 'retired';
 
@@ -29,8 +30,8 @@ export interface Trace {
   image?: { file: string; caption: string; license: string };
   /** 맨눈으로 보이는 별자리 모양 (D46) */
   constellation?: string;
-  /** 지중해 약도에서의 자리 (D47) */
-  map_spot?: string;
+  /** 실제 지도 위의 자리 (D48) */
+  map?: MapPin;
   body: string;
   sections: Record<string, string>;
 }
@@ -61,8 +62,8 @@ export interface Source {
   image?: { file: string; caption: string; license: string };
   /** 맨눈으로 보이는 별자리 모양 (D46) */
   constellation?: string;
-  /** 지중해 약도에서의 자리 (D47) */
-  map_spot?: string;
+  /** 실제 지도 위의 자리 (D48) */
+  map?: MapPin;
   body: string;
   sections: Record<string, string>;
 }

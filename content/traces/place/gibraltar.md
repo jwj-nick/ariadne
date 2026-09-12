@@ -3,7 +3,11 @@ id: trace:gibraltar
 type: trace
 category: place
 group: sea
-map_spot: gibraltar
+map:
+  lat: 35.95
+  lng: -5.6
+  span: 12
+  note: 지중해와 대서양이 만나는 목이다. 해협 양쪽의 바위를 헤라클레스의 기둥이라 불렀다.
 name_ko: 지브롤터
 name_en: Gibraltar
 sources: [source:heracles]

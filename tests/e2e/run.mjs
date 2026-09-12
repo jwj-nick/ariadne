@@ -178,11 +178,14 @@ try {
     '/thread': ['이름의 무리', '하늘에서 지구만'],
     '/timeline': ['연표', '함무라비 법전', '아테네의 시대', '기원전 776년', '호메로스'],
     '/source/nike-goddess': ['영어로는', 'NY-kee', '나이키'],
-    // 별자리 도형과 지중해 약도 (D46·D47)
+    // 별자리 도형 (D46) 과 실제 지도 위의 자리 (D48)
     '/trace/sirius': ['맨눈으로는 이렇게', '큰개자리', '시리우스'],
     '/source/orion-hunter': ['맨눈으로는 이렇게', '삼태성', '베텔게우스'],
-    '/trace/bosphorus': ['어디쯤인가', '흑해', '북아프리카'],
-    '/trace/gibraltar': ['어디쯤인가', '대서양과 지중해'],
+    '/trace/bosphorus': ['어디쯤인가', '흑해에서 내려오는', '북위 41.12°, 동경 29.07°', '구글 지도에서 열기', 'NordNordWest'],
+    '/trace/gibraltar': ['어디쯤인가', '헤라클레스의 기둥', '북위 35.95°, 서경 5.60°', 'query=35.95,-5.6'],
+    // 넓은 자리는 한 점으로 집을 수 없으므로 구글 지도 링크를 걸지 않는다.
+    '/trace/europe': ['어디쯤인가', '대륙 전체로 넓어졌다'],
+    '/trace/atlantic': ['어디쯤인가', '세상의 바깥', '북위 34.00°, 서경 35.00°', 'TUBS'],
     '/thread/car-names': ['삼지창', '비스콘티', '페가수스'],
     '/thread/places-named': ['소가 건넌 자리', '아틀라스'],
     '/thread/sky-how-to-find': ['북극성', '좀생이별'],
@@ -870,6 +873,8 @@ try {
         ['m-capture', '/capture'],
         ['m-graph', '/graph'],
         ['m-request', '/request'],
+        ['m-place-bosphorus', '/trace/bosphorus'],
+        ['m-place-atlantic', '/trace/atlantic'],
       ]) {
         await s.send('Page.navigate', { url: BASE + path });
         await sleep(1200);
@@ -882,7 +887,7 @@ try {
         });
         writeFileSync(join(SHOTS, `${name}.png`), Buffer.from(shot.data, 'base64'));
       }
-      ok('스크린샷 9장', 'tests/e2e/shots/');
+      ok('스크린샷 11장', 'tests/e2e/shots/');
       s.ws.close();
     }
   }

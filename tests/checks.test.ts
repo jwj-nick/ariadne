@@ -227,3 +227,21 @@ test('W06 — frequency 가 1~5 정수가 아님', () => {
   assert.ok(codes([trace({ frequency: undefined }), source()]).includes('W06'));
   assert.ok(!codes([trace({ frequency: 3 }), source()]).includes('W06'));
 });
+
+test('W11 — 지도 자리', () => {
+  const ok = { lat: 41.118, lng: 29.068, span: 17 };
+  assert.ok(!codes([trace({ map: ok }), source()]).includes('W11'), '온전한 좌표는 걸리면 안 된다');
+  assert.ok(!codes([trace({}), source()]).includes('W11'), 'map 이 없으면 걸리면 안 된다');
+
+  assert.ok(codes([trace({ map: { lat: 100, lng: 29 } }), source()]).includes('W11'), '위도 범위 밖');
+  assert.ok(codes([trace({ map: { lat: 41, lng: 400 } }), source()]).includes('W11'), '경도 범위 밖');
+  assert.ok(codes([trace({ map: { lat: '41', lng: 29 } }), source()]).includes('W11'), '숫자가 아닌 위도');
+  assert.ok(codes([trace({ map: '41,29' }), source()]).includes('W11'), 'map 이 묶음이 아님');
+  assert.ok(codes([trace({ map: { ...ok, base: 'moon' } }), source()]).includes('W11'), '없는 바탕 지도');
+  assert.ok(codes([trace({ map: { ...ok, span: 0 } }), source()]).includes('W11'), 'span 이 0');
+
+  // 대서양 한복판은 지중해 지도가 덮지 않는다. 세계 지도로 바꾸면 통과한다.
+  const mid = { lat: 34, lng: -32 };
+  assert.ok(codes([trace({ map: mid }), source()]).includes('W11'), '바탕 지도 범위 밖');
+  assert.ok(!codes([trace({ map: { ...mid, base: 'world' } }), source()]).includes('W11'));
+});

@@ -14,6 +14,7 @@ import {
 } from './schema.ts';
 import { isValidGroup } from './groups.ts';
 import { isSource, isTrace, type Card } from './content.ts';
+import { MAP_BASES, DEFAULT_BASE, insideBase } from '../../app/lib/map.ts';
 
 export type Severity = 'error' | 'warn';
 
@@ -44,6 +45,7 @@ const CODE_TITLES: Record<string, string> = {
   W08: '본문의 [[링크]] 가 없는 카드를 가리킴',
   W09: 'image 항목의 짜임이 어긋남',
   W10: 'group 이 그 갈래의 묶음 목록 밖',
+  W11: 'map 항목의 짜임이 어긋남',
 };
 
 export const codeTitle = (code: string) => CODE_TITLES[code] ?? code;
@@ -293,6 +295,53 @@ export function runChecks(cards: Card[]): Finding[] {
         }
         if (file.startsWith('File:')) {
           add('W09', 'warn', c.path, 'image.file 에는 "File:" 을 빼고 파일 이름만 적습니다.');
+        }
+      }
+    }
+
+    /**
+     * W11 — 지도 자리 (D48).
+     *
+     * 화면은 이 위경도를 그대로 바탕 지도 위의 자리로 옮긴다.
+     * 값이 뒤집히거나 바탕 지도가 덮지 않는 자리를 가리키면
+     * 엉뚱한 데에 점이 찍히는데, 화면만 보아서는 그것이 틀렸는지 알기 어렵다.
+     */
+    if (d.map !== undefined) {
+      const m = d.map as Record<string, unknown> | null;
+      if (!m || typeof m !== 'object' || Array.isArray(m)) {
+        add('W11', 'warn', c.path, 'map 은 lat 과 lng 를 담은 묶음이어야 합니다.');
+      } else {
+        const lat = m.lat;
+        const lng = m.lng;
+        const okLat = typeof lat === 'number' && lat >= -90 && lat <= 90;
+        const okLng = typeof lng === 'number' && lng >= -180 && lng <= 180;
+        if (!okLat) add('W11', 'warn', c.path, `map.lat "${String(lat)}" 이 위도(-90~90)가 아닙니다.`);
+        if (!okLng) add('W11', 'warn', c.path, `map.lng "${String(lng)}" 이 경도(-180~180)가 아닙니다.`);
+
+        const baseName = typeof m.base === 'string' ? m.base : DEFAULT_BASE;
+        const base = MAP_BASES[baseName];
+        if (!base) {
+          add(
+            'W11',
+            'warn',
+            c.path,
+            `map.base "${baseName}" 은 바탕 지도 목록 밖입니다: ${Object.keys(MAP_BASES).join(', ')}`,
+          );
+        } else if (okLat && okLng && !insideBase(base, lat as number, lng as number)) {
+          add(
+            'W11',
+            'warn',
+            c.path,
+            `이 좌표는 바탕 지도 "${baseName}" 이 덮는 범위 밖입니다. ` +
+              `그 지도는 북위 ${base.south}~${base.north}도, 경도 ${base.west}~${base.east}도만 덮습니다.`,
+          );
+        }
+
+        for (const field of ['span', 'spread'] as const) {
+          const v = m[field];
+          if (v !== undefined && (typeof v !== 'number' || v <= 0)) {
+            add('W11', 'warn', c.path, `map.${field} 은 0보다 큰 숫자여야 합니다.`);
+          }
         }
       }
     }

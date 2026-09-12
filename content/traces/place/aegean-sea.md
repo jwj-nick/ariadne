@@ -3,7 +3,12 @@ id: trace:aegean-sea
 type: trace
 category: place
 group: sea
-map_spot: aegean-sea
+map:
+  lat: 38.3
+  lng: 25.0
+  span: 16
+  spread: 2.6
+  note: 그리스 본토와 아나톨리아 사이의 바다다. 섬이 촘촘해 뭍을 보면서 건널 수 있었다.
 name_ko: 에게해
 name_en: Aegean Sea
 sources: [source:theseus-minotaur]

@@ -121,9 +121,9 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
       })()}
 
       {/* 사진은 망원경이 본 것이고, 맨눈으로 보이는 것은 점 몇 개다 (D46).
-          지명은 사진보다 "어디쯤인가" 가 먼저다 (D47). */}
+          지명은 사진보다 "어디쯤인가" 가 먼저다 (D48). */}
       {trace.constellation && <Constellation name={trace.constellation} />}
-      {trace.map_spot && <MapFigure spot={trace.map_spot} />}
+      {trace.map && <MapFigure pin={trace.map} name={trace.name_ko} />}
 
       <Section title="한 줄" text={trace.sections['한 줄']} />
       <Section title="어디서 만나나" text={trace.sections['어디서 만나나']} />
