@@ -20,6 +20,11 @@ image:
   file: Neptuno colosal (Museo del Prado) 02a.jpg
   caption: 넵투누스 거상, 프라도 미술관
   license: CC BY 2.0
+figures:
+  - file: 'Temple of Poseidon - Northern fascade.jpg'
+    kicker: 그 자리는
+    caption: '수니온곶의 포세이돈 신전, 기원전 440년경. 아테네에서 배로 나갈 때 뭍에서 마지막으로 보이고, 돌아올 때 가장 먼저 보이는 자리에 세웠다'
+    license: CC BY 2.0
 status: reviewed
 created: 2026-09-08
 ---

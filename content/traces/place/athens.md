@@ -14,6 +14,11 @@ sources: [source:athena]
 why: 아테나와 포세이돈이 도시를 두고 겨루었을 때 아테나가 올리브 나무를 내놓아 이겼고, 그 도시가 그 이름을 얻었다.
 frequency: 5
 domain_hint: [greece, olive, city, democracy]
+figures:
+  - file: '1784 Bocage Map of Athens, Greece - Geographicus - Athens-bocage-1784.jpg'
+    kicker: 옛 지도로는
+    caption: '바르비에 뒤 보카주, 고대 아테네 지도, 1784년. 한가운데 성채(Citadel)라 적힌 바위가 아크로폴리스이며, 그 위에 아테나의 신전이 섰다'
+    license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -245,3 +245,18 @@ test('W11 — 지도 자리', () => {
   assert.ok(codes([trace({ map: mid }), source()]).includes('W11'), '바탕 지도 범위 밖');
   assert.ok(!codes([trace({ map: { ...mid, base: 'world' } }), source()]).includes('W11'));
 });
+
+test('W12 — 곁들이는 그림', () => {
+  const one = { file: 'A.jpg', caption: '설명', license: 'Public domain' };
+  assert.ok(!codes([trace({ figures: [one] }), source()]).includes('W12'), '온전한 항목은 걸리면 안 된다');
+  assert.ok(!codes([trace({}), source()]).includes('W12'), 'figures 가 없으면 걸리면 안 된다');
+
+  assert.ok(codes([trace({ figures: one }), source()]).includes('W12'), '목록이 아님');
+  assert.ok(codes([trace({ figures: [{ ...one, caption: '' }] }), source()]).includes('W12'), '설명이 비었음');
+  assert.ok(codes([trace({ figures: [{ ...one, license: undefined }] }), source()]).includes('W12'), '저작권이 없음');
+  assert.ok(codes([trace({ figures: [{ ...one, file: 'A' }] }), source()]).includes('W12'), '확장자가 없음');
+  assert.ok(codes([trace({ figures: [{ ...one, file: 'File:A.jpg' }] }), source()]).includes('W12'), '"File:" 이 붙었음');
+  assert.ok(codes([trace({ figures: [one, one] }), source()]).includes('W12'), '같은 그림을 두 번 걺');
+  // 대표 그림과 같은 파일을 곁들이면 한 카드에 같은 그림이 두 장 뜬다.
+  assert.ok(codes([trace({ image: one, figures: [one] }), source()]).includes('W12'), '대표 그림과 겹침');
+});

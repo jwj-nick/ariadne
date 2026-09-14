@@ -15,6 +15,11 @@ sources: [source:europa]
 why: 황소로 변한 제우스가 등에 태우고 바다를 건넌 페니키아 공주의 이름이다.
 frequency: 5
 domain_hint: [continent, bull, phoenicia, name]
+figures:
+  - file: 'Europa Regina by Sebastian Münster.jpg'
+    kicker: 옛 지도로는
+    caption: '뮌스터, 여왕의 모습을 한 유럽, 1628년. 머리가 이베리아이고 가슴이 프랑스와 독일이며, 왼쪽 옆구리를 지중해가 지난다. 발치의 아래쪽에 ASIA 라고 적혀 있다'
+    license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

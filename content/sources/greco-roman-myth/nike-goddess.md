@@ -21,6 +21,11 @@ image:
   file: Goddess Nike at Ephesus, Turkey.JPG
   caption: 에페소스의 니케 부조
   license: Public domain
+figures:
+  - file: 'Nike of Samothrake Louvre Ma2369 n4.jpg'
+    kicker: 조각으로는
+    caption: '사모트라케의 니케, 기원전 2세기. 뱃머리에 내려앉는 자세이며, 루브르 계단 위에 서 있다. 이 앞에 서 본 사람은 날개부터 기억한다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

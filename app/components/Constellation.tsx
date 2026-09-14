@@ -1,3 +1,5 @@
+import Artwork from './Artwork';
+
 /**
  * 별자리 도형 (D46).
  *
@@ -30,9 +32,23 @@ interface Shape {
   lines: Array<[number, number]>;
   /** 맨눈으로 어떻게 찾는가 */
   hint: string;
+  /**
+   * 옛 성도에 이 별자리가 어떻게 그려졌는가 (D49).
+   *
+   * 별자리 이름이 왜 그 이름인지는 점을 이은 도형만 보아서는 알 수 없다.
+   * 페르세우스자리의 알골이 왜 "악마의 머리" 인지는, 그가 메두사의 머리를 든 그림을
+   * 한 번 보면 그것으로 끝난다. 옛사람들은 하늘에 이야기를 이렇게 얹어 놓았다.
+   *
+   * 일곱 장 모두 시드니 홀의 『우라니아의 거울』(1825) 한 벌에서 가져왔다.
+   * 한 벌로 맞추면 별자리를 옮겨 다녀도 같은 손이 그린 그림으로 보인다.
+   */
+  atlas: { file: string; caption: string };
 }
 
-const SHAPES: Record<string, Shape> = {
+/** 옛 성도의 저작권. 일곱 장이 모두 같은 판이다. */
+const ATLAS_LICENSE = 'Public domain';
+
+export const SHAPES: Record<string, Shape> = {
   orion: {
     label: 'Orion',
     ko: '오리온자리',
@@ -54,6 +70,10 @@ const SHAPES: Record<string, Shape> = {
       [2, 3],
       [3, 4],
     ],
+    atlas: {
+      file: "Sidney Hall - Urania's Mirror - Orion (best currently available version - 2014).jpg",
+      caption: '사냥꾼 오리온. 오른손의 몽둥이와 왼손의 사자 가죽 아래로 허리띠 별 셋이 지난다',
+    },
   },
   cassiopeia: {
     label: 'Cassiopeia',
@@ -72,6 +92,10 @@ const SHAPES: Record<string, Shape> = {
       [2, 3],
       [3, 4],
     ],
+    atlas: {
+      file: "Sidney Hall - Urania's Mirror - Cassiopeia (image right side up).jpg",
+      caption: '의자에 앉은 카시오페이아. 그 의자째로 하늘에 묶여 북극성 둘레를 돈다',
+    },
   },
   pleiades: {
     label: 'Pleiades',
@@ -90,6 +114,10 @@ const SHAPES: Record<string, Shape> = {
     ],
     // 성단이라 선으로 잇지 않는다. 이어 놓으면 없는 모양을 만들어 내게 된다.
     lines: [],
+    atlas: {
+      file: "Sidney Hall - Urania's Mirror - Taurus.jpg",
+      caption: '황소자리. 어깨 앞쪽에 좁쌀처럼 모인 자리가 플레이아데스다',
+    },
   },
   andromeda: {
     label: 'Andromeda',
@@ -108,6 +136,10 @@ const SHAPES: Record<string, Shape> = {
       [2, 3],
       [2, 4],
     ],
+    atlas: {
+      file: "Sidney Hall - Urania's Mirror - Gloria Frederici, Andromeda, and Triangula.jpg",
+      caption: '사슬에 묶인 안드로메다. 그 옆으로 페르세우스자리와 카시오페이아자리가 이어진다',
+    },
   },
   perseus: {
     label: 'Perseus',
@@ -128,6 +160,10 @@ const SHAPES: Record<string, Shape> = {
       [0, 4],
       [0, 5],
     ],
+    atlas: {
+      file: "Sidney Hall - Urania's Mirror - Perseus.jpg",
+      caption: '메두사의 머리를 든 페르세우스. 그 머리에 박힌 별이 알골이며, 이름의 뜻이 악마의 머리다',
+    },
   },
   'canis-major': {
     label: 'Canis Major',
@@ -146,6 +182,10 @@ const SHAPES: Record<string, Shape> = {
       [2, 3],
       [2, 4],
     ],
+    atlas: {
+      file: "Sidney Hall - Urania's Mirror - Canis Major.jpg",
+      caption: '사냥꾼을 따르는 큰 개. 목덜미에서 가장 밝게 빛나는 별이 시리우스다',
+    },
   },
   gemini: {
     label: 'Gemini',
@@ -170,6 +210,10 @@ const SHAPES: Record<string, Shape> = {
       [5, 7],
       [2, 3],
     ],
+    atlas: {
+      file: "Sidney Hall - Urania's Mirror - Gemini.jpg",
+      caption: '나란히 선 쌍둥이 카스토르와 폴룩스. 두 머리에 같은 이름의 별이 하나씩 박혀 있다',
+    },
   },
 };
 
@@ -228,5 +272,24 @@ export default function Constellation({ name }: { name: string }) {
         {shape.hint}
       </figcaption>
     </figure>
+  );
+}
+
+/**
+ * 같은 별자리를 옛사람은 어떻게 그렸나 (D49).
+ *
+ * 도형 바로 아래에 놓는다. 위에서 본 점 몇 개가 아래 그림의 어디에 박혀 있는지
+ * 눈이 저절로 맞춰 보게 되고, 그러면서 별자리 이름의 뜻이 함께 들어온다.
+ */
+export function ConstellationAtlas({ name }: { name: string }) {
+  const shape = SHAPES[name];
+  if (!shape) return null;
+  return (
+    <Artwork
+      file={shape.atlas.file}
+      caption={`${shape.atlas.caption}. 시드니 홀, 『우라니아의 거울』 1825년`}
+      license={ATLAS_LICENSE}
+      kicker="옛 성도로는"
+    />
   );
 }

@@ -19,6 +19,11 @@ image:
   file: The Garden of Earthly Delights by Bosch High Resolution.jpg
   caption: 히에로니무스 보스, 쾌락의 정원, 1500년경, 프라도 미술관
   license: Public domain
+figures:
+  - file: 'Lucas Cranach the Elder - The Garden of Eden - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '크라나흐, 낙원, 1530년. 한 화면 안에 창조부터 쫓겨남까지가 차례로 그려져 있어, 그림 한 장이 이야기 전체를 담는다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

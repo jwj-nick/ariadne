@@ -15,6 +15,11 @@ sources: [source:theseus-minotaur]
 why: 아들이 죽은 줄 알고 몸을 던진 아테네 왕 아이게우스의 이름이 그 바다에 남았다.
 frequency: 4
 domain_hint: [greece, sea, theseus, sail]
+figures:
+  - file: 'Greece and West Anatolia, 1580 (Ruscelli).jpg'
+    kicker: 옛 지도로는
+    caption: '루셀리, 그리스 신지도, 1580년. 바다 한가운데 MARE EGEO 라 적혀 있고, 섬이 흩뿌려진 자리를 ARCIPELAGO 라 불렀다. 오른쪽 노란 땅에는 ASIA 라고 적혀 있다'
+    license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

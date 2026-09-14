@@ -22,6 +22,11 @@ image:
   file: '"Bacchus and Ariadne" by Titian - National Gallery, London - Joy of Museums.jpg'
   caption: 티치아노, 바쿠스와 아리아드네, 1520~1523년, 런던 내셔널 갤러리
   license: Public domain
+figures:
+  - file: 'Sleeping Ariadne.jpg'
+    kicker: 조각으로는
+    caption: '잠든 아리아드네, 기원전 2세기 원본의 로마 시대 복제본. 테세우스가 두고 떠난 낙소스섬에서 잠든 모습이다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-07
 ---

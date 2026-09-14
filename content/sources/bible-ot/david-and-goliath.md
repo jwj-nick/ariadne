@@ -19,6 +19,11 @@ image:
   file: David with the Head of Goliath-Caravaggio (1610).jpg
   caption: 카라바조, 골리앗의 머리를 든 다윗, 1610년
   license: Public domain
+figures:
+  - file: 'Michelangelo''s David 2015.jpg'
+    kicker: 조각으로는
+    caption: '미켈란젤로, 다비드, 1504년. 던지기 전의 순간이라 손에 돌만 쥐고 있다. 이긴 뒤를 그린 그림이 많은 것과 대비된다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-07
 ---

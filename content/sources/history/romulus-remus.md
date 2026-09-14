@@ -19,6 +19,11 @@ image:
   file: Romulus and Remus by Peter Paul Rubens.jpg
   caption: 페테르 파울 루벤스, 늑대의 젖을 먹는 로물루스와 레무스, 1616년경
   license: CC0
+figures:
+  - file: 'Capitoline she-wolf Musei Capitolini MC1181.jpg'
+    kicker: 조각으로는
+    caption: '카피톨리노의 암늑대. 늑대는 훨씬 오래되었고 젖을 빠는 쌍둥이는 15세기에 덧붙였다. 로마시의 상징으로 지금도 쓰인다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

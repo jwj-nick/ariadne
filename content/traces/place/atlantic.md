@@ -16,6 +16,11 @@ sources: [source:atlas]
 why: 하늘을 떠받치는 아틀라스가 서 있다고 여긴 서쪽 끝의 바다라, 아틀라스의 바다라는 뜻으로 불렸다.
 frequency: 5
 domain_hint: [ocean, atlas, west, sea]
+figures:
+  - file: 'Cantino planisphere (1502).jpg'
+    kicker: 옛 지도로는
+    caption: '칸티노 세계지도, 1502년. 왼쪽의 너른 바다에 Oceanus occidentalis, 곧 "서쪽 바다"라고 적혀 있다. 그 너머의 땅이 막 알려지기 시작한 무렵이다'
+    license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

@@ -22,6 +22,11 @@ image:
   file: Herakles Farnese MAN Napoli Inv6001 n07.jpg
   caption: 파르네세의 헤라클레스, 나폴리 국립고고학박물관
   license: Public domain
+figures:
+  - file: 'Mosaic with the Labors of Hercules, 3rd century AD, found in Liria (Valencia), National Archaeological Museum of Spain, Madrid (15457383995).jpg'
+    kicker: 유물로는
+    caption: '헤라클레스의 열두 과업 모자이크, 기원후 3세기 히스파니아. 칸마다 과업이 하나씩 들어 있어 열둘을 한눈에 셀 수 있다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

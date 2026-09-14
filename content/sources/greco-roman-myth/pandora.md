@@ -20,6 +20,11 @@ image:
   file: John William Waterhouse - Pandora, 1896.jpg
   caption: 존 윌리엄 워터하우스, 판도라, 1896년
   license: Public domain
+figures:
+  - file: 'Dante Gabriel Rossetti - Pandora.jpg'
+    kicker: 그림으로는
+    caption: '로세티, 판도라, 1871년. 손에 든 것이 상자이고 뚜껑 틈에서 이미 연기가 새고 있다. 원래 이야기에서는 상자가 아니라 항아리였다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

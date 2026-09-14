@@ -19,6 +19,11 @@ image:
   file: Perseus Medusa Cellini Lanzi Florence.jpg
   caption: 벤베누토 첼리니, 메두사의 머리를 든 페르세우스, 1554년, 피렌체
   license: CC0
+figures:
+  - file: 'Caravaggio - Medusa - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '카라바조, 메두사, 1597년. 둥근 방패에 그렸다. 메두사를 이긴 무기가 방패였으므로, 그리는 자리 자체가 이야기의 일부다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

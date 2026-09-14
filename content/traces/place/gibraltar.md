@@ -14,6 +14,11 @@ sources: [source:heracles]
 why: 헤라클레스가 서쪽 끝에서 산을 갈라 바다를 열었다는 이야기가 있어, 그 양쪽을 헤라클레스의 기둥이라 불렀다.
 frequency: 4
 domain_hint: [strait, pillars, hercules, spain]
+figures:
+  - file: '1747 Ratelband Map of Gibraltar - Geographicus - Gibraltar-ratelband-1747.jpg'
+    kicker: 옛 지도로는
+    caption: '라텔반트, 지브롤터 해협 해도, 1747년. 아래쪽 띠는 배에서 바라본 해협의 모습이며, 양쪽으로 솟은 바위가 헤라클레스의 기둥이다'
+    license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

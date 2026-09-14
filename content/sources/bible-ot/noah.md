@@ -19,6 +19,11 @@ image:
   file: (Venice) Animals Entering Noah's Ark by Jacopo Da Ponte (workshop) - gallerie Accademia.jpg
   caption: 야코포 바사노, 방주로 들어가는 짐승들
   license: Public domain
+figures:
+  - file: 'Unidentified artists - Stories of Noah - Noah and the Ark - WGA16281.jpg'
+    kicker: 유물로는
+    caption: '노아와 방주, 13세기 베네치아 산마르코 대성당의 모자이크. 짐승들이 층층이 나뉜 방주로 들어가고 있다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -18,6 +18,7 @@ import { loadThreads, checkThreads } from './lib/threads.ts';
 import { computeLayout } from './lib/layout.ts';
 import { bodyIndex } from '../app/lib/search.ts';
 import type { MapPin } from '../app/lib/map.ts';
+import type { Figure } from '../app/lib/graph.ts';
 
 interface GraphTrace {
   id: string;
@@ -38,6 +39,8 @@ interface GraphTrace {
    */
   constellation?: string;
   map?: MapPin;
+  /** 곁들이는 그림 (D49) */
+  figures?: Figure[];
   /** 위키미디어에 걸어 둔 그림. 리포에는 파일 이름만 둔다. */
   image?: { file: string; caption: string; license: string };
   body: string;
@@ -79,6 +82,8 @@ interface GraphSource {
    */
   constellation?: string;
   map?: MapPin;
+  /** 곁들이는 그림 (D49) */
+  figures?: Figure[];
 
   /** 빌드가 채우는 역링크 */
   traces: string[];
@@ -186,6 +191,32 @@ function mapPin(data: Record<string, unknown>): MapPin | undefined {
   };
 }
 
+/**
+ * 곁들이는 그림을 꺼낸다 (D49).
+ *
+ * 대표 그림 한 장으로는 모자란 카드가 있다. 지명에는 지금 지도와 옛 지도가 함께 있어야 하고,
+ * 별자리에는 사진과 도형과 옛 성도가 함께 있어야 한다.
+ * 파일 이름이 없는 항목은 버린다. 나머지 어긋남은 감사(W12)가 잡는다.
+ */
+function figures(data: Record<string, unknown>): Figure[] | undefined {
+  const raw = data.figures;
+  if (!Array.isArray(raw)) return undefined;
+  const out: Figure[] = [];
+  for (const item of raw) {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) continue;
+    const o = item as Record<string, unknown>;
+    const file = str(o.file);
+    if (!file) continue;
+    out.push({
+      file,
+      caption: str(o.caption),
+      license: str(o.license),
+      kicker: str(o.kicker) || undefined,
+    });
+  }
+  return out.length > 0 ? out : undefined;
+}
+
 const traceCards = all.filter(isTrace).filter(visible);
 const sourceCards = all.filter(isSource).filter(visible);
 const visibleSourceIds = new Set(sourceCards.map((c) => String(c.data.id)));
@@ -206,6 +237,7 @@ const traces: GraphTrace[] = traceCards.map((c) => ({
   image: image(c.data as Record<string, unknown>),
   constellation: str((c.data as Record<string, unknown>).constellation) || undefined,
   map: mapPin(c.data as Record<string, unknown>),
+  figures: figures(c.data as Record<string, unknown>),
   body: c.body.trim(),
   sections: splitSections(c.body),
 }));
@@ -247,6 +279,7 @@ const sources: GraphSource[] = sourceCards.map((c) => {
     image: image(c.data as Record<string, unknown>),
     constellation: str((c.data as Record<string, unknown>).constellation) || undefined,
     map: mapPin(c.data as Record<string, unknown>),
+    figures: figures(c.data as Record<string, unknown>),
     body: c.body.trim(),
     sections: splitSections(c.body),
   };

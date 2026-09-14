@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Emblem, { emblemFor } from '../../components/Emblem';
 import Artwork from '../../components/Artwork';
-import Constellation from '../../components/Constellation';
+import Constellation, { ConstellationAtlas } from '../../components/Constellation';
 import MapFigure from '../../components/MapFigure';
 import Section from '../../components/Section';
 import WishButton from '../../components/WishButton';
@@ -142,7 +142,13 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
 
       {/* 맨눈으로 보이는 모양과 자리 (D46·D47) */}
       {source.constellation && <Constellation name={source.constellation} />}
+      {source.constellation && <ConstellationAtlas name={source.constellation} />}
       {source.map && <MapFigure pin={source.map} name={source.name_ko} />}
+
+      {/* 더 보여 줄 것이 있는 카드는 여기에 이어 붙인다 (D49). */}
+      {source.figures?.map((f) => (
+        <Artwork key={f.file} file={f.file} caption={f.caption} license={f.license} kicker={f.kicker} />
+      ))}
 
       <Section title="한 줄 정의" text={source.sections['한 줄 정의']} />
       <Section title="3문장 스토리" text={source.sections['3문장 스토리']} />

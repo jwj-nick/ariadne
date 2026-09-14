@@ -186,6 +186,11 @@ try {
     // 넓은 자리는 한 점으로 집을 수 없으므로 구글 지도 링크를 걸지 않는다.
     '/trace/europe': ['어디쯤인가', '대륙 전체로 넓어졌다'],
     '/trace/atlantic': ['어디쯤인가', '세상의 바깥', '북위 34.00°, 서경 35.00°', 'TUBS'],
+    // 한 카드에 그림 여러 장 (D49)
+    '/trace/jupiter-planet': ['제우스의 그림'],
+    '/trace/pleiades': ['맨눈으로는 이렇게', '옛 성도로는', '황소자리', '우라니아의 거울'],
+    '/source/nike-goddess': ['조각으로는', '사모트라케의 니케'],
+    '/trace/asia': ['옛 지도로는', 'ASIA PROPRIE'],
     '/thread/car-names': ['삼지창', '비스콘티', '페가수스'],
     '/thread/places-named': ['소가 건넌 자리', '아틀라스'],
     '/thread/sky-how-to-find': ['북극성', '좀생이별'],

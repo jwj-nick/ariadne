@@ -18,6 +18,11 @@ image:
   file: Domenico-Di-Michelino-Dante-and-the-Three-Kingdoms.jpg
   caption: 도메니코 디 미켈리노, 단테와 세 나라, 1465년, 피렌체 대성당
   license: CC0
+figures:
+  - file: 'Sandro Botticelli - La Carte de l''Enfer.jpg'
+    kicker: 그림으로는
+    caption: '보티첼리, 지옥의 지도, 1480년대. 아홉 고리가 깔때기처럼 좁아지며 내려간다. 단테가 적어 놓은 구조를 그대로 옮긴 그림이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

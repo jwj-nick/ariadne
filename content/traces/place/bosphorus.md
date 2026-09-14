@@ -14,6 +14,11 @@ sources: [source:io]
 why: 암소가 된 이오가 등에에 쫓겨 건넌 곳이라, 소가 건넌 자리라는 뜻의 이름이 붙었다.
 frequency: 4
 domain_hint: [strait, istanbul, cow, europe]
+figures:
+  - file: 'Carte du Bosphore, avec Constantinople et les lieux environnants, ainsi que le tracé de la communication à bateaux à vapeur.jpg'
+    kicker: 옛 지도로는
+    caption: '빈더, 보스포루스 해협도, 1850년경. 위쪽이 흑해(Mer Noire)이고 아래쪽이 마르마라해(Mer de Marmara)이며, 그 사이를 잇는 가느다란 물길 왼쪽 기슭에 이스탄불이 있다'
+    license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

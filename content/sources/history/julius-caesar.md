@@ -19,6 +19,11 @@ image:
   file: Head of Julius Caesar from Tusculum MAntTorino 2089 n01.jpg
   caption: 율리우스 카이사르의 투스쿨룸 흉상. 생전의 모습에 가장 가깝다고 본다
   license: Public domain
+figures:
+  - file: 'Jean-Léon Gérôme - The Death of Caesar - Walters 37884.jpg'
+    kicker: 그림으로는
+    caption: '제롬, 카이사르의 죽음, 1867년. 원로원 회의장 바닥에 쓰러진 그를 두고 사람들이 이미 걸어 나가고 있다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

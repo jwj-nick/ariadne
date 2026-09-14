@@ -19,6 +19,11 @@ image:
   file: El Greco (Domenikos Theotokopoulos) - Laocoön - Google Art Project.jpg
   caption: 엘 그레코, 라오콘, 1610년대. 뒤에 그려진 도시는 트로이가 아니라 톨레도다
   license: Public domain
+figures:
+  - file: 'Laocoon Pio-Clementino Inv1059-1064-1067.jpg'
+    kicker: 조각으로는
+    caption: '라오콘 군상, 기원전 1세기. 1506년 로마의 밭에서 나왔고, 그것을 보러 달려간 사람 가운데 미켈란젤로가 있었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -21,6 +21,11 @@ image:
   file: Peter Paul Rubens, Flemish (active Italy, Antwerp, and England) - Prometheus Bound - Google Art Project.jpg
   caption: 페테르 파울 루벤스, 결박된 프로메테우스, 1618년
   license: Public domain
+figures:
+  - file: 'Prometheus and Atlas, Laconian black-figure kylix, by the Arkesilas Painter, 560-550 BC, inv. 16592 - Museo Gregoriano Etrusco - Vatican Museums - DSC01069.jpg'
+    kicker: 유물로는
+    caption: '프로메테우스와 아틀라스, 기원전 6세기 라코니아 잔. 왼쪽은 하늘을 떠받치고 오른쪽은 묶인 채 독수리에게 간을 쪼이고 있다. 벌 받는 두 형제가 한 그림에 있다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

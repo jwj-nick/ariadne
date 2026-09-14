@@ -18,6 +18,11 @@ image:
   file: Panathenaic amphora Kleophrades Louvre F277.jpg
   caption: 파나테나이아 암포라의 달리기 장면, 루브르
   license: Public domain
+figures:
+  - file: 'Discobolus Kleomelos Louvre G111.jpg'
+    kicker: 유물로는
+    caption: '원반을 든 선수, 기원전 5세기 초 아테네의 붉은 그림 접시. 원반던지기는 오종경기의 한 종목이었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

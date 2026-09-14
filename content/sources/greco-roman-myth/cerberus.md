@@ -19,6 +19,11 @@ image:
   file: 'Illustrations to Dante''s Divine Comedy object 13 Butlin 812-13 Second Version of Cerberus.jpg'
   caption: 윌리엄 블레이크, 단테 신곡의 케르베로스
   license: Public domain
+figures:
+  - file: 'Herakles Kerberos Louvre A481.jpg'
+    kicker: 유물로는
+    caption: '헤라클레스와 케르베로스, 기원전 6세기 검은 그림 항아리. 옛 그림에서는 머리가 셋이 아니라 둘인 경우도 흔하다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -13,6 +13,18 @@ import type { MapPin } from './map';
 
 export type Status = 'candidate' | 'reviewed' | 'published' | 'retired';
 
+/**
+ * 한 카드에 곁들이는 그림 (D49).
+ * 대표 그림(image) 말고 더 보여 줄 것이 있을 때 쓴다. 옛 지도, 옛 성도 같은 것이다.
+ */
+export interface Figure {
+  file: string;
+  caption: string;
+  license: string;
+  /** 이 장이 무엇을 보여 주는지 알리는 짧은 딱지. 예: "옛 지도로는" */
+  kicker?: string;
+}
+
 export interface Trace {
   id: string;
   slug: string;
@@ -32,6 +44,8 @@ export interface Trace {
   constellation?: string;
   /** 실제 지도 위의 자리 (D48) */
   map?: MapPin;
+  /** 곁들이는 그림 (D49). 대표 그림 다음에 순서대로 걸린다. */
+  figures?: Figure[];
   body: string;
   sections: Record<string, string>;
 }
@@ -64,6 +78,8 @@ export interface Source {
   constellation?: string;
   /** 실제 지도 위의 자리 (D48) */
   map?: MapPin;
+  /** 곁들이는 그림 (D49). 대표 그림 다음에 순서대로 걸린다. */
+  figures?: Figure[];
   body: string;
   sections: Record<string, string>;
 }

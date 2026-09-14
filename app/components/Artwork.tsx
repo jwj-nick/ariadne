@@ -23,6 +23,7 @@ export default function Artwork({
   caption,
   license,
   borrowedFrom,
+  kicker,
 }: {
   file: string;
   caption: string;
@@ -33,6 +34,12 @@ export default function Artwork({
    * 아무 말 없이 원천의 그림을 띄우면 그것이 이 브랜드의 사진인 줄로 읽힌다.
    */
   borrowedFrom?: string;
+  /**
+   * 한 카드에 그림이 여러 장 걸릴 때, 이 장이 무엇을 보여 주는지 알리는 짧은 딱지 (D49).
+   * "옛 지도로는" 처럼 앞에 붙여 두면, 같은 자리를 다르게 그린 두 장을 나란히 놓아도
+   * 어느 쪽이 무엇인지 헷갈리지 않는다.
+   */
+  kicker?: string;
 }) {
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -68,12 +75,12 @@ export default function Artwork({
       </div>
       {/* 설명과 저작권을 한 줄에 이으면 줄 끝에서 링크가 갈라져 읽기 나쁘다. */}
       <figcaption className="mt-2 text-[12px] leading-relaxed" style={{ color: 'var(--muted)' }}>
-        {borrowedFrom && (
+        {(borrowedFrom || kicker) && (
           <span className="mr-1.5 rounded px-1.5 py-0.5 text-[11px]" style={{ background: 'var(--thread-soft)', color: 'var(--thread)' }}>
-            {borrowedFrom}의 그림
+            {borrowedFrom ? `${borrowedFrom}의 그림` : kicker}
           </span>
         )}
-        <span className={borrowedFrom ? '' : 'block'}>{caption}</span>
+        <span className={borrowedFrom || kicker ? '' : 'block'}>{caption}</span>
         <a
           href={page}
           target="_blank"

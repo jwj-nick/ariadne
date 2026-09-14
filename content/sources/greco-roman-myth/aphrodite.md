@@ -21,6 +21,11 @@ image:
   file: Capitoline Venus Louvre Ma336 n6.jpg
   caption: 카피톨리노의 비너스, 로마 시대 대리석
   license: Public domain
+figures:
+  - file: 'Venus de Milo Louvre Ma399 n4.jpg'
+    kicker: 조각으로는
+    caption: '밀로의 비너스, 기원전 2세기 말. 1820년 밀로스섬의 밭에서 농부가 파냈고, 팔은 그때 이미 없었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

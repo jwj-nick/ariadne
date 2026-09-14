@@ -20,6 +20,11 @@ image:
   file: '"Varvakeion Athena" Statue, 200-250 AD (27890636513).jpg'
   caption: 바르바케이온의 아테나. 파르테논에 있던 거상을 옮긴 로마 시대 복제본
   license: CC0
+figures:
+  - file: 'Parthenon (30276156187).jpg'
+    kicker: 그 자리는
+    caption: '아테네의 파르테논, 기원전 438년. 아테나에게 바친 신전이며, 도시와 여신이 같은 이름을 나누어 가졌다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

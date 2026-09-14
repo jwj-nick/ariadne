@@ -15,6 +15,11 @@ sources: [source:asia-titaness]
 why: 오케아노스의 딸 이름에서 왔다는 설명이 전해지지만, 해가 뜨는 쪽을 뜻하는 낱말에서 왔다는 설명이 더 유력하다.
 frequency: 5
 domain_hint: [continent, sunrise, herodotus, name]
+figures:
+  - file: 'Prima Asiae Tabula (Asia Minor) - Geography (Ptolemy), Rome, 1478.jpg'
+    kicker: 옛 지도로는
+    caption: '프톨레마이오스 『지리학』 1478년 로마판의 아시아 제1도. 한가운데에 ASIA PROPRIE, 곧 "본래의 아시아"라고 적혀 있다. 이 이름이 처음 가리킨 땅이 이만큼이었다'
+    license: Public domain
 status: reviewed
 captured_by: seed
 created: 2026-09-08

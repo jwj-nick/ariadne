@@ -19,6 +19,11 @@ image:
   file: Rembrandt - Moses with the Ten Commandments - Google Art Project.jpg
   caption: 렘브란트, 십계명을 든 모세, 1659년
   license: Public domain
+figures:
+  - file: 'Michelangelo Moses.jpg'
+    kicker: 조각으로는
+    caption: '미켈란젤로, 모세, 1515년경. 머리에 뿔이 돋아 있는데, 얼굴이 빛났다는 히브리어를 뿔이 났다로 옮긴 라틴어 성서 때문이다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

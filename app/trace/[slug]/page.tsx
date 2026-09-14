@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Artwork from '../../components/Artwork';
-import Constellation from '../../components/Constellation';
+import Constellation, { ConstellationAtlas } from '../../components/Constellation';
 import MapFigure from '../../components/MapFigure';
 import SourceThumb from '../../components/SourceThumb';
 import Emblem, { emblemFor } from '../../components/Emblem';
@@ -100,30 +100,44 @@ export default async function TracePage({ params }: { params: Promise<{ slug: st
           })()}
       </div>
 
-      {/* 흔적 자체의 그림이 없으면 그 원천의 그림을 빌려 온다.
-          로고는 상표권 때문에 걸 수 없지만, 그 이름이 나온 자리의 그림은 걸 수 있다. */}
+      {/*
+        이 이름의 그림과, 그 이름이 나온 이야기의 그림을 잇달아 건다 (D49).
+
+        앞서는 둘 중 하나만 걸었다. 흔적에 제 그림이 없을 때만 원천의 그림을 빌려 왔으므로,
+        목성 사진이 걸린 카드에서는 유피테르의 상을 볼 수 없었다. 그런데 이 앱이 하려는 말이
+        바로 "저 이름이 이 이야기에서 왔다" 이므로, 그 둘은 나란히 있어야 한다.
+
+        로고는 상표권 때문에 걸 수 없어서 흔적 쪽이 자주 비는데, 그때는 예전처럼 한 장만 걸린다.
+      */}
       {(() => {
         const own = trace.image;
-        const lent = own ? null : sources.find((s) => s.image)?.image;
-        const lender = own ? null : sources.find((s) => s.image);
-        if (own) return <Artwork file={own.file} caption={own.caption} license={own.license} />;
-        if (lent && lender) {
-          return (
-            <Artwork
-              file={lent.file}
-              caption={lent.caption}
-              license={lent.license}
-              borrowedFrom={lender.name_ko}
-            />
-          );
-        }
-        return null;
+        const lender = sources.find((s) => s.image);
+        const lent = lender?.image;
+        return (
+          <>
+            {own && <Artwork file={own.file} caption={own.caption} license={own.license} />}
+            {lent && lender && lent.file !== own?.file && (
+              <Artwork
+                file={lent.file}
+                caption={lent.caption}
+                license={lent.license}
+                borrowedFrom={lender.name_ko}
+              />
+            )}
+          </>
+        );
       })()}
 
       {/* 사진은 망원경이 본 것이고, 맨눈으로 보이는 것은 점 몇 개다 (D46).
           지명은 사진보다 "어디쯤인가" 가 먼저다 (D48). */}
       {trace.constellation && <Constellation name={trace.constellation} />}
+      {trace.constellation && <ConstellationAtlas name={trace.constellation} />}
       {trace.map && <MapFigure pin={trace.map} name={trace.name_ko} />}
+
+      {/* 더 보여 줄 것이 있는 카드는 여기에 이어 붙인다 (D49). */}
+      {trace.figures?.map((f) => (
+        <Artwork key={f.file} file={f.file} caption={f.caption} license={f.license} kicker={f.kicker} />
+      ))}
 
       <Section title="한 줄" text={trace.sections['한 줄']} />
       <Section title="어디서 만나나" text={trace.sections['어디서 만나나']} />

@@ -46,6 +46,7 @@ const CODE_TITLES: Record<string, string> = {
   W09: 'image 항목의 짜임이 어긋남',
   W10: 'group 이 그 갈래의 묶음 목록 밖',
   W11: 'map 항목의 짜임이 어긋남',
+  W12: 'figures 항목의 짜임이 어긋남',
 };
 
 export const codeTitle = (code: string) => CODE_TITLES[code] ?? code;
@@ -296,6 +297,46 @@ export function runChecks(cards: Card[]): Finding[] {
         if (file.startsWith('File:')) {
           add('W09', 'warn', c.path, 'image.file 에는 "File:" 을 빼고 파일 이름만 적습니다.');
         }
+      }
+    }
+
+    /**
+     * W12 — 곁들이는 그림 (D49).
+     *
+     * image 와 같은 규칙을 따른다. 다만 여러 장이므로 몇 번째 장이 잘못됐는지 함께 알린다.
+     * 같은 파일을 두 번 걸면 한 카드에 같은 그림이 두 장 뜬다.
+     */
+    if (d.figures !== undefined) {
+      const list = d.figures;
+      if (!Array.isArray(list)) {
+        add('W12', 'warn', c.path, 'figures 는 그림 묶음의 목록이어야 합니다.');
+      } else {
+        const seen = new Set<string>([typeof (d.image as { file?: string })?.file === 'string' ? (d.image as { file: string }).file : '']);
+        list.forEach((item, i) => {
+          const nth = `figures[${i}]`;
+          if (!item || typeof item !== 'object' || Array.isArray(item)) {
+            add('W12', 'warn', c.path, `${nth} 은 file · caption · license 를 담은 묶음이어야 합니다.`);
+            return;
+          }
+          const o = item as Record<string, unknown>;
+          for (const field of ['file', 'caption', 'license'] as const) {
+            const v = o[field];
+            if (typeof v !== 'string' || v.trim() === '') {
+              add('W12', 'warn', c.path, `${nth}.${field} 가 비어 있습니다.`);
+            }
+          }
+          const file = typeof o.file === 'string' ? o.file : '';
+          if (file && !/\.(jpe?g|png|gif|svg|webp|tiff?)$/i.test(file)) {
+            add('W12', 'warn', c.path, `${nth}.file "${file}" 에 그림 확장자가 없습니다.`);
+          }
+          if (file.startsWith('File:')) {
+            add('W12', 'warn', c.path, `${nth}.file 에는 "File:" 을 빼고 파일 이름만 적습니다.`);
+          }
+          if (file && seen.has(file)) {
+            add('W12', 'warn', c.path, `${nth}.file "${file}" 은 이 카드에 이미 걸려 있습니다.`);
+          }
+          seen.add(file);
+        });
       }
     }
 

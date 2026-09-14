@@ -20,6 +20,11 @@ image:
   file: MAN Atlante fronte 1040572.JPG
   caption: 파르네세 아틀라스. 어깨에 얹힌 것이 하늘이며, 지금 남은 가장 오래된 천구다
   license: CC BY-SA 4.0
+figures:
+  - file: 'Prometheus and Atlas, Laconian black-figure kylix, by the Arkesilas Painter, 560-550 BC, inv. 16592 - Museo Gregoriano Etrusco - Vatican Museums - DSC01069.jpg'
+    kicker: 유물로는
+    caption: '프로메테우스와 아틀라스, 기원전 6세기 라코니아 잔. 하늘을 떠받친 쪽이 아틀라스이고, 묶여 간을 쪼이는 쪽이 그 아우 프로메테우스다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

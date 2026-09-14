@@ -20,6 +20,11 @@ image:
   file: Bellerophon killing Chimaera (mosaic from Rhodes).jpg
   caption: 페가수스를 타고 키마이라를 죽이는 벨레로폰. 로도스의 모자이크
   license: Public domain
+figures:
+  - file: 'Corinth - 350-338 BC - silver stater - Pegasos - head of Athena - Berlin MK AM.jpg'
+    kicker: 유물로는
+    caption: '코린토스의 은화, 기원전 4세기. 날개 달린 말이 새겨져 있어 이 화폐 자체를 망아지라 불렀다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

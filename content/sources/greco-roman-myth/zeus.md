@@ -23,6 +23,11 @@ image:
   file: Jupiter and Thetis (Ingres).jpg
   caption: 앵그르, 유피테르와 테티스, 1811년
   license: Public domain
+figures:
+  - file: 'Bronze Zeus or Poseidon NAMA X 15161 Athens Greece.jpg'
+    kicker: 조각으로는
+    caption: '아르테미시온의 청동상, 기원전 460년경. 바다에서 건져 올렸다. 던지려던 것이 번개면 제우스이고 삼지창이면 포세이돈인데, 손에 쥔 것이 사라져 아직 결론이 없다'
+    license: CC0
 status: reviewed
 created: 2026-09-07
 ---
