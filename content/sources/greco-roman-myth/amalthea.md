@@ -19,6 +19,11 @@ image:
   file: Nicolas Poussin - The Infant Jupiter Nurtured by the Goat Amalthea - WGA18300.jpg
   caption: 니콜라 푸생, 염소 아말테이아의 젖을 먹는 어린 유피테르, 1638년경
   license: Public domain
+figures:
+  - file: 'The Goat Amalthea with the Infant Jupiter and a Faun, by Gian Lorenzo Bernini, 1609-1615, marble - Galleria Borghese - Rome, Italy - DSC04644.jpg'
+    kicker: 조각으로는
+    caption: '베르니니, 염소 아말테이아와 아기 유피테르, 1615년경. 베르니니가 열몇 살에 깎은 것으로, 남아 있는 가장 이른 작품이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

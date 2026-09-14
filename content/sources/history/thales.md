@@ -19,6 +19,11 @@ image:
   file: Thalès from Lives 1761.png
   caption: 탈레스 초상 판화, 1761년
   license: CC0
+figures:
+  - file: 'Miletus-amphitheatre ruins.jpg'
+    kicker: 그 자리는
+    caption: '밀레토스의 극장 터. 탈레스가 살던 도시이며, 그때 바다였던 자리가 지금은 강이 실어 온 흙으로 메워져 뭍이 되었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

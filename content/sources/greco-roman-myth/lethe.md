@@ -19,6 +19,11 @@ image:
   file: Henryk Siemiradzki - Orfeusz w podziemnym królestwie.jpg
   caption: 헨리크 시에미라츠키, 저승의 오르페우스, 19세기
   license: Public domain
+figures:
+  - file: 'Gustove Dore, The Divine Comedy, Paradise, plate 115, Dante and the River of Lethe.jpg'
+    kicker: 그림으로는
+    caption: '도레, 레테 강의 단테, 1868년. 연옥 꼭대기의 이 강에 잠기면 지은 죄의 기억이 지워진다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

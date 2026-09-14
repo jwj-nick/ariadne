@@ -18,6 +18,11 @@ image:
   file: Attica 06-13 Athens 50 View from Philopappos - Acropolis Hill.jpg
   caption: 필로파포스 언덕에서 본 아테네. 폴리스는 이런 도시 하나가 곧 나라였다
   license: CC BY-SA 3.0
+figures:
+  - file: 'The Stoa of Attalos (Attalus) in Ancient Agora.jpg'
+    kicker: 그 자리는
+    caption: '아테네 아고라의 아탈로스 주랑. 폴리스의 심장은 신전이 아니라 이 광장이었고, 재판과 장사와 수다가 모두 여기서 벌어졌다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

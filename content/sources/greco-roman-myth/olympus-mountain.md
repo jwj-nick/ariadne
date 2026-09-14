@@ -19,6 +19,11 @@ image:
   file: Mountain Olympus snowy.JPG
   caption: 눈 덮인 올림포스산. 그리스에서 가장 높은 산이다
   license: Public domain
+figures:
+  - file: 'Assembly of the Gods after the ceiling composition in the Loggia di Psiche, Villa Farnesina, Rome MET DP851671.jpg'
+    kicker: 그림으로는
+    caption: '라파엘로의 신들의 회의를 옮긴 판화, 16세기. 올림포스에 신들이 모두 모인 자리다. 산이 아니라 이 회의가 올림포스라는 말의 뜻이었다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

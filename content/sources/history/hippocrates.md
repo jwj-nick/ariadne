@@ -19,6 +19,11 @@ image:
   file: Engraving; portrait of Hippocrates, Wellcome L0016239.jpg
   caption: 히포크라테스 초상 판화
   license: CC BY 4.0
+figures:
+  - file: 'Plane of Hippocrates, Kos island Greece.jpg'
+    kicker: 그 자리는
+    caption: '코스섬의 플라타너스. 히포크라테스가 이 나무 아래서 제자를 가르쳤다고 전한다. 지금 나무는 그 후손이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

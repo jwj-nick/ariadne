@@ -19,6 +19,11 @@ image:
   file: Iris Louvre L43 n2.jpg
   caption: 무지개의 여신 이리스를 그린 도기, 루브르
   license: CC BY 3.0
+figures:
+  - file: 'Purple-Iris pn.jpg'
+    kicker: 그 이름은
+    caption: '붓꽃. 무지개의 여신 이름을 그대로 받았다. 꽃잎 색이 여럿이라 그렇게 불렀고, 눈의 홍채도 같은 이름이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

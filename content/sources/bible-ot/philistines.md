@@ -20,6 +20,11 @@ image:
   file: Medinet Habu Ramses III14.JPG
   caption: 메디네트 하부의 부조에 새겨진 블레셋 포로
   license: CC BY-SA 3.0
+figures:
+  - file: 'Philistine Painted Pottery, 12th-11th Century BC (42312461435).jpg'
+    kicker: 유물로는
+    caption: '블레셋 채색 토기, 기원전 12~11세기. 에게해 쪽 무늬가 남아 있어, 이들이 바다를 건너온 사람들이라는 것을 그릇이 말해 준다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

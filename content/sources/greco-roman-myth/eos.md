@@ -19,6 +19,11 @@ image:
   file: 'Coupe attique à figures rouges avec décor central d''Éos tenant le cadravre de son fils Memnon - Douris ; potier Kalliadès - Musée du Louvre AGER MNB 1698 ; G 115.jpg'
   caption: 에오스를 그린 아티카 적색상 잔
   license: CC0
+figures:
+  - file: 'Guido Reni - L''Aurora di Guido Reni nelle arti decorative.jpg'
+    kicker: 그림으로는
+    caption: '귀도 레니의 오로라, 1614년 천장화를 옮긴 것. 새벽의 여신이 앞장서고 그 뒤로 해의 수레가 따라온다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

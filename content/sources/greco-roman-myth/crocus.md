@@ -17,6 +17,11 @@ image:
   file: Frühlings-Krokus, spring crocus (Crocus vernus).jpg
   caption: 크로커스 꽃. 이 꽃술을 말린 것이 사프란이다
   license: CC BY-SA 2.0
+figures:
+  - file: 'Crocus sativus, saffron (4).jpg'
+    kicker: 그 이름은
+    caption: '말린 사프란 암술. 크로코스라는 이름이 이 향신료의 학명에 남았고, 몇 가닥이 밥 한 솥을 노랗게 물들인다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

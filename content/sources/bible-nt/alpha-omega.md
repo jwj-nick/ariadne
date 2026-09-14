@@ -16,6 +16,11 @@ image:
   file: Katowice St John Paul church mosaic 2021.jpg
   caption: 그리스도 좌우의 A 와 Ω. 카토비체 성당 모자이크, 2021년
   license: CC BY-SA 4.0
+figures:
+  - file: 'Chrisme Colosseum Rome Italy crop.jpg'
+    kicker: 유물로는
+    caption: '콜로세움에서 나온 크리스몬 부조, 4세기경. 그리스도를 뜻하는 카이와 로 두 글자 양옆에 알파와 오메가가 매달려 있다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

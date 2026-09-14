@@ -19,6 +19,11 @@ image:
   file: Inferno Canto 08 - Styx (148618431).jpg
   caption: 귀스타브 도레, 신곡 지옥편의 스틱스강, 1870년
   license: Public domain
+figures:
+  - file: 'Peter Paul Rubens 181.jpg'
+    kicker: 그림으로는
+    caption: '루벤스, 아킬레우스를 스틱스 강에 담그는 테티스, 1635년경. 발목을 잡고 담갔기 때문에 그 자리만 남았다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

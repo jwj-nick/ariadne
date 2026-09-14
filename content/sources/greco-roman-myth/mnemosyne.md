@@ -20,6 +20,11 @@ image:
   file: Gabriel Dante Rosetti, Mnemosyne.jpg
   caption: 단테 가브리엘 로세티, 므네모시네, 1881년
   license: Public domain
+figures:
+  - file: 'Thalia sarcophagus Louvre Ma475.jpg'
+    kicker: 유물로는
+    caption: '뮤즈 석관의 탈리아, 기원후 2세기. 므네모시네의 아홉 딸 가운데 희극을 맡은 이며, 손에 든 것이 희극 가면이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

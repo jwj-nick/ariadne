@@ -19,6 +19,11 @@ image:
   file: Tel Megiddo 26.jpg
   caption: 이스라엘 므깃도 텔. 아마겟돈은 이 언덕 이름에서 왔다
   license: CC BY-SA 4.0
+figures:
+  - file: 'AERIAL VIEW OF TEL MEGIDDO (7723470910).jpg'
+    kicker: 그 자리는
+    caption: '하늘에서 본 텔 메기도. 이스라엘 북부의 이 언덕이 아마겟돈이라는 말의 뿌리다. 스물여섯 겹의 도시가 켜켜이 쌓여 있다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

@@ -20,6 +20,11 @@ image:
   file: Nemesis (The Great Fortune) MET MM5236.jpg
   caption: 알브레히트 뒤러, 네메시스, 1502년경 동판화
   license: CC0
+figures:
+  - file: 'Nemesis of Rhamnous Type (Farnese Collection) 1.jpg'
+    kicker: 조각으로는
+    caption: '람누스의 네메시스, 기원전 5세기 원본의 로마 복제본. 뒤러의 판화보다 이천 년 앞선 같은 여신이며, 손에 든 것은 자 또는 잔이다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-07
 ---

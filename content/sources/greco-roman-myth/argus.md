@@ -19,6 +19,11 @@ image:
   file: Fábula de Mercurio y Argos, by Diego Velázquez.jpg
   caption: 디에고 벨라스케스, 메르쿠리우스와 아르고스, 1659년, 프라도
   license: Public domain
+figures:
+  - file: 'Peacock (11) (8315376663).jpg'
+    kicker: 그 이름은
+    caption: '공작의 꼬리. 아르고스가 죽자 헤라가 그 백 개의 눈을 제 새의 깃털에 옮겨 붙였다고 한다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

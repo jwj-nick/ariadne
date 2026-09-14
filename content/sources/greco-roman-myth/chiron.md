@@ -20,6 +20,11 @@ image:
   file: Herculanum-basilica-Chiron.jpg
   caption: 헤르쿨라네움 벽화의 케이론과 아킬레우스, 1세기
   license: Public domain
+figures:
+  - file: 'Baron Jean Baptiste Regnault - Education of Achilles - 79.162 - Detroit Institute of Arts.jpg'
+    kicker: 그림으로는
+    caption: '르뇨, 아킬레우스의 교육, 1782년. 켄타우로스가 소년에게 활을 가르친다. 케이론은 야만이 아니라 스승의 이름이었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

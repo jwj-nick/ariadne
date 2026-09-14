@@ -17,6 +17,11 @@ image:
   file: MA I386039 TePapa Hebe full.jpg
   caption: 안젤리카 카우프만, 신들의 잔을 든 헤베, 1770년
   license: Public domain
+figures:
+  - file: 'Antonio Canova Hebe Berlin Alte Nationalgalerie 27042018 1.jpg'
+    kicker: 조각으로는
+    caption: '카노바, 헤베, 1800년경. 신들에게 넥타르를 따르던 젊음의 여신이며, 손에 든 것이 그 잔과 병이다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

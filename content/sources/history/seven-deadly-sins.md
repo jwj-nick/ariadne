@@ -18,6 +18,11 @@ image:
   file: Hieronymus Bosch- The Seven Deadly Sins and the Four Last Things.JPG
   caption: 히에로니무스 보스, 일곱 죄악 탁자, 1505~1510년, 프라도
   license: Public domain
+figures:
+  - file: 'Pride (Superbia), from the series The Seven Deadly Sins MET MM20358.jpg'
+    kicker: 그림으로는
+    caption: '브뤼헐의 일곱 죄악 연작 가운데 교만, 1558년 판화. 거울을 든 여인 둘레로 온 세상이 뒤틀려 있다'
+    license: CC0
 status: reviewed
 created: 2026-09-07
 ---

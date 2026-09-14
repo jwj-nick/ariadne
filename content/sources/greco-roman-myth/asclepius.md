@@ -20,6 +20,11 @@ image:
   file: Statue-of-asclepius.jpg
   caption: 뱀이 감긴 지팡이를 든 아스클레피오스
   license: CC0
+figures:
+  - file: 'Ancient theatre of Epidaurus (50841792791).jpg'
+    kicker: 그 자리는
+    caption: '에피다우로스의 극장, 기원전 4세기. 아스클레피오스 성소의 일부였다. 병을 고치러 온 사람들이 이 극장에서 연극을 보았다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

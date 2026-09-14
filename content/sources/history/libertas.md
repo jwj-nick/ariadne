@@ -17,6 +17,11 @@ image:
   file: Roman Coin, Denarius of Vitellius (FindID 580806).jpg
   caption: 리베르타스가 새겨진 로마 은화
   license: CC BY-SA 4.0
+figures:
+  - file: 'Statue of Liberty, NY.jpg'
+    kicker: 그 이름은
+    caption: '뉴욕의 자유의 여신상, 1886년. 로마의 리베르타스가 횃불을 들고 대서양을 건너간 모습이다'
+    license: CC BY 2.0
 status: reviewed
 created: 2026-09-08
 ---

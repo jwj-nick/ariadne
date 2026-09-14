@@ -19,6 +19,11 @@ image:
   file: Greece from the Coming of the Hellenes to AD. 14, page 1, Vase painting.jpg
   caption: 테세우스에게 자기 침대에 눕혀지는 프로크루스테스
   license: CC0
+figures:
+  - file: 'Theseus deeds BM E 84.JPG'
+    kicker: 유물로는
+    caption: '테세우스의 위업을 두른 잔, 기원전 440년경. 길 가는 나그네를 침대에 맞춰 늘이거나 자르던 프로크루스테스를 같은 방법으로 처치하는 장면이 들어 있다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

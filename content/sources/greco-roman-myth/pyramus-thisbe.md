@@ -16,6 +16,11 @@ image:
   file: Nicolas Poussin - Landscape during a Thunderstorm with Pyramus and thisbe - Google Art Project.jpg
   caption: 니콜라 푸생, 폭풍우 속의 피라모스와 티스베, 1651년
   license: Public domain
+figures:
+  - file: 'Pyrthis.jpg'
+    kicker: 그림으로는
+    caption: '피라모스와 티스베, 폼페이 벽화, 기원후 1세기. 셰익스피어보다 천오백 년 앞서 사람들이 이 이야기를 벽에 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

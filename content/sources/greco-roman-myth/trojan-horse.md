@@ -20,6 +20,11 @@ image:
   file: Mykonos vase, relief pithos, capture of Troy, 670 BC, AM Mykonos, 2240, 177256.jpg
   caption: 트로이 목마를 새긴 미코노스 항아리, 기원전 670년경
   license: CC BY-SA 4.0
+figures:
+  - file: 'Giovanni Domenico Tiepolo - The Procession of the Trojan Horse in Troy - WGA22382.jpg'
+    kicker: 그림으로는
+    caption: '티에폴로, 트로이 목마의 행렬, 1760년경. 성벽 안으로 끌려 들어가는 순간이며, 이 그림에서는 아직 아무도 의심하지 않는다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

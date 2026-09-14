@@ -19,6 +19,11 @@ image:
   file: Gigantomachy Staatliche Antikensammlungen 1553.jpg
   caption: 기간토마키아를 그린 도기. 포보스는 아레스를 따라다니는 공포의 신이다
   license: Public domain
+figures:
+  - file: 'Phobos colour 2008.jpg'
+    kicker: 그 이름은
+    caption: '화성의 위성 포보스. 전쟁의 신의 아들 이름을 붙였으며, 감자처럼 생긴 이 돌덩이가 하루에 세 번 화성을 돈다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

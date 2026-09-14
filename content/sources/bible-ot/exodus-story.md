@@ -19,6 +19,11 @@ image:
   file: Hans Jordaens (III) - The crossing of the Red Sea.jpg
   caption: 한스 요르단스, 홍해를 건너다
   license: Public domain
+figures:
+  - file: 'Sunrise at Mount Moses.jpg'
+    kicker: 그 자리는
+    caption: '시나이산의 해돋이. 모세의 산이라고도 부르며, 순례자들은 지금도 밤에 올라 이 해를 본다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-07
 ---

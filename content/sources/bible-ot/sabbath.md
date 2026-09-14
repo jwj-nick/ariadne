@@ -18,6 +18,11 @@ image:
   file: Shabbat Candles.jpg
   caption: 안식일을 여는 촛불
   license: CC BY-SA 3.0
+figures:
+  - file: 'Shabbat table setting.jpg'
+    kicker: 그 자리는
+    caption: '안식일 저녁 상차림. 촛불 둘, 포도주 잔, 천으로 덮은 빵 두 덩이. 해가 지면 이 상 앞에서 한 주가 멈춘다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

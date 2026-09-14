@@ -16,6 +16,11 @@ image:
   file: Sermon-on-the-mount detail.jpg
   caption: 산상수훈. 예수의 말이 모인 자리다
   license: Public domain
+figures:
+  - file: 'Bloch-SermonOnTheMount.jpg'
+    kicker: 그림으로는
+    caption: '블로흐, 산상수훈, 1877년. 어록의 대부분이 이 자리에서 나왔다고 복음서는 전한다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

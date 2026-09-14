@@ -22,6 +22,11 @@ image:
   file: Attic black-figure amphora Achilles and Aias playing a board game, between them Athena, Chiusi painter, c. 510 BC (28453316940).jpg
   caption: 아킬레우스와 아약스가 놀이판을 사이에 둔 장면, 엑세키아스의 항아리
   license: CC0
+figures:
+  - file: 'Exekias - ABV 144 8 - Achilles and Penthesilea - Memnon between two of his soldiers - London BM 1849-0518-10 - 01.jpg'
+    kicker: 유물로는
+    caption: '엑세키아스, 아킬레우스와 펜테실레이아, 기원전 530년경 항아리. 아마존 여왕을 찌르는 순간 눈이 마주쳤고, 그 순간 사랑에 빠졌다는 이야기다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-07
 ---

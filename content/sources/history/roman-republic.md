@@ -18,6 +18,11 @@ image:
   file: PUBLIC-515492, Silver Roman Republic AR denarius L. Procilius (FindID 746439).jpg
   caption: 로마 공화정의 은화 데나리우스
   license: CC BY 2.0
+figures:
+  - file: 'Capitoline Brutus Musei Capitolini MC1183.jpg'
+    kicker: 조각으로는
+    caption: '카피톨리노의 브루투스, 기원전 4~3세기 청동. 왕을 몰아내고 공화정을 세운 첫 집정관의 얼굴이라고 여겨져 왔다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

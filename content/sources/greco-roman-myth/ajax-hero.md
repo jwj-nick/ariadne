@@ -20,6 +20,11 @@ image:
   file: Ajax suicide.jpg
   caption: 자기 칼 위로 몸을 던지는 아이아스, 19세기
   license: Public domain
+figures:
+  - file: 'Akhilleus Aias MGEt 16757.jpg'
+    kicker: 유물로는
+    caption: '엑세키아스, 주사위 놀이를 하는 아킬레우스와 아이아스, 기원전 540년경 항아리. 전쟁 한가운데 잠시 멈춘 둘을 그렸고, 그리스 도자기 그림 가운데 가장 이름난 한 점이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

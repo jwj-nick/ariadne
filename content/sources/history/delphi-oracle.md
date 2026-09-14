@@ -20,6 +20,11 @@ image:
   file: Delphes. Ruines. Temple d'Apollon. Voie Sacrée.jpg
   caption: 델포이의 아폴론 신전 유적
   license: CC0
+figures:
+  - file: 'Oracle of Delphi, red-figure kylix, 440-430 BC, Kodros Painter, Berlin F 2538, 141668.jpg'
+    kicker: 유물로는
+    caption: '신탁을 묻는 아이게우스, 기원전 440년경 잔. 세발솥에 앉은 여사제 피티아가 월계수 가지를 들고 답한다. 신탁 장면을 그린 거의 유일한 그림이다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-07
 ---

@@ -17,6 +17,11 @@ image:
   file: Waterhouse miranda the tempest.jpg
   caption: 존 윌리엄 워터하우스, 미란다, 1916년. 폭풍우에 난파하는 배를 보고 있다
   license: Public domain
+figures:
+  - file: 'William Hogarth 017.jpg'
+    kicker: 그림으로는
+    caption: '호가스, 템페스트의 한 장면, 1735년경. 프로스페로와 미란다 앞에 페르디난드가 나타나고, 칼리반이 뒤에서 노려본다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -20,6 +20,11 @@ image:
   file: Diane de Versailles - Musée du Louvre AGER Ma 589.jpg
   caption: 베르사유의 디아나, 루브르 박물관
   license: CC0
+figures:
+  - file: 'Artemis of Ephesus MAN Napoli Inv6278.jpg'
+    kicker: 조각으로는
+    caption: '에페소스의 아르테미스, 기원후 2세기. 그리스의 사냥꾼 여신과 같은 이름이지만 소아시아에서는 이렇게 온몸에 열매를 단 풍요의 여신이었다'
+    license: CC BY 2.5
 status: reviewed
 created: 2026-09-07
 ---

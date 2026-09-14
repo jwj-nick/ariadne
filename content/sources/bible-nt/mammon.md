@@ -18,6 +18,11 @@ image:
   file: Mammon and His Slave.jpg
   caption: 사샤 슈나이더, 맘몬과 그의 노예, 1896년경
   license: Public domain
+figures:
+  - file: 'El Greco Christ Driving the Money Changers from the Temple.jpg'
+    kicker: 그림으로는
+    caption: '엘 그레코, 성전에서 환전상을 쫓아내는 그리스도, 1600년경. 돈과 신을 함께 섬길 수 없다는 말을 행동으로 보여 준 장면이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

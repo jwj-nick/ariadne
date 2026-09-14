@@ -19,6 +19,11 @@ image:
   file: Velázquez - La Fábula de Aracne o Las Hilanderas (Museo del Prado, 1657-58).jpg
   caption: 디에고 벨라스케스, 실 잣는 여인들, 1655년경. 뒤쪽 벽걸이에 아라크네 이야기가 있다
   license: Public domain
+figures:
+  - file: 'Purgatorio Canto 12 (148974491).jpg'
+    kicker: 그림으로는
+    caption: '도레, 신곡 연옥편의 아라크네, 1868년. 단테는 오만한 자들 가운데 거미로 변한 그를 놓았다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

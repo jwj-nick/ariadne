@@ -19,6 +19,11 @@ image:
   file: Joachim Patinir. De oversteek naar de onderwereld, GD000687.jpg
   caption: 요아힘 파티니르, 스틱스강을 건너는 카론, 1520년경, 프라도
   license: Public domain
+figures:
+  - file: 'Attic white-ground Lekythos depicting Charon, the ferryman of Hades, pushing his boat across the Acheron, ca. 450 BC, Staatliche Antikensammlungen, Munich (8958110566).jpg'
+    kicker: 유물로는
+    caption: '배를 미는 카론, 기원전 450년경 흰 바탕 레키토스. 무덤에 함께 묻던 기름병이며, 죽은 이가 건너갈 길을 그려 넣었다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

@@ -20,6 +20,11 @@ image:
   file: Antonio Allegri, called Correggio - Jupiter and Io - Google Art Project.jpg
   caption: 코레조, 유피테르와 이오, 1530년경. 구름이 곧 제우스다
   license: Public domain
+figures:
+  - file: 'Eucharides Painter - ARV 229 39extra - Hermes liberating Io from Argos - Würzburg MvWM Z A 48 - 04.jpg'
+    kicker: 유물로는
+    caption: '아르고스를 죽여 이오를 풀어 주는 헤르메스, 기원전 490년경 항아리. 눈이 백 개인 파수꾼을 피리로 재운 뒤의 장면이다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

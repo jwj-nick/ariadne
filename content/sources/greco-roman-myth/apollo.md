@@ -20,6 +20,11 @@ image:
   file: Apollo Belvedere replicas in Toulouse MHNT.jpg
   caption: 벨베데레의 아폴론 복제본
   license: CC BY-SA 4.0
+figures:
+  - file: '20100706 Terrace of the Lions Delos Cyclades Greece.jpg'
+    kicker: 그 자리는
+    caption: '델로스섬의 사자 테라스. 아폴론이 태어났다는 섬이며, 사자들은 그 성소로 가는 길을 지키고 있다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-07
 ---

@@ -19,6 +19,11 @@ image:
   file: Punishment sisyph.jpg
   caption: 티치아노, 시시포스, 1549년경, 프라도 미술관
   license: Public domain
+figures:
+  - file: 'Attic Black Figured amphora depicting the punishment of Sisyphus in Hades, Staatliche Antikensammlungen, Munich (8958117338).jpg'
+    kicker: 유물로는
+    caption: '바위를 미는 시시포스, 기원전 6세기 항아리. 티치아노보다 이천 년 앞서 같은 자세로 그려졌다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

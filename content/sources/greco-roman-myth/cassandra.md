@@ -20,6 +20,11 @@ image:
   file: Cassandra1.jpeg
   caption: 이블린 드 모건, 카산드라, 1898년. 뒤에서 트로이가 타고 있다
   license: Public domain
+figures:
+  - file: 'Ajax and Cassandra (fresco in Room 4 of the Casa del Menandro in Pompeii) (48442977122).jpg'
+    kicker: 그림으로는
+    caption: '아이아스와 카산드라, 폼페이 메난드로스의 집 벽화, 기원후 1세기. 트로이가 함락되던 밤 아테나 신상에 매달린 그를 끌어내는 장면이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

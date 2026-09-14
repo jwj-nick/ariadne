@@ -19,6 +19,11 @@ image:
   file: Samson and Delilah by Rubens.jpg
   caption: 페테르 파울 루벤스, 삼손과 들릴라, 1610년경
   license: Public domain
+figures:
+  - file: 'Samson pulling down the Pillars (BM 1868,0808.9765).jpg'
+    kicker: 그림으로는
+    caption: '기둥을 무너뜨리는 삼손, 18세기 판화. 데릴라에게 머리를 잘린 뒤의 마지막 장면이며, 이때 죽인 사람이 살아서 죽인 사람보다 많았다고 한다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -18,6 +18,11 @@ image:
   file: Leónidas en las Termópilas, por Jacques-Louis David.jpg
   caption: 자크 루이 다비드, 테르모필레의 레오니다스, 1814년, 루브르
   license: Public domain
+figures:
+  - file: 'Leonidas Statue.jpg'
+    kicker: 조각으로는
+    caption: '스파르타에서 나온 투구 쓴 전사상, 기원전 5세기. 레오니다스라 불리지만 확실하지 않다. 다비드의 그림 속 왕이 실제로는 이런 얼굴이었을 것이다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

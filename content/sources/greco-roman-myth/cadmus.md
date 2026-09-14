@@ -19,6 +19,11 @@ image:
   file: Cadmus zaait drakentanden Rijksmuseum SK-A-4051.jpeg
   caption: 루벤스 공방, 용의 이빨을 뿌리는 카드모스, 1610년대
   license: Public domain
+figures:
+  - file: 'Kadmos dragon Louvre N3157.jpg'
+    kicker: 유물로는
+    caption: '용과 싸우는 카드모스, 기원전 4세기 항아리. 이 용의 이빨을 땅에 뿌려 나온 사람들이 테베의 첫 시민이 되었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

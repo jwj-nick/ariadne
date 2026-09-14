@@ -17,6 +17,11 @@ image:
   file: Anatomical Man.jpg
   caption: 랭부르 형제, 별자리와 몸의 대응, 1416년경. 별이 몸을 다스린다고 믿었다
   license: Public domain
+figures:
+  - file: 'Dendera zodiac, E 13482 (222).jpg'
+    kicker: 유물로는
+    caption: '덴데라의 황도대, 기원전 1세기 이집트. 하늘의 열두 자리를 돌에 새겼다. 별이 사람을 좌우한다는 생각이 이 천장 아래서 자라났다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

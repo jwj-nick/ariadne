@@ -19,6 +19,11 @@ image:
   file: Guerin, Pierre Narcisse - Morpheus and Iris.jpg
   caption: 피에르 나르시스 게랭, 모르페우스와 이리스, 1811년
   license: Public domain
+figures:
+  - file: 'Morphée – Jean-Antoine Houdon – Musée du Louvre, RF 3993 – Q19404664.jpg'
+    kicker: 조각으로는
+    caption: '우동, 모르페우스, 1777년. 잠든 청년의 이마에 양귀비가 얹혀 있다. 모르핀이라는 약 이름이 이 신에게서 왔다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

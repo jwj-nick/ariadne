@@ -19,6 +19,11 @@ image:
   file: Hku Klimt Hygieia.jpg
   caption: '구스타프 클림트, 히기에이아. 빈 대학 천장화 <의학>의 부분, 1907년'
   license: Public domain
+figures:
+  - file: 'Bowl of Hygeia and serpent and scales.jpg'
+    kicker: 그 이름은
+    caption: '히기에이아의 잔. 뱀이 감긴 이 잔이 약국의 표지가 되었다. 위생을 뜻하는 hygiene 도 이 여신의 이름이다'
+    license: CC BY 4.0
 status: reviewed
 created: 2026-09-08
 ---

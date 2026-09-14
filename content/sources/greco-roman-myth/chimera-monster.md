@@ -19,6 +19,11 @@ image:
   file: Chimera di Arezzo.jpg
   caption: 아레초의 키마이라. 기원전 4세기 에트루리아 청동상
   license: Public domain
+figures:
+  - file: 'Lakonian Black-Figure Kylix; detached fragments.jpg'
+    kicker: 유물로는
+    caption: '벨레로폰과 키마이라, 기원전 6세기 라코니아 잔. 날개 달린 말을 탄 영웅이 사자 몸에 염소 머리가 돋은 괴물을 창으로 찌른다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

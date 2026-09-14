@@ -20,6 +20,11 @@ image:
   file: Mentor neemt afscheid van Telemachus, RP-T-1996-103.jpg
   caption: 텔레마코스와 작별하는 멘토르, 18세기
   license: CC0
+figures:
+  - file: 'MEYNIER - Telemachus, Urged by Mentor, Leaving the Island of Calypso.jpg'
+    kicker: 그림으로는
+    caption: '메니에, 멘토르의 재촉으로 칼립소의 섬을 떠나는 텔레마코스, 1800년. 소년의 팔을 끄는 노인이 멘토르다. 이 그림이 그린 책 때문에 그 이름이 스승을 뜻하게 되었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

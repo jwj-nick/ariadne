@@ -20,6 +20,11 @@ image:
   file: Coptic - Plaque with Allegorical Relief - Walters 711113.jpg
   caption: 태양신 헬리오스를 새긴 부조, 5세기
   license: Public domain
+figures:
+  - file: 'Head Helios AM Rhodes E49.jpg'
+    kicker: 조각으로는
+    caption: '헬리오스의 머리, 기원전 4세기 로도스. 머리 둘레의 구멍에 청동 햇살을 꽂았다. 로도스의 거상도 이 신의 모습이었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

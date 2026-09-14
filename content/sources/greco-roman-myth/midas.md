@@ -19,6 +19,11 @@ image:
   file: Midas Washing at the Source of the Pactolus MET DP123854.jpg
   caption: 니콜라 푸생, 팍톨로스 강에서 손을 씻는 미다스, 1627년경
   license: CC0
+figures:
+  - file: 'Nicolas Poussin - Midas and Bacchus - WGA18272.jpg'
+    kicker: 그림으로는
+    caption: '푸생, 미다스와 바쿠스, 1630년경. 손대는 것마다 금이 되게 해 달라고 비는 장면이다. 이 소원이 어떻게 끝났는지는 누구나 안다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

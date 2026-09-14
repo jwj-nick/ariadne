@@ -19,6 +19,11 @@ image:
   file: Gemäldegalerie Alte Meister (Dresden) Galeriewerk Heineken 135.jpg
   caption: 도메니코 페티를 따른 판화, 아르키메데스
   license: Public domain
+figures:
+  - file: 'Archimedes before his death with the Roman soldier, Roman mosaic.jpg'
+    kicker: 유물로는
+    caption: '아르키메데스의 죽음, 로마 모자이크. 도형을 그리던 그를 병사가 내려친다. 내 원을 밟지 말라는 말이 마지막이었다고 전한다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

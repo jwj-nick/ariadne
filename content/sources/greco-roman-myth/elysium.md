@@ -19,6 +19,11 @@ image:
   file: Goethe Elysium crop.jpg
   caption: 프란츠 나도르프, 엘리시온에 도착한 괴테
   license: Public domain
+figures:
+  - file: 'Avenue des Champs-Elysées from top of Arc de triomphe Paris.jpg'
+    kicker: 그 이름은
+    caption: '파리의 샹젤리제. 이름 그대로 엘리시온의 들판이다. 죽은 영웅이 쉬는 들판이 파리에서 가장 붐비는 길이 되었다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

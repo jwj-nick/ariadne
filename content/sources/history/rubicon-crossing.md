@@ -18,6 +18,11 @@ image:
   file: Gustave Boulanger, Jules-César arrivé au Rubicon, 1854, Musée Picardie.jpg
   caption: 귀스타브 불랑제, 루비콘강에 이른 카이사르, 1857년
   license: Public domain
+figures:
+  - file: 'Rubicone River near its mouth (Savignano on its right, Gatteo on its left).jpg'
+    kicker: 그 자리는
+    caption: '지금의 루비콘강. 냇물에 가깝다. 이 물을 건너는 것이 반역이었던 이유는 폭이 아니라 그 선이 국경이었기 때문이다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

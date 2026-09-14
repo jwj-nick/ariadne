@@ -17,6 +17,11 @@ image:
   file: Red-figure oinochoe, gymnasium scene (New Orleans Mus of Art 16.11).jpg
   caption: 김나시온을 그린 그리스 도기. 몸을 닦는 일이 교육의 절반이었다
   license: Public domain
+figures:
+  - file: 'Discobolus in National Roman Museum.jpg'
+    kicker: 조각으로는
+    caption: '원반 던지는 사람, 기원전 5세기 원본의 로마 복제본. 건강한 몸이라는 말을 그리스인은 이 자세로 이해했다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

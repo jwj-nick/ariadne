@@ -19,6 +19,11 @@ image:
   file: Nióbide corriendo - vaciado en RABASF.jpg
   caption: 달아나는 니오베의 아이. 고대 조각의 주형
   license: CC0
+figures:
+  - file: 'Firenze - Florence - Galleria degli Uffizi - Sala della Niobe 1782 - View East.jpg'
+    kicker: 조각으로는
+    caption: '우피치의 니오베 방. 화살을 피해 흩어지는 아이들과 그들을 감싸는 어머니가 한 방에 놓여 있다. 로마에서 파낸 군상을 통째로 옮겼다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

@@ -19,6 +19,11 @@ image:
   file: Michelangelo Buonarroti 019.jpg
   caption: 미켈란젤로, 시스티나 천장의 창조 장면, 1508~1512년
   license: Public domain
+figures:
+  - file: 'Michelangelo, Separation of Light from Darkness 00.jpg'
+    kicker: 그림으로는
+    caption: '미켈란젤로, 빛과 어둠을 가르다, 1512년. 시스티나 천장의 첫 칸이며, 창세기의 첫 문장을 그린 것이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

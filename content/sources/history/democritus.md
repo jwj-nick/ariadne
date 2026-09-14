@@ -19,6 +19,11 @@ image:
   file: Democritus Rijksmuseum SK-A-2783.jpeg
   caption: 헨드릭 테르 브뤼헨, 데모크리토스, 1628년. 웃는 철학자로 불렸다
   license: Public domain
+figures:
+  - file: 'Johannes Moreelse - Democritus, the Laughing Philosopher - 705 - Mauritshuis.jpg'
+    kicker: 그림으로는
+    caption: '요하네스 모렐세, 웃는 철학자 데모크리토스, 1630년경. 세상을 보고 우는 헤라클레이토스와 짝을 이루어 그려졌다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

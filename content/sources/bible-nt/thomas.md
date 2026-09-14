@@ -18,6 +18,11 @@ image:
   file: Caravaggio incredulity.jpg
   caption: 카라바조, 의심하는 도마, 1601~1602년. 상처에 손가락을 넣는 장면이다
   license: Public domain
+figures:
+  - file: 'Rembrandt - The Incredulity of St Thomas - WGA19095.jpg'
+    kicker: 그림으로는
+    caption: '렘브란트, 의심하는 도마, 1634년. 카라바조가 손가락을 상처에 넣는 순간을 그렸다면 렘브란트는 그 앞에서 물러서는 순간을 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

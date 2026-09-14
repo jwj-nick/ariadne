@@ -18,6 +18,11 @@ image:
   file: Narcissus and Echo Met DP886213.jpg
   caption: 나르키소스와 에코, 17세기
   license: CC0
+figures:
+  - file: 'Alexandre Cabanel - Echo.jpg'
+    kicker: 그림으로는
+    caption: '카바넬, 에코, 1874년. 귀를 막은 채 입을 벌린 모습. 남의 말 끝만 되풀이할 수 있게 된 뒤의 얼굴이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

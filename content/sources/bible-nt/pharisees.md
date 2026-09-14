@@ -18,6 +18,11 @@ image:
   file: Christ and the Woman Cught in Adultery with Pharisees - MNK XII-A-307 (342040).jpg
   caption: 간음한 여인과 바리새인들, 18세기
   license: Public domain
+figures:
+  - file: 'Titian - The Tribute Money - Google Art Project (715452).jpg'
+    kicker: 그림으로는
+    caption: '티치아노, 세금 동전, 1516년경. 바리새인이 내민 동전을 두고 카이사르의 것은 카이사르에게 돌리라는 답이 나온 장면이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

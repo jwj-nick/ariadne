@@ -19,6 +19,11 @@ image:
   file: Titian and Workshop, Venus and Adonis, c. 1540s-c. 1560-1565, NGA 1223.jpg
   caption: 티치아노와 공방, 비너스와 아도니스
   license: CC0
+figures:
+  - file: 'Sebastiano del Piombo - Morte di Adone - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '세바스티아노 델 피옴보, 아도니스의 죽음, 1512년경. 사냥에서 죽은 청년 곁에서 아프로디테가 슬퍼하고, 뒤로 베네치아가 보인다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

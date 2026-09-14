@@ -17,6 +17,11 @@ image:
   file: Sommer, Giorgio (1834-1914) - n. 11211 - Napoli - Museo Nazionale.jpg
   caption: 참주를 죽인 하르모디오스와 아리스토게이톤, 나폴리 국립고고학박물관
   license: Public domain
+figures:
+  - file: 'Harmodius and Aristogeiton group (Naples).jpg'
+    kicker: 조각으로는
+    caption: '참주 살해자 하르모디오스와 아리스토게이톤, 기원전 5세기 원본의 로마 복제본. 참주를 죽인 두 사람을 아테네는 광장에 세웠다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

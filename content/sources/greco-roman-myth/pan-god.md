@@ -17,6 +17,11 @@ image:
   file: The Barberini Faun.jpg
   caption: 바르베리니 파운. 목신 판과 같은 계열의 사티로스상이다
   license: CC0
+figures:
+  - file: 'Pan Daphnis Altemps Inv8571.jpg'
+    kicker: 조각으로는
+    caption: '판과 다프니스, 기원전 2세기 원본의 로마 복제본. 염소 다리의 신이 소년에게 피리를 가르친다. 그 피리가 팬파이프다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

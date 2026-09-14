@@ -20,6 +20,11 @@ image:
   file: Alexander cuts the Gordian Knot.jpg
   caption: 장 시몽 베르텔레미, 고르디우스의 매듭을 자르는 알렉산드로스, 1767년
   license: Public domain
+figures:
+  - file: 'Entrance and Dromos of Tumulus MM Midas Mound Gordion.jpg'
+    kicker: 그 자리는
+    caption: '고르디온의 미다스 무덤 입구. 알렉산드로스가 매듭을 끊은 그 도시이며, 미다스도 이곳의 왕이었다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

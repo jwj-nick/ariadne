@@ -18,6 +18,11 @@ image:
   file: Pieter Bruegel the Elder - The Fall of the Rebel Angels - Google Art Project.jpg
   caption: 피터르 브뤼헐, 반역 천사의 추락, 1562년
   license: Public domain
+figures:
+  - file: 'William Blake - Satan in his Original Glory - ''Thou wast Perfect till Iniquity was Found in Thee'' (1805).jpg'
+    kicker: 그림으로는
+    caption: '블레이크, 본래의 영광 속 사탄, 1805년. 떨어지기 전의 모습이다. 샛별이라는 이름은 이 빛나던 때를 가리킨다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

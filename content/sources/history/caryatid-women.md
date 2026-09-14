@@ -17,6 +17,11 @@ image:
   file: Athens Acropolis Erechtheion and Caryatids (28443400325).jpg
   caption: 에레크테이온의 카리아티드. 기둥 대신 여인이 지붕을 인다
   license: CC0
+figures:
+  - file: 'Caryatid Erechtheion BM Sc407.jpg'
+    kicker: 조각으로는
+    caption: '에레크테이온의 카리아티드 실물, 기원전 5세기. 아테네에 남은 것은 복제본이고 원본 하나는 런던 대영박물관에 있다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

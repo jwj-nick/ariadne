@@ -19,6 +19,11 @@ image:
   file: 1869 Frederic Leighton - Electra at the Tomb of Agamemnon.jpg
   caption: 프레더릭 레이턴, 아가멤논의 무덤 앞의 엘렉트라, 1869년경
   license: Public domain
+figures:
+  - file: 'Orestes and Elektra (Archaeological Museum of Naples).jpeg'
+    kicker: 조각으로는
+    caption: '오레스테스와 엘렉트라, 기원전 1세기 대리석. 아버지의 무덤에서 다시 만난 남매다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

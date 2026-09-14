@@ -20,6 +20,11 @@ image:
   file: Pergamonmuseum - Antikensammlung - Pergamonaltar 13 detail.jpg
   caption: 페르가몬 제단의 기간토마키아 부조에 새겨진 가이아
   license: Public domain
+figures:
+  - file: 'Berlin - Pergamonmuseum - Altar 02.jpg'
+    kicker: 그 자리는
+    caption: '페르가몬 제단, 기원전 2세기. 베를린에 옮겨 세워졌다. 계단 양쪽 띠에 신들과 거인의 싸움이 새겨져 있고, 가이아는 그 거인들의 어머니로 땅에서 솟아오른다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

@@ -18,6 +18,11 @@ image:
   file: Herbert James Draper - Halcyone (1915).jpg
   caption: 허버트 드레이퍼, 알키오네, 1915년
   license: Public domain
+figures:
+  - file: 'Common Kingfisher Alcedo atthis.jpg'
+    kicker: 그 이름은
+    caption: '물총새. 영어로 halcyon 이며 알키오네에서 온 말이다. 겨울 바다가 잔잔한 며칠을 이 새가 알을 품는 때라고 여겨 할키온의 날이라 불렀다'
+    license: CC BY-SA 2.5
 status: reviewed
 created: 2026-09-08
 ---

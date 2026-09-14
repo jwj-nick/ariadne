@@ -18,6 +18,11 @@ image:
   file: Hermes Trismegistus Sienna Cathedral Mosaic.jpg
   caption: 시에나 대성당 바닥의 헤르메스 트리스메기스토스, 1500년대
   license: Public domain
+figures:
+  - file: 'Borgia Apartment - Isis between Moses and Hermes Trismegistus.jpg'
+    kicker: 그림으로는
+    caption: '핀투리키오, 모세와 헤르메스 트리스메기스투스 사이의 이시스, 1492년. 바티칸 보르자의 방 천장. 교황의 거처에 이집트의 현자를 그려 넣을 만큼 르네상스는 이 이름을 진지하게 여겼다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

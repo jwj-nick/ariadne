@@ -17,6 +17,11 @@ image:
   file: Dipylon Inscription.JPG
   caption: 디필론 도기의 명문. 지금 남은 가장 오래된 그리스 알파벳이다
   license: CC BY-SA 4.0
+figures:
+  - file: 'Coupe de Nestor - musée Archéologique de Pithecusae - photo 4.jpg'
+    kicker: 유물로는
+    caption: '네스토르의 잔, 기원전 8세기. 그리스 문자로 적힌 가장 이른 글 가운데 하나이며, 이 잔으로 마시면 사랑에 빠진다는 농담이 새겨져 있다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

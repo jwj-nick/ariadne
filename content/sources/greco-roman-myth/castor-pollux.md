@@ -21,6 +21,11 @@ image:
   file: Castor and Pollux Temple Forum Romanum, Rome.jpg
   caption: 로마 포룸에 남은 카스토르와 폴룩스 신전의 기둥
   license: CC0
+figures:
+  - file: 'Campidoglio - Dioscuri all''alba 1050290.JPG'
+    kicker: 조각으로는
+    caption: '캄피돌리오 광장의 디오스쿠로이. 로마 시청 앞 계단 꼭대기에서 말고삐를 잡고 서 있다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

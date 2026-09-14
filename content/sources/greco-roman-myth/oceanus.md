@@ -20,6 +20,11 @@ image:
   file: Sousse bath Oceanus.JPG
   caption: 수스의 목욕탕 바닥에 새겨진 오케아노스의 얼굴
   license: CC BY-SA 3.0
+figures:
+  - file: 'Trevi Fountain (48423932571).jpg'
+    kicker: 조각으로는
+    caption: '트레비 분수의 오케아노스, 1762년. 로마에서 가장 유명한 분수 한가운데 선 이가 이 바다의 신이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -17,6 +17,11 @@ image:
   file: The Fight Between Carnival and Lent.jpg
   caption: 피터르 브뤼헐, 사육제와 사순절의 싸움, 1559년
   license: Public domain
+figures:
+  - file: 'Karneval in Venedig 2019, Markusplatz, Vendedig, Italien, Europäische Union.jpg'
+    kicker: 그 자리는
+    caption: '베네치아 카니발. 사순절 전에 고기와 놀이를 끝내 두는 날이며, 가면은 신분을 잠시 지우는 장치였다'
+    license: CC BY 4.0
 status: reviewed
 created: 2026-09-08
 ---
