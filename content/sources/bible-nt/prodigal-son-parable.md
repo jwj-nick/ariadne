@@ -17,6 +17,11 @@ image:
   file: Rembrandt Harmensz van Rijn - Return of the Prodigal Son - Google Art Project.jpg
   caption: 렘브란트, 돌아온 탕자, 1669년경, 예르미타시 미술관
   license: Public domain
+figures:
+  - file: 'Albrecht Dürer, The Prodigal Son, c. 1496, NGA 6577.jpg'
+    kicker: 그림으로는
+    caption: '뒤러, 탕자, 1496년경. 돼지 틈에 무릎 꿇은 순간이며, 렘브란트가 그린 돌아온 뒤보다 앞선 장면이다'
+    license: CC0
 status: reviewed
 created: 2026-09-07
 ---

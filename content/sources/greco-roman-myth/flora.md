@@ -19,6 +19,11 @@ image:
   file: Tiziano - Flora - Google Art Project.jpg
   caption: 티치아노, 플로라, 1515년경, 우피치
   license: Public domain
+figures:
+  - file: 'Primavera di Stabiae.jpg'
+    kicker: 그림으로는
+    caption: '스타비아이의 플로라, 기원후 1세기 벽화. 등을 돌린 채 꽃을 꺾는 여인이며, 폼페이 곁 별장에서 나왔다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

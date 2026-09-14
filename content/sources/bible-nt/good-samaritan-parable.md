@@ -19,6 +19,11 @@ image:
   file: Landscape with the Good Samaritan - Rembrandt.jpg
   caption: 렘브란트, 선한 사마리아인이 있는 풍경, 1638년
   license: Public domain
+figures:
+  - file: 'Vincent van Gogh - The Good Samaritan, 1890 - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '반 고흐, 선한 사마리아인, 1890년. 들라크루아의 그림을 보고 다시 그린 것이며, 세상을 떠나기 두 달 전 작품이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

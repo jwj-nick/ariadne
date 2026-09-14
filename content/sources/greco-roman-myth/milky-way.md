@@ -18,6 +18,11 @@ image:
   file: Jacopo Tintoretto - The Origin of the Milky Way - Google Art Project.jpg
   caption: 틴토레토, 은하수의 기원, 1575년. 헤라의 젖이 흩어져 은하수가 되었다
   license: Public domain
+figures:
+  - file: 'The Milky Way arch in the steppes of Kazakhstan.jpg'
+    kicker: 그 자리는
+    caption: '카자흐스탄 초원 위의 은하수. 헤라의 젖이라던 그 띠가 실제로는 이렇게 보인다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

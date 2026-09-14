@@ -20,6 +20,11 @@ image:
   file: Oedipus and Sphinx (Ingres).jpg
   caption: 앵그르, 스핑크스의 수수께끼를 푸는 오이디푸스, 1808년, 루브르
   license: Public domain
+figures:
+  - file: 'Attic red-figured ceramic Kylix depicting Oedipus listening to the riddle of the Theban Sphinx; attributed to Oedipus Painter or to Douris; from Vulci, c. 500-450 BC (48465623472).jpg'
+    kicker: 유물로는
+    caption: '스핑크스의 수수께끼를 듣는 오이디푸스, 기원전 470년경 잔. 앵그르보다 이천삼백 년 앞선 같은 장면이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

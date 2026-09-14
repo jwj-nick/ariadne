@@ -19,6 +19,11 @@ image:
   file: Plato Academy MAN Napoli Inv124545.jpg
   caption: 플라톤의 아카데메이아를 그린 폼페이 모자이크, 나폴리
   license: Public domain
+figures:
+  - file: 'The School of Athens by Raffaello Sanzio da Urbino.jpg'
+    kicker: 그림으로는
+    caption: '라파엘로, 아테네 학당, 1511년. 한가운데 두 사람 가운데 손가락으로 하늘을 가리키는 쪽이 플라톤이다. 얼굴은 레오나르도 다 빈치를 본떴다고 전한다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

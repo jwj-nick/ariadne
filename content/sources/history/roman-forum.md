@@ -18,6 +18,11 @@ image:
   file: Roman Forum (1883), by Cesare Tallone.jpg
   caption: 체사레 탈로네, 로마 광장, 1883년
   license: Public domain
+figures:
+  - file: 'Roman Forum looking East panorama.jpg'
+    kicker: 그 자리는
+    caption: '지금의 포룸 로마눔. 원로원 건물과 개선문과 신전 기둥이 한 자리에 남아 있다. 광장이라는 말이 지금도 이 자리를 가리킨다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

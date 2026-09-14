@@ -18,6 +18,11 @@ image:
   file: View of the Retaining Wall of the Pnyx.jpg
   caption: 아테네 프닉스 언덕. 시민이 모여 표결하던 자리다
   license: CC0
+figures:
+  - file: 'Ostracon of Themistocles - Museum of the Ancient Agora - Joy of Museum.jpg'
+    kicker: 유물로는
+    caption: '도편, 기원전 5세기. 깨진 그릇 조각에 쫓아내고 싶은 사람의 이름을 적어 냈다. 도편추방이라는 말이 여기서 나왔고, 적힌 이름은 테미스토클레스다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

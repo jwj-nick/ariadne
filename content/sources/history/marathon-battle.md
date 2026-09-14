@@ -18,6 +18,11 @@ image:
   file: The burial mound of the Plataeans in Marathon on January 15, 2019.jpg
   caption: 마라톤 벌판의 봉분. 전사한 아테네 시민이 여기 묻혔다
   license: CC0
+figures:
+  - file: 'The Soldier of Marathon Merson ENSBA PRP120.jpg'
+    kicker: 그림으로는
+    caption: '메르송, 마라톤의 병사, 1869년. 승전을 알리고 쓰러진 병사. 이 이야기 하나에서 42.195킬로미터를 달리는 경기가 나왔다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

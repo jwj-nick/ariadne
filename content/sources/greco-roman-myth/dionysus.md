@@ -19,6 +19,11 @@ image:
   file: Bacchus by Caravaggio 1.jpg
   caption: 카라바조, 바쿠스, 1596년경, 우피치 미술관
   license: Public domain
+figures:
+  - file: 'Exekias Dionysos Staatliche Antikensammlungen 2044.jpg'
+    kicker: 유물로는
+    caption: '엑세키아스의 디오니소스 잔, 기원전 530년경. 해적에게 붙잡힌 신이 돛대에 포도나무를 피우자 해적들이 돌고래로 변했다는 이야기 그대로다'
+    license: CC BY 2.5
 status: reviewed
 created: 2026-09-08
 ---

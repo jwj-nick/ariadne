@@ -19,6 +19,11 @@ image:
   file: Kiss of Judas by Giotto.jpg
   caption: 조토, 유다의 입맞춤, 1305년경, 스크로베니 예배당
   license: Public domain
+figures:
+  - file: 'Judas Returning the Thirty Silver Pieces - Rembrandt.jpg'
+    kicker: 그림으로는
+    caption: '렘브란트, 은화 서른 닢을 돌려주는 유다, 1629년. 입맞춤 다음 장면이다. 스물세 살의 렘브란트가 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

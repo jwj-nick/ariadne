@@ -19,6 +19,11 @@ image:
   file: 'Sir Peter Paul Rubens - Daniel in the Lions'' Den - Google Art Project.jpg'
   caption: 페테르 파울 루벤스, 사자굴의 다니엘, 1615년경
   license: Public domain
+figures:
+  - file: 'Rembrandt-Belsazar.jpg'
+    kicker: 그림으로는
+    caption: '렘브란트, 벨사살의 연회, 1635년경. 벽에 나타난 글씨를 읽어 낸 사람이 다니엘이다. 영어 관용구 "벽에 쓴 글씨"가 여기서 나왔다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

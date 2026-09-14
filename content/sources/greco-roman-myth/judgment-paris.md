@@ -19,6 +19,11 @@ image:
   file: Lucas Cranach the Elder - Judgment of Paris - 28-1932 - Saint Louis Art Museum.jpg
   caption: 루카스 크라나흐, 파리스의 심판, 1530년
   license: Public domain
+figures:
+  - file: 'Peter Paul Rubens - The Judgment of Paris - WGA20311.jpg'
+    kicker: 그림으로는
+    caption: '루벤스, 파리스의 심판, 1636년경. 크라나흐가 갑옷 입은 기사로 그린 장면을 루벤스는 목동으로 되돌려 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -17,6 +17,11 @@ image:
   file: Hamlet. Acte V. Sc. I.re - estampe - Eug. Delacroix - btv1b10029779z.jpg
   caption: 외젠 들라크루아, 햄릿 5막 1장, 무덤 파는 사람들
   license: Public domain
+figures:
+  - file: 'John Everett Millais - Ophelia - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '밀레이, 오필리아, 1852년. 햄릿 그림 가운데 가장 많이 본 한 장이며, 정작 햄릿은 나오지 않는다. 물에 떠내려가는 이 장면은 무대에 오르지 않고 대사로만 전해진다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -19,6 +19,11 @@ image:
   file: 'Antonio del Pollaiolo - Ercole e l''Idra e Ercole e Anteo - Google Art Project.jpg'
   caption: 안토니오 델 폴라이올로, 헤라클레스와 히드라, 1475년경, 우피치
   license: Public domain
+figures:
+  - file: 'Caeretan hydria by Eagle Painter, detail of Herakles - Getty Museum (83.AE.346).jpg'
+    kicker: 유물로는
+    caption: '헤라클레스와 히드라, 기원전 525년경 물동이. 머리가 여럿인 뱀에 게까지 달려들고 있다. 이 물동이 이름 자체가 히드리아다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

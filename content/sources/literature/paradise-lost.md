@@ -18,6 +18,11 @@ image:
   file: Paradise Lost 12.jpg
   caption: 귀스타브 도레, 실낙원 삽화
   license: Public domain
+figures:
+  - file: 'GustaveDoreParadiseLostSatanProfile.jpg'
+    kicker: 그림으로는
+    caption: '도레, 실낙원 삽화 가운데 사탄, 1866년. 바위 위에 선 옆모습. 밀턴의 사탄이 위엄 있는 반역자로 그려진 것은 이 삽화의 영향이 크다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

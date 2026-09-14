@@ -19,6 +19,11 @@ image:
   file: Le Jugement de Salomon - 1649 - Nicolas Poussin - Louvre - INV 7277 ; MR 2316 (2).jpg
   caption: 니콜라 푸생, 솔로몬의 심판, 1649년, 루브르
   license: Public domain
+figures:
+  - file: '086.Solomon Receives the Queen of Sheba.jpg'
+    kicker: 그림으로는
+    caption: '도레, 시바의 여왕을 맞는 솔로몬, 1866년. 지혜를 시험하러 온 여왕과 그 앞에 선 왕. 재판 장면과 함께 솔로몬의 두 얼굴이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

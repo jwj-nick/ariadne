@@ -18,6 +18,11 @@ image:
   file: 122.The Destruction of Leviathan.jpg
   caption: 귀스타브 도레, 리바이어던의 파멸, 1866년
   license: Public domain
+figures:
+  - file: 'Leviathan by Thomas Hobbes.jpg'
+    kicker: 그림으로는
+    caption: '홉스 『리바이어던』 초판 표지, 1651년. 수많은 사람으로 이루어진 거인이 나라를 굽어본다. 바다 괴물의 이름이 국가를 가리키는 말이 된 자리다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

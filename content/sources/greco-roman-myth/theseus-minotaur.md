@@ -20,6 +20,11 @@ image:
   file: Theseus Minotaur MGEt Inv20260.jpg
   caption: 미노타우로스를 죽이는 테세우스, 기원전 5세기 도자기
   license: Public domain
+figures:
+  - file: 'Antonio Canova-Theseus and the Minotaur-Victoria and Albert Museum.jpg'
+    kicker: 조각으로는
+    caption: '카노바, 테세우스와 미노타우로스, 1783년. 싸우는 장면이 아니라 이긴 뒤 숨을 고르는 장면을 골랐다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

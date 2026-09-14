@@ -21,6 +21,11 @@ image:
   file: Echo and Narcissus by John William Waterhouse.jpg
   caption: 존 윌리엄 워터하우스, 에코와 나르키소스, 1903년
   license: Public domain
+figures:
+  - file: 'Narcissus-Caravaggio (1594-96) edited.jpg'
+    kicker: 그림으로는
+    caption: '카라바조, 나르키소스, 1599년경. 물에 비친 얼굴과 마주 보는 얼굴이 화면을 위아래로 정확히 나눈다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

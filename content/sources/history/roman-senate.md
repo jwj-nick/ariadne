@@ -18,6 +18,11 @@ image:
   file: Cicero Denounces Catiline in the Roman Senate by Cesare Maccari.png
   caption: 체사레 마카리, 원로원에서 카틸리나를 탄핵하는 키케로, 1889년
   license: Public domain
+figures:
+  - file: 'Curia Julia (Senate House), Roman Forum, Rome (9115853194).jpg'
+    kicker: 그 자리는
+    caption: '쿠리아 율리아. 카이사르가 짓기 시작한 원로원 회의장이며, 벽돌 건물이 온전히 남은 것은 뒤에 성당으로 쓰였기 때문이다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

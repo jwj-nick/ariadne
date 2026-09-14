@@ -20,6 +20,11 @@ image:
   file: Psyche-Waterhouse.jpg
   caption: 존 윌리엄 워터하우스, 황금 상자를 여는 프시케, 1904년
   license: Public domain
+figures:
+  - file: 'Psyché ranimée par le baiser de l''Amour, Louvre.jpg'
+    kicker: 조각으로는
+    caption: '카노바, 큐피드의 입맞춤으로 깨어나는 프시케, 1793년. 죽음 같은 잠에서 깨어나는 순간이며, 이 이야기의 끝이다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

@@ -16,6 +16,11 @@ image:
   file: Fra Angelico, Fra Filippo Lippi, The Adoration of the Magi.jpg
   caption: 프라 안젤리코와 필리포 리피, 동방박사의 경배, 1440년경
   license: Public domain
+figures:
+  - file: 'Gentile da fabriano, adorazione dei magi.jpg'
+    kicker: 그림으로는
+    caption: '젠틸레 다 파브리아노, 동방박사의 경배, 1423년. 세 왕의 행렬이 화면 뒤쪽 산길부터 이어져 내려온다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -18,6 +18,11 @@ image:
   file: The Four Horsemen (CBL WEp 0021).jpg
   caption: 알브레히트 뒤러, 요한계시록의 네 기사, 1498년 목판화
   license: Public domain
+figures:
+  - file: 'Albrecht Dürer, The Four Horsemen, 1498, NGA 142352.jpg'
+    kicker: 그림으로는
+    caption: '뒤러, 묵시록의 네 기사, 1498년. 요한계시록 그림 가운데 가장 널리 퍼진 한 장이며, 목판화라 책으로 찍혀 유럽 전체에 돌았다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

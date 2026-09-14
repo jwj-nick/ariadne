@@ -20,6 +20,11 @@ image:
   file: Pluto Serapis and Persephone Isis Heraklion museum.jpg
   caption: 하데스와 페르세포네. 발치의 개가 케르베로스다
   license: CC0
+figures:
+  - file: 'Rape of Prosepina September 2015-3a.jpg'
+    kicker: 조각으로는
+    caption: '베르니니, 페르세포네의 납치, 1622년. 대리석인데 손가락이 허벅지를 파고든 자국이 남는다. 베르니니가 스물셋에 깎았다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

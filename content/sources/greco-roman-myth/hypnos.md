@@ -20,6 +20,11 @@ image:
   file: Hypnos (Petit Palais, Paris) (32419933577).jpg
   caption: 잠의 신 힙노스. 관자놀이의 날개로 알아본다
   license: CC BY 2.0
+figures:
+  - file: 'Waterhouse-sleep and his half-brother death-1874.jpg'
+    kicker: 그림으로는
+    caption: '워터하우스, 잠과 그 이복형제 죽음, 1874년. 나란히 누운 둘 가운데 얼굴에 빛이 닿은 쪽이 잠이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

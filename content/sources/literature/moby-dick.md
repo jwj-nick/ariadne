@@ -18,6 +18,11 @@ image:
   file: Thomas Beale - Boats attacking whales.jpg
   caption: 고래를 쫓는 보트, 19세기 판화
   license: Public domain
+figures:
+  - file: 'Moby-Dick FE title page.jpg'
+    kicker: 유물로는
+    caption: '『모비 딕』 미국 초판 속표지, 1851년. 첫해에 몇천 부밖에 팔리지 않았고, 작가가 죽은 뒤에야 이 제목이 누구나 아는 말이 되었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

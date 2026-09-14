@@ -19,6 +19,11 @@ image:
   file: The Tower of Babel (Bruegel).jpg
   caption: 피터르 브뤼헐, 바벨탑, 1563년, 빈 미술사 박물관
   license: Public domain
+figures:
+  - file: 'Confusion of Tongues (89393754).jpg'
+    kicker: 그림으로는
+    caption: '도레, 언어의 혼란, 1866년. 브뤼헐이 탑 자체를 그렸다면 도레는 말이 갈라져 흩어지는 사람들을 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

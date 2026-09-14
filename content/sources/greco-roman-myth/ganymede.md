@@ -19,6 +19,11 @@ image:
   file: 'Ganymede with Jupiter''s Eagle - Thorvaldsens Museum - DSC08616.JPG'
   caption: 베르텔 토르발센, 유피테르의 독수리와 가니메데스
   license: CC0
+figures:
+  - file: 'Rembrandt - The Abduction of Ganymede - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '렘브란트, 가니메데스의 납치, 1635년. 아름다운 소년이 아니라 겁에 질려 우는 아기로 그려 이야기를 뒤집었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

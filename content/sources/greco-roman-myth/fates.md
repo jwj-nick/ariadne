@@ -17,6 +17,11 @@ image:
   file: The Three Fates by Paul Thumann.jpg
   caption: 파울 투만, 운명의 세 여신, 19세기. 실을 뽑고 재고 끊는다
   license: Public domain
+figures:
+  - file: 'Atropos o Las Parcas.jpg'
+    kicker: 그림으로는
+    caption: '고야, 아트로포스 또는 운명의 여신들, 1820년경. 가위를 든 쪽이 아트로포스이며, 실을 자르면 그 사람의 목숨이 끝난다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

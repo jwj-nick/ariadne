@@ -21,6 +21,11 @@ image:
   file: Ares Borghese Cour Carrée Louvre.jpg
   caption: 아레스 보르게세, 루브르
   license: Public domain
+figures:
+  - file: 'Venus and Mars National Gallery.jpg'
+    kicker: 그림으로는
+    caption: '보티첼리, 비너스와 마르스, 1483년경. 전쟁의 신이 갑옷을 벗고 잠들었고, 사티로스들이 그 창과 투구를 갖고 논다. 사랑이 전쟁을 이긴다는 그림이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

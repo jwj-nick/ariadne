@@ -20,6 +20,11 @@ image:
   file: Amazonomachy sarcophagus (Harvard, Sackler Mus 1899.9+1932.49) detail 06.jpg
   caption: 아마존족과의 싸움을 새긴 석관 부조
   license: CC BY 4.0
+figures:
+  - file: 'Amazzone ferita - Musei Capitolini.jpg'
+    kicker: 조각으로는
+    caption: '부상당한 아마존, 기원전 5세기 원본의 로마 복제본. 한쪽 가슴을 드러낸 옷차림이 아마존을 알아보는 표지가 되었다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-07
 ---

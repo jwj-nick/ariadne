@@ -19,6 +19,11 @@ image:
   file: Euphronios - ARV 14 extra - Hypnos and Thanatos carrying the body of Sarpedon - warriors arming - Cerveteri MAN - 08.jpg
   caption: 에우프로니오스의 크라테르. 힙노스와 타나토스가 사르페돈을 옮긴다
   license: CC BY-SA 4.0
+figures:
+  - file: 'Waterhouse-sleep and his half-brother death-1874.jpg'
+    kicker: 그림으로는
+    caption: '워터하우스, 잠과 그 이복형제 죽음, 1874년. 나란히 누운 둘 가운데 그늘에 든 쪽이 죽음이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

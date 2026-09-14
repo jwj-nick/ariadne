@@ -20,6 +20,11 @@ image:
   file: Musée de Bruxelles. Rubens. La Chute des Titans - Der Fall der Titanen - The fall of the Titan, GP019175.jpg
   caption: 페테르 파울 루벤스, 티탄의 추락
   license: Public domain
+figures:
+  - file: 'Cornelis Cornelisz. van Haarlem - The Fall of the Titans - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '코르넬리스 반 하를렘, 티탄의 추락, 1590년. 몸들이 얽혀 떨어지는 화면 전체가 하나의 덩어리다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

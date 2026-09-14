@@ -20,6 +20,11 @@ image:
   file: Titian - Rape of Europa - Google Art Project.jpg
   caption: 티치아노, 에우로페의 납치. 황소로 변한 제우스가 그를 업고 바다를 건넌다
   license: Public domain
+figures:
+  - file: 'Rembrandt - The Abduction of Europa - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '렘브란트, 에우로페의 납치, 1632년. 티치아노가 바다 한가운데를 그렸다면 렘브란트는 기슭에 남은 시녀들의 놀란 얼굴을 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-07
 ---

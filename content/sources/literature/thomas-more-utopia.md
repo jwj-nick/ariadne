@@ -17,6 +17,11 @@ image:
   file: Thomas More Utopia 1516 VTOPIAE INSVLAE FIGVRA (Bibliothèque Mazarine).jpg
   caption: 토머스 모어의 유토피아 초판에 실린 섬 지도, 1516년
   license: Public domain
+figures:
+  - file: 'Hans Holbein, the Younger - Sir Thomas More - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '홀바인, 토머스 모어, 1527년. 이 초상을 그린 지 여덟 해 뒤 왕의 뜻을 거스른 죄로 처형되었다. 없는 나라를 쓴 사람이 있는 나라에서 죽은 것이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

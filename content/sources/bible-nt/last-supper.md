@@ -17,6 +17,11 @@ image:
   file: Leonardo da Vinci - The Last Supper high res.jpg
   caption: 레오나르도 다 빈치, 최후의 만찬, 1498년
   license: Public domain
+figures:
+  - file: 'Jacopo Tintoretto - The Last Supper - WGA22649.jpg'
+    kicker: 그림으로는
+    caption: '틴토레토, 최후의 만찬, 1594년. 레오나르도가 식탁을 정면에 놓았다면 틴토레토는 비스듬히 놓고 천장에 천사를 채웠다. 같은 저녁을 백 년 뒤 사람이 이렇게 보았다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

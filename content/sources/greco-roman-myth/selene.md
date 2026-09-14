@@ -20,6 +20,11 @@ image:
   file: Selene en Endymion Rijksmuseum SK-A-71.jpeg
   caption: 요한 카를 로트, 셀레네와 엔디미온, 1660년대
   license: Public domain
+figures:
+  - file: 'The Parthenon sculptures, Head of a horse of Selene from the east pediment of the Parthenon, Acropolis, Athens, 438-432 BC, British Museum (14063436397).jpg'
+    kicker: 조각으로는
+    caption: '셀레네의 말, 파르테논 동쪽 박공, 기원전 435년경. 밤새 하늘을 달린 말이 지쳐 콧구멍을 벌린 채 수평선 아래로 내려가는 순간이다'
+    license: CC BY-SA 2.0
 status: reviewed
 created: 2026-09-08
 ---

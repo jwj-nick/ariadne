@@ -19,6 +19,11 @@ image:
   file: Velázquez - Esopo (Museo del Prado, 1639-41).jpg
   caption: 디에고 벨라스케스, 이솝, 1640년경, 프라도 미술관
   license: Public domain
+figures:
+  - file: 'The Tortoise and the Hare - Project Gutenberg etext 19994.jpg'
+    kicker: 그림으로는
+    caption: '밀로 윈터, 토끼와 거북, 1919년 『어린이를 위한 이솝』 삽화. 초상보다 이 그림이 이솝을 더 잘 설명한다. 사람들이 기억하는 것은 얼굴이 아니라 이야기다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

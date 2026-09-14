@@ -18,6 +18,11 @@ image:
   file: Pieter Lastman - Jonah and the Whale - Google Art Project.jpg
   caption: 피터르 라스트만, 요나와 고래, 1621년
   license: Public domain
+figures:
+  - file: 'Michelangelo Buonarroti 030.jpg'
+    kicker: 그림으로는
+    caption: '미켈란젤로, 시스티나 예배당 천장의 요나, 1512년. 제단 바로 위 가장 큰 자리에 놓였고, 옆에 큰 물고기가 그려져 있다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

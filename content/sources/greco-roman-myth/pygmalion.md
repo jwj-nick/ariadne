@@ -19,6 +19,11 @@ image:
   file: Jean-Leon Gerome - Pygmalion and Galatea.png
   caption: 장 레옹 제롬, 피그말리온과 갈라테이아, 1890년경. 아래는 아직 돌이다
   license: Public domain
+figures:
+  - file: 'Edward Burne-Jones - Pygmalion and the Image - The Godhead Fires - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '번존스, 피그말리온 연작 가운데 여신이 불을 붙이다, 1878년. 조각상이 사람이 되는 순간이며, 제롬이 입맞춤을 그렸다면 번존스는 여신의 손길을 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

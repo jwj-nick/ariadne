@@ -17,6 +17,11 @@ image:
   file: Frank William Warwick Topham Voyage of King Arthur and Morgan Le Fay to the Isle of Avalon 1888.jpg
   caption: 프랭크 톱햄, 아발론으로 가는 아서왕, 1888년
   license: Public domain
+figures:
+  - file: 'The Death of King Arthur by James Archer (1860).jpg'
+    kicker: 그림으로는
+    caption: '아처, 아서왕의 죽음, 1860년. 바다 저편에 아발론으로 데려갈 배가 보이고, 왕은 아직 눈을 뜨고 있다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

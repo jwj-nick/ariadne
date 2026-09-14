@@ -19,6 +19,11 @@ image:
   file: Pollaiolo, Piero del - Apollo and Daphne.jpg
   caption: 피에로 델 폴라이올로, 아폴론과 다프네, 1470년대. 손끝이 이미 월계수 가지다
   license: Public domain
+figures:
+  - file: 'Apollo and Daphne (Bernini) (cropped).jpg'
+    kicker: 조각으로는
+    caption: '베르니니, 아폴론과 다프네, 1625년. 손끝이 잎으로, 발이 뿌리로 바뀌는 바로 그 순간이다. 대리석으로 나뭇잎을 깎았다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

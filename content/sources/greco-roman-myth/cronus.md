@@ -20,6 +20,11 @@ image:
   file: Rubens saturn.jpg
   caption: 페테르 파울 루벤스, 자식을 삼키는 사투르누스, 1636년, 프라도
   license: Public domain
+figures:
+  - file: 'Francisco de Goya, Saturno devorando a su hijo (1819-1823).jpg'
+    kicker: 그림으로는
+    caption: '고야, 아들을 삼키는 사투르누스, 1820년경. 자기 집 벽에 그린 검은 그림 가운데 하나이며, 루벤스보다 훨씬 무섭게 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

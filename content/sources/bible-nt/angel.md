@@ -16,6 +16,11 @@ image:
   file: GuidoReni MichaelDefeatsSatan.jpg
   caption: 구이도 레니, 대천사 미카엘, 1636년경, 로마 산타 마리아 델라 콘체치오네
   license: Public domain
+figures:
+  - file: 'Fra Angelico - The Annunciation - WGA00555.jpg'
+    kicker: 그림으로는
+    caption: '프라 안젤리코, 수태고지, 1440년경. 미카엘이 칼을 든 천사라면 가브리엘은 말을 전하는 천사다. 두 천사가 천사의 두 얼굴이다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -20,6 +20,11 @@ image:
   file: Bronze statue of Eros sleeping MET DP123903.jpg
   caption: 잠자는 에로스 청동상, 기원전 3~2세기
   license: CC0
+figures:
+  - file: 'Psyché ranimée par le baiser de l''Amour, Louvre.jpg'
+    kicker: 조각으로는
+    caption: '카노바, 큐피드의 입맞춤으로 깨어나는 프시케, 1793년. 잠든 아기 에로스가 아니라 사랑에 빠진 청년 에로스다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

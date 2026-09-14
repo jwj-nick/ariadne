@@ -19,6 +19,11 @@ image:
   file: John William Waterhouse - Ulysses and the Sirens - Google Art Project.jpg
   caption: 존 윌리엄 워터하우스, 오디세우스와 세이렌, 1891년
   license: Public domain
+figures:
+  - file: 'Herbert James Draper, Ulysses and the Sirens, 1909.jpg'
+    kicker: 그림으로는
+    caption: '드레이퍼, 율리시스와 세이렌, 1909년. 세이렌이 새가 아니라 물에서 기어오르는 여인으로 그려졌다. 시대마다 다른 모습이었다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

@@ -21,6 +21,11 @@ image:
   file: Odysseus Sirens BM E440.jpg
   caption: 돛대에 몸을 묶은 오디세우스와 세이렌, 기원전 5세기 도자기
   license: Public domain
+figures:
+  - file: 'Odysseus and Polyphemus, Proto-Attic neck amphora, ca 650 BC, AM Eleusis, 081141.jpg'
+    kicker: 유물로는
+    caption: '폴리페모스의 눈을 찌르는 오디세우스, 기원전 650년경 엘레우시스 항아리. 호메로스가 글로 남긴 지 백 년쯤 뒤의 그림이다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

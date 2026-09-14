@@ -16,6 +16,11 @@ image:
   file: Psalm 26 (27); Thomas Becket - Luttrell Psalter (c.1325-1335), f.51 - BL Add MS 42130.jpg
   caption: 러트렐 시편집의 시편 26편. 14세기 채색 필사본
   license: CC0
+figures:
+  - file: 'Albrecht Dürer, Saint Jerome in His Study, 1514, NGA 6642.jpg'
+    kicker: 그림으로는
+    caption: '뒤러, 서재의 성 히에로니무스, 1514년. 라틴어 성서를 옮긴 사람이며, 이 판화 속 서재가 그 번역이 이루어진 자리를 상상한 것이다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

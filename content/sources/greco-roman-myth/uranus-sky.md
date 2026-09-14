@@ -20,6 +20,11 @@ image:
   file: Aion mosaic Glyptothek Munich W504 full.jpg
   caption: 아이온 모자이크. 하늘을 두른 띠가 황도 십이궁이다
   license: Public domain
+figures:
+  - file: 'The Mutilation of Uranus by Saturn.jpg'
+    kicker: 그림으로는
+    caption: '바사리와 게라르디, 우라노스를 거세하는 크로노스, 1555년경. 피렌체 베키오궁 원소의 방. 하늘이 잘려 나가며 세상이 시작된다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

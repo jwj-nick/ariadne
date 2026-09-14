@@ -17,6 +17,11 @@ image:
   file: Vlad Ţepeş, the Impaler, Prince of Wallachia (1456-1462) (died 1477).jpg
   caption: 블라드 3세 초상, 16세기. 드라큘라라는 이름이 여기서 왔다
   license: Public domain
+figures:
+  - file: 'Bran Castle, Transylvania (2023).jpg'
+    kicker: 그 자리는
+    caption: '트란실바니아의 브란 성. 드라큘라의 성으로 알려져 관광객이 찾지만, 블라드가 여기 오래 머문 기록은 없다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

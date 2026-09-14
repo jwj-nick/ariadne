@@ -20,6 +20,11 @@ image:
   file: 'Pieter Bruegel the Elder - Landscape with the Fall of Icarus - Brussels, Royal Museums of Fine Arts of Belgium - Google Arts & Culture.jpg'
   caption: 피터르 브뤼헐, 이카로스의 추락이 있는 풍경. 오른쪽 아래 물에 잠긴 다리가 이카로스다
   license: Public domain
+figures:
+  - file: 'Herbert Draper - The Lament for Icarus - Google Art Project.jpg'
+    kicker: 그림으로는
+    caption: '드레이퍼, 이카로스의 탄식, 1898년. 브뤼헐이 아무도 보지 않는 추락을 그렸다면 드레이퍼는 그 뒤에 남은 몸과 날개를 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

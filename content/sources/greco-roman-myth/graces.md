@@ -18,6 +18,11 @@ image:
   file: Secret Cabinet Fresco of the three Graces, naked, wearing wreaths, standing in a spring landscape, from Pompeii (48451882416).jpg
   caption: 폼페이 벽화의 삼미신
   license: Public domain
+figures:
+  - file: 'The Three Graces in the Hermitage by Antonio Canova.jpg'
+    kicker: 조각으로는
+    caption: '카노바, 삼미신, 1817년. 폼페이 벽화의 세 여신을 이천 년 뒤 대리석으로 다시 세운 것이다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---

@@ -16,6 +16,11 @@ image:
   file: 'Raphael - The Sistine Madonna - Google Arts & Culture.jpg'
   caption: 라파엘로, 시스티나의 성모, 1512년경, 드레스덴
   license: Public domain
+figures:
+  - file: 'Michelangelo''s Pieta 5450 cropncleaned edit.jpg'
+    kicker: 조각으로는
+    caption: '미켈란젤로, 피에타, 1499년. 성 베드로 대성당. 아기를 안은 성모가 아니라 아들의 주검을 안은 성모이며, 미켈란젤로가 이름을 새긴 유일한 작품이다'
+    license: CC BY 2.5
 status: reviewed
 created: 2026-09-08
 ---

@@ -18,6 +18,11 @@ image:
   file: William Blake - Job and His Family.jpg
   caption: 윌리엄 블레이크, 욥과 그의 가족
   license: Public domain
+figures:
+  - file: 'Léon Bonnat - Job.jpg'
+    kicker: 그림으로는
+    caption: '보나, 욥, 1880년. 재산도 자식도 잃고 온몸에 종기가 난 채 하늘을 올려다본다. 블레이크가 이야기를 그렸다면 보나는 사람 하나를 그렸다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

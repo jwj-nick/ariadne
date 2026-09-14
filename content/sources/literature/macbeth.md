@@ -17,6 +17,11 @@ image:
   file: Füssli - The Three Witches Appearing to Macbeth and Banquo.jpg
   caption: 헨리 푸젤리, 맥베스 앞에 나타난 세 마녀, 18세기
   license: Public domain
+figures:
+  - file: 'John singer sargent, ellen terry come lady macbeth, 1889.jpg'
+    kicker: 그림으로는
+    caption: '사전트, 맥베스 부인 역의 엘런 테리, 1889년. 왕관을 제 머리에 얹는 순간. 마녀보다 이 여인이 이야기를 밀고 간다'
+    license: CC BY 3.0
 status: reviewed
 created: 2026-09-08
 ---

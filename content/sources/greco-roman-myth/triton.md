@@ -19,6 +19,11 @@ image:
   file: Fontana del Tritone(Triton Fountain), Rome, Italy (Ank Kumar, Infosys Limited) 03.jpg
   caption: 잔 로렌초 베르니니, 트리톤 분수, 1643년, 로마
   license: CC BY-SA 4.0
+figures:
+  - file: 'Giovanni Lorenzo Bernini-Neptune and Triton-Victoria and Albert Museum.jpg'
+    kicker: 조각으로는
+    caption: '베르니니, 넵투누스와 트리톤, 1623년. 아버지의 발치에서 소라 나팔을 부는 쪽이 트리톤이다'
+    license: CC BY-SA 3.0
 status: reviewed
 created: 2026-09-08
 ---

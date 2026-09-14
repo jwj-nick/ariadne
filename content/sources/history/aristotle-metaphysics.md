@@ -19,6 +19,11 @@ image:
   file: Aristotle Altemps Inv8575.jpg
   caption: 아리스토텔레스 흉상. 리시포스 원작의 로마 시대 복제
   license: Public domain
+figures:
+  - file: 'The School of Athens by Raffaello Sanzio da Urbino.jpg'
+    kicker: 그림으로는
+    caption: '라파엘로, 아테네 학당, 1511년. 한가운데 두 사람 가운데 손바닥을 땅으로 향한 쪽이 아리스토텔레스다. 하늘을 가리키는 플라톤과 대비된다'
+    license: Public domain
 status: reviewed
 created: 2026-09-08
 ---

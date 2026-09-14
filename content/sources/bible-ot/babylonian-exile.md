@@ -18,6 +18,11 @@ image:
   file: 'Jews Mourning in Exile - Eduard Bendemann - Wallraf-Richartz-Museum & Fondation Corboud-6071 (without frame).jpg'
   caption: 에두아르트 벤데만, 유배지에서 슬퍼하는 유대인들, 1832년
   license: Public domain
+figures:
+  - file: 'Pergamon museum Ishtar Gate.jpg'
+    kicker: 유물로는
+    caption: '바빌론의 이슈타르 문, 기원전 6세기. 끌려간 유다 사람들이 이 문으로 들어갔다. 지금은 베를린 페르가몬 박물관에 옮겨 세워져 있다'
+    license: CC0
 status: reviewed
 created: 2026-09-08
 ---

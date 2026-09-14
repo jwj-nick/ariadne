@@ -20,6 +20,11 @@ image:
   file: Hera Ludovisi Altemps Inv8631.jpg
   caption: 헤라 루도비시. 로마 알템프스 궁전
   license: Public domain
+figures:
+  - file: 'Temple of Hera (Paestum), front East view.jpg'
+    kicker: 그 자리는
+    caption: '파에스툼의 헤라 신전, 기원전 460년경. 이탈리아 남부에 그리스인이 세운 것이며, 그리스 본토보다 온전하게 남았다'
+    license: CC BY-SA 4.0
 status: reviewed
 created: 2026-09-08
 ---
